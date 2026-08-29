@@ -20,6 +20,7 @@ import { mockPartners } from '../../data/partners';
 import { Button } from '../../components/ui/Button';
 import { Badge } from '../../components/ui/Badge';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '../../components/ui/Card';
+import { ImageWithFallback } from '../../components/ui/ImageWithFallback';
 import { useDocumentTitle } from '../../hooks/useDocumentTitle';
 
 export const Home: React.FC = () => {
@@ -167,12 +168,12 @@ export const Home: React.FC = () => {
 
             <div className="lg:col-span-6 relative">
               <div className="relative rounded-3xl overflow-hidden border border-slate-800 shadow-2xl group">
-                <img
-                  src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=1000&q=80"
+                <ImageWithFallback
+                  src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1000&q=80"
                   alt="AIRC Autonomous Laboratory"
                   className="w-full h-96 object-cover group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/40 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/40 to-transparent pointer-events-none" />
                 <div className="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-navy-950/85 backdrop-blur-md border border-cyan-500/20 flex items-center justify-between">
                   <div>
                     <div className="text-xs font-bold text-cyan-400 font-mono">FLAGSHIP FACILITY</div>
