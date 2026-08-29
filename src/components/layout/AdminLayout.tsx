@@ -59,13 +59,13 @@ export const AdminLayout: React.FC = () => {
         <div className="overflow-y-auto pr-1">
           {/* Brand Header */}
           <div className="flex items-center justify-between px-3 py-3 mb-4 border-b border-slate-800">
-            <Link to="/" className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-xl bg-purple-500/20 border border-purple-500/40 flex items-center justify-center text-purple-400">
-                <ShieldAlert className="w-4 h-4" />
+            <Link to="/" className="flex items-center gap-3">
+              <div className="w-9 h-9 rounded-xl bg-purple-500/20 border border-purple-500/40 flex items-center justify-center text-purple-400">
+                <ShieldAlert className="w-5 h-5" />
               </div>
               <div className="flex flex-col">
-                <span className="text-sm font-extrabold tracking-wider text-slate-100 font-mono">AIRC ADMIN</span>
-                <span className="text-[10px] text-purple-400 font-mono -mt-1 font-semibold">DIRECTORATE</span>
+                <span className="text-base font-black tracking-wider text-slate-100 font-sans">AIRC ADMIN</span>
+                <span className="text-[11px] text-purple-400 font-mono font-bold">DIRECTORATE CMS</span>
               </div>
             </Link>
             <button onClick={() => setSidebarOpen(false)} className="lg:hidden text-slate-400 hover:text-white">

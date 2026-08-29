@@ -52,13 +52,13 @@ export const ResearcherLayout: React.FC = () => {
         <div>
           {/* Logo & Portal Badge */}
           <div className="flex items-center justify-between px-3 py-3 mb-6 border-b border-slate-800/80">
-            <Link to="/" className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-xl bg-cyan-500/20 border border-cyan-500/40 flex items-center justify-center text-cyan-400">
-                <Atom className="w-4 h-4" />
+            <Link to="/" className="flex items-center gap-3">
+              <div className="w-9 h-9 rounded-xl bg-cyan-500/20 border border-cyan-500/40 flex items-center justify-center text-cyan-400">
+                <Atom className="w-5 h-5" />
               </div>
               <div className="flex flex-col">
-                <span className="text-sm font-extrabold tracking-wider text-slate-100 font-mono">AIRC PORTAL</span>
-                <span className="text-[10px] text-cyan-400 font-mono -mt-1 font-semibold">FACULTY CONSOLE</span>
+                <span className="text-base font-black tracking-wider text-slate-100 font-sans">AIRC PORTAL</span>
+                <span className="text-[11px] text-cyan-400 font-mono font-bold">FACULTY CONSOLE</span>
               </div>
             </Link>
             <button onClick={() => setSidebarOpen(false)} className="lg:hidden text-slate-400 hover:text-white">

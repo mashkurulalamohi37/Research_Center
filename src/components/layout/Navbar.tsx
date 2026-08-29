@@ -118,17 +118,22 @@ export const Navbar: React.FC = () => {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-2 lg:gap-4">
           {/* Brand Logo */}
-          <Link to="/" className="flex items-center gap-2.5 shrink-0 group">
-            <div className="relative flex items-center justify-center w-9 h-9 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 p-0.5 shadow-md shadow-cyan-500/20 group-hover:shadow-cyan-500/40 transition-all">
+          <Link to="/" className="flex items-center gap-3 shrink-0 group">
+            <div className="relative flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 p-0.5 shadow-lg shadow-cyan-500/25 group-hover:shadow-cyan-500/45 transition-all">
               <div className="w-full h-full bg-slate-900 dark:bg-navy-950 rounded-[10px] flex items-center justify-center">
-                <Atom className="w-4 h-4 text-cyan-400 group-hover:rotate-180 transition-transform duration-700" />
+                <Atom className="w-5 h-5 text-cyan-400 group-hover:rotate-180 transition-transform duration-700" />
               </div>
             </div>
             <div className="flex flex-col">
-              <span className="text-base sm:text-lg font-black tracking-wider text-slate-900 dark:text-slate-100 font-sans flex items-center gap-1.5 leading-tight">
-                AIRC <span className="text-[9px] font-mono px-1.5 py-0.2 rounded bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border border-cyan-500/30 font-semibold">INSTITUTE</span>
-              </span>
-              <span className="text-[9px] text-slate-500 dark:text-slate-400 tracking-tight font-medium hidden md:block">
+              <div className="flex items-center gap-2">
+                <span className="text-lg sm:text-xl font-black tracking-wider text-slate-900 dark:text-white font-sans leading-none">
+                  AIRC
+                </span>
+                <span className="text-[10px] font-mono px-2 py-0.5 rounded-md bg-cyan-500/15 text-cyan-600 dark:text-cyan-300 border border-cyan-500/40 font-bold tracking-wider leading-none">
+                  INSTITUTE
+                </span>
+              </div>
+              <span className="text-xs font-semibold text-slate-700 dark:text-slate-200 tracking-tight mt-1 hidden sm:block">
                 Advanced Intelligent Research Center
               </span>
             </div>
