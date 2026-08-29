@@ -137,18 +137,11 @@ export const ResearcherLayout: React.FC = () => {
           </div>
 
           <div className="flex items-center gap-3">
-            <button
-              onClick={toggleTheme}
-              className="p-2 rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors cursor-pointer"
-            >
-              {theme === 'dark' ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-indigo-600" />}
-            </button>
-
             <Button
               variant="outline"
               size="sm"
               onClick={() => { switchRole('admin'); navigate('/admin'); }}
-              className="text-xs hidden md:flex items-center gap-1 border-purple-500/30 text-purple-600 dark:text-purple-300 hover:bg-purple-500/10 cursor-pointer"
+              className="text-xs hidden md:flex items-center gap-1 border-purple-500/30 text-purple-300 hover:bg-purple-500/10 cursor-pointer"
             >
               <Shield className="w-3.5 h-3.5" /> Admin View
             </Button>
