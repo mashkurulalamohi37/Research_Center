@@ -1,0 +1,183 @@
+import { Project } from '../types';
+
+export const mockProjects: Project[] = [
+  {
+    id: 'proj-neurosym-core',
+    slug: 'provable-neurosymbolic-reasoning',
+    title: 'Provable Neuro-Symbolic Foundation Architectures',
+    shortDescription: 'Unifying deep transformer neural models with formal mathematical logic to guarantee zero-hallucination and safety compliance.',
+    description: 'This multi-year flagship initiative bridges the expressive representation capacity of deep learning with the rigorous guarantees of formal deductive systems. By incorporating differentiable first-order logic solver constraints directly into self-attention heads, our architecture ensures verifiable logical consistency in high-stakes reasoning domains.',
+    problemStatement: 'Current large deep foundation models suffer from uncontrollable hallucinations, inability to perform multi-step exact algorithmic reasoning, and lack of verifiable safety bounds in mission-critical applications.',
+    methodology: 'We combine differentiable SAT/SMT solvers with sparse transformer attention layers, enforcing mathematical invariants through Lagrange multiplier penalty bounds during gradient backpropagation.',
+    outcomes: [
+      'Engineered the open-source NeuroLogic-v2 engine with 10x faster constrained decoding.',
+      'Published 4 papers in NeurIPS and ICLR with zero semantic contradiction proofs.',
+      'Deployed pilot system with the National Aerospace Laboratory for flight checklist verification.'
+    ],
+    researchAreaId: 'ai-core',
+    leadResearcherId: 'dr-sarah-lin',
+    teamMemberIds: ['dr-sarah-lin', 'dr-elena-rostova', 'james-chen'],
+    status: 'Ongoing',
+    startDate: '2023-01-15',
+    endDate: '2026-12-31',
+    fundingBody: 'National Science Foundation (NSF) & DARPA',
+    fundingAmount: '$4,800,000',
+    image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1000&q=80',
+    technologies: ['PyTorch', 'Z3 SMT Solver', 'JAX', 'CUDA Custom Kernels', 'Formal Verification'],
+    featured: true,
+    publicationsIds: ['pub-neurips-2025-logic', 'pub-icml-2024-causal'],
+    githubUrl: 'https://github.com/airc-lab/neurologic-core',
+    demoUrl: 'https://neurologic-demo.airc.research.edu',
+    deliverables: [
+      { title: 'Differentiable SMT Solver Kernel', date: '2023-09-01', completed: true },
+      { title: '14B Parameter Symbolic Foundation Model', date: '2024-06-15', completed: true },
+      { title: 'Formal Verification Test Suite', date: '2025-02-10', completed: true },
+      { title: 'Multi-Agent Logical Protocol Standard', date: '2026-08-30', completed: false },
+    ]
+  },
+  {
+    id: 'proj-surgical-vision-3d',
+    slug: 'intraoperative-3d-surgical-navigation',
+    title: 'Real-Time 3D Intraoperative Neural Splatting for Surgical Guidance',
+    shortDescription: 'High-frequency 3D volumetric reconstruction and sub-millimeter anatomical tracking during minimally invasive microsurgery.',
+    description: 'Developing high-speed, sub-millimeter 3D neural reconstruction from stereo endoscopic video streams. Using optimized dynamic 3D Gaussian splatting, the system renders live, occlusion-free subsurface vascular overlays onto surgical augmented reality headsets in real-time at 120 FPS.',
+    problemStatement: 'Surgeons during laparoscopic procedures lack direct depth perception and real-time visualization of hidden critical vessels obscured beneath tissue surfaces.',
+    methodology: 'Combining dual-view optical coherence tomography with ultra-fast dynamic Gaussian primitives trained on continuous deformation fields to simulate soft tissue dynamics.',
+    outcomes: [
+      'Achieved 0.38mm average tracking accuracy across 45 ex-vivo surgical trials.',
+      'Reduced average intraoperative vascular identification time by 42%.',
+      'Clinical trial ongoing across 3 premier teaching hospitals.'
+    ],
+    researchAreaId: 'computer-vision',
+    leadResearcherId: 'dr-marcus-vance',
+    teamMemberIds: ['dr-marcus-vance', 'dr-ananya-patel'],
+    status: 'Ongoing',
+    startDate: '2023-06-01',
+    endDate: '2026-05-30',
+    fundingBody: 'National Institutes of Health (NIH) R01',
+    fundingAmount: '$3,200,000',
+    image: 'https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=1000&q=80',
+    technologies: ['3D Gaussian Splatting', 'CUDA', 'Stereo Endoscopy', 'OpenCV', 'Vision Transformers'],
+    featured: true,
+    publicationsIds: ['pub-cvpr-2025-surgical', 'pub-miccai-2024-splat'],
+    demoUrl: 'https://surgical3d.airc.research.edu',
+    deliverables: [
+      { title: 'Real-Time Endoscopic Stream Pipeline', date: '2023-12-01', completed: true },
+      { title: 'Sub-Millimeter Tissue Deformation Model', date: '2024-11-20', completed: true },
+      { title: 'Phase II Clinical Validation Trials', date: '2025-10-15', completed: false },
+    ]
+  },
+  {
+    id: 'proj-autonomous-swarm-rescue',
+    slug: 'heterogeneous-swarm-disaster-response',
+    title: 'Autonomous Heterogeneous Swarm Robotics in Communication-Denied Environments',
+    shortDescription: 'Decentralized collective intelligence for collaborative aerial-ground robotic teams in subterranean and disaster zones.',
+    description: 'Deploying swarms of agile micro-aerial quadcopters and quadruped ground robots that coordinate autonomously without GPS or centralized radio communication. The robots cooperatively construct 3D volumetric thermal and structural maps of collapsed facilities.',
+    problemStatement: 'Search-and-rescue teams cannot enter unstable collapsed buildings or deep underground mines without risking human lives, while radio signals degrade within meters of subterranean rubble.',
+    methodology: 'Decentralized multi-agent reinforcement learning coupled with ad-hoc acoustic/UWB peer mesh networking and peer-to-peer distributed SLAM.',
+    outcomes: [
+      'Successfully mapped a 4-level subterranean training tunnel in under 8 minutes with 6 drones.',
+      'Won First Place in the International Swarm Robotics Urban Search benchmark.',
+      'Technology licensed by two emergency rescue robotics consortiums.'
+    ],
+    researchAreaId: 'robotics-autonomous',
+    leadResearcherId: 'dr-kenji-takahashi',
+    teamMemberIds: ['dr-kenji-takahashi', 'dr-maya-lin', 'dr-wei-zhang'],
+    status: 'Ongoing',
+    startDate: '2022-09-01',
+    endDate: '2025-12-31',
+    fundingBody: 'Federal Emergency Management Agency & Industrial Robotics Grant',
+    fundingAmount: '$2,750,000',
+    image: 'https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&w=1000&q=80',
+    technologies: ['ROS2', 'Multi-Agent RL', 'LIDAR Odometry', 'Distributed SLAM', 'UWB Mesh'],
+    featured: true,
+    publicationsIds: ['pub-icra-2025-swarm'],
+    githubUrl: 'https://github.com/airc-lab/swarm-rescue',
+    deliverables: [
+      { title: 'Autonomous P2P Spatial SLAM Protocol', date: '2023-04-10', completed: true },
+      { title: 'Autonomous Air-Ground Team Rendezvous', date: '2024-05-18', completed: true },
+      { title: 'Field Deployment with Mountain Rescue Teams', date: '2025-06-30', completed: false }
+    ]
+  },
+  {
+    id: 'proj-ai-drug-oncology',
+    slug: 'generative-graph-ai-oncology-therapeutics',
+    title: 'Generative Molecular Graph AI for Targeted Small-Molecule Therapeutics',
+    shortDescription: 'Deep geometric graph models simulating protein-ligand binding dynamics to synthesize targeted inhibitors for hard-to-treat oncology targets.',
+    description: 'We harness 3D equivariant graph neural networks and diffusion trajectories on molecular manifolds to design de novo small molecules that bind selectively to oncogenic mutant proteins while minimizing off-target toxicity.',
+    problemStatement: 'Traditional drug discovery cycles average 5-7 years and billions of dollars with over 90% failure rates during in-vitro affinity validation.',
+    methodology: 'Equivariant SE(3) diffusion models combined with molecular dynamics conformational sampling and multi-objective Pareto optimization.',
+    outcomes: [
+      'Synthesized 18 novel candidate molecules with sub-nanomolar affinity for KRAS G12D mutation.',
+      '2 patent applications filed with clinical partner hospitals.',
+      'Paper published in Nature Chemical Biology.'
+    ],
+    researchAreaId: 'healthcare-biomedical',
+    leadResearcherId: 'dr-ananya-patel',
+    teamMemberIds: ['dr-ananya-patel', 'dr-sarah-lin'],
+    status: 'Completed',
+    startDate: '2022-01-01',
+    endDate: '2024-12-31',
+    fundingBody: 'Chan Zuckerberg Initiative & Biomedical AI Fund',
+    fundingAmount: '$3,500,000',
+    image: 'https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=1000&q=80',
+    technologies: ['Equivariant GNNs', 'Schrodinger Suite', 'PyTorch Geometric', 'AlphaFold Multi-Conformers'],
+    featured: true,
+    publicationsIds: ['pub-nature-2024-oncology'],
+    deliverables: [
+      { title: 'SE(3) Equivariant Diffusion Model', date: '2022-10-15', completed: true },
+      { title: 'In-Vitro Wet Lab Validation Roster', date: '2023-11-01', completed: true },
+      { title: 'Final Compound Library Synthesis', date: '2024-12-15', completed: true }
+    ]
+  },
+  {
+    id: 'proj-defensive-cyber-crs',
+    slug: 'autonomous-cyber-reasoning-system',
+    title: 'Autonomous Cyber Reasoning: Self-Healing Software Frameworks',
+    shortDescription: 'AI-driven binary analysis for instant zero-day vulnerability synthesis and provably sound auto-patch generation.',
+    description: 'Creating autonomous reasoning systems capable of decompiling stripped binary architectures, formulating symbolic execution graphs, discovering complex control-flow vulnerabilities, and generating provably sound patches in seconds.',
+    problemStatement: 'The time window between vulnerability disclosure and automated exploit generation has shrunk to minutes, far faster than human security teams can respond.',
+    methodology: 'Large neural decompiler models fine-tuned with directed greybox fuzzing feedback loops and symbolic verification proofs.',
+    outcomes: [
+      'Discovered and patched 14 previously unknown CVEs in critical open-source infrastructure.',
+      'Auto-generated patches with zero regression faults across 2,000+ test suites.'
+    ],
+    researchAreaId: 'cybersecurity-ai',
+    leadResearcherId: 'dr-alexander-weiss',
+    teamMemberIds: ['dr-alexander-weiss'],
+    status: 'Ongoing',
+    startDate: '2024-01-15',
+    endDate: '2026-12-31',
+    fundingBody: 'Cyber Defense Agency Research Grant',
+    fundingAmount: '$2,100,000',
+    image: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1000&q=80',
+    technologies: ['Ghidra API', 'AFL++', 'Angr Symbolic Execution', 'Transformer Decompilers'],
+    featured: false,
+    publicationsIds: ['pub-sp-2025-cyber']
+  },
+  {
+    id: 'proj-edge-neuromorphic-sensor',
+    slug: 'sub-milliwatt-neuromorphic-acoustic-arrays',
+    title: 'Sub-Milliwatt Neuromorphic Sensor Arrays for Environmental Monitoring',
+    shortDescription: 'Ultra-low power bio-inspired spiking neural processors for year-long remote deployment on energy harvesting.',
+    description: 'We develop custom analog-digital spiking neural network processors tailored for acoustic ecology monitoring, seismic tremor classification, and early forest fire detection running purely on miniature solar harvesting.',
+    problemStatement: 'Remote environmental monitoring sensors require battery replacements in inaccessible terrains or lack on-device processing power to filter gigabytes of ambient noise.',
+    methodology: 'Event-driven asynchronous analog frontend coupled with on-chip spike timing-dependent plasticity (STDP).',
+    outcomes: [
+      'Reduced average active listening power consumption to 2.4mW.',
+      'Deployed 500 nodes across dense conservation forests with 99.4% acoustic detection accuracy.'
+    ],
+    researchAreaId: 'iot-edge-ai',
+    leadResearcherId: 'dr-wei-zhang',
+    teamMemberIds: ['dr-wei-zhang'],
+    status: 'Proposed',
+    startDate: '2025-06-01',
+    endDate: '2028-05-31',
+    fundingBody: 'Global Conservation Technology Foundation & Energy Department',
+    fundingAmount: '$1,900,000',
+    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1000&q=80',
+    technologies: ['Spiking Neural Networks', 'Cadence Virtuoso', 'TinyML', 'Ultra-Low Power CMOS'],
+    featured: false,
+    publicationsIds: []
+  }
+];
