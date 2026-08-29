@@ -32,7 +32,7 @@ export const ResearcherLayout: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-navy-950 flex text-slate-100">
+    <div className="h-screen w-full overflow-hidden bg-navy-950 flex text-slate-100">
       {/* Mobile Sidebar Overlay */}
       {sidebarOpen && (
         <div
@@ -41,17 +41,17 @@ export const ResearcherLayout: React.FC = () => {
         />
       )}
 
-      {/* Sidebar */}
+      {/* Fixed Sidebar */}
       <aside
-        className={`fixed lg:static top-0 bottom-0 left-0 z-50 w-64 bg-slate-950/98 border-r border-slate-800/80 flex flex-col justify-between p-4 transition-transform duration-300 shadow-2xl lg:shadow-none ${
+        className={`fixed lg:static top-0 bottom-0 left-0 z-50 w-64 h-screen shrink-0 bg-slate-950/98 border-r border-slate-800/80 flex flex-col justify-between p-4 transition-transform duration-300 shadow-2xl lg:shadow-none ${
           sidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
         }`}
       >
-        <div>
+        <div className="flex flex-col flex-1 min-h-0 overflow-hidden">
           {/* Logo & Portal Badge */}
-          <div className="flex items-center justify-between px-3 py-3 mb-6 border-b border-slate-800/80">
+          <div className="flex items-center justify-between px-3 py-3 mb-3 border-b border-slate-800/80 shrink-0">
             <Link to="/" className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-xl bg-cyan-500/20 border border-cyan-500/40 flex items-center justify-center text-cyan-400 shadow-sm">
+              <div className="w-9 h-9 rounded-xl bg-cyan-500/20 border border-cyan-500/40 flex items-center justify-center text-cyan-400 shadow-sm shrink-0">
                 <Atom className="w-5 h-5" />
               </div>
               <div className="flex flex-col">
@@ -64,8 +64,8 @@ export const ResearcherLayout: React.FC = () => {
             </button>
           </div>
 
-          {/* Navigation Items */}
-          <nav className="space-y-1">
+          {/* Navigation Items with Independent Scroll */}
+          <nav className="space-y-1 overflow-y-auto pr-1 flex-1 py-1 custom-scrollbar">
             {navItems.map(item => (
               <NavLink
                 key={item.path}
@@ -88,12 +88,12 @@ export const ResearcherLayout: React.FC = () => {
         </div>
 
         {/* Bottom User Area */}
-        <div className="pt-4 border-t border-slate-800/80 space-y-3">
+        <div className="pt-4 border-t border-slate-800/80 space-y-3 shrink-0">
           <div className="flex items-center gap-3 px-2">
             <img
               src={user?.avatar || 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80'}
               alt={user?.name}
-              className="w-9 h-9 rounded-xl object-cover border border-cyan-500/40 shadow-sm"
+              className="w-9 h-9 rounded-xl object-cover border border-cyan-500/40 shadow-sm shrink-0"
             />
             <div className="flex-1 min-w-0">
               <div className="text-xs font-bold text-slate-100 truncate">{user?.name || 'Dr. Marcus Vance'}</div>
@@ -118,8 +118,8 @@ export const ResearcherLayout: React.FC = () => {
         </div>
       </aside>
 
-      {/* Main Content Area */}
-      <div className="flex-1 flex flex-col min-w-0 overflow-hidden">
+      {/* Main Content Area with Separate Scroll */}
+      <div className="flex-1 flex flex-col min-w-0 h-screen overflow-hidden">
         {/* Header Bar */}
         <header className="h-16 border-b border-slate-800/80 bg-slate-950/80 backdrop-blur-md px-6 flex items-center justify-between shrink-0">
           <div className="flex items-center gap-3">
