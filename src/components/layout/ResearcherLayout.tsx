@@ -144,11 +144,14 @@ export const ResearcherLayout: React.FC = () => {
               {theme === 'dark' ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-cyan-400" />}
             </button>
 
-            <Link to="/admin">
-              <Button variant="outline" size="sm" className="text-xs hidden md:flex items-center gap-1 border-purple-500/30 text-purple-300 hover:bg-purple-500/10">
-                <Shield className="w-3.5 h-3.5" /> Admin View
-              </Button>
-            </Link>
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => { switchRole('admin'); navigate('/admin'); }}
+              className="text-xs hidden md:flex items-center gap-1 border-purple-500/30 text-purple-300 hover:bg-purple-500/10 cursor-pointer"
+            >
+              <Shield className="w-3.5 h-3.5" /> Admin View
+            </Button>
 
             <Badge variant="cyan">Faculty Active</Badge>
           </div>

@@ -14,7 +14,7 @@ import { Button } from '../ui/Button';
 
 export const AdminLayout: React.FC = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const { user, logout } = useAuth();
+  const { user, logout, switchRole } = useAuth();
   const { theme, toggleTheme } = useTheme();
   const navigate = useNavigate();
 
@@ -150,11 +150,14 @@ export const AdminLayout: React.FC = () => {
               {theme === 'dark' ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-purple-400" />}
             </button>
 
-            <Link to="/dashboard">
-              <Button variant="outline" size="sm" className="text-xs hidden md:flex items-center gap-1 border-cyan-500/30 text-cyan-300 hover:bg-cyan-500/10">
-                Researcher View
-              </Button>
-            </Link>
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => { switchRole('researcher'); navigate('/dashboard'); }}
+              className="text-xs hidden md:flex items-center gap-1 border-cyan-500/30 text-cyan-300 hover:bg-cyan-500/10 cursor-pointer"
+            >
+              Researcher View
+            </Button>
 
             <Badge variant="purple">Superadmin Mode</Badge>
           </div>
