@@ -3,16 +3,18 @@ import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Brain, Eye, MessageSquareText, Bot, Activity, 
-  ShieldCheck, Cpu, ArrowRight, Sparkles, Layers, CheckCircle2 
+  ShieldCheck, Cpu, ArrowRight, Sparkles 
 } from 'lucide-react';
 import { mockResearchAreas } from '../../data/researchAreas';
+import { mockResearchers } from '../../data/researchers';
 import { Badge } from '../ui/Badge';
 import { Button } from '../ui/Button';
 
 export const InteractiveResearchMap: React.FC = () => {
-  const [selectedAreaId, setSelectedAreaId] = useState<string>('ai-core');
+  const [selectedAreaId, setSelectedAreaId] = useState<string>(mockResearchAreas[0].id);
 
   const selectedArea = mockResearchAreas.find(a => a.id === selectedAreaId) || mockResearchAreas[0];
+  const leadResearcher = mockResearchers.find(r => r.id === selectedArea.leadResearcherId);
 
   const getIcon = (iconName: string) => {
     switch (iconName) {
@@ -42,7 +44,7 @@ export const InteractiveResearchMap: React.FC = () => {
             Interconnected Research Architecture
           </h2>
           <p className="text-slate-600 dark:text-slate-400 text-base mt-3 leading-relaxed">
-            AIRC connects mathematical foundations, visual intelligence, physical robotics, and biomedical translation into a cohesive interdisciplinary network.
+            IRICC connects mathematical foundations, visual intelligence, physical robotics, and biomedical translation into a cohesive interdisciplinary network.
           </p>
         </div>
 
@@ -51,14 +53,18 @@ export const InteractiveResearchMap: React.FC = () => {
           {/* Left: Node Hierarchy Tree & Grid */}
           <div className="lg:col-span-6 space-y-3">
             {/* Center Node Indicator */}
-            <div className="p-4 rounded-2xl border border-cyan-500/40 bg-white dark:bg-cyan-950/20 backdrop-blur-md flex items-center justify-between shadow-sm dark:shadow-lg dark:shadow-cyan-950/30">
+            <div className="p-4 rounded-2xl border border-cyan-500/40 bg-white dark:bg-cyan-950/20 backdrop-blur-md flex items-center justify-between shadow-xs dark:shadow-lg dark:shadow-cyan-950/30">
               <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-lg bg-cyan-500 text-white dark:bg-cyan-400 dark:text-navy-950 flex items-center justify-center font-bold text-xs">
-                  AIRC
-                </div>
+                <img
+                  src="/iricc-logo.jpg"
+                  alt="IRICC Official Seal"
+                  width="40"
+                  height="40"
+                  className="w-10 h-10 rounded-full object-cover shadow-sm ring-2 ring-amber-400/40 shrink-0"
+                />
                 <div>
-                  <h4 className="text-sm font-bold text-slate-900 dark:text-slate-100">Central Institute Topology</h4>
-                  <p className="text-xs text-cyan-600 dark:text-cyan-400 font-mono font-medium">8 Core Research Groups • 32 Projects</p>
+                  <h4 className="text-sm font-bold text-slate-900 dark:text-slate-100">IRICC Knowledge Topology</h4>
+                  <p className="text-xs text-cyan-700 dark:text-cyan-400 font-mono font-medium">8 Core Research Groups • 32 Projects</p>
                 </div>
               </div>
               <Badge variant="cyan">Unified Hub</Badge>
@@ -74,21 +80,21 @@ export const InteractiveResearchMap: React.FC = () => {
                     onClick={() => setSelectedAreaId(area.id)}
                     className={`flex items-center gap-3 p-3.5 rounded-xl border text-left transition-all duration-200 cursor-pointer ${
                       isSelected
-                        ? 'border-cyan-500 bg-cyan-500/10 dark:border-cyan-400 dark:bg-cyan-500/15 shadow-md shadow-cyan-500/10 scale-[1.02]'
+                        ? 'border-cyan-500 bg-cyan-50 dark:border-cyan-400 dark:bg-cyan-500/15 shadow-sm shadow-cyan-500/10 scale-[1.01]'
                         : 'border-slate-200 bg-white hover:border-slate-300 dark:border-slate-800 dark:bg-slate-900/60 dark:hover:border-slate-700 dark:hover:bg-slate-800/50'
                     }`}
                   >
                     <div
                       className={`p-2 rounded-lg transition-colors ${
                         isSelected
-                          ? 'bg-cyan-500 text-white dark:bg-cyan-400 dark:text-navy-950'
-                          : 'bg-slate-100 text-cyan-600 dark:bg-slate-800 dark:text-cyan-400'
+                          ? 'bg-cyan-600 text-white dark:bg-cyan-400 dark:text-navy-950'
+                          : 'bg-slate-100 text-cyan-700 dark:bg-slate-800 dark:text-cyan-400'
                       }`}
                     >
                       {getIcon(area.iconName)}
                     </div>
                     <div className="flex-1 min-w-0">
-                      <div className={`text-xs font-bold truncate ${isSelected ? 'text-cyan-700 dark:text-cyan-300' : 'text-slate-900 dark:text-slate-200'}`}>
+                      <div className={`text-xs font-bold truncate ${isSelected ? 'text-cyan-800 dark:text-cyan-300' : 'text-slate-900 dark:text-slate-200'}`}>
                         {area.title}
                       </div>
                       <div className="text-[11px] text-slate-500 dark:text-slate-400 font-mono">
@@ -122,31 +128,31 @@ export const InteractiveResearchMap: React.FC = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-white via-white/70 to-transparent dark:from-slate-900 dark:via-slate-900/60 dark:to-transparent" />
                   <div className="absolute bottom-4 left-8 right-8 flex items-center justify-between">
                     <div className="flex items-center gap-2">
-                      <span className="p-2 rounded-xl bg-cyan-500 text-white dark:bg-cyan-400 dark:text-navy-950 font-bold">
+                      <span className="p-2 rounded-xl bg-cyan-600 text-white dark:bg-cyan-400 dark:text-navy-950 font-bold">
                         {getIcon(selectedArea.iconName)}
                       </span>
                       <h3 className="text-xl font-bold text-slate-900 dark:text-white tracking-tight">
                         {selectedArea.title}
                       </h3>
                     </div>
-                    <Badge variant="cyan">{selectedArea.projectCount} Active Grants</Badge>
+                    <Badge variant="cyan">{selectedArea.projectCount} Active Initiatives</Badge>
                   </div>
                 </div>
 
-                <p className="text-slate-700 dark:text-slate-300 text-sm leading-relaxed">
+                <p className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
                   {selectedArea.description}
                 </p>
 
-                {/* Core Technologies Badges */}
-                <div>
-                  <h4 className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2 flex items-center gap-1.5">
-                    <Layers className="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-400" /> Key Technical Capabilities
-                  </h4>
+                {/* Sub-Specialties Matrix */}
+                <div className="space-y-2">
+                  <div className="text-xs font-bold text-slate-900 dark:text-slate-200 uppercase tracking-wider">
+                    Core Specializations
+                  </div>
                   <div className="flex flex-wrap gap-2">
                     {selectedArea.technologies.map(tech => (
                       <span
                         key={tech}
-                        className="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-100 dark:bg-slate-800/80 text-cyan-700 dark:text-cyan-300 border border-slate-200 dark:border-slate-700/60"
+                        className="text-xs px-3 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700"
                       >
                         {tech}
                       </span>
@@ -154,29 +160,30 @@ export const InteractiveResearchMap: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Strategic Objectives */}
-                <div>
-                  <h4 className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2 flex items-center gap-1.5">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" /> Core Research Goals
-                  </h4>
-                  <ul className="space-y-1.5 text-xs text-slate-700 dark:text-slate-300">
-                    {selectedArea.objectives.map((obj, i) => (
-                      <li key={i} className="flex items-start gap-2">
-                        <span className="w-1.5 h-1.5 rounded-full bg-cyan-500 dark:bg-cyan-400 mt-1.5 shrink-0" />
-                        <span>{obj}</span>
-                      </li>
-                    ))}
-                  </ul>
+                {/* Lead PI */}
+                <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 flex items-center justify-between">
+                  <div>
+                    <div className="text-[11px] text-slate-500 dark:text-slate-400 uppercase font-mono">Principal Investigator</div>
+                    <div className="text-sm font-bold text-slate-900 dark:text-slate-100">
+                      {leadResearcher?.name || 'Principal Investigator'}
+                    </div>
+                  </div>
+                  <Link to={`/researchers/${selectedArea.leadResearcherId}`}>
+                    <Button variant="outline" size="sm" className="text-xs">
+                      Faculty Bio <ArrowRight className="w-3.5 h-3.5 ml-1" />
+                    </Button>
+                  </Link>
                 </div>
 
-                {/* Bottom Action CTA */}
-                <div className="pt-2 flex items-center justify-between border-t border-slate-200 dark:border-slate-800">
-                  <div className="text-xs text-slate-500 dark:text-slate-400">
-                    Lead: <span className="text-slate-800 dark:text-slate-200 font-semibold">{selectedArea.leadResearcherId.replace('dr-', 'Dr. ').replace('-', ' ').toUpperCase()}</span>
-                  </div>
+                {/* CTA Link to Area Page */}
+                <div className="pt-2 flex items-center justify-between">
+                  <span className="text-xs text-slate-500 font-mono">
+                    {selectedArea.publicationCount} Peer-Reviewed Articles
+                  </span>
                   <Link to={`/research/${selectedArea.slug}`}>
                     <Button variant="cyan" size="sm">
-                      Explore Discipline <ArrowRight className="w-3.5 h-3.5 ml-1" />
+                      Explore Full Research Discipline
+                      <ArrowRight className="w-4 h-4 ml-1" />
                     </Button>
                   </Link>
                 </div>

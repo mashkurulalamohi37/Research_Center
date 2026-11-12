@@ -27,12 +27,12 @@ export const PublicationDetail: React.FC = () => {
 
   const getCitationText = () => {
     if (citeFormat === 'bibtex') {
-      return `@article{airc_${pub.slug.replace(/-/g, '_')}_${pub.year},
+      return `@article{iricc_${pub.slug.replace(/-/g, '_')}_${pub.year},
   title = {${pub.title}},
   author = {${pub.authors.join(' and ')}},
   journal = {${pub.venue}},
   year = {${pub.year}},
-  doi = {${pub.doi || '10.1145/airc.2025.01'}}
+  doi = {${pub.doi || '10.1145/iricc.2025.01'}}
 }`;
     } else if (citeFormat === 'apa') {
       return `${pub.authors.join(', ')} (${pub.year}). ${pub.title}. ${pub.venue}.${pub.doi ? ` https://doi.org/${pub.doi}` : ''}`;
@@ -56,33 +56,33 @@ export const PublicationDetail: React.FC = () => {
     <div className="py-10 space-y-12">
       {/* Top Back Nav */}
       <div className="container mx-auto px-4 lg:px-8 max-w-4xl">
-        <Link to="/publications" className="inline-flex items-center gap-1.5 text-xs text-slate-400 hover:text-cyan-400 font-mono transition-colors">
+        <Link to="/publications" className="inline-flex items-center gap-1.5 text-xs text-slate-500 hover:text-cyan-600 dark:text-slate-400 dark:hover:text-cyan-400 font-mono transition-colors">
           <ArrowLeft className="w-3.5 h-3.5" /> Back to Publications Repository
         </Link>
       </div>
 
       {/* Main Academic Article Paper Header */}
       <section className="container mx-auto px-4 lg:px-8 max-w-4xl">
-        <div className="p-8 sm:p-12 rounded-3xl border border-slate-800 bg-slate-900/90 shadow-2xl backdrop-blur-xl space-y-6">
+        <div className="p-8 sm:p-12 rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/90 shadow-xl dark:shadow-2xl backdrop-blur-xl space-y-6">
           <div className="flex flex-wrap items-center gap-2">
             <Badge variant="cyan">{pub.type}</Badge>
-            <span className="text-xs font-mono text-cyan-400 font-bold">{pub.year}</span>
-            <span className="text-xs text-slate-600">•</span>
-            {area && <span className="text-xs text-slate-400 font-medium">{area.title}</span>}
+            <span className="text-xs font-mono text-cyan-600 dark:text-cyan-400 font-bold">{pub.year}</span>
+            <span className="text-xs text-slate-300 dark:text-slate-600">•</span>
+            {area && <span className="text-xs text-slate-500 dark:text-slate-400 font-medium">{area.title}</span>}
           </div>
 
-          <h1 className="text-2xl sm:text-4xl font-extrabold text-slate-100 tracking-tight leading-snug">
+          <h1 className="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight leading-snug">
             {pub.title}
           </h1>
 
           {/* Authors List */}
           <div className="pt-1">
-            <div className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 font-mono">
+            <div className="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2 font-mono">
               Authors
             </div>
-            <div className="flex flex-wrap gap-2 text-sm text-slate-200">
+            <div className="flex flex-wrap gap-2 text-sm text-slate-800 dark:text-slate-200">
               {pub.authors.map((author, i) => (
-                <span key={i} className="px-3 py-1 rounded-xl bg-slate-800/80 border border-slate-700 font-medium">
+                <span key={i} className="px-3 py-1 rounded-xl bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 font-medium">
                   {author}
                 </span>
               ))}
@@ -90,22 +90,22 @@ export const PublicationDetail: React.FC = () => {
           </div>
 
           {/* Publication Metadata Table */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 p-4 rounded-2xl bg-slate-950/60 border border-slate-800 text-xs font-mono">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 p-4 rounded-2xl bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 text-xs font-mono">
             <div>
-              <span className="text-slate-500 block">Published In</span>
-              <strong className="text-slate-200">{pub.venue}</strong>
+              <span className="text-slate-500 dark:text-slate-400 block">Published In</span>
+              <strong className="text-slate-800 dark:text-slate-200">{pub.venue}</strong>
             </div>
             <div>
-              <span className="text-slate-500 block">Publisher</span>
-              <strong className="text-slate-200">{pub.publisher || 'AIRC Open Press'}</strong>
+              <span className="text-slate-500 dark:text-slate-400 block">Publisher</span>
+              <strong className="text-slate-800 dark:text-slate-200">{pub.publisher || 'IRICC Open Press'}</strong>
             </div>
             <div>
-              <span className="text-slate-500 block">DOI Identifier</span>
-              <strong className="text-cyan-400">{pub.doi || 'arXiv:2602.04819'}</strong>
+              <span className="text-slate-500 dark:text-slate-400 block">DOI Identifier</span>
+              <strong className="text-cyan-600 dark:text-cyan-400">{pub.doi || 'arXiv:2602.04819'}</strong>
             </div>
             <div>
-              <span className="text-slate-500 block">Citations</span>
-              <strong className="text-slate-100">{pub.citations} citations</strong>
+              <span className="text-slate-500 dark:text-slate-400 block">Citations</span>
+              <strong className="text-slate-900 dark:text-slate-100">{pub.citations} citations</strong>
             </div>
           </div>
 
@@ -120,14 +120,14 @@ export const PublicationDetail: React.FC = () => {
             {pub.codeUrl && (
               <a href={pub.codeUrl} target="_blank" rel="noreferrer">
                 <Button variant="outline" size="md">
-                  <Github className="w-4 h-4 mr-1.5 text-purple-400" /> Source Code
+                  <Github className="w-4 h-4 mr-1.5 text-purple-600 dark:text-purple-400" /> Source Code
                 </Button>
               </a>
             )}
             {pub.datasetUrl && (
               <a href={pub.datasetUrl} target="_blank" rel="noreferrer">
                 <Button variant="outline" size="md">
-                  <Database className="w-4 h-4 mr-1.5 text-emerald-400" /> Benchmark Data
+                  <Database className="w-4 h-4 mr-1.5 text-emerald-600 dark:text-emerald-400" /> Benchmark Data
                 </Button>
               </a>
             )}
@@ -137,21 +137,21 @@ export const PublicationDetail: React.FC = () => {
 
       {/* Abstract & Content Body */}
       <section className="container mx-auto px-4 lg:px-8 max-w-4xl space-y-8">
-        <Card className="p-8 sm:p-10 border-slate-800 bg-slate-900/60 space-y-4">
-          <h2 className="text-xl font-bold text-slate-100 flex items-center gap-2">
-            <BookOpen className="w-5 h-5 text-cyan-400" /> Abstract
+        <Card className="p-8 sm:p-10 border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 shadow-md space-y-4">
+          <h2 className="text-xl font-bold text-slate-900 dark:text-slate-100 flex items-center gap-2">
+            <BookOpen className="w-5 h-5 text-cyan-600 dark:text-cyan-400" /> Abstract
           </h2>
-          <p className="text-slate-200 text-sm sm:text-base leading-relaxed text-justify font-sans">
+          <p className="text-slate-700 dark:text-slate-200 text-sm sm:text-base leading-relaxed text-justify font-sans">
             {pub.abstract}
           </p>
 
-          <div className="pt-6 border-t border-slate-800">
-            <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3 font-mono">
+          <div className="pt-6 border-t border-slate-200 dark:border-slate-800">
+            <h4 className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-3 font-mono">
               Indexed Keywords
             </h4>
             <div className="flex flex-wrap gap-2">
               {pub.keywords.map(kw => (
-                <span key={kw} className="px-3 py-1 rounded-xl bg-slate-800 text-cyan-300 text-xs font-mono border border-slate-700">
+                <span key={kw} className="px-3 py-1 rounded-xl bg-slate-100 dark:bg-slate-800 text-cyan-700 dark:text-cyan-300 text-xs font-mono border border-slate-200 dark:border-slate-700">
                   {kw}
                 </span>
               ))}
@@ -168,15 +168,15 @@ export const PublicationDetail: React.FC = () => {
         description="Select your preferred academic citation standard or copy BibTeX for LaTeX."
       >
         <div className="space-y-4">
-          <div className="flex items-center gap-2 border-b border-slate-800 pb-3">
+          <div className="flex items-center gap-2 border-b border-slate-200 dark:border-slate-800 pb-3">
             {(['bibtex', 'apa', 'ieee'] as const).map(fmt => (
               <button
                 key={fmt}
                 onClick={() => setCiteFormat(fmt)}
                 className={`px-3 py-1.5 rounded-lg text-xs font-mono uppercase font-bold transition-colors ${
                   citeFormat === fmt
-                    ? 'bg-cyan-500 text-navy-950'
-                    : 'bg-slate-800 text-slate-300 hover:text-white'
+                    ? 'bg-cyan-600 text-white dark:bg-cyan-500 dark:text-navy-950'
+                    : 'bg-slate-100 text-slate-700 hover:text-slate-900 dark:bg-slate-800 dark:text-slate-300 dark:hover:text-white'
                 }`}
               >
                 {fmt}
@@ -184,7 +184,7 @@ export const PublicationDetail: React.FC = () => {
             ))}
           </div>
 
-          <pre className="p-4 rounded-xl bg-slate-950 border border-slate-800 text-xs font-mono text-cyan-300 overflow-x-auto whitespace-pre-wrap leading-relaxed">
+          <pre className="p-4 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-xs font-mono text-cyan-700 dark:text-cyan-300 overflow-x-auto whitespace-pre-wrap leading-relaxed">
             {getCitationText()}
           </pre>
 

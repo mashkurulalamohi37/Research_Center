@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { 
-  Mail, Phone, MapPin, Send, MessageSquare, 
-  Sparkles, Building2, Clock, CheckCircle2 
+  Mail, Phone, MapPin, Send,
+  Sparkles, Building2, CheckCircle2 
 } from 'lucide-react';
 import { Badge } from '../../components/ui/Badge';
 import { Button } from '../../components/ui/Button';
-import { Card, CardHeader, CardTitle, CardContent } from '../../components/ui/Card';
+import { Card } from '../../components/ui/Card';
 import { Input, Textarea, Select } from '../../components/ui/Input';
 import { useToast } from '../../context/ToastContext';
 import { useDocumentTitle } from '../../hooks/useDocumentTitle';
@@ -65,11 +65,11 @@ export const Contact: React.FC = () => {
           <Sparkles className="w-3.5 h-3.5 mr-1" />
           Institutional Communications
         </Badge>
-        <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-100 tracking-tight">
-          Contact AIRC
+        <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight">
+          Contact IRICC
         </h1>
-        <p className="text-slate-300 text-base sm:text-lg mt-4 leading-relaxed max-w-2xl mx-auto">
-          Connect with our academic administration, research laboratories, fellowship coordinators, or media relations team.
+        <p className="text-slate-600 dark:text-slate-300 text-base sm:text-lg mt-4 leading-relaxed max-w-2xl mx-auto">
+          Connect with our administration, research laboratories, technology transfer office, or commercialization team.
         </p>
       </section>
 
@@ -79,57 +79,57 @@ export const Contact: React.FC = () => {
           {/* Left: Department Directory & Campus Location */}
           <div className="lg:col-span-5 space-y-6">
             {/* Campus Address Card */}
-            <Card className="p-6 border-slate-800 bg-slate-900/60 space-y-4">
+            <Card className="p-6 border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 shadow-xs space-y-4">
               <div className="flex items-center gap-3">
-                <div className="p-2.5 rounded-xl bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+                <div className="p-2.5 rounded-xl bg-cyan-50 dark:bg-cyan-500/10 text-cyan-700 dark:text-cyan-400 border border-cyan-200 dark:border-cyan-500/20">
                   <Building2 className="w-5 h-5" />
                 </div>
                 <div>
-                  <h3 className="text-base font-bold text-slate-100">Main Campus Headquarters</h3>
-                  <p className="text-xs text-slate-400">Turing Hall & High-Bay Robotics Wing</p>
+                  <h3 className="text-base font-bold text-slate-900 dark:text-slate-100">Main Center Headquarters</h3>
+                  <p className="text-xs text-slate-500 dark:text-slate-400">Turing Hall & Commercialization Quad</p>
                 </div>
               </div>
 
-              <div className="space-y-2 text-xs text-slate-300">
+              <div className="space-y-2.5 text-xs text-slate-600 dark:text-slate-300">
                 <p className="flex items-start gap-2">
-                  <MapPin className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                  <MapPin className="w-4 h-4 text-cyan-600 dark:text-cyan-400 shrink-0 mt-0.5" />
                   <span>450 Innovation Parkway, Cambridge Research Park, MA 02142, USA</span>
                 </p>
                 <p className="flex items-center gap-2">
-                  <Phone className="w-4 h-4 text-cyan-400 shrink-0" />
+                  <Phone className="w-4 h-4 text-cyan-600 dark:text-cyan-400 shrink-0" />
                   <span>+1 (617) 890-2100 (Administrative Mainline)</span>
                 </p>
                 <p className="flex items-center gap-2">
-                  <Mail className="w-4 h-4 text-cyan-400 shrink-0" />
-                  <span>contact@airc.research.edu</span>
+                  <Mail className="w-4 h-4 text-cyan-600 dark:text-cyan-400 shrink-0" />
+                  <span>contact@iricc.org</span>
                 </p>
               </div>
             </Card>
 
             {/* Specialized Inboxes */}
-            <Card className="p-6 border-slate-800 bg-slate-900/60 space-y-3">
-              <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider font-mono">
+            <Card className="p-6 border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 shadow-xs space-y-3">
+              <h4 className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider font-mono">
                 Direct Department Contacts
               </h4>
               <div className="space-y-2 text-xs">
-                <div className="p-3 rounded-xl bg-slate-950/60 border border-slate-800 flex items-center justify-between">
+                <div className="p-3 rounded-xl bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 flex items-center justify-between">
                   <div>
-                    <div className="font-semibold text-slate-200">Admissions & Fellowships</div>
-                    <div className="text-slate-500">fellowships@airc.research.edu</div>
+                    <div className="font-semibold text-slate-900 dark:text-slate-200">Admissions & Fellowships</div>
+                    <div className="text-slate-500">fellowships@iricc.org</div>
                   </div>
                   <Badge variant="outline">Recruitment</Badge>
                 </div>
-                <div className="p-3 rounded-xl bg-slate-950/60 border border-slate-800 flex items-center justify-between">
+                <div className="p-3 rounded-xl bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 flex items-center justify-between">
                   <div>
-                    <div className="font-semibold text-slate-200">Office of Sponsored Research</div>
-                    <div className="text-slate-500">grants@airc.research.edu</div>
+                    <div className="font-semibold text-slate-900 dark:text-slate-200">Office of Commercialization & Grants</div>
+                    <div className="text-slate-500">commercialization@iricc.org</div>
                   </div>
-                  <Badge variant="cyan">Alliances</Badge>
+                  <Badge variant="cyan">Tech Transfer</Badge>
                 </div>
-                <div className="p-3 rounded-xl bg-slate-950/60 border border-slate-800 flex items-center justify-between">
+                <div className="p-3 rounded-xl bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 flex items-center justify-between">
                   <div>
-                    <div className="font-semibold text-slate-200">Press & Scientific Communications</div>
-                    <div className="text-slate-500">media@airc.research.edu</div>
+                    <div className="font-semibold text-slate-900 dark:text-slate-200">Press & Scientific Communications</div>
+                    <div className="text-slate-500">media@iricc.org</div>
                   </div>
                   <Badge variant="outline">Press</Badge>
                 </div>
@@ -137,17 +137,17 @@ export const Contact: React.FC = () => {
             </Card>
 
             {/* Simulated Campus Map View */}
-            <div className="relative h-48 rounded-2xl overflow-hidden border border-slate-800">
+            <div className="relative h-48 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xs">
               <img
                 src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=800&q=80"
-                alt="AIRC Campus Map"
-                className="w-full h-full object-cover opacity-60"
+                alt="IRICC Campus Map"
+                className="w-full h-full object-cover opacity-75"
               />
-              <div className="absolute inset-0 bg-navy-950/40 flex items-center justify-center">
-                <div className="p-3 rounded-2xl bg-navy-950/90 border border-cyan-500/40 text-center backdrop-blur-md">
-                  <MapPin className="w-5 h-5 text-cyan-400 mx-auto mb-1 animate-bounce" />
-                  <div className="text-xs font-bold text-slate-100">AIRC Turing Pavilion</div>
-                  <div className="text-[10px] text-cyan-300 font-mono">Cambridge Innovation Quad</div>
+              <div className="absolute inset-0 bg-slate-900/20 dark:bg-navy-950/40 flex items-center justify-center">
+                <div className="p-3 rounded-2xl bg-white/95 dark:bg-navy-950/90 border border-slate-200 dark:border-cyan-500/40 text-center backdrop-blur-md shadow-md">
+                  <MapPin className="w-5 h-5 text-cyan-600 dark:text-cyan-400 mx-auto mb-1 animate-bounce" />
+                  <div className="text-xs font-bold text-slate-900 dark:text-slate-100">IRICC Innovation Pavilion</div>
+                  <div className="text-[10px] text-cyan-700 dark:text-cyan-300 font-mono">Cambridge Commercialization Quad</div>
                 </div>
               </div>
             </div>
@@ -155,15 +155,15 @@ export const Contact: React.FC = () => {
 
           {/* Right: Message Form */}
           <div className="lg:col-span-7">
-            <Card className="p-8 sm:p-10 border-slate-800 bg-slate-900/90 shadow-2xl backdrop-blur-xl">
+            <Card className="p-8 sm:p-10 border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/90 shadow-xl backdrop-blur-xl">
               {isSubmitted ? (
                 <div className="text-center py-12 space-y-4">
-                  <div className="w-16 h-16 rounded-full bg-cyan-500/20 text-cyan-400 flex items-center justify-center mx-auto">
+                  <div className="w-16 h-16 rounded-full bg-cyan-100 dark:bg-cyan-500/20 text-cyan-700 dark:text-cyan-400 flex items-center justify-center mx-auto">
                     <CheckCircle2 className="w-8 h-8" />
                   </div>
-                  <h3 className="text-2xl font-bold text-slate-100">Inquiry Dispatched</h3>
-                  <p className="text-sm text-slate-300 max-w-sm mx-auto leading-relaxed">
-                    Thank you for contacting AIRC. A member of our administration will review and respond to your inquiry shortly.
+                  <h3 className="text-2xl font-bold text-slate-900 dark:text-slate-100">Inquiry Dispatched</h3>
+                  <p className="text-sm text-slate-600 dark:text-slate-300 max-w-sm mx-auto leading-relaxed">
+                    Thank you for contacting IRICC. A member of our administration will review and respond to your inquiry shortly.
                   </p>
                   <div className="pt-4">
                     <Button variant="outline" size="sm" onClick={() => setIsSubmitted(false)}>
@@ -173,16 +173,16 @@ export const Contact: React.FC = () => {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
-                  <div className="space-y-1 pb-3 border-b border-slate-800">
-                    <h3 className="text-xl font-bold text-slate-100">Send an Inquiry</h3>
-                    <p className="text-xs text-slate-400">
-                      Fill out the form below to reach the appropriate laboratory or office.
+                  <div className="space-y-1 pb-3 border-b border-slate-200 dark:border-slate-800">
+                    <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100">Send an Inquiry</h3>
+                    <p className="text-xs text-slate-500 dark:text-slate-400">
+                      Fill out the form below to reach the appropriate laboratory or commercialization division.
                     </p>
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="text-xs font-semibold text-slate-300 block mb-1">Your Name *</label>
+                      <label className="text-xs font-semibold text-slate-700 dark:text-slate-300 block mb-1">Your Name *</label>
                       <Input
                         required
                         value={formData.name}
@@ -191,27 +191,27 @@ export const Contact: React.FC = () => {
                       />
                     </div>
                     <div>
-                      <label className="text-xs font-semibold text-slate-300 block mb-1">Email Address *</label>
+                      <label className="text-xs font-semibold text-slate-700 dark:text-slate-300 block mb-1">Email Address *</label>
                       <Input
                         type="email"
                         required
                         value={formData.email}
                         onChange={e => setFormData({ ...formData, email: e.target.value })}
-                        placeholder="m.lin@university.edu"
+                        placeholder="m.lin@institution.org"
                       />
                     </div>
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="text-xs font-semibold text-slate-300 block mb-1">Target Department</label>
+                      <label className="text-xs font-semibold text-slate-700 dark:text-slate-300 block mb-1">Target Department</label>
                       <Select
                         value={formData.department}
                         onChange={e => setFormData({ ...formData, department: e.target.value })}
                       >
                         <option value="General Inquiries">General Inquiries</option>
                         <option value="Admissions & Fellowships">Admissions & Fellowships</option>
-                        <option value="Office of Sponsored Research">Office of Sponsored Research</option>
+                        <option value="Office of Commercialization & Grants">Office of Commercialization & Grants</option>
                         <option value="Visual Intelligence Lab">Visual Intelligence Lab</option>
                         <option value="AI Foundations Lab">AI Foundations Lab</option>
                         <option value="Robotics Institute">Robotics Institute</option>
@@ -219,17 +219,17 @@ export const Contact: React.FC = () => {
                       </Select>
                     </div>
                     <div>
-                      <label className="text-xs font-semibold text-slate-300 block mb-1">Subject</label>
+                      <label className="text-xs font-semibold text-slate-700 dark:text-slate-300 block mb-1">Subject</label>
                       <Input
                         value={formData.subject}
                         onChange={e => setFormData({ ...formData, subject: e.target.value })}
-                        placeholder="e.g. Research Seminar Inquiry"
+                        placeholder="e.g. Research Commercialization Proposal"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label className="text-xs font-semibold text-slate-300 block mb-1">Message Body *</label>
+                    <label className="text-xs font-semibold text-slate-700 dark:text-slate-300 block mb-1">Message Body *</label>
                     <Textarea
                       required
                       rows={5}

@@ -1,19 +1,21 @@
 import React, { useState } from 'react';
 import { 
   BookOpen, Plus, Search, Edit3, Trash2, 
-  Send, ExternalLink, CheckCircle2, Clock, Sparkles 
+  ExternalLink, CheckCircle2, Clock, Eye 
 } from 'lucide-react';
 import { mockPublications } from '../../data/publications';
 import { mockResearchAreas } from '../../data/researchAreas';
-import { Publication, PublicationType, PublicationStatus } from '../../types';
+import { Publication, PublicationType } from '../../types';
 import { Badge } from '../../components/ui/Badge';
 import { Button } from '../../components/ui/Button';
 import { Card } from '../../components/ui/Card';
 import { Dialog } from '../../components/ui/Dialog';
 import { Input, Textarea, Select } from '../../components/ui/Input';
 import { useToast } from '../../context/ToastContext';
+import { useDocumentTitle } from '../../hooks/useDocumentTitle';
 
 export const MyPublications: React.FC = () => {
+  useDocumentTitle('My Authored Publications — Faculty');
   const [publications, setPublications] = useState<Publication[]>(mockPublications);
   const [searchTerm, setSearchTerm] = useState('');
   const [statusFilter, setStatusFilter] = useState<string>('all');
@@ -22,22 +24,22 @@ export const MyPublications: React.FC = () => {
 
   const [formState, setFormState] = useState({
     title: '',
-    authors: 'Marcus Vance, Ananya Patel',
+    authors: 'Dr. Marcus Vance, Dr. Julian Richter',
     venue: '',
     year: '2026',
     type: 'Conference' as PublicationType,
-    researchAreaId: 'computer-vision',
-    abstract: '',
+    researchAreaId: 'vision-lang',
     doi: '',
+    abstract: '',
   });
 
   const { success, error } = useToast();
 
-  const filteredPubs = publications.filter(pub => {
+  const filteredPubs = publications.filter(p => {
     const matchesSearch =
-      pub.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      pub.venue.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesStatus = statusFilter === 'all' || pub.status === statusFilter;
+      p.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      p.venue.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesStatus = statusFilter === 'all' || p.status === statusFilter;
     return matchesSearch && matchesStatus;
   });
 
@@ -45,13 +47,13 @@ export const MyPublications: React.FC = () => {
     setIsEditing(null);
     setFormState({
       title: '',
-      authors: 'Marcus Vance, Ananya Patel',
+      authors: 'Dr. Marcus Vance, Dr. Julian Richter',
       venue: '',
       year: '2026',
       type: 'Conference',
-      researchAreaId: 'computer-vision',
-      abstract: '',
+      researchAreaId: 'vision-lang',
       doi: '',
+      abstract: '',
     });
     setModalOpen(true);
   };
@@ -65,21 +67,21 @@ export const MyPublications: React.FC = () => {
       year: pub.year.toString(),
       type: pub.type,
       researchAreaId: pub.researchAreaId,
-      abstract: pub.abstract,
       doi: pub.doi || '',
+      abstract: pub.abstract,
     });
     setModalOpen(true);
   };
 
   const handleDelete = (id: string) => {
     setPublications(prev => prev.filter(p => p.id !== id));
-    success('Publication Removed', 'The publication has been deleted from your lab roster.');
+    success('Publication Removed', 'The item was deleted from your portfolio.');
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!formState.title || !formState.venue) {
-      error('Missing Information', 'Please complete the title and venue fields.');
+      error('Missing Information', 'Please provide a title and venue.');
       return;
     }
 
@@ -92,16 +94,16 @@ export const MyPublications: React.FC = () => {
                 title: formState.title,
                 authors: formState.authors.split(',').map(a => a.trim()),
                 venue: formState.venue,
-                year: parseInt(formState.year) || 2026,
+                year: parseInt(formState.year) || p.year,
                 type: formState.type,
                 researchAreaId: formState.researchAreaId,
-                abstract: formState.abstract,
                 doi: formState.doi,
+                abstract: formState.abstract,
               }
             : p
         )
       );
-      success('Publication Updated', 'Changes saved successfully.');
+      success('Publication Updated', 'Changes have been saved successfully.');
     } else {
       const newPub: Publication = {
         id: `pub-${Date.now()}`,
@@ -113,7 +115,7 @@ export const MyPublications: React.FC = () => {
         type: formState.type,
         researchAreaId: formState.researchAreaId,
         abstract: formState.abstract,
-        keywords: ['Computer Vision', 'Neural Fields', 'AIRC'],
+        keywords: ['Computer Vision', 'Neural Fields', 'IRICC'],
         doi: formState.doi,
         citations: 0,
         featured: false,
@@ -132,10 +134,10 @@ export const MyPublications: React.FC = () => {
       {/* Header Bar */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-extrabold text-slate-100 tracking-tight">
+          <h1 className="text-2xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight">
             My Authored Publications
           </h1>
-          <p className="text-xs text-slate-400 font-mono mt-0.5">
+          <p className="text-xs text-slate-500 dark:text-slate-400 font-mono mt-0.5">
             Manage peer-reviewed articles, submit preprints for review, and track citations.
           </p>
         </div>
@@ -146,7 +148,7 @@ export const MyPublications: React.FC = () => {
       </div>
 
       {/* Filter Bar */}
-      <div className="p-4 rounded-2xl border border-slate-800 bg-slate-900/60 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div className="p-4 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4">
         <div className="relative w-full sm:w-80">
           <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
           <input
@@ -154,14 +156,14 @@ export const MyPublications: React.FC = () => {
             value={searchTerm}
             onChange={e => setSearchTerm(e.target.value)}
             placeholder="Filter by title or venue..."
-            className="w-full h-10 pl-10 pr-3 rounded-xl bg-slate-950 border border-slate-700 text-slate-100 placeholder:text-slate-500 text-xs focus:outline-none focus:border-cyan-400"
+            className="w-full h-10 pl-10 pr-3 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 text-xs focus:outline-none focus:border-cyan-500 shadow-sm"
           />
         </div>
 
         <select
           value={statusFilter}
           onChange={e => setStatusFilter(e.target.value)}
-          className="h-10 px-3 rounded-xl bg-slate-950 border border-slate-700 text-slate-200 text-xs focus:outline-none focus:border-cyan-400 w-full sm:w-auto"
+          className="h-10 px-3 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-slate-200 text-xs focus:outline-none focus:border-cyan-500 w-full sm:w-auto shadow-sm"
         >
           <option value="all">All Statuses</option>
           <option value="Published">Published</option>
@@ -175,7 +177,7 @@ export const MyPublications: React.FC = () => {
         {filteredPubs.map(pub => (
           <div
             key={pub.id}
-            className="p-6 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-cyan-500/30 transition-all flex flex-col md:flex-row items-start md:items-center justify-between gap-4 shadow-xl"
+            className="p-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 hover:border-cyan-500/30 transition-all flex flex-col md:flex-row items-start md:items-center justify-between gap-4 shadow-sm hover:shadow-md"
           >
             <div className="space-y-1.5 flex-1 min-w-0">
               <div className="flex flex-wrap items-center gap-2 text-xs">
@@ -183,16 +185,16 @@ export const MyPublications: React.FC = () => {
                   {pub.status}
                 </Badge>
                 <Badge variant="cyan">{pub.type}</Badge>
-                <span className="text-slate-400 font-mono">{pub.year}</span>
-                <span className="text-slate-600">•</span>
-                <span className="text-cyan-400 font-semibold truncate">{pub.venue}</span>
+                <span className="text-slate-500 dark:text-slate-400 font-mono">{pub.year}</span>
+                <span className="text-slate-300 dark:text-slate-600">•</span>
+                <span className="text-cyan-700 dark:text-cyan-400 font-semibold truncate">{pub.venue}</span>
               </div>
 
-              <h3 className="text-base font-bold text-slate-100 leading-snug truncate">
+              <h3 className="text-base font-bold text-slate-900 dark:text-slate-100 leading-snug truncate">
                 {pub.title}
               </h3>
 
-              <p className="text-xs text-slate-400 font-mono">
+              <p className="text-xs text-slate-500 dark:text-slate-400 font-mono">
                 Authors: {pub.authors.join(', ')}
               </p>
             </div>
@@ -205,7 +207,7 @@ export const MyPublications: React.FC = () => {
                 variant="ghost"
                 size="sm"
                 onClick={() => handleDelete(pub.id)}
-                className="text-red-400 hover:text-red-300 hover:bg-red-500/10"
+                className="text-red-500 dark:text-red-400 hover:text-red-600 hover:bg-red-500/10"
               >
                 <Trash2 className="w-3.5 h-3.5" />
               </Button>
@@ -224,7 +226,7 @@ export const MyPublications: React.FC = () => {
       >
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label className="text-xs font-semibold text-slate-300 block mb-1">Paper Title *</label>
+            <label className="text-xs font-semibold text-slate-700 dark:text-slate-300 block mb-1">Paper Title *</label>
             <Input
               required
               value={formState.title}
@@ -235,14 +237,14 @@ export const MyPublications: React.FC = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="text-xs font-semibold text-slate-300 block mb-1">Authors (comma-separated)</label>
+              <label className="text-xs font-semibold text-slate-700 dark:text-slate-300 block mb-1">Authors (comma-separated)</label>
               <Input
                 value={formState.authors}
                 onChange={e => setFormState({ ...formState, authors: e.target.value })}
               />
             </div>
             <div>
-              <label className="text-xs font-semibold text-slate-300 block mb-1">Publication Venue *</label>
+              <label className="text-xs font-semibold text-slate-700 dark:text-slate-300 block mb-1">Publication Venue *</label>
               <Input
                 required
                 value={formState.venue}
@@ -254,14 +256,14 @@ export const MyPublications: React.FC = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div>
-              <label className="text-xs font-semibold text-slate-300 block mb-1">Year</label>
+              <label className="text-xs font-semibold text-slate-700 dark:text-slate-300 block mb-1">Year</label>
               <Input
                 value={formState.year}
                 onChange={e => setFormState({ ...formState, year: e.target.value })}
               />
             </div>
             <div>
-              <label className="text-xs font-semibold text-slate-300 block mb-1">Type</label>
+              <label className="text-xs font-semibold text-slate-700 dark:text-slate-300 block mb-1">Type</label>
               <Select
                 value={formState.type}
                 onChange={e => setFormState({ ...formState, type: e.target.value as PublicationType })}
@@ -273,7 +275,7 @@ export const MyPublications: React.FC = () => {
               </Select>
             </div>
             <div>
-              <label className="text-xs font-semibold text-slate-300 block mb-1">Research Area</label>
+              <label className="text-xs font-semibold text-slate-700 dark:text-slate-300 block mb-1">Research Area</label>
               <Select
                 value={formState.researchAreaId}
                 onChange={e => setFormState({ ...formState, researchAreaId: e.target.value })}
@@ -286,7 +288,7 @@ export const MyPublications: React.FC = () => {
           </div>
 
           <div>
-            <label className="text-xs font-semibold text-slate-300 block mb-1">DOI Identifier (Optional)</label>
+            <label className="text-xs font-semibold text-slate-700 dark:text-slate-300 block mb-1">DOI Identifier (Optional)</label>
             <Input
               value={formState.doi}
               onChange={e => setFormState({ ...formState, doi: e.target.value })}
@@ -295,7 +297,7 @@ export const MyPublications: React.FC = () => {
           </div>
 
           <div>
-            <label className="text-xs font-semibold text-slate-300 block mb-1">Abstract</label>
+            <label className="text-xs font-semibold text-slate-700 dark:text-slate-300 block mb-1">Abstract</label>
             <Textarea
               rows={4}
               value={formState.abstract}
@@ -304,7 +306,7 @@ export const MyPublications: React.FC = () => {
             />
           </div>
 
-          <div className="pt-3 flex items-center justify-end gap-3 border-t border-slate-800">
+          <div className="pt-3 flex items-center justify-end gap-3 border-t border-slate-200 dark:border-slate-800">
             <Button variant="outline" size="sm" type="button" onClick={() => setModalOpen(false)}>
               Cancel
             </Button>

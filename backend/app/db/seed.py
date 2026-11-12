@@ -24,12 +24,12 @@ async def seed_data():
             print("Database already contains records. Skipping initial seeding.")
             return
 
-        print("Seeding AIRC database with institutional academic records...")
+        print("Seeding IRICC database with institutional academic records...")
 
         # 1. Admin Users & Faculty Users
         admin_user = User(
             id="usr-director-01",
-            email="admin@airc.research.edu",
+            email="admin@iricc.org",
             hashed_password=get_password_hash("AdminPass123!"),
             name="Prof. Dr. Sarah Lin",
             role="SUPER_ADMIN",
@@ -37,7 +37,7 @@ async def seed_data():
         )
         researcher_user = User(
             id="usr-marcus-01",
-            email="marcus@airc.research.edu",
+            email="m.vance@iricc.org",
             hashed_password=get_password_hash("ResearcherPass123!"),
             name="Dr. Marcus Vance",
             role="RESEARCHER",
@@ -112,10 +112,10 @@ async def seed_data():
                 title="Founding Director & Distinguished Professor",
                 category="faculty",
                 department="Department of Computer Science & AI",
-                email="director@airc.research.edu",
+                email="director@iricc.org",
                 office="Turing Hall, Executive Suite 401",
                 avatar="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80",
-                bio="Prof. Sarah Lin is the Founding Director of AIRC and an IEEE Fellow. Her research pioneered formal verification algorithms for neural networks.",
+                bio="Prof. Sarah Lin is the Founding Director of IRICC and an IEEE Fellow. Her research pioneered formal verification algorithms for neural networks.",
                 education=[{"degree": "Ph.D. in Computer Science", "institution": "MIT", "year": 2008}],
                 h_index=64,
                 citations=24500,
@@ -133,7 +133,7 @@ async def seed_data():
                 title="Lead Investigator, Visual Intelligence Lab",
                 category="faculty",
                 department="Department of Electrical & Computer Engineering",
-                email="marcus@airc.research.edu",
+                email="m.vance@iricc.org",
                 office="Turing Hall, Room 304",
                 avatar="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80",
                 bio="Dr. Marcus Vance leads research on 3D neural reconstruction, dynamic Gaussian splatting, and real-time medical vision systems.",
@@ -218,12 +218,12 @@ async def seed_data():
         news = [
             NewsArticle(
                 id="news-01",
-                slug="airc-wins-cvpr-best-paper-award",
-                title="AIRC Visual Intelligence Team Wins CVPR 2025 Best Paper Award for LaproSplat",
+                slug="iricc-wins-cvpr-best-paper-award",
+                title="IRICC Visual Intelligence Team Wins CVPR 2025 Best Paper Award for LaproSplat",
                 excerpt="The Visual Intelligence Laboratory was awarded Best Paper for revolutionary real-time surgical neural splatting.",
                 content="The award recognizes pioneering contributions in bridging computer vision neural fields with clinical operating procedures.",
                 publish_date="2025-06-20",
-                author="AIRC Scientific Communications",
+                author="IRICC Scientific Communications",
                 category="Award",
                 featured=True
             )
@@ -249,7 +249,7 @@ async def seed_data():
         db.add_all(opportunities)
 
         await db.commit()
-        print("AIRC Database successfully seeded with full academic dataset!")
+        print("IRICC Database successfully seeded with full academic dataset!")
 
 
 if __name__ == "__main__":

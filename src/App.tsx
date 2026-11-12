@@ -1,6 +1,5 @@
 import React, { Suspense, lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { Atom } from 'lucide-react';
 
 // Layouts
 import { Layout } from './components/layout/Layout';
@@ -11,10 +10,18 @@ import { ResearcherRoute, AdminRoute } from './components/auth/ProtectedRoute';
 // Loading Placeholder
 const PageLoader = () => (
   <div className="min-h-[60vh] flex flex-col items-center justify-center space-y-4">
-    <div className="w-12 h-12 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center animate-pulse">
-      <Atom className="w-6 h-6 text-cyan-400 animate-spin" />
+    <div className="relative">
+      <img
+        src="/iricc-logo.jpg"
+        alt="IRICC Official Seal"
+        width="56"
+        height="56"
+        className="w-14 h-14 rounded-full object-cover shadow-md ring-2 ring-amber-400/50 animate-pulse"
+      />
     </div>
-    <span className="text-xs font-mono text-cyan-400/80 tracking-widest uppercase">Loading AIRC Node...</span>
+    <span className="text-xs font-mono text-cyan-800 dark:text-cyan-400 tracking-widest uppercase font-semibold">
+      Loading IRICC…
+    </span>
   </div>
 );
 

@@ -6,8 +6,10 @@ import { NewsCategory } from '../../types';
 import { Badge } from '../../components/ui/Badge';
 import { Button } from '../../components/ui/Button';
 import { Card, CardHeader, CardTitle, CardDescription, CardFooter } from '../../components/ui/Card';
+import { useDocumentTitle } from '../../hooks/useDocumentTitle';
 
 export const News: React.FC = () => {
+  useDocumentTitle('News & Dispatches');
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
 
@@ -32,11 +34,11 @@ export const News: React.FC = () => {
           <Sparkles className="w-3.5 h-3.5 mr-1" />
           Newsroom & Press
         </Badge>
-        <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-100 tracking-tight">
-          AIRC News & Scientific Dispatches
+        <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight">
+          IRICC News & Scientific Dispatches
         </h1>
-        <p className="text-slate-300 text-base sm:text-lg mt-4 leading-relaxed max-w-2xl mx-auto">
-          Read about scientific breakthroughs, awards, major grants, and institutional announcements.
+        <p className="text-slate-600 dark:text-slate-300 text-base sm:text-lg mt-4 leading-relaxed max-w-2xl mx-auto">
+          Read about scientific breakthroughs, awards, major grants, and institutional announcements from the International Research and Innovation and Commercialization Center.
         </p>
 
         {/* Filter Bar */}
@@ -45,16 +47,17 @@ export const News: React.FC = () => {
             <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
             <input
               type="text"
+              aria-label="Search news and press releases"
               value={searchTerm}
               onChange={e => setSearchTerm(e.target.value)}
-              placeholder="Search news & press..."
-              className="w-full h-11 pl-10 pr-3 rounded-xl bg-slate-900 border border-slate-700 text-slate-100 placeholder:text-slate-500 text-xs focus:outline-none focus:border-cyan-400"
+              placeholder="Search news & press…"
+              className="w-full h-11 pl-10 pr-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 text-xs focus:outline-none focus:ring-2 focus:ring-cyan-500 shadow-sm"
             />
           </div>
           <select
             value={selectedCategory}
             onChange={e => setSelectedCategory(e.target.value)}
-            className="h-11 px-3 rounded-xl bg-slate-900 border border-slate-700 text-slate-200 text-xs focus:outline-none focus:border-cyan-400"
+            className="h-11 px-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-slate-200 text-xs focus:outline-none focus:border-cyan-500 shadow-sm"
           >
             <option value="all">All Categories</option>
             <option value="Research">Research</option>
@@ -69,9 +72,9 @@ export const News: React.FC = () => {
       {selectedCategory === 'all' && !searchTerm && featuredArticle && (
         <section className="container mx-auto px-4 lg:px-8">
           <Link to={`/news/${featuredArticle.slug}`} className="group block">
-            <div className="relative rounded-3xl overflow-hidden border border-cyan-500/30 bg-slate-900 shadow-2xl p-8 sm:p-12">
+            <div className="relative rounded-3xl overflow-hidden border border-slate-200 dark:border-cyan-500/30 bg-white dark:bg-slate-900 shadow-xl dark:shadow-2xl p-8 sm:p-12 transition-all hover:shadow-2xl">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                <div className="lg:col-span-6 relative h-72 sm:h-96 rounded-2xl overflow-hidden">
+                <div className="lg:col-span-6 relative h-72 sm:h-96 rounded-2xl overflow-hidden bg-slate-100 dark:bg-slate-800">
                   <img
                     src={featuredArticle.coverImage}
                     alt={featuredArticle.title}
@@ -83,23 +86,23 @@ export const News: React.FC = () => {
                 </div>
 
                 <div className="lg:col-span-6 space-y-4">
-                  <div className="flex items-center gap-2 text-xs font-mono text-cyan-400">
+                  <div className="flex items-center gap-2 text-xs font-mono text-cyan-600 dark:text-cyan-400">
                     <Calendar className="w-3.5 h-3.5" />
                     <span>{featuredArticle.publishDate}</span>
                     <span>•</span>
                     <Badge variant="outline">{featuredArticle.category}</Badge>
                   </div>
 
-                  <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-100 group-hover:text-cyan-300 transition-colors leading-tight">
+                  <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-slate-100 group-hover:text-cyan-600 dark:group-hover:text-cyan-300 transition-colors leading-tight">
                     {featuredArticle.title}
                   </h2>
 
-                  <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+                  <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed">
                     {featuredArticle.excerpt}
                   </p>
 
                   <div className="pt-2 flex items-center justify-between">
-                    <span className="text-xs text-slate-400 font-mono">By {featuredArticle.author}</span>
+                    <span className="text-xs text-slate-500 dark:text-slate-400 font-mono">By {featuredArticle.author}</span>
                     <Button variant="cyan" size="sm">
                       Read Full Article <ArrowRight className="w-3.5 h-3.5 ml-1" />
                     </Button>
@@ -116,9 +119,9 @@ export const News: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredNews.map(item => (
             <Link key={item.id} to={`/news/${item.slug}`} className="group block">
-              <Card className="overflow-hidden border-slate-800 bg-slate-900/60 hover:border-cyan-500/40 hover:bg-slate-900/90 transition-all duration-300 flex flex-col justify-between h-full shadow-xl">
+              <Card className="overflow-hidden border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 hover:border-cyan-500/40 hover:bg-slate-50 dark:hover:bg-slate-900/90 transition-all duration-300 flex flex-col justify-between h-full shadow-md hover:shadow-xl">
                 <div>
-                  <div className="relative h-48 overflow-hidden">
+                  <div className="relative h-48 overflow-hidden bg-slate-100 dark:bg-slate-800">
                     <img
                       src={item.coverImage}
                       alt={item.title}
@@ -130,19 +133,19 @@ export const News: React.FC = () => {
                   </div>
 
                   <CardHeader className="pb-2">
-                    <span className="text-[11px] font-mono text-cyan-400 mb-1 block">{item.publishDate}</span>
-                    <CardTitle className="text-base group-hover:text-cyan-300 transition-colors leading-snug line-clamp-2">
+                    <span className="text-[11px] font-mono text-cyan-600 dark:text-cyan-400 mb-1 block">{item.publishDate}</span>
+                    <CardTitle className="text-base text-slate-900 dark:text-slate-100 group-hover:text-cyan-600 dark:group-hover:text-cyan-300 transition-colors leading-snug line-clamp-2">
                       {item.title}
                     </CardTitle>
-                    <CardDescription className="text-xs line-clamp-3 mt-2 leading-relaxed">
+                    <CardDescription className="text-xs text-slate-600 dark:text-slate-400 line-clamp-3 mt-2 leading-relaxed">
                       {item.excerpt}
                     </CardDescription>
                   </CardHeader>
                 </div>
 
-                <CardFooter className="pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
+                <CardFooter className="pt-4 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
                   <span>By {item.author}</span>
-                  <ArrowRight className="w-4 h-4 text-cyan-400 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-4 h-4 text-cyan-600 dark:text-cyan-400 group-hover:translate-x-1 transition-transform" />
                 </CardFooter>
               </Card>
             </Link>

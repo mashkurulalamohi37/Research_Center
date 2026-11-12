@@ -4,8 +4,10 @@ import { Badge } from '../../components/ui/Badge';
 import { Button } from '../../components/ui/Button';
 import { Card } from '../../components/ui/Card';
 import { useToast } from '../../context/ToastContext';
+import { useDocumentTitle } from '../../hooks/useDocumentTitle';
 
 export const LabResources: React.FC = () => {
+  useDocumentTitle('Lab Infrastructure & Compute — Faculty');
   const { success } = useToast();
 
   const clusterNodes = [
@@ -18,28 +20,28 @@ export const LabResources: React.FC = () => {
     <div className="space-y-8 max-w-5xl">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-extrabold text-slate-100 tracking-tight">
+          <h1 className="text-2xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight">
             Lab Infrastructure & Compute Allocation
           </h1>
-          <p className="text-xs text-slate-400 font-mono mt-0.5">
+          <p className="text-xs text-slate-500 dark:text-slate-400 font-mono mt-0.5">
             Supercomputing cluster nodes, training dataset repositories, and lab documentation.
           </p>
         </div>
-        <Button variant="cyan" size="sm" onClick={() => success('Job Scheduler', 'Launched AIRC SLURM GPU job submission wizard.')}>
+        <Button variant="cyan" size="sm" onClick={() => success('Job Scheduler', 'Launched IRICC SLURM GPU job submission wizard.')}>
           <Plus className="w-3.5 h-3.5 mr-1" /> Allocate Compute
         </Button>
       </div>
 
       <div className="space-y-4">
         {clusterNodes.map((node, i) => (
-          <Card key={i} className="p-6 border-slate-800 bg-slate-900/60 flex items-center justify-between gap-4 shadow-xl">
+          <Card key={i} className="p-6 border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 flex items-center justify-between gap-4 shadow-sm hover:shadow-md transition-shadow">
             <div className="flex items-center gap-4">
-              <div className="p-3 rounded-2xl bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+              <div className="p-3 rounded-2xl bg-cyan-50 dark:bg-cyan-500/10 text-cyan-700 dark:text-cyan-400 border border-cyan-200 dark:border-cyan-500/20">
                 <Cpu className="w-5 h-5" />
               </div>
               <div>
-                <h4 className="text-sm font-bold text-slate-100">{node.name}</h4>
-                <p className="text-xs text-slate-400 font-mono mt-0.5">Active Job: <strong className="text-cyan-300">{node.job}</strong></p>
+                <h4 className="text-sm font-bold text-slate-900 dark:text-slate-100">{node.name}</h4>
+                <p className="text-xs text-slate-500 dark:text-slate-400 font-mono mt-0.5">Active Job: <strong className="text-cyan-700 dark:text-cyan-300">{node.job}</strong></p>
               </div>
             </div>
             <Badge variant="cyan">{node.status}</Badge>

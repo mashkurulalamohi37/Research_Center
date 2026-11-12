@@ -11,8 +11,10 @@ import { Card } from '../../components/ui/Card';
 import { Dialog } from '../../components/ui/Dialog';
 import { Textarea, Select, Input } from '../../components/ui/Input';
 import { useToast } from '../../context/ToastContext';
+import { useDocumentTitle } from '../../hooks/useDocumentTitle';
 
 export const AdminApplications: React.FC = () => {
+  useDocumentTitle('Applications & Admissions — Admin');
   const [applications, setApplications] = useState<Application[]>(mockApplications);
   const [selectedApp, setSelectedApp] = useState<Application | null>(null);
   const [modalOpen, setModalOpen] = useState(false);
@@ -48,10 +50,10 @@ export const AdminApplications: React.FC = () => {
     <div className="space-y-8 max-w-7xl">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-extrabold text-slate-100 tracking-tight">
+          <h1 className="text-2xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight">
             Candidate Applications & Fellowship Admissions
           </h1>
-          <p className="text-xs text-slate-400 font-mono mt-0.5">
+          <p className="text-xs text-slate-500 dark:text-slate-400 font-mono mt-0.5">
             Evaluate prospective postdoctoral fellows, doctoral scholars, and graduate research assistants.
           </p>
         </div>
@@ -60,7 +62,7 @@ export const AdminApplications: React.FC = () => {
       {/* Applications Pipeline Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {applications.map(app => (
-          <Card key={app.id} className="p-6 border-slate-800 bg-slate-900/60 flex flex-col justify-between shadow-xl space-y-4">
+          <Card key={app.id} className="p-6 border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow space-y-4">
             <div className="space-y-2">
               <div className="flex items-center justify-between">
                 <Badge
@@ -78,23 +80,23 @@ export const AdminApplications: React.FC = () => {
                 >
                   {app.status}
                 </Badge>
-                <span className="text-[11px] font-mono text-slate-500">{app.submittedDate}</span>
+                <span className="text-[11px] font-mono text-slate-500 dark:text-slate-400">{app.submittedDate}</span>
               </div>
 
-              <h3 className="text-base font-bold text-slate-100">{app.applicantName}</h3>
-              <p className="text-xs text-cyan-400 font-mono">{app.degreeLevel} • {app.currentInstitution}</p>
+              <h3 className="text-base font-bold text-slate-900 dark:text-slate-100">{app.applicantName}</h3>
+              <p className="text-xs text-cyan-700 dark:text-cyan-400 font-mono font-medium">{app.degreeLevel} • {app.currentInstitution}</p>
 
-              <div className="p-3 rounded-xl bg-slate-950/60 border border-slate-800 text-xs text-slate-300">
+              <div className="p-3 rounded-xl bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 text-xs text-slate-700 dark:text-slate-300">
                 <span className="text-[10px] text-slate-500 block font-mono">Position</span>
-                <strong className="text-slate-200">{app.opportunityTitle}</strong>
+                <strong className="text-slate-900 dark:text-slate-200">{app.opportunityTitle}</strong>
               </div>
 
-              <p className="text-xs text-slate-400 line-clamp-2 leading-relaxed">
+              <p className="text-xs text-slate-600 dark:text-slate-400 line-clamp-2 leading-relaxed">
                 "{app.statementOfPurpose}"
               </p>
             </div>
 
-            <div className="pt-3 border-t border-slate-800 flex items-center justify-between">
+            <div className="pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
               <span className="text-xs font-mono text-slate-500">Ref: {app.id}</span>
               <Button variant="cyan" size="sm" onClick={() => handleOpenDossier(app)}>
                 Review Dossier
@@ -115,27 +117,27 @@ export const AdminApplications: React.FC = () => {
         >
           <div className="space-y-6">
             {/* Candidate Identity */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 p-4 rounded-2xl bg-slate-950 border border-slate-800 text-xs font-mono">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 p-4 rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-xs font-mono">
               <div>
-                <span className="text-slate-500 block">Email</span>
-                <strong className="text-slate-200">{selectedApp.applicantEmail}</strong>
+                <span className="text-slate-500 dark:text-slate-400 block">Email</span>
+                <strong className="text-slate-800 dark:text-slate-200">{selectedApp.applicantEmail}</strong>
               </div>
               <div>
-                <span className="text-slate-500 block">Current Institution</span>
-                <strong className="text-slate-200">{selectedApp.currentInstitution}</strong>
+                <span className="text-slate-500 dark:text-slate-400 block">Current Institution</span>
+                <strong className="text-slate-800 dark:text-slate-200">{selectedApp.currentInstitution}</strong>
               </div>
               <div>
-                <span className="text-slate-500 block">Degree / GPA</span>
-                <strong className="text-cyan-400">{selectedApp.degreeLevel} ({selectedApp.gpa || 'N/A'})</strong>
+                <span className="text-slate-500 dark:text-slate-400 block">Degree / GPA</span>
+                <strong className="text-cyan-700 dark:text-cyan-400">{selectedApp.degreeLevel} ({selectedApp.gpa || 'N/A'})</strong>
               </div>
             </div>
 
             {/* Statement of Purpose */}
             <div className="space-y-2">
-              <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider font-mono">
+              <h4 className="text-xs font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider font-mono">
                 Statement of Purpose & Alignment
               </h4>
-              <div className="p-4 rounded-xl bg-slate-950/80 border border-slate-800 text-xs text-slate-200 leading-relaxed max-h-48 overflow-y-auto">
+              <div className="p-4 rounded-xl bg-slate-50 dark:bg-slate-950/80 border border-slate-200 dark:border-slate-800 text-xs text-slate-800 dark:text-slate-200 leading-relaxed max-h-48 overflow-y-auto">
                 {selectedApp.statementOfPurpose}
               </div>
             </div>
@@ -143,7 +145,7 @@ export const AdminApplications: React.FC = () => {
             {/* Status Change Selector */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="text-xs font-semibold text-slate-300 block mb-1">Admissions Status</label>
+                <label className="text-xs font-semibold text-slate-700 dark:text-slate-300 block mb-1">Admissions Status</label>
                 <Select
                   value={newStatus}
                   onChange={e => setNewStatus(e.target.value as ApplicationStatus)}
@@ -155,7 +157,7 @@ export const AdminApplications: React.FC = () => {
               </div>
 
               <div>
-                <label className="text-xs font-semibold text-slate-300 block mb-1">Review Committee Notes</label>
+                <label className="text-xs font-semibold text-slate-700 dark:text-slate-300 block mb-1">Review Committee Notes</label>
                 <Input
                   value={reviewerNotes}
                   onChange={e => setReviewerNotes(e.target.value)}
@@ -164,7 +166,7 @@ export const AdminApplications: React.FC = () => {
               </div>
             </div>
 
-            <div className="pt-3 flex items-center justify-end gap-3 border-t border-slate-800">
+            <div className="pt-3 flex items-center justify-end gap-3 border-t border-slate-200 dark:border-slate-800">
               <Button variant="outline" size="sm" onClick={() => setModalOpen(false)}>
                 Close
               </Button>

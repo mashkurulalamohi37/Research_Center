@@ -1,17 +1,15 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { 
-  Search, FolderGit2, Calendar, Users, 
-  ArrowRight, Sparkles, Filter 
-} from 'lucide-react';
+import { Search, Sparkles, ArrowRight } from 'lucide-react';
 import { mockProjects } from '../../data/projects';
 import { mockResearchAreas } from '../../data/researchAreas';
-import { ProjectStatus } from '../../types';
 import { Badge } from '../../components/ui/Badge';
 import { Button } from '../../components/ui/Button';
-import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '../../components/ui/Card';
+import { Card, CardHeader, CardTitle, CardDescription, CardFooter } from '../../components/ui/Card';
+import { useDocumentTitle } from '../../hooks/useDocumentTitle';
 
 export const Projects: React.FC = () => {
+  useDocumentTitle('Research Projects & Spinouts');
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedStatus, setSelectedStatus] = useState<string>('all');
   const [selectedArea, setSelectedArea] = useState<string>('all');
@@ -34,35 +32,37 @@ export const Projects: React.FC = () => {
       <section className="container mx-auto px-4 lg:px-8 text-center max-w-4xl">
         <Badge variant="cyan" className="mb-4">
           <Sparkles className="w-3.5 h-3.5 mr-1" />
-          Funded Initiatives
+          Funded Initiatives & Spinouts
         </Badge>
-        <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-100 tracking-tight">
-          AIRC Research Projects
+        <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight">
+          IRICC Research Projects
         </h1>
-        <p className="text-slate-300 text-base sm:text-lg mt-4 leading-relaxed max-w-2xl mx-auto">
-          Multi-year research investigations supported by national science foundations, medical institutes, and advanced industrial alliances.
+        <p className="text-slate-600 dark:text-slate-300 text-base sm:text-lg mt-4 leading-relaxed max-w-2xl mx-auto">
+          Multi-year research investigations supported by national science foundations, international medical institutes, and advanced industrial alliances.
         </p>
 
         {/* Filter Controls Bar */}
-        <div className="mt-10 p-4 rounded-2xl border border-slate-800 bg-slate-900/80 backdrop-blur-xl shadow-xl flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="mt-10 p-4 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/80 backdrop-blur-xl shadow-xs flex flex-col md:flex-row items-center justify-between gap-4">
           {/* Search Input */}
           <div className="relative w-full md:w-80">
             <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
             <input
               type="text"
+              aria-label="Search projects or technologies"
               value={searchTerm}
               onChange={e => setSearchTerm(e.target.value)}
-              placeholder="Search projects or technologies..."
-              className="w-full h-10 pl-10 pr-3 rounded-xl bg-slate-950 border border-slate-700 text-slate-100 placeholder:text-slate-500 text-xs focus:outline-none focus:border-cyan-400"
+              placeholder="Search projects or technologies…"
+              className="w-full h-10 pl-10 pr-3 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 text-xs focus:outline-none focus:ring-2 focus:ring-cyan-500"
             />
           </div>
 
           {/* Filters */}
           <div className="flex flex-wrap items-center gap-3 w-full md:w-auto">
             <select
+              aria-label="Filter by project status"
               value={selectedStatus}
               onChange={e => setSelectedStatus(e.target.value)}
-              className="h-10 px-3 rounded-xl bg-slate-950 border border-slate-700 text-slate-200 text-xs focus:outline-none focus:border-cyan-400"
+              className="h-10 px-3 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-cyan-500"
             >
               <option value="all">All Statuses</option>
               <option value="Ongoing">Ongoing Projects</option>
@@ -71,9 +71,10 @@ export const Projects: React.FC = () => {
             </select>
 
             <select
+              aria-label="Filter by research area"
               value={selectedArea}
               onChange={e => setSelectedArea(e.target.value)}
-              className="h-10 px-3 rounded-xl bg-slate-950 border border-slate-700 text-slate-200 text-xs focus:outline-none focus:border-cyan-400"
+              className="h-10 px-3 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-cyan-500"
             >
               <option value="all">All Disciplines</option>
               {mockResearchAreas.map(a => (
@@ -87,14 +88,14 @@ export const Projects: React.FC = () => {
       {/* Projects Grid */}
       <section className="container mx-auto px-4 lg:px-8">
         {filteredProjects.length === 0 ? (
-          <div className="text-center py-16 text-slate-400">
-            <p className="text-lg font-medium text-slate-200">No projects found matching your search</p>
+          <div className="text-center py-16 text-slate-500">
+            <p className="text-lg font-medium text-slate-800 dark:text-slate-200">No projects found matching your search</p>
             <p className="text-xs text-slate-500 mt-1">Try clearing filters or using broader terms</p>
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredProjects.map(proj => (
-              <Card key={proj.id} className="overflow-hidden border-slate-800 bg-slate-900/60 hover:border-cyan-500/40 hover:bg-slate-900/90 transition-all duration-300 flex flex-col justify-between group shadow-xl">
+              <Card key={proj.id} className="overflow-hidden border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 hover:border-cyan-500/40 hover:bg-slate-50/50 dark:hover:bg-slate-900/90 transition-all duration-300 flex flex-col justify-between group shadow-xs hover:shadow-md">
                 <div>
                   <div className="relative h-52 overflow-hidden">
                     <img
@@ -102,19 +103,19 @@ export const Projects: React.FC = () => {
                       alt={proj.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
                     <div className="absolute top-3 left-3">
                       <Badge variant={proj.status === 'Ongoing' ? 'success' : proj.status === 'Completed' ? 'cyan' : 'secondary'}>
                         {proj.status}
                       </Badge>
                     </div>
-                    <div className="absolute bottom-3 right-3 text-[10px] font-mono px-2 py-0.5 rounded bg-navy-950/90 text-cyan-300 border border-slate-700 backdrop-blur-sm">
+                    <div className="absolute bottom-3 right-3 text-[10px] font-mono px-2 py-0.5 rounded bg-white/90 dark:bg-navy-950/90 text-cyan-800 dark:text-cyan-300 border border-slate-200 dark:border-slate-700 backdrop-blur-sm shadow-xs">
                       {proj.fundingAmount}
                     </div>
                   </div>
 
                   <CardHeader className="pb-2">
-                    <CardTitle className="text-base group-hover:text-cyan-300 transition-colors leading-snug">
+                    <CardTitle className="text-base group-hover:text-cyan-700 dark:group-hover:text-cyan-300 transition-colors leading-snug">
                       {proj.title}
                     </CardTitle>
                     <CardDescription className="text-xs line-clamp-3 mt-2 leading-relaxed">
@@ -125,7 +126,7 @@ export const Projects: React.FC = () => {
                   <div className="px-6 py-2">
                     <div className="flex flex-wrap gap-1.5">
                       {proj.technologies.slice(0, 3).map(tech => (
-                        <span key={tech} className="text-[10px] px-2 py-0.5 rounded bg-slate-800 text-slate-300 font-mono">
+                        <span key={tech} className="text-[10px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono">
                           {tech}
                         </span>
                       ))}
@@ -133,13 +134,13 @@ export const Projects: React.FC = () => {
                   </div>
                 </div>
 
-                <CardFooter className="pt-4 border-t border-slate-800/80 flex items-center justify-between">
-                  <div className="text-[11px] text-slate-400 font-mono">
+                <CardFooter className="pt-4 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between">
+                  <div className="text-[11px] text-slate-500 font-mono">
                     <span>{proj.fundingBody}</span>
                   </div>
                   <Link to={`/projects/${proj.slug}`}>
                     <Button variant="cyan" size="sm">
-                      Details <ArrowRight className="w-3.5 h-3.5 ml-1" />
+                      Inspect Project <ArrowRight className="w-3 h-3 ml-1" />
                     </Button>
                   </Link>
                 </CardFooter>

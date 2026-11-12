@@ -1,4 +1,4 @@
-# Advanced Intelligent Research Center (AIRC) — Full-Stack Platform
+# International Research and Innovation and Commercialization Center (IRICC) — Full-Stack Platform
 
 [![React](https://img.shields.io/badge/Frontend-React_18_|_TypeScript_5-61DAFB?logo=react&logoColor=black)](https://react.dev/)
 [![Vite](https://img.shields.io/badge/Bundler-Vite_6-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)
@@ -9,25 +9,25 @@
 [![Docker](https://img.shields.io/badge/Orchestration-Docker_Compose-2496ED?logo=docker&logoColor=white)](https://www.docker.com/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-> **"Advancing Intelligence. Enabling Innovation."**  
-> An enterprise-grade, multidisciplinary scientific web application and research management platform engineered for premier academic institutions, high-performance computing centers, and autonomous AI laboratories.
+> **"Advancing Research. Empowering Innovation. Accelerating Commercialization."**  
+> An enterprise-grade, multidisciplinary scientific web application and research management platform engineered for the International Research and Innovation and Commercialization Center (IRICC).
 
 ---
 
 ## 🔬 Institutional Architecture & Capabilities
 
-The **AIRC Digital Platform** combines a public-facing academic portal with authenticated scientific lab management workspaces and an institute-wide Directorate CMS.
+The **IRICC Digital Platform** combines a light-themed, public-facing academic & technology transfer portal with authenticated scientific lab management workspaces and an institute-wide Directorate CMS.
 
 ```text
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                          AIRC DIGITAL ECOSYSTEM                             │
+│                          IRICC DIGITAL ECOSYSTEM                            │
 ├─────────────────────────┬─────────────────────────┬─────────────────────────┤
 │    PUBLIC WEB PORTAL    │    RESEARCHER PORTAL    │   ADMIN DIRECTORATE CMS │
 ├─────────────────────────┼─────────────────────────┼─────────────────────────┤
 │ • 13+ Specialized Pages │ • PI & Fellow Dashboard │ • Institutional Metrics │
 │ • 6 Core Research Areas │ • Publication Pipeline  │ • Publication Approval  │
 │ • Faculty & Researcher  │ • Grant & Project Mgmt  │ • Candidate Dossiers    │
-│ • Funded Project Atlas  │ • Ph.D. Mentorship      │ • Partnership Leads     │
+│ • Funded Project Atlas  │ • Ph.D. Mentorship      │ • Commercial Transfer   │
 │ • Publications & BibTeX │ • Lab Equipment Booking │ • Audit Logging (SHA256)│
 │ • Events & Fellowships  │ • Activity Telemetry    │ • CMS Content Modules   │
 └─────────────────────────┴─────────────────────────┴─────────────────────────┘
@@ -38,18 +38,20 @@ The **AIRC Digital Platform** combines a public-facing academic portal with auth
 ## ✨ Key Features & Technical Highlights
 
 ### 1. 🌐 Public Research Portal (13+ Interactive Routes)
-- **Interactive Research Map**: Interactive discipline graph with cross-lab node exploration and telemetry.
+- **Light Theme by Default**: Premium, high-contrast light design system with an interactive dark mode toggle.
+- **Interactive Research Map**: Interactive topology graph with cross-lab node exploration and telemetry.
 - **Academic Catalog**: Multi-criteria filtering by publication venue, year, research domain, and type.
 - **BibTeX Citation Engine**: Instant modal generation with one-click clipboard copying.
 - **Global Search (`Ctrl + K`)**: Fuzzy indexing across faculty, publications, grants, press, and symposia.
 - **Admissions & Fellowships**: Validated candidate application intake supporting `.pdf`/`.docx` CV parsing.
+- **Commercialization & Technology Transfer**: Direct intake portal for commercial partnerships, licensing, and venture spin-offs.
 
 ### 2. 🧪 Authenticated Researcher Portal (`/dashboard`)
 - **Telemetry Overview**: Real-time citation tracking, h-index gauges, grant burn-down, and lab utilization.
 - **Publication Pipeline**: Draft manuscript submission with automatic queueing for Directorate review.
 - **Project & Grant Management**: Milestone tracking, deliverables, and team member management.
 - **Supervised Students**: Doctoral and master's candidate milestone progress monitoring.
-- **Lab Resource Booking**: Reservation scheduler for DGX H100 Superclusters and Surgical High-Bays.
+- **Lab Resource Booking**: Reservation scheduler for supercomputer clusters and high-bay facilities.
 
 ### 3. 🏛️ Administrative Directorate CMS (`/admin`)
 - **Review Queue**: Single-click approval/rejection of submitted publications and grant proposals.
@@ -64,7 +66,7 @@ The **AIRC Digital Platform** combines a public-facing academic portal with auth
 - **Dynamic SEO**: Contextual document titles via `useDocumentTitle` and comprehensive OpenGraph / Twitter Cards.
 
 ### 5. 🐍 High-Throughput FastAPI Backend
-- **Async REST API**: Clean endpoints across all 12 institutional modules in `backend/app/api/v1/`.
+- **Async REST API**: Clean endpoints across all institutional modules in `backend/app/api/v1/`.
 - **JWT & RBAC Security**: Granular role enforcement (`guest`, `researcher`, `admin`, `super_admin`).
 - **Database Seeder**: Complete synthetic dataset populating faculty, publications, projects, and events.
 - **Automated Test Suite**: Pytest suite verifying auth guards, schema validation, and CRUD operations.
@@ -91,7 +93,7 @@ Research_Center/
 │   ├── components/
 │   │   ├── auth/                   # ProtectedRoute, ResearcherRoute, AdminRoute
 │   │   ├── layout/                 # Public Layout, ResearcherLayout, AdminLayout
-│   │   ├── shared/                 # GlobalSearchModal, Header, Footer
+│   │   ├── shared/                 # GlobalSearchModal, Navbar, Footer
 │   │   └── ui/                     # Badge, Button, Card, Dialog, Input, Tabs
 │   ├── context/                    # AuthContext, ThemeContext, ToastContext
 │   ├── data/                       # Initial mock datasets (offline fallback)
@@ -185,9 +187,9 @@ The platform includes pre-configured demo presets for rapid evaluation:
 
 | Role | Email | Password | Access Scope |
 |---|---|---|---|
-| **Institute Director (Admin)** | `sarah.lin@airc.research.edu` | `airc2026!` | Full Admin Directorate CMS (`/admin`), Review Queues, Audit Logs, Settings |
-| **Principal Investigator (Researcher)** | `marcus@airc.research.edu` | `airc2026!` | Researcher Portal (`/dashboard`), Publication Pipeline, Project Grants, Lab Bookings |
-| **Ph.D. Fellow (Researcher)** | `elena.rostova@airc.research.edu` | `airc2026!` | Research Workspace, Authored Papers, Student Tracking |
+| **Institute Director (Admin)** | `director@iricc.org` | `iricc2026!` | Full Admin Directorate CMS (`/admin`), Review Queues, Audit Logs, Settings |
+| **Principal Investigator (Researcher)** | `m.vance@iricc.org` | `iricc2026!` | Researcher Portal (`/dashboard`), Publication Pipeline, Project Grants, Lab Bookings |
+| **Faculty Lead (Researcher)** | `sarah.lin@iricc.org` | `iricc2026!` | Research Workspace, Authored Papers, Student Tracking |
 | **Public Visitor (Guest)** | *Unauthenticated* | *N/A* | Public Institute Catalog, Application Intake, BibTeX Generator |
 
 *(You can also use the **Quick Demo Switcher** buttons on the `/login` page for instant role switching without typing credentials).*
@@ -202,13 +204,6 @@ The platform includes pre-configured demo presets for rapid evaluation:
 npm run build
 ```
 
-### Backend Automated Test Suite
-```bash
-# Run backend Pytest suite
-cd backend
-pytest -v
-```
-
 ---
 
 ## 📄 License
@@ -219,12 +214,12 @@ This project is licensed under the **MIT License** — see the [LICENSE](LICENSE
 
 ## 🏛️ Acknowledgments & Citation
 
-If you utilize the AIRC platform or its research methodologies in your academic work, please cite:
+If you utilize the IRICC platform or its research methodologies in your academic work, please cite:
 
 ```bibtex
-@misc{airc2026platform,
-  title={Advanced Intelligent Research Center (AIRC) Full-Stack Digital Platform},
-  author={AIRC Directorate and Engineering Team},
+@misc{iricc2026platform,
+  title={International Research and Innovation and Commercialization Center (IRICC) Full-Stack Digital Platform},
+  author={IRICC Directorate and Engineering Team},
   year={2026},
   publisher={GitHub},
   howpublished={\url{https://github.com/mashkurulalamohi37/Research_Center}}

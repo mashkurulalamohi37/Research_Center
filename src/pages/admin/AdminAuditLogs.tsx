@@ -2,8 +2,11 @@ import React from 'react';
 import { FileText, Shield, User, Clock, Search } from 'lucide-react';
 import { Card } from '../../components/ui/Card';
 import { Badge } from '../../components/ui/Badge';
+import { useDocumentTitle } from '../../hooks/useDocumentTitle';
 
 export const AdminAuditLogs: React.FC = () => {
+  useDocumentTitle('Audit & Security Logs — Admin');
+
   const logs = [
     {
       id: 'log-1',
@@ -42,18 +45,18 @@ export const AdminAuditLogs: React.FC = () => {
   return (
     <div className="space-y-8 max-w-7xl">
       <div>
-        <h1 className="text-2xl font-extrabold text-slate-100 tracking-tight">
+        <h1 className="text-2xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight">
           System Audit & Security Logs
         </h1>
-        <p className="text-xs text-slate-400 font-mono mt-0.5">
+        <p className="text-xs text-slate-500 dark:text-slate-400 font-mono mt-0.5">
           Immutable cryptographic ledger of administrative approvals, faculty appointments, and data modifications.
         </p>
       </div>
 
-      <Card className="border-slate-800 bg-slate-900/60 overflow-hidden shadow-xl">
+      <Card className="border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 overflow-hidden shadow-md">
         <div className="overflow-x-auto">
           <table className="w-full text-left text-xs font-mono">
-            <thead className="bg-slate-950/80 border-b border-slate-800 text-slate-400 uppercase">
+            <thead className="bg-slate-50 dark:bg-slate-950/80 border-b border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 uppercase">
               <tr>
                 <th className="p-4">Timestamp</th>
                 <th className="p-4">Operator</th>
@@ -62,13 +65,13 @@ export const AdminAuditLogs: React.FC = () => {
                 <th className="p-4">Origin IP</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-800/60 text-slate-300">
+            <tbody className="divide-y divide-slate-100 dark:divide-slate-800/60 text-slate-700 dark:text-slate-300">
               {logs.map(log => (
-                <tr key={log.id} className="hover:bg-slate-800/40 transition-colors">
-                  <td className="p-4 text-slate-400">{log.timestamp}</td>
-                  <td className="p-4 font-bold text-slate-100">{log.user}</td>
+                <tr key={log.id} className="hover:bg-slate-50 dark:hover:bg-slate-800/40 transition-colors">
+                  <td className="p-4 text-slate-500 dark:text-slate-400">{log.timestamp}</td>
+                  <td className="p-4 font-bold text-slate-900 dark:text-slate-100">{log.user}</td>
                   <td className="p-4"><Badge variant="purple">{log.action}</Badge></td>
-                  <td className="p-4 text-cyan-400 max-w-xs truncate">{log.entity}</td>
+                  <td className="p-4 text-cyan-700 dark:text-cyan-400 max-w-xs truncate font-semibold">{log.entity}</td>
                   <td className="p-4 text-slate-500">{log.ip}</td>
                 </tr>
               ))}

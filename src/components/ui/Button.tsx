@@ -9,15 +9,15 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant = 'primary', size = 'md', isLoading = false, children, disabled, ...props }, ref) => {
-    const baseStyles = "inline-flex items-center justify-center font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none rounded-xl active:scale-[0.98]";
+    const baseStyles = "inline-flex items-center justify-center font-medium transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none rounded-xl active:scale-[0.98]";
     
     const variants = {
-      primary: "bg-cyan-500 hover:bg-cyan-400 text-navy-950 font-semibold shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/35",
-      secondary: "bg-slate-800/80 hover:bg-slate-700/80 text-slate-100 border border-slate-700/50 backdrop-blur-sm",
-      outline: "border border-slate-700 hover:border-cyan-500/50 text-slate-200 hover:text-cyan-400 hover:bg-cyan-500/5",
-      ghost: "hover:bg-slate-800/50 text-slate-300 hover:text-white",
-      destructive: "bg-red-600/90 hover:bg-red-500 text-white shadow-md shadow-red-600/20",
-      cyan: "bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-semibold shadow-lg shadow-cyan-500/25",
+      primary: "bg-cyan-600 hover:bg-cyan-500 text-white font-semibold shadow-md shadow-cyan-600/20 hover:shadow-cyan-600/30 dark:bg-cyan-500 dark:hover:bg-cyan-400 dark:text-navy-950",
+      secondary: "bg-slate-100 hover:bg-slate-200 text-slate-800 border border-slate-200 dark:bg-slate-800/80 dark:hover:bg-slate-700/80 dark:text-slate-100 dark:border-slate-700/50 backdrop-blur-sm",
+      outline: "border border-slate-300 hover:border-cyan-600 text-slate-700 hover:text-cyan-700 hover:bg-cyan-50/50 dark:border-slate-700 dark:hover:border-cyan-500/50 dark:text-slate-200 dark:hover:text-cyan-400 dark:hover:bg-cyan-500/5",
+      ghost: "hover:bg-slate-100 text-slate-700 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white dark:hover:bg-slate-800/50",
+      destructive: "bg-red-600 hover:bg-red-500 text-white shadow-md shadow-red-600/20",
+      cyan: "bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white font-semibold shadow-md shadow-cyan-600/25 dark:from-cyan-500 dark:to-blue-600 dark:hover:from-cyan-400 dark:hover:to-blue-500 dark:text-slate-950",
     };
 
     const sizes = {

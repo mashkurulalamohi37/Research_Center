@@ -4,18 +4,18 @@ services:
   # 1. PostgreSQL Database
   postgres:
     image: postgres:16-alpine
-    container_name: airc_postgres
+    container_name: iricc_postgres
     restart: unless-stopped
     environment:
-      POSTGRES_USER: airc_user
-      POSTGRES_PASSWORD: airc_secure_db_password
-      POSTGRES_DB: airc_db
+      POSTGRES_USER: iricc_user
+      POSTGRES_PASSWORD: iricc_secure_db_password
+      POSTGRES_DB: iricc_db
     ports:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U airc_user -d airc_db"]
+      test: ["CMD-SHELL", "pg_isready -U iricc_user -d iricc_db"]
       interval: 5s
       timeout: 5s
       retries: 5
@@ -23,7 +23,7 @@ services:
   # 2. Redis Cache
   redis:
     image: redis:7-alpine
-    container_name: airc_redis
+    container_name: iricc_redis
     restart: unless-stopped
     ports:
       - "6379:6379"
@@ -35,7 +35,7 @@ services:
     build:
       context: ./backend
       dockerfile: Dockerfile
-    container_name: airc_backend
+    container_name: iricc_backend
     restart: unless-stopped
     depends_on:
       postgres:
@@ -43,10 +43,10 @@ services:
       redis:
         condition: service_started
     environment:
-      PROJECT_NAME: "Advanced Intelligent Research Center API"
+      PROJECT_NAME: "International Research and Innovation and Commercialization Center API"
       API_V1_STR: "/api/v1"
-      SECRET_KEY: "airc_super_secret_jwt_key_for_docker_deployment"
-      DATABASE_URL: "postgresql+asyncpg://airc_user:airc_secure_db_password@postgres:5432/airc_db"
+      SECRET_KEY: "iricc_super_secret_jwt_key_for_docker_deployment"
+      DATABASE_URL: "postgresql+asyncpg://iricc_user:iricc_secure_db_password@postgres:5432/iricc_db"
       CORS_ORIGINS: "http://localhost,http://localhost:80,http://localhost:5173"
       ENVIRONMENT: "production"
     ports:
@@ -57,7 +57,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: airc_frontend
+    container_name: iricc_frontend
     restart: unless-stopped
     depends_on:
       - backend

@@ -3,20 +3,20 @@ import { Project } from '../types';
 export const mockProjects: Project[] = [
   {
     id: 'proj-neurosym-core',
-    slug: 'provable-neurosymbolic-reasoning',
-    title: 'Provable Neuro-Symbolic Foundation Architectures',
-    shortDescription: 'Unifying deep transformer neural models with formal mathematical logic to guarantee zero-hallucination and safety compliance.',
-    description: 'This multi-year flagship initiative bridges the expressive representation capacity of deep learning with the rigorous guarantees of formal deductive systems. By incorporating differentiable first-order logic solver constraints directly into self-attention heads, our architecture ensures verifiable logical consistency in high-stakes reasoning domains.',
-    problemStatement: 'Current large deep foundation models suffer from uncontrollable hallucinations, inability to perform multi-step exact algorithmic reasoning, and lack of verifiable safety bounds in mission-critical applications.',
-    methodology: 'We combine differentiable SAT/SMT solvers with sparse transformer attention layers, enforcing mathematical invariants through Lagrange multiplier penalty bounds during gradient backpropagation.',
+    slug: 'provably-sound-neurosymbolic-foundations',
+    title: 'Provably Sound Neuro-Symbolic Foundations for General Reasoning',
+    shortDescription: 'Unifying deep transformer representations with first-order logic solver constraints for zero-hallucination artificial reasoning.',
+    description: 'Modern foundation models exhibit extraordinary fluency but frequently hallucinate in multi-step deductive reasoning tasks. This multi-year initiative constructs a unified architectural paradigm combining transformer latent representations with continuous Lagrange relaxation of first-order logic constraints, establishing mathematically verifiable semantic safety bounds.',
+    problemStatement: 'Current deep generative architectures lack mathematical soundness guarantees, making them dangerous for mission-critical deployments in healthcare, aviation, and legal arbitration.',
+    methodology: 'Integrating differentiable SMT and SAT solvers directly into the self-attention and feed-forward pathways, trained using end-to-end continuous constraint optimization.',
     outcomes: [
-      'Engineered the open-source NeuroLogic-v2 engine with 10x faster constrained decoding.',
-      'Published 4 papers in NeurIPS and ICLR with zero semantic contradiction proofs.',
-      'Deployed pilot system with the National Aerospace Laboratory for flight checklist verification.'
+      'Eliminated 100% of axiomatic hallucinations on standard mathematical proof benchmarks.',
+      'Released NeuroLogic-v2 open-source foundation model family (7B, 14B, 70B).',
+      'Adopted by 5 major national aerospace and defense safety consortia.'
     ],
     researchAreaId: 'ai-core',
     leadResearcherId: 'dr-sarah-lin',
-    teamMemberIds: ['dr-sarah-lin', 'dr-elena-rostova', 'james-chen'],
+    teamMemberIds: ['dr-sarah-lin', 'james-chen', 'dr-elena-rostova'],
     status: 'Ongoing',
     startDate: '2023-01-15',
     endDate: '2026-12-31',
@@ -26,8 +26,8 @@ export const mockProjects: Project[] = [
     technologies: ['PyTorch', 'Z3 SMT Solver', 'JAX', 'CUDA Custom Kernels', 'Formal Verification'],
     featured: true,
     publicationsIds: ['pub-neurips-2025-logic', 'pub-icml-2024-causal'],
-    githubUrl: 'https://github.com/airc-lab/neurologic-core',
-    demoUrl: 'https://neurologic-demo.airc.research.edu',
+    githubUrl: 'https://github.com/iricc/neurologic-core',
+    demoUrl: 'https://neurologic.iricc.org',
     deliverables: [
       { title: 'Differentiable SMT Solver Kernel', date: '2023-09-01', completed: true },
       { title: '14B Parameter Symbolic Foundation Model', date: '2024-06-15', completed: true },
@@ -60,7 +60,7 @@ export const mockProjects: Project[] = [
     technologies: ['3D Gaussian Splatting', 'CUDA', 'Stereo Endoscopy', 'OpenCV', 'Vision Transformers'],
     featured: true,
     publicationsIds: ['pub-cvpr-2025-surgical', 'pub-miccai-2024-splat'],
-    demoUrl: 'https://surgical3d.airc.research.edu',
+    demoUrl: 'https://surgical3d.iricc.org',
     deliverables: [
       { title: 'Real-Time Endoscopic Stream Pipeline', date: '2023-12-01', completed: true },
       { title: 'Sub-Millimeter Tissue Deformation Model', date: '2024-11-20', completed: true },
@@ -92,7 +92,7 @@ export const mockProjects: Project[] = [
     technologies: ['ROS2', 'Multi-Agent RL', 'LIDAR Odometry', 'Distributed SLAM', 'UWB Mesh'],
     featured: true,
     publicationsIds: ['pub-icra-2025-swarm'],
-    githubUrl: 'https://github.com/airc-lab/swarm-rescue',
+    githubUrl: 'https://github.com/iricc/swarm-rescue',
     deliverables: [
       { title: 'Autonomous P2P Spatial SLAM Protocol', date: '2023-04-10', completed: true },
       { title: 'Autonomous Air-Ground Team Rendezvous', date: '2024-05-18', completed: true },

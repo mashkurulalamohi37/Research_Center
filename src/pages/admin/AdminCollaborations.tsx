@@ -9,8 +9,10 @@ import { Card } from '../../components/ui/Card';
 import { Dialog } from '../../components/ui/Dialog';
 import { Select } from '../../components/ui/Input';
 import { useToast } from '../../context/ToastContext';
+import { useDocumentTitle } from '../../hooks/useDocumentTitle';
 
 export const AdminCollaborations: React.FC = () => {
+  useDocumentTitle('Collaborations & Partnerships — Admin');
   const [collaborations, setCollaborations] = useState<Collaboration[]>(mockCollaborations);
   const [selectedCollab, setSelectedCollab] = useState<Collaboration | null>(null);
   const [assigneeId, setAssigneeId] = useState('');
@@ -40,10 +42,10 @@ export const AdminCollaborations: React.FC = () => {
   return (
     <div className="space-y-8 max-w-7xl">
       <div>
-        <h1 className="text-2xl font-extrabold text-slate-100 tracking-tight">
+        <h1 className="text-2xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight">
           Strategic Industrial & Academic Collaborations
         </h1>
-        <p className="text-xs text-slate-400 font-mono mt-0.5">
+        <p className="text-xs text-slate-500 dark:text-slate-400 font-mono mt-0.5">
           Process inbound institutional partnership proposals and assign faculty lead investigators.
         </p>
       </div>
@@ -52,30 +54,30 @@ export const AdminCollaborations: React.FC = () => {
         {collaborations.map(c => {
           const assigned = mockResearchers.find(r => r.id === c.assignedResearcherId);
           return (
-            <Card key={c.id} className="p-6 border-slate-800 bg-slate-900/60 shadow-xl space-y-4">
-              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-3 border-b border-slate-800">
+            <Card key={c.id} className="p-6 border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 shadow-sm hover:shadow-md transition-shadow space-y-4">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-3 border-b border-slate-100 dark:border-slate-800">
                 <div>
                   <div className="flex items-center gap-2">
                     <Badge variant={c.status === 'Approved' ? 'success' : 'cyan'}>{c.status}</Badge>
                     <Badge variant="outline">{c.collaborationType}</Badge>
-                    <span className="text-xs font-mono text-slate-500">{c.submittedDate}</span>
+                    <span className="text-xs font-mono text-slate-500 dark:text-slate-400">{c.submittedDate}</span>
                   </div>
-                  <h3 className="text-base font-bold text-slate-100 mt-1">{c.organization}</h3>
+                  <h3 className="text-base font-bold text-slate-900 dark:text-slate-100 mt-1">{c.organization}</h3>
                 </div>
 
-                <div className="text-right">
-                  <span className="text-xs text-slate-400 font-mono block">Point of Contact</span>
-                  <span className="text-xs font-bold text-slate-200">{c.contactPerson} ({c.email})</span>
+                <div className="text-left sm:text-right">
+                  <span className="text-xs text-slate-500 dark:text-slate-400 font-mono block">Point of Contact</span>
+                  <span className="text-xs font-bold text-slate-800 dark:text-slate-200">{c.contactPerson} ({c.email})</span>
                 </div>
               </div>
 
-              <p className="text-xs text-slate-300 leading-relaxed">
+              <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
                 {c.proposalSummary}
               </p>
 
-              <div className="pt-2 flex items-center justify-between border-t border-slate-800 text-xs font-mono">
-                <span className="text-slate-400">
-                  Lead Liaison: <strong className="text-cyan-400">{assigned ? assigned.name : 'Unassigned'}</strong>
+              <div className="pt-2 flex items-center justify-between border-t border-slate-100 dark:border-slate-800 text-xs font-mono">
+                <span className="text-slate-500 dark:text-slate-400">
+                  Lead Liaison: <strong className="text-cyan-700 dark:text-cyan-400">{assigned ? assigned.name : 'Unassigned'}</strong>
                 </span>
                 <Button variant="cyan" size="sm" onClick={() => handleOpenAssign(c)}>
                   Assign Faculty Lead
@@ -96,7 +98,7 @@ export const AdminCollaborations: React.FC = () => {
         >
           <div className="space-y-4">
             <div>
-              <label className="text-xs font-semibold text-slate-300 block mb-1">Designate Principal Investigator</label>
+              <label className="text-xs font-semibold text-slate-700 dark:text-slate-300 block mb-1">Designate Principal Investigator</label>
               <Select value={assigneeId} onChange={e => setAssigneeId(e.target.value)}>
                 {mockResearchers.map(r => (
                   <option key={r.id} value={r.id}>{r.name} — {r.title}</option>
@@ -104,7 +106,7 @@ export const AdminCollaborations: React.FC = () => {
               </Select>
             </div>
 
-            <div className="pt-3 flex justify-end gap-3 border-t border-slate-800">
+            <div className="pt-3 flex justify-end gap-3 border-t border-slate-200 dark:border-slate-800">
               <Button variant="outline" size="sm" onClick={() => setModalOpen(false)}>Cancel</Button>
               <Button variant="cyan" size="sm" onClick={handleSaveAssign}>Save Assignment</Button>
             </div>

@@ -8,8 +8,10 @@ import { Card } from '../../components/ui/Card';
 import { Dialog } from '../../components/ui/Dialog';
 import { Input, Textarea, Select } from '../../components/ui/Input';
 import { useToast } from '../../context/ToastContext';
+import { useDocumentTitle } from '../../hooks/useDocumentTitle';
 
 export const AdminNews: React.FC = () => {
+  useDocumentTitle('News & Press Releases — Admin');
   const [articles, setArticles] = useState<NewsArticle[]>(mockNews);
   const [modalOpen, setModalOpen] = useState(false);
   const [isEditing, setIsEditing] = useState<NewsArticle | null>(null);
@@ -19,7 +21,7 @@ export const AdminNews: React.FC = () => {
     category: 'Research' as NewsCategory,
     excerpt: '',
     content: '',
-    author: 'AIRC Newsroom',
+    author: 'IRICC Newsroom',
     coverImage: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80',
   });
 
@@ -32,7 +34,7 @@ export const AdminNews: React.FC = () => {
       category: 'Research',
       excerpt: '',
       content: '',
-      author: 'AIRC Newsroom',
+      author: 'IRICC Newsroom',
       coverImage: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80',
     });
     setModalOpen(true);
@@ -53,7 +55,7 @@ export const AdminNews: React.FC = () => {
         publishDate: new Date().toISOString().split('T')[0],
         featured: false,
         status: 'Published',
-        tags: ['AIRC', formState.category],
+        tags: ['IRICC', formState.category],
       };
       setArticles(prev => [newArticle, ...prev]);
       success('Article Dispatched', 'New press release is now live.');
@@ -65,10 +67,10 @@ export const AdminNews: React.FC = () => {
     <div className="space-y-8 max-w-7xl">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-extrabold text-slate-100 tracking-tight">
+          <h1 className="text-2xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight">
             News & Press Releases CMS
           </h1>
-          <p className="text-xs text-slate-400 font-mono mt-0.5">
+          <p className="text-xs text-slate-500 dark:text-slate-400 font-mono mt-0.5">
             Publish research breakthroughs, awards, symposium announcements, and press dispatches.
           </p>
         </div>
@@ -77,10 +79,10 @@ export const AdminNews: React.FC = () => {
         </Button>
       </div>
 
-      <Card className="border-slate-800 bg-slate-900/60 overflow-hidden shadow-xl">
+      <Card className="border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 overflow-hidden shadow-md">
         <div className="overflow-x-auto">
           <table className="w-full text-left text-xs">
-            <thead className="bg-slate-950/80 border-b border-slate-800 text-slate-400 font-mono uppercase tracking-wider">
+            <thead className="bg-slate-50 dark:bg-slate-950/80 border-b border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 font-mono uppercase tracking-wider">
               <tr>
                 <th className="p-4">Article Headline</th>
                 <th className="p-4">Category</th>
@@ -89,18 +91,18 @@ export const AdminNews: React.FC = () => {
                 <th className="p-4 text-right">Actions</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-800/60">
+            <tbody className="divide-y divide-slate-100 dark:divide-slate-800/60">
               {articles.map(n => (
-                <tr key={n.id} className="hover:bg-slate-800/40 transition-colors">
-                  <td className="p-4 max-w-md font-bold text-slate-200">{n.title}</td>
+                <tr key={n.id} className="hover:bg-slate-50 dark:hover:bg-slate-800/40 transition-colors">
+                  <td className="p-4 max-w-md font-bold text-slate-900 dark:text-slate-200">{n.title}</td>
                   <td className="p-4"><Badge variant="cyan">{n.category}</Badge></td>
-                  <td className="p-4 font-mono text-slate-400">{n.publishDate}</td>
-                  <td className="p-4 text-slate-300">{n.author}</td>
+                  <td className="p-4 font-mono text-slate-500 dark:text-slate-400">{n.publishDate}</td>
+                  <td className="p-4 text-slate-700 dark:text-slate-300">{n.author}</td>
                   <td className="p-4 text-right space-x-2">
                     <Button variant="ghost" size="sm" onClick={() => { setIsEditing(n); setFormState(n as any); setModalOpen(true); }}>
                       <Edit3 className="w-3.5 h-3.5" />
                     </Button>
-                    <Button variant="ghost" size="sm" onClick={() => setArticles(prev => prev.filter(x => x.id !== n.id))} className="text-red-400">
+                    <Button variant="ghost" size="sm" onClick={() => setArticles(prev => prev.filter(x => x.id !== n.id))} className="text-red-500 dark:text-red-400">
                       <Trash2 className="w-3.5 h-3.5" />
                     </Button>
                   </td>
@@ -116,23 +118,23 @@ export const AdminNews: React.FC = () => {
         isOpen={modalOpen}
         onClose={() => setModalOpen(false)}
         title={isEditing ? 'Edit Article' : 'Compose News Article'}
-        description="Publish article to the public AIRC newsroom."
+        description="Publish article to the public IRICC newsroom."
         maxWidth="2xl"
       >
         <form onSubmit={handleSave} className="space-y-4">
           <div>
-            <label className="text-xs font-semibold text-slate-300 block mb-1">Headline *</label>
+            <label className="text-xs font-semibold text-slate-700 dark:text-slate-300 block mb-1">Headline *</label>
             <Input
               required
               value={formState.title}
               onChange={e => setFormState({ ...formState, title: e.target.value })}
-              placeholder="e.g. AIRC Researchers Win Best Paper at CVPR 2025"
+              placeholder="e.g. IRICC Researchers Win Best Paper at CVPR 2025"
             />
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="text-xs font-semibold text-slate-300 block mb-1">Category</label>
+              <label className="text-xs font-semibold text-slate-700 dark:text-slate-300 block mb-1">Category</label>
               <Select
                 value={formState.category}
                 onChange={e => setFormState({ ...formState, category: e.target.value as NewsCategory })}
@@ -144,7 +146,7 @@ export const AdminNews: React.FC = () => {
               </Select>
             </div>
             <div>
-              <label className="text-xs font-semibold text-slate-300 block mb-1">Author / Byline</label>
+              <label className="text-xs font-semibold text-slate-700 dark:text-slate-300 block mb-1">Author / Byline</label>
               <Input
                 value={formState.author}
                 onChange={e => setFormState({ ...formState, author: e.target.value })}
@@ -153,7 +155,7 @@ export const AdminNews: React.FC = () => {
           </div>
 
           <div>
-            <label className="text-xs font-semibold text-slate-300 block mb-1">Lead Excerpt</label>
+            <label className="text-xs font-semibold text-slate-700 dark:text-slate-300 block mb-1">Lead Excerpt</label>
             <Input
               value={formState.excerpt}
               onChange={e => setFormState({ ...formState, excerpt: e.target.value })}
@@ -162,7 +164,7 @@ export const AdminNews: React.FC = () => {
           </div>
 
           <div>
-            <label className="text-xs font-semibold text-slate-300 block mb-1">Article Body (Markdown)</label>
+            <label className="text-xs font-semibold text-slate-700 dark:text-slate-300 block mb-1">Article Body (Markdown)</label>
             <Textarea
               rows={6}
               value={formState.content}
@@ -171,7 +173,7 @@ export const AdminNews: React.FC = () => {
             />
           </div>
 
-          <div className="pt-3 flex items-center justify-end gap-3 border-t border-slate-800">
+          <div className="pt-3 flex items-center justify-end gap-3 border-t border-slate-200 dark:border-slate-800">
             <Button variant="outline" size="sm" type="button" onClick={() => setModalOpen(false)}>
               Cancel
             </Button>

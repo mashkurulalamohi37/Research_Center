@@ -4,8 +4,10 @@ import { Card } from '../../components/ui/Card';
 import { Button } from '../../components/ui/Button';
 import { Input } from '../../components/ui/Input';
 import { useToast } from '../../context/ToastContext';
+import { useDocumentTitle } from '../../hooks/useDocumentTitle';
 
 export const ResearcherSettings: React.FC = () => {
+  useDocumentTitle('Account Settings — Faculty');
   const { success } = useToast();
 
   const handleSave = (e: React.FormEvent) => {
@@ -16,45 +18,45 @@ export const ResearcherSettings: React.FC = () => {
   return (
     <div className="space-y-8 max-w-4xl">
       <div>
-        <h1 className="text-2xl font-extrabold text-slate-100 tracking-tight">
+        <h1 className="text-2xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight">
           Account & Portal Preferences
         </h1>
-        <p className="text-xs text-slate-400 font-mono mt-0.5">
+        <p className="text-xs text-slate-500 dark:text-slate-400 font-mono mt-0.5">
           Manage institutional single sign-on, API access tokens, and notification subscriptions.
         </p>
       </div>
 
       <form onSubmit={handleSave} className="space-y-6">
-        <Card className="p-6 border-slate-800 bg-slate-900/60 space-y-4">
-          <h3 className="text-base font-bold text-slate-100 flex items-center gap-2">
-            <Key className="w-4 h-4 text-cyan-400" /> AIRC API Access Token
+        <Card className="p-6 border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 shadow-sm space-y-4">
+          <h3 className="text-base font-bold text-slate-900 dark:text-slate-100 flex items-center gap-2">
+            <Key className="w-4 h-4 text-cyan-600 dark:text-cyan-400" /> IRICC API Access Token
           </h3>
-          <p className="text-xs text-slate-400">
+          <p className="text-xs text-slate-500 dark:text-slate-400">
             Use this token to programmatically submit papers, upload dataset artifacts, and query the knowledge graph.
           </p>
           <div className="flex gap-2">
-            <Input readOnly value="airc_sec_token_991823908129482914801" className="font-mono text-xs" />
+            <Input readOnly value="iricc_sec_token_991823908129482914801" className="font-mono text-xs" />
             <Button variant="secondary" size="sm" type="button" onClick={() => success('Copied Token', 'API access token copied to clipboard.')}>
               Copy
             </Button>
           </div>
         </Card>
 
-        <Card className="p-6 border-slate-800 bg-slate-900/60 space-y-4">
-          <h3 className="text-base font-bold text-slate-100 flex items-center gap-2">
-            <Bell className="w-4 h-4 text-cyan-400" /> Dispatch Preferences
+        <Card className="p-6 border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 shadow-sm space-y-4">
+          <h3 className="text-base font-bold text-slate-900 dark:text-slate-100 flex items-center gap-2">
+            <Bell className="w-4 h-4 text-cyan-600 dark:text-cyan-400" /> Dispatch Preferences
           </h3>
-          <div className="space-y-3 text-xs text-slate-300">
+          <div className="space-y-3 text-xs text-slate-700 dark:text-slate-300">
             <label className="flex items-center gap-2.5 cursor-pointer">
-              <input type="checkbox" defaultChecked className="rounded border-slate-700 bg-slate-900 text-cyan-500" />
+              <input type="checkbox" defaultChecked className="rounded border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-cyan-500" />
               <span>Email me immediately when a paper review decision is published</span>
             </label>
             <label className="flex items-center gap-2.5 cursor-pointer">
-              <input type="checkbox" defaultChecked className="rounded border-slate-700 bg-slate-900 text-cyan-500" />
+              <input type="checkbox" defaultChecked className="rounded border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-cyan-500" />
               <span>Notify me when a new candidate applies for my open fellowship track</span>
             </label>
             <label className="flex items-center gap-2.5 cursor-pointer">
-              <input type="checkbox" defaultChecked className="rounded border-slate-700 bg-slate-900 text-cyan-500" />
+              <input type="checkbox" defaultChecked className="rounded border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-cyan-500" />
               <span>Send monthly institutional citation and h-index digest</span>
             </label>
           </div>

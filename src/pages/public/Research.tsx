@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { 
   Search, Brain, Eye, MessageSquareText, Bot, 
-  Activity, ShieldCheck, Cpu, Network, ArrowRight, Sparkles, Layers, BookOpen 
+  Activity, ShieldCheck, Cpu, Network, ArrowRight, Sparkles 
 } from 'lucide-react';
 import { mockResearchAreas } from '../../data/researchAreas';
 import { InteractiveResearchMap } from '../../components/home/InteractiveResearchMap';
@@ -59,7 +59,7 @@ export const Research: React.FC = () => {
             value={searchTerm}
             onChange={e => setSearchTerm(e.target.value)}
             placeholder="Search disciplines or technologies (e.g. NeRF, Logic, TinyML)..."
-            className="w-full h-12 pl-12 pr-4 rounded-2xl bg-white dark:bg-slate-900/80 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 text-sm focus:outline-none focus:border-cyan-500 transition-colors shadow-md"
+            className="w-full h-12 pl-12 pr-4 rounded-2xl bg-white dark:bg-slate-900/80 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 text-sm focus:outline-none focus:border-cyan-500 transition-colors shadow-xs"
           />
         </div>
       </section>
@@ -70,7 +70,7 @@ export const Research: React.FC = () => {
           {filteredAreas.map(area => (
             <Card
               key={area.id}
-              className="overflow-hidden border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 hover:border-cyan-500/50 transition-all duration-300 flex flex-col justify-between group shadow-md hover:shadow-xl"
+              className="overflow-hidden border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 hover:border-cyan-500/50 transition-all duration-300 flex flex-col justify-between group shadow-xs hover:shadow-md"
             >
               <div>
                 <div className="relative h-48 overflow-hidden">
@@ -79,20 +79,20 @@ export const Research: React.FC = () => {
                     alt={area.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80 group-hover:opacity-100"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
-                  <div className="absolute top-4 left-4 p-3 rounded-2xl bg-slate-900/90 backdrop-blur-md border border-cyan-500/30 text-cyan-400 shadow-md">
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/30 to-transparent" />
+                  <div className="absolute top-4 left-4 p-3 rounded-2xl bg-white/95 dark:bg-slate-900/90 backdrop-blur-md border border-slate-200 dark:border-cyan-500/30 text-cyan-600 dark:text-cyan-400 shadow-md">
                     {getAreaIcon(area.iconName)}
                   </div>
                   <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between">
                     <Badge variant="cyan">{area.projectCount} Projects</Badge>
-                    <span className="text-xs font-mono text-slate-200 bg-slate-900/80 px-2 py-0.5 rounded border border-slate-700">
+                    <span className="text-xs font-mono text-slate-100 bg-slate-900/80 px-2 py-0.5 rounded border border-slate-700">
                       {area.publicationCount} Papers
                     </span>
                   </div>
                 </div>
 
                 <CardHeader>
-                  <CardTitle className="text-lg group-hover:text-cyan-600 dark:group-hover:text-cyan-300 transition-colors leading-snug">
+                  <CardTitle className="text-lg group-hover:text-cyan-700 dark:group-hover:text-cyan-300 transition-colors leading-snug">
                     {area.title}
                   </CardTitle>
                   <CardDescription className="text-xs line-clamp-3 mt-2 leading-relaxed text-slate-600 dark:text-slate-400">
@@ -105,7 +105,7 @@ export const Research: React.FC = () => {
                     {area.technologies.slice(0, 3).map(tech => (
                       <span
                         key={tech}
-                        className="text-[10px] px-2 py-0.5 rounded-lg bg-slate-100 dark:bg-slate-800/80 text-cyan-700 dark:text-cyan-300 border border-slate-200 dark:border-slate-700/60 font-mono"
+                        className="text-[10px] px-2 py-0.5 rounded-lg bg-slate-100 dark:bg-slate-800/80 text-cyan-800 dark:text-cyan-300 border border-slate-200 dark:border-slate-700/60 font-mono"
                       >
                         {tech}
                       </span>
@@ -114,7 +114,7 @@ export const Research: React.FC = () => {
                 </div>
               </div>
 
-              <CardFooter className="pt-4 border-t border-slate-200 dark:border-slate-800/80 flex items-center justify-between">
+              <CardFooter className="pt-4 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between">
                 <span className="text-xs text-slate-600 dark:text-slate-400">
                   Lead: <strong className="text-slate-900 dark:text-slate-200">{area.leadResearcherId.replace('dr-', 'Dr. ').replace('-', ' ').toUpperCase()}</strong>
                 </span>

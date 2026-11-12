@@ -17,7 +17,7 @@ export const Dialog: React.FC<DialogProps> = ({
   title,
   description,
   children,
-  maxWidth = 'lg'
+  maxWidth = 'md',
 }) => {
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -26,8 +26,6 @@ export const Dialog: React.FC<DialogProps> = ({
     if (isOpen) {
       document.body.style.overflow = 'hidden';
       window.addEventListener('keydown', handleKeyDown);
-    } else {
-      document.body.style.overflow = 'unset';
     }
     return () => {
       document.body.style.overflow = 'unset';
@@ -58,25 +56,25 @@ export const Dialog: React.FC<DialogProps> = ({
       {/* Backdrop */}
       <div
         onClick={onClose}
-        className="fixed inset-0 bg-navy-950/80 backdrop-blur-md transition-opacity animate-fade-in"
+        className="fixed inset-0 bg-slate-900/40 backdrop-blur-sm dark:bg-navy-950/80 transition-opacity animate-fade-in"
       />
 
       {/* Modal Container */}
       <div
         className={cn(
-          'relative w-full z-10 max-h-[90vh] overflow-y-auto rounded-2xl border border-slate-700/80 bg-slate-900/95 dark:bg-slate-950/95 p-6 shadow-2xl backdrop-blur-xl animate-fade-in',
+          'relative w-full z-10 max-h-[90vh] overflow-y-auto rounded-2xl border border-slate-200 dark:border-slate-700/80 bg-white dark:bg-slate-950/95 text-slate-900 dark:text-slate-100 p-6 shadow-2xl backdrop-blur-xl animate-fade-in',
           maxWidths[maxWidth]
         )}
       >
-        <div className="flex items-start justify-between pb-4 border-b border-slate-800">
+        <div className="flex items-start justify-between pb-4 border-b border-slate-200 dark:border-slate-800">
           <div>
-            {title && <h3 id="dialog-title" className="text-xl font-bold text-slate-100">{title}</h3>}
-            {description && <p id="dialog-desc" className="text-sm text-slate-400 mt-1">{description}</p>}
+            {title && <h3 id="dialog-title" className="text-xl font-bold text-slate-900 dark:text-slate-100">{title}</h3>}
+            {description && <p id="dialog-desc" className="text-sm text-slate-500 dark:text-slate-400 mt-1">{description}</p>}
           </div>
           <button
             onClick={onClose}
             aria-label="Close dialog"
-            className="p-1 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
+            className="p-1.5 rounded-lg text-slate-400 hover:text-slate-700 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
           >
             <X className="w-5 h-5" />
           </button>

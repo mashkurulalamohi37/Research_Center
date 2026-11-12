@@ -1,16 +1,16 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { 
-  FolderGit2, Calendar, Users, Award, 
-  Github, Globe, ArrowRight, CheckCircle2, 
-  Clock, DollarSign, Layers, BookOpen 
+  Calendar, Award, 
+  Github, CheckCircle2, 
+  Clock, DollarSign, BookOpen 
 } from 'lucide-react';
 import { mockProjects } from '../../data/projects';
 import { mockResearchers } from '../../data/researchers';
 import { mockPublications } from '../../data/publications';
 import { Badge } from '../../components/ui/Badge';
 import { Button } from '../../components/ui/Button';
-import { Card, CardHeader, CardTitle, CardContent } from '../../components/ui/Card';
+import { Card } from '../../components/ui/Card';
 import { useDocumentTitle } from '../../hooks/useDocumentTitle';
 
 export const ProjectDetail: React.FC = () => {
@@ -27,34 +27,34 @@ export const ProjectDetail: React.FC = () => {
     <div className="py-10 space-y-12">
       {/* Project Hero Banner */}
       <section className="container mx-auto px-4 lg:px-8">
-        <div className="relative rounded-3xl overflow-hidden border border-slate-800 bg-slate-900/90 shadow-2xl p-8 sm:p-12">
-          <div className="absolute inset-0 z-0 opacity-20">
+        <div className="relative rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/90 shadow-xl p-8 sm:p-12">
+          <div className="absolute inset-0 z-0 opacity-15">
             <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-r from-navy-950 via-navy-950/80 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent dark:from-navy-950 dark:via-navy-950/80" />
           </div>
 
           <div className="relative z-10 max-w-3xl space-y-4">
             <div className="flex flex-wrap items-center gap-2">
-              <Link to="/projects" className="text-xs text-slate-400 hover:text-cyan-400">Projects</Link>
-              <span className="text-xs text-slate-600">/</span>
+              <Link to="/projects" className="text-xs text-slate-500 hover:text-cyan-700 dark:text-slate-400 dark:hover:text-cyan-400">Projects</Link>
+              <span className="text-xs text-slate-400">/</span>
               <Badge variant={project.status === 'Ongoing' ? 'success' : 'secondary'}>{project.status}</Badge>
-              <span className="text-xs text-cyan-400 font-mono">{project.fundingBody}</span>
+              <span className="text-xs text-cyan-700 dark:text-cyan-400 font-mono font-medium">{project.fundingBody}</span>
             </div>
 
-            <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-100 tracking-tight leading-tight">
+            <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight leading-tight">
               {project.title}
             </h1>
 
-            <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+            <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed">
               {project.description}
             </p>
 
             <div className="pt-4 flex flex-wrap items-center gap-4 text-xs font-mono">
-              <span className="px-3 py-1.5 rounded-xl bg-slate-800/80 border border-slate-700 text-slate-200 flex items-center gap-1.5">
-                <Calendar className="w-3.5 h-3.5 text-cyan-400" />
+              <span className="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 flex items-center gap-1.5">
+                <Calendar className="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-400" />
                 {project.startDate} {project.endDate ? `– ${project.endDate}` : '(Active)'}
               </span>
-              <span className="px-3 py-1.5 rounded-xl bg-slate-800/80 border border-slate-700 text-cyan-400 flex items-center gap-1.5 font-bold">
+              <span className="px-3 py-1.5 rounded-xl bg-cyan-50 dark:bg-slate-800/80 border border-cyan-200 dark:border-slate-700 text-cyan-800 dark:text-cyan-400 flex items-center gap-1.5 font-bold">
                 <DollarSign className="w-3.5 h-3.5" />
                 {project.fundingAmount}
               </span>
@@ -63,9 +63,9 @@ export const ProjectDetail: React.FC = () => {
                   href={project.githubUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-200 hover:text-cyan-400 flex items-center gap-1.5 transition-colors"
+                  className="px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 hover:text-cyan-700 dark:hover:text-cyan-400 flex items-center gap-1.5 transition-colors"
                 >
-                  <Github className="w-3.5 h-3.5 text-purple-400" /> Open Code
+                  <Github className="w-3.5 h-3.5 text-purple-600 dark:text-purple-400" /> Open Code
                 </a>
               )}
             </div>
@@ -79,30 +79,30 @@ export const ProjectDetail: React.FC = () => {
           {/* Left Main Content */}
           <div className="lg:col-span-8 space-y-8">
             {/* Problem Statement */}
-            <Card className="p-8 border-slate-800 bg-slate-900/60 space-y-3">
-              <h3 className="text-lg font-bold text-slate-100 flex items-center gap-2">
+            <Card className="p-8 border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 shadow-xs space-y-3">
+              <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100 flex items-center gap-2">
                 Problem Statement & Research Urgency
               </h3>
-              <p className="text-sm text-slate-300 leading-relaxed">
+              <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
                 {project.problemStatement}
               </p>
             </Card>
 
             {/* Methodology */}
-            <Card className="p-8 border-slate-800 bg-slate-900/60 space-y-3">
-              <h3 className="text-lg font-bold text-slate-100 flex items-center gap-2">
+            <Card className="p-8 border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 shadow-xs space-y-3">
+              <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100 flex items-center gap-2">
                 Technical Methodology & Algorithmic Design
               </h3>
-              <p className="text-sm text-slate-300 leading-relaxed">
+              <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
                 {project.methodology}
               </p>
             </Card>
 
-            {/* Visual Milestones Timeline (Section 29) */}
+            {/* Visual Milestones Timeline */}
             {project.deliverables && project.deliverables.length > 0 && (
-              <Card className="p-8 border-slate-800 bg-slate-900/60 space-y-6">
-                <h3 className="text-lg font-bold text-slate-100 flex items-center gap-2">
-                  <Clock className="w-5 h-5 text-cyan-400" /> Project Milestones & Roadmap
+              <Card className="p-8 border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 shadow-xs space-y-6">
+                <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100 flex items-center gap-2">
+                  <Clock className="w-5 h-5 text-cyan-600 dark:text-cyan-400" /> Project Milestones & Roadmap
                 </h3>
                 <div className="space-y-4">
                   {project.deliverables.map((item, i) => (
@@ -110,16 +110,16 @@ export const ProjectDetail: React.FC = () => {
                       key={i}
                       className={`p-4 rounded-xl border flex items-center justify-between ${
                         item.completed
-                          ? 'border-emerald-500/30 bg-emerald-950/10'
-                          : 'border-slate-800 bg-slate-950/40'
+                          ? 'border-emerald-200 bg-emerald-50/60 dark:border-emerald-500/30 dark:bg-emerald-950/10'
+                          : 'border-slate-200 bg-slate-50 dark:border-slate-800 dark:bg-slate-950/40'
                       }`}
                     >
                       <div className="flex items-center gap-3">
                         <CheckCircle2
-                          className={`w-5 h-5 ${item.completed ? 'text-emerald-400' : 'text-slate-600'}`}
+                          className={`w-5 h-5 ${item.completed ? 'text-emerald-600 dark:text-emerald-400' : 'text-slate-400'}`}
                         />
                         <div>
-                          <h5 className="text-sm font-semibold text-slate-200">{item.title}</h5>
+                          <h5 className="text-sm font-semibold text-slate-900 dark:text-slate-200">{item.title}</h5>
                           <span className="text-xs text-slate-500 font-mono">Target: {item.date}</span>
                         </div>
                       </div>
@@ -133,14 +133,14 @@ export const ProjectDetail: React.FC = () => {
             )}
 
             {/* Concrete Scientific Outcomes */}
-            <Card className="p-8 border-slate-800 bg-slate-900/60 space-y-4">
-              <h3 className="text-lg font-bold text-slate-100 flex items-center gap-2">
-                <Award className="w-5 h-5 text-cyan-400" /> Key Research Deliverables & Outcomes
+            <Card className="p-8 border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 shadow-xs space-y-4">
+              <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100 flex items-center gap-2">
+                <Award className="w-5 h-5 text-cyan-600 dark:text-cyan-400" /> Key Research Deliverables & Outcomes
               </h3>
-              <ul className="space-y-3 text-sm text-slate-300">
+              <ul className="space-y-3 text-sm text-slate-600 dark:text-slate-300">
                 {project.outcomes.map((outcome, i) => (
                   <li key={i} className="flex items-start gap-3">
-                    <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-4 h-4 text-cyan-600 dark:text-cyan-400 shrink-0 mt-0.5" />
                     <span>{outcome}</span>
                   </li>
                 ))}
@@ -149,18 +149,18 @@ export const ProjectDetail: React.FC = () => {
 
             {/* Related Publications */}
             {relatedPubs.length > 0 && (
-              <Card className="p-8 border-slate-800 bg-slate-900/60 space-y-4">
-                <h3 className="text-lg font-bold text-slate-100 flex items-center gap-2">
-                  <BookOpen className="w-5 h-5 text-cyan-400" /> Project Publications
+              <Card className="p-8 border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 shadow-xs space-y-4">
+                <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100 flex items-center gap-2">
+                  <BookOpen className="w-5 h-5 text-cyan-600 dark:text-cyan-400" /> Project Publications
                 </h3>
                 <div className="space-y-3">
                   {relatedPubs.map(pub => (
-                    <div key={pub.id} className="p-4 rounded-xl border border-slate-800 bg-slate-950/60 flex items-center justify-between gap-4">
+                    <div key={pub.id} className="p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950/60 flex items-center justify-between gap-4">
                       <div>
-                        <Link to={`/publications/${pub.slug}`} className="text-sm font-bold text-slate-200 hover:text-cyan-300 transition-colors">
+                        <Link to={`/publications/${pub.slug}`} className="text-sm font-bold text-slate-900 dark:text-slate-200 hover:text-cyan-700 dark:hover:text-cyan-300 transition-colors">
                           {pub.title}
                         </Link>
-                        <p className="text-xs text-slate-400 font-mono mt-0.5">{pub.venue} ({pub.year})</p>
+                        <p className="text-xs text-slate-500 font-mono mt-0.5">{pub.venue} ({pub.year})</p>
                       </div>
                       <Link to={`/publications/${pub.slug}`}>
                         <Button variant="cyan" size="sm">Read</Button>
@@ -176,36 +176,36 @@ export const ProjectDetail: React.FC = () => {
           <div className="lg:col-span-4 space-y-6">
             {/* Principal Investigator */}
             {leadPI && (
-              <Card className="p-6 border-slate-800 bg-slate-900/60 space-y-4">
-                <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider">
+              <Card className="p-6 border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 shadow-xs space-y-4">
+                <h4 className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
                   Principal Investigator
                 </h4>
                 <Link to={`/researchers/${leadPI.slug}`} className="flex items-center gap-3 group">
                   <img src={leadPI.avatar} alt={leadPI.name} className="w-14 h-14 rounded-2xl object-cover border border-cyan-500/40" />
                   <div>
-                    <h5 className="text-sm font-bold text-slate-100 group-hover:text-cyan-300 transition-colors">
+                    <h5 className="text-sm font-bold text-slate-900 dark:text-slate-100 group-hover:text-cyan-700 dark:group-hover:text-cyan-300 transition-colors">
                       {leadPI.name}
                     </h5>
-                    <p className="text-xs text-cyan-400 font-mono">{leadPI.title}</p>
+                    <p className="text-xs text-cyan-700 dark:text-cyan-400 font-mono">{leadPI.title}</p>
                   </div>
                 </Link>
               </Card>
             )}
 
             {/* Team Members */}
-            <Card className="p-6 border-slate-800 bg-slate-900/60 space-y-4">
-              <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider">
+            <Card className="p-6 border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 shadow-xs space-y-4">
+              <h4 className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
                 Investigative Team ({teamMembers.length})
               </h4>
               <div className="space-y-3">
                 {teamMembers.map(member => (
                   <Link key={member.id} to={`/researchers/${member.slug}`} className="flex items-center gap-3 group">
-                    <img src={member.avatar} alt={member.name} className="w-10 h-10 rounded-xl object-cover border border-slate-700" />
+                    <img src={member.avatar} alt={member.name} className="w-10 h-10 rounded-xl object-cover border border-slate-200 dark:border-slate-700" />
                     <div>
-                      <h6 className="text-xs font-bold text-slate-200 group-hover:text-cyan-300 transition-colors">
+                      <h6 className="text-xs font-bold text-slate-900 dark:text-slate-200 group-hover:text-cyan-700 dark:group-hover:text-cyan-300 transition-colors">
                         {member.name}
                       </h6>
-                      <p className="text-[11px] text-slate-400">{member.category}</p>
+                      <p className="text-[11px] text-slate-500 dark:text-slate-400">{member.category}</p>
                     </div>
                   </Link>
                 ))}
@@ -213,13 +213,13 @@ export const ProjectDetail: React.FC = () => {
             </Card>
 
             {/* Technologies */}
-            <Card className="p-6 border-slate-800 bg-slate-900/60 space-y-4">
-              <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider">
+            <Card className="p-6 border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 shadow-xs space-y-4">
+              <h4 className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
                 Technologies & Frameworks
               </h4>
               <div className="flex flex-wrap gap-2">
                 {project.technologies.map(tech => (
-                  <span key={tech} className="px-2.5 py-1 rounded-lg text-xs font-mono bg-slate-800 text-cyan-300 border border-slate-700">
+                  <span key={tech} className="px-2.5 py-1 rounded-lg text-xs font-mono bg-slate-100 dark:bg-slate-800 text-cyan-800 dark:text-cyan-300 border border-slate-200 dark:border-slate-700">
                     {tech}
                   </span>
                 ))}

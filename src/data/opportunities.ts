@@ -8,12 +8,12 @@ export const mockOpportunities: Opportunity[] = [
     type: 'Fellowship',
     researchAreaId: 'ai-core',
     supervisorId: 'dr-sarah-lin',
-    location: 'AIRC Main Campus (Cambridge / Boston)',
+    location: 'IRICC Main Campus (Cambridge / Boston)',
     duration: '2 Years (Renewable up to 3 Years)',
     stipend: '$85,000 – $95,000 / year + Full Benefits & Compute Allocation',
     deadline: '2026-10-31',
     status: 'Open',
-    overview: 'The AIRC AI Foundations Lab is inviting applications for a fully-funded Postdoctoral Research Fellow to investigate differentiable formal methods, certified bounds in large foundation models, and verifiable agentic decision making under the direction of Prof. Sarah Lin.',
+    overview: 'The IRICC AI Foundations Lab is inviting applications for a fully-funded Postdoctoral Research Fellow to investigate differentiable formal methods, certified bounds in large foundation models, and verifiable agentic decision making under the direction of Prof. Sarah Lin.',
     eligibility: [
       'Ph.D. in Computer Science, Applied Mathematics, Computational Linguistics, or related field earned within the last 3 years.',
       'Demonstrated first-author publication track record at top-tier venues (NeurIPS, ICML, ICLR, AAAI, IJCAI, CAV, POPL).',
@@ -22,7 +22,7 @@ export const mockOpportunities: Opportunity[] = [
     ],
     requirements: [
       'Curriculum Vitae including complete publication list and Google Scholar link.',
-      '2-page Research Statement detailing alignment with AIRC Neuro-Symbolic objectives.',
+      '2-page Research Statement detailing alignment with IRICC Neuro-Symbolic objectives.',
       '3 Letters of Recommendation submitted directly by referees.',
       'Up to 3 representative published papers.'
     ],
@@ -48,7 +48,7 @@ export const mockOpportunities: Opportunity[] = [
     type: 'Graduate Research',
     researchAreaId: 'computer-vision',
     supervisorId: 'dr-marcus-vance',
-    location: 'AIRC Main Campus & University Hospital Surgical Center',
+    location: 'IRICC Main Campus & University Hospital Surgical Center',
     duration: '4-5 Years (Full Tuition Waiver + Living Stipend)',
     stipend: '$44,000 / year + Full Tuition Coverage & Health Insurance',
     deadline: '2026-11-15',
@@ -71,7 +71,7 @@ export const mockOpportunities: Opportunity[] = [
       'Publish at CVPR, ICCV, ECCV, and MICCAI.'
     ],
     applicationProcess: [
-      'Submit AIRC graduate assistantship application.',
+      'Submit IRICC graduate assistantship application.',
       'Faculty interview with Dr. Marcus Vance.',
       'Coding assessment and research presentation.'
     ],
@@ -85,7 +85,7 @@ export const mockOpportunities: Opportunity[] = [
     type: 'Internship',
     researchAreaId: 'robotics-autonomous',
     supervisorId: 'dr-kenji-takahashi',
-    location: 'AIRC Robotics Pavilion',
+    location: 'IRICC Robotics Pavilion',
     duration: '12 Weeks (Summer 2027)',
     stipend: '$9,000 / month + Housing Allowance',
     deadline: '2026-12-01',
@@ -121,7 +121,7 @@ export const mockOpportunities: Opportunity[] = [
     type: 'Undergraduate Research',
     researchAreaId: 'cybersecurity-ai',
     supervisorId: 'dr-alexander-weiss',
-    location: 'AIRC Cyber Wing (Hybrid)',
+    location: 'IRICC Cyber Wing (Hybrid)',
     duration: 'Academic Year 2026-2027 (15 hrs/week)',
     stipend: '$24.00 / hour',
     deadline: '2026-09-15',
@@ -141,7 +141,7 @@ export const mockOpportunities: Opportunity[] = [
       'Contribute to our open-source ShieldAI security framework.'
     ],
     applicationProcess: [
-      'Direct online submission through the AIRC Opportunities portal.'
+      'Direct online submission through the IRICC Opportunities portal.'
     ],
     featured: false,
     postedDate: '2026-08-18'

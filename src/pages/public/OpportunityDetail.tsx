@@ -43,7 +43,6 @@ export const OpportunityDetail: React.FC = () => {
     const file = e.target.files?.[0];
     if (!file) return;
 
-    // Check size limit: 25MB
     if (file.size > 25 * 1024 * 1024) {
       error('File Size Exceeded', 'The attached file exceeds the 25MB size limit.');
       e.target.value = '';
@@ -51,7 +50,6 @@ export const OpportunityDetail: React.FC = () => {
       return;
     }
 
-    // Check format
     const validExtensions = ['.pdf', '.doc', '.docx'];
     const hasValidExtension = validExtensions.some(ext => file.name.toLowerCase().endsWith(ext));
     if (!hasValidExtension) {
@@ -113,52 +111,52 @@ export const OpportunityDetail: React.FC = () => {
     <div className="py-10 space-y-12">
       {/* Top Back Nav */}
       <div className="container mx-auto px-4 lg:px-8 max-w-4xl">
-        <Link to="/opportunities" className="inline-flex items-center gap-1.5 text-xs text-slate-400 hover:text-cyan-400 font-mono transition-colors">
+        <Link to="/opportunities" className="inline-flex items-center gap-1.5 text-xs text-slate-500 hover:text-cyan-600 dark:text-slate-400 dark:hover:text-cyan-400 font-mono transition-colors">
           <ArrowLeft className="w-3.5 h-3.5" /> Back to Opportunities & Fellowships
         </Link>
       </div>
 
       {/* Main Header Banner */}
       <section className="container mx-auto px-4 lg:px-8 max-w-4xl">
-        <div className="p-8 sm:p-12 rounded-3xl border border-slate-800 bg-slate-900/90 shadow-2xl backdrop-blur-xl space-y-6">
+        <div className="p-8 sm:p-12 rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/90 shadow-xl dark:shadow-2xl backdrop-blur-xl space-y-6">
           <div className="flex flex-wrap items-center gap-2">
             <Badge variant="cyan">{opp.type}</Badge>
             <Badge variant={opp.status === 'Open' ? 'success' : 'secondary'}>{opp.status}</Badge>
-            <span className="text-xs text-emerald-400 font-mono font-semibold">Deadline: {opp.deadline}</span>
+            <span className="text-xs text-emerald-600 dark:text-emerald-400 font-mono font-semibold">Deadline: {opp.deadline}</span>
           </div>
 
-          <h1 className="text-2xl sm:text-4xl font-extrabold text-slate-100 tracking-tight leading-snug">
+          <h1 className="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight leading-snug">
             {opp.title}
           </h1>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 p-5 rounded-2xl bg-slate-950/60 border border-slate-800 text-xs font-mono">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 p-5 rounded-2xl bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 text-xs font-mono">
             <div className="flex items-center gap-2.5">
-              <MapPin className="w-4 h-4 text-cyan-400 shrink-0" />
+              <MapPin className="w-4 h-4 text-cyan-600 dark:text-cyan-400 shrink-0" />
               <div>
-                <span className="text-slate-500 block">Location</span>
-                <strong className="text-slate-200">{opp.location}</strong>
+                <span className="text-slate-500 dark:text-slate-400 block">Location</span>
+                <strong className="text-slate-800 dark:text-slate-200">{opp.location}</strong>
               </div>
             </div>
             <div className="flex items-center gap-2.5">
-              <Clock className="w-4 h-4 text-cyan-400 shrink-0" />
+              <Clock className="w-4 h-4 text-cyan-600 dark:text-cyan-400 shrink-0" />
               <div>
-                <span className="text-slate-500 block">Duration</span>
-                <strong className="text-slate-200">{opp.duration}</strong>
+                <span className="text-slate-500 dark:text-slate-400 block">Duration</span>
+                <strong className="text-slate-800 dark:text-slate-200">{opp.duration}</strong>
               </div>
             </div>
             <div className="flex items-center gap-2.5">
-              <DollarSign className="w-4 h-4 text-emerald-400 shrink-0" />
+              <DollarSign className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
               <div>
-                <span className="text-slate-500 block">Compensation / Grant</span>
-                <strong className="text-emerald-400">{opp.stipend || 'Competitive'}</strong>
+                <span className="text-slate-500 dark:text-slate-400 block">Compensation / Grant</span>
+                <strong className="text-emerald-600 dark:text-emerald-400">{opp.stipend || 'Competitive'}</strong>
               </div>
             </div>
           </div>
 
-          <div className="pt-2 flex items-center justify-between border-t border-slate-800">
+          <div className="pt-2 flex flex-wrap items-center justify-between gap-4 border-t border-slate-200 dark:border-slate-800">
             {supervisor && (
-              <span className="text-xs text-slate-400">
-                Primary Mentor: <Link to={`/researchers/${supervisor.slug}`} className="text-cyan-400 font-semibold hover:underline">{supervisor.name}</Link>
+              <span className="text-xs text-slate-600 dark:text-slate-400">
+                Primary Mentor: <Link to={`/researchers/${supervisor.slug}`} className="text-cyan-600 dark:text-cyan-400 font-semibold hover:underline">{supervisor.name}</Link>
               </span>
             )}
             <Button variant="cyan" size="lg" onClick={() => setApplyModalOpen(true)}>
@@ -171,20 +169,20 @@ export const OpportunityDetail: React.FC = () => {
       {/* Main Content Sections */}
       <section className="container mx-auto px-4 lg:px-8 max-w-4xl space-y-8">
         {/* Overview */}
-        <Card className="p-8 sm:p-10 border-slate-800 bg-slate-900/60 space-y-4">
-          <h3 className="text-lg font-bold text-slate-100">Position Overview</h3>
-          <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+        <Card className="p-8 sm:p-10 border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 shadow-md space-y-4">
+          <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100">Position Overview</h3>
+          <p className="text-slate-700 dark:text-slate-300 text-sm sm:text-base leading-relaxed">
             {opp.overview}
           </p>
         </Card>
 
         {/* Eligibility */}
-        <Card className="p-8 sm:p-10 border-slate-800 bg-slate-900/60 space-y-4">
-          <h3 className="text-lg font-bold text-slate-100">Eligibility Criteria</h3>
-          <ul className="space-y-3 text-sm text-slate-300">
+        <Card className="p-8 sm:p-10 border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 shadow-md space-y-4">
+          <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100">Eligibility Criteria</h3>
+          <ul className="space-y-3 text-sm text-slate-700 dark:text-slate-300">
             {opp.eligibility.map((item, i) => (
               <li key={i} className="flex items-start gap-3">
-                <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                <CheckCircle2 className="w-4 h-4 text-cyan-600 dark:text-cyan-400 shrink-0 mt-0.5" />
                 <span>{item}</span>
               </li>
             ))}
@@ -192,12 +190,12 @@ export const OpportunityDetail: React.FC = () => {
         </Card>
 
         {/* Requirements */}
-        <Card className="p-8 sm:p-10 border-slate-800 bg-slate-900/60 space-y-4">
-          <h3 className="text-lg font-bold text-slate-100">Dossier & Application Requirements</h3>
-          <ul className="space-y-3 text-sm text-slate-300">
+        <Card className="p-8 sm:p-10 border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 shadow-md space-y-4">
+          <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100">Dossier & Application Requirements</h3>
+          <ul className="space-y-3 text-sm text-slate-700 dark:text-slate-300">
             {opp.requirements.map((item, i) => (
               <li key={i} className="flex items-start gap-3">
-                <FileText className="w-4 h-4 text-purple-400 shrink-0 mt-0.5" />
+                <FileText className="w-4 h-4 text-purple-600 dark:text-purple-400 shrink-0 mt-0.5" />
                 <span>{item}</span>
               </li>
             ))}
@@ -205,12 +203,12 @@ export const OpportunityDetail: React.FC = () => {
         </Card>
 
         {/* Responsibilities */}
-        <Card className="p-8 sm:p-10 border-slate-800 bg-slate-900/60 space-y-4">
-          <h3 className="text-lg font-bold text-slate-100">Core Responsibilities</h3>
-          <ul className="space-y-3 text-sm text-slate-300">
+        <Card className="p-8 sm:p-10 border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 shadow-md space-y-4">
+          <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100">Core Responsibilities</h3>
+          <ul className="space-y-3 text-sm text-slate-700 dark:text-slate-300">
             {opp.responsibilities.map((item, i) => (
               <li key={i} className="flex items-start gap-3">
-                <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5" />
                 <span>{item}</span>
               </li>
             ))}
@@ -218,15 +216,15 @@ export const OpportunityDetail: React.FC = () => {
         </Card>
 
         {/* Application Process */}
-        <Card className="p-8 sm:p-10 border-slate-800 bg-slate-900/60 space-y-4">
-          <h3 className="text-lg font-bold text-slate-100">Evaluation & Selection Process</h3>
+        <Card className="p-8 sm:p-10 border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 shadow-md space-y-4">
+          <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100">Evaluation & Selection Process</h3>
           <div className="space-y-3">
             {opp.applicationProcess.map((step, i) => (
-              <div key={i} className="p-3.5 rounded-xl border border-slate-800 bg-slate-950/60 flex items-center gap-3">
-                <span className="w-6 h-6 rounded-lg bg-cyan-500/10 text-cyan-400 flex items-center justify-center font-bold text-xs shrink-0 font-mono">
+              <div key={i} className="p-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950/60 flex items-center gap-3">
+                <span className="w-6 h-6 rounded-lg bg-cyan-100 text-cyan-800 dark:bg-cyan-500/10 dark:text-cyan-400 flex items-center justify-center font-bold text-xs shrink-0 font-mono">
                   {i + 1}
                 </span>
-                <span className="text-xs sm:text-sm text-slate-200">{step}</span>
+                <span className="text-xs sm:text-sm text-slate-800 dark:text-slate-200">{step}</span>
               </div>
             ))}
           </div>
@@ -244,7 +242,7 @@ export const OpportunityDetail: React.FC = () => {
         <form onSubmit={handleSubmitApplication} className="space-y-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="text-xs font-semibold text-slate-300 block mb-1">Full Legal Name *</label>
+              <label className="text-xs font-semibold text-slate-700 dark:text-slate-300 block mb-1">Full Legal Name *</label>
               <Input
                 required
                 value={formData.applicantName}
@@ -253,7 +251,7 @@ export const OpportunityDetail: React.FC = () => {
               />
             </div>
             <div>
-              <label className="text-xs font-semibold text-slate-300 block mb-1">Email Address *</label>
+              <label className="text-xs font-semibold text-slate-700 dark:text-slate-300 block mb-1">Email Address *</label>
               <Input
                 type="email"
                 required
@@ -266,7 +264,7 @@ export const OpportunityDetail: React.FC = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div>
-              <label className="text-xs font-semibold text-slate-300 block mb-1">Phone Number</label>
+              <label className="text-xs font-semibold text-slate-700 dark:text-slate-300 block mb-1">Phone Number</label>
               <Input
                 value={formData.applicantPhone}
                 onChange={e => setFormData({ ...formData, applicantPhone: e.target.value })}
@@ -274,7 +272,7 @@ export const OpportunityDetail: React.FC = () => {
               />
             </div>
             <div>
-              <label className="text-xs font-semibold text-slate-300 block mb-1">Current Institution *</label>
+              <label className="text-xs font-semibold text-slate-700 dark:text-slate-300 block mb-1">Current Institution *</label>
               <Input
                 required
                 value={formData.currentInstitution}
@@ -283,7 +281,7 @@ export const OpportunityDetail: React.FC = () => {
               />
             </div>
             <div>
-              <label className="text-xs font-semibold text-slate-300 block mb-1">Degree Level *</label>
+              <label className="text-xs font-semibold text-slate-700 dark:text-slate-300 block mb-1">Degree Level *</label>
               <Select
                 value={formData.degreeLevel}
                 onChange={e => setFormData({ ...formData, degreeLevel: e.target.value })}
@@ -297,7 +295,7 @@ export const OpportunityDetail: React.FC = () => {
           </div>
 
           <div>
-            <label className="text-xs font-semibold text-slate-300 block mb-1">
+            <label className="text-xs font-semibold text-slate-700 dark:text-slate-300 block mb-1">
               Statement of Purpose & Research Alignment (Brief) *
             </label>
             <Textarea
@@ -305,12 +303,12 @@ export const OpportunityDetail: React.FC = () => {
               rows={4}
               value={formData.statementOfPurpose}
               onChange={e => setFormData({ ...formData, statementOfPurpose: e.target.value })}
-              placeholder="Outline your research background, technical skills, and why your interests align with AIRC..."
+              placeholder="Outline your research background, technical skills, and why your interests align with IRICC..."
             />
           </div>
 
           {/* Validated File Upload */}
-          <div className="relative p-5 rounded-2xl border border-dashed border-slate-700 bg-slate-950/60 text-center space-y-2 hover:border-cyan-500/40 transition-colors">
+          <div className="relative p-5 rounded-2xl border border-dashed border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-950/60 text-center space-y-2 hover:border-cyan-500/50 transition-colors">
             <input
               type="file"
               accept=".pdf,.doc,.docx"
@@ -318,20 +316,20 @@ export const OpportunityDetail: React.FC = () => {
               className="absolute inset-0 opacity-0 cursor-pointer w-full h-full"
             />
             {cvFileName ? (
-              <div className="flex items-center justify-center gap-2 text-emerald-400 font-mono text-xs">
+              <div className="flex items-center justify-center gap-2 text-emerald-600 dark:text-emerald-400 font-mono text-xs">
                 <Check className="w-4 h-4" />
                 <span>{cvFileName}</span>
               </div>
             ) : (
               <>
-                <Upload className="w-6 h-6 text-cyan-400 mx-auto" />
-                <p className="text-xs font-semibold text-slate-200">Click or Drag & Drop Curriculum Vitae & Publications</p>
+                <Upload className="w-6 h-6 text-cyan-600 dark:text-cyan-400 mx-auto" />
+                <p className="text-xs font-semibold text-slate-800 dark:text-slate-200">Click or Drag & Drop Curriculum Vitae & Publications</p>
                 <p className="text-[11px] text-slate-500">PDF, DOC, DOCX up to 25MB</p>
               </>
             )}
           </div>
 
-          <div className="pt-3 flex items-center justify-end gap-3 border-t border-slate-800">
+          <div className="pt-3 flex items-center justify-end gap-3 border-t border-slate-200 dark:border-slate-800">
             <Button variant="outline" size="sm" type="button" onClick={() => setApplyModalOpen(false)}>
               Cancel
             </Button>

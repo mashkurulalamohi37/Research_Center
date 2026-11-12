@@ -20,7 +20,7 @@ const API_BASE_URL = ((import.meta as any).env?.VITE_API_URL as string) || '/api
 // Helper for backend requests with automatic fallback
 async function fetchWithFallback<T>(endpoint: string, fallbackData: T): Promise<T> {
   try {
-    const token = localStorage.getItem('airc_access_token');
+    const token = localStorage.getItem('iricc_access_token');
     const headers: Record<string, string> = {
       'Content-Type': 'application/json',
     };

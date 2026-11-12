@@ -5,17 +5,17 @@ import json
 
 
 class Settings(BaseSettings):
-    PROJECT_NAME: str = "Advanced Intelligent Research Center API"
+    PROJECT_NAME: str = "International Research and Innovation and Commercialization Center API"
     VERSION: str = "1.0.0"
     API_V1_STR: str = "/api/v1"
     
-    SECRET_KEY: str = "airc_super_secret_production_jwt_signing_key_change_in_prod"
-    REFRESH_SECRET_KEY: str = "airc_super_secret_refresh_token_key_change_in_prod"
+    SECRET_KEY: str = "iricc_super_secret_production_jwt_signing_key_change_in_prod"
+    REFRESH_SECRET_KEY: str = "iricc_super_secret_refresh_token_key_change_in_prod"
     ALGORITHM: str = "HS256"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 1440
     REFRESH_TOKEN_EXPIRE_DAYS: int = 7
     
-    DATABASE_URL: str = "sqlite+aiosqlite:///./airc.db"
+    DATABASE_URL: str = "sqlite+aiosqlite:///./iricc.db"
     
     CORS_ORIGINS: List[str] = [
         "http://localhost:5173",

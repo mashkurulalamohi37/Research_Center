@@ -12,8 +12,10 @@ import { Card } from '../../components/ui/Card';
 import { Dialog } from '../../components/ui/Dialog';
 import { Input, Textarea, Select } from '../../components/ui/Input';
 import { useToast } from '../../context/ToastContext';
+import { useDocumentTitle } from '../../hooks/useDocumentTitle';
 
 export const AdminResearchers: React.FC = () => {
+  useDocumentTitle('Researchers & Faculty — Admin');
   const [researchers, setResearchers] = useState<Researcher[]>(mockResearchers);
   const [searchTerm, setSearchTerm] = useState('');
   const [categoryFilter, setCategoryFilter] = useState<string>('all');
@@ -148,10 +150,10 @@ export const AdminResearchers: React.FC = () => {
       {/* Header Bar */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-extrabold text-slate-100 tracking-tight">
+          <h1 className="text-2xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight">
             Researchers & Faculty Management
           </h1>
-          <p className="text-xs text-slate-400 font-mono mt-0.5">
+          <p className="text-xs text-slate-500 dark:text-slate-400 font-mono mt-0.5">
             Maintain faculty appointments, postdoctoral appointments, and student allocations.
           </p>
         </div>
@@ -162,7 +164,7 @@ export const AdminResearchers: React.FC = () => {
       </div>
 
       {/* Filter Bar */}
-      <div className="p-4 rounded-2xl border border-slate-800 bg-slate-900/60 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div className="p-4 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4">
         <div className="relative w-full sm:w-80">
           <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
           <input
@@ -170,14 +172,14 @@ export const AdminResearchers: React.FC = () => {
             value={searchTerm}
             onChange={e => setSearchTerm(e.target.value)}
             placeholder="Search faculty by name or department..."
-            className="w-full h-10 pl-10 pr-3 rounded-xl bg-slate-950 border border-slate-700 text-slate-100 placeholder:text-slate-500 text-xs focus:outline-none focus:border-cyan-400"
+            className="w-full h-10 pl-10 pr-3 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 text-xs focus:outline-none focus:border-cyan-500 shadow-sm"
           />
         </div>
 
         <select
           value={categoryFilter}
           onChange={e => setCategoryFilter(e.target.value)}
-          className="h-10 px-3 rounded-xl bg-slate-950 border border-slate-700 text-slate-200 text-xs focus:outline-none focus:border-cyan-400 w-full sm:w-auto"
+          className="h-10 px-3 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-slate-200 text-xs focus:outline-none focus:border-cyan-500 w-full sm:w-auto shadow-sm"
         >
           <option value="all">All Positions</option>
           <option value="faculty">Faculty & PIs</option>
@@ -186,11 +188,11 @@ export const AdminResearchers: React.FC = () => {
         </select>
       </div>
 
-      {/* Table (Section 51) */}
-      <Card className="border-slate-800 bg-slate-900/60 overflow-hidden shadow-xl">
+      {/* Table */}
+      <Card className="border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 overflow-hidden shadow-md">
         <div className="overflow-x-auto">
           <table className="w-full text-left text-xs">
-            <thead className="bg-slate-950/80 border-b border-slate-800 text-slate-400 font-mono uppercase tracking-wider">
+            <thead className="bg-slate-50 dark:bg-slate-950/80 border-b border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 font-mono uppercase tracking-wider">
               <tr>
                 <th className="p-4">Faculty Member</th>
                 <th className="p-4">Position / Department</th>
@@ -199,25 +201,25 @@ export const AdminResearchers: React.FC = () => {
                 <th className="p-4 text-right">Actions</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-800/60">
+            <tbody className="divide-y divide-slate-100 dark:divide-slate-800/60">
               {filteredResearchers.map(r => (
-                <tr key={r.id} className="hover:bg-slate-800/40 transition-colors">
+                <tr key={r.id} className="hover:bg-slate-50 dark:hover:bg-slate-800/40 transition-colors">
                   <td className="p-4">
                     <div className="flex items-center gap-3">
-                      <img src={r.avatar} alt={r.name} className="w-10 h-10 rounded-xl object-cover border border-slate-700" />
+                      <img src={r.avatar} alt={r.name} className="w-10 h-10 rounded-xl object-cover border border-slate-200 dark:border-slate-700" />
                       <div>
-                        <div className="font-bold text-slate-200">{r.name}</div>
+                        <div className="font-bold text-slate-900 dark:text-slate-200">{r.name}</div>
                         <div className="text-slate-500 text-[11px] font-mono">{r.email}</div>
                       </div>
                     </div>
                   </td>
                   <td className="p-4">
-                    <div className="font-medium text-slate-300">{r.title}</div>
+                    <div className="font-medium text-slate-800 dark:text-slate-300">{r.title}</div>
                     <div className="text-slate-500 text-[11px]">{r.department}</div>
                   </td>
                   <td className="p-4 font-mono">
-                    <div className="text-slate-200">{r.citations.toLocaleString()} Citations</div>
-                    <div className="text-cyan-400">h-index: {r.hIndex}</div>
+                    <div className="text-slate-900 dark:text-slate-200">{r.citations.toLocaleString()} Citations</div>
+                    <div className="text-cyan-600 dark:text-cyan-400 font-semibold">h-index: {r.hIndex}</div>
                   </td>
                   <td className="p-4">
                     <button onClick={() => toggleStatus(r.id)}>
@@ -234,7 +236,7 @@ export const AdminResearchers: React.FC = () => {
                       variant="ghost"
                       size="sm"
                       onClick={() => handleDelete(r.id)}
-                      className="text-red-400 hover:text-red-300 hover:bg-red-500/10"
+                      className="text-red-500 dark:text-red-400 hover:text-red-600 hover:bg-red-500/10"
                     >
                       <Trash2 className="w-3.5 h-3.5" />
                     </Button>
@@ -257,7 +259,7 @@ export const AdminResearchers: React.FC = () => {
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="text-xs font-semibold text-slate-300 block mb-1">Full Legal Name *</label>
+              <label className="text-xs font-semibold text-slate-700 dark:text-slate-300 block mb-1">Full Legal Name *</label>
               <Input
                 required
                 value={formState.name}
@@ -266,7 +268,7 @@ export const AdminResearchers: React.FC = () => {
               />
             </div>
             <div>
-              <label className="text-xs font-semibold text-slate-300 block mb-1">Title / Designation *</label>
+              <label className="text-xs font-semibold text-slate-700 dark:text-slate-300 block mb-1">Title / Designation *</label>
               <Input
                 required
                 value={formState.title}
@@ -278,7 +280,7 @@ export const AdminResearchers: React.FC = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div>
-              <label className="text-xs font-semibold text-slate-300 block mb-1">Position Category</label>
+              <label className="text-xs font-semibold text-slate-700 dark:text-slate-300 block mb-1">Position Category</label>
               <Select
                 value={formState.category}
                 onChange={e => setFormState({ ...formState, category: e.target.value as any })}
@@ -290,17 +292,17 @@ export const AdminResearchers: React.FC = () => {
               </Select>
             </div>
             <div>
-              <label className="text-xs font-semibold text-slate-300 block mb-1">Institutional Email *</label>
+              <label className="text-xs font-semibold text-slate-700 dark:text-slate-300 block mb-1">Institutional Email *</label>
               <Input
                 type="email"
                 required
                 value={formState.email}
                 onChange={e => setFormState({ ...formState, email: e.target.value })}
-                placeholder="j.doe@airc.research.edu"
+                placeholder="j.doe@iricc.org"
               />
             </div>
             <div>
-              <label className="text-xs font-semibold text-slate-300 block mb-1">Office / Lab Suite</label>
+              <label className="text-xs font-semibold text-slate-700 dark:text-slate-300 block mb-1">Office / Lab Suite</label>
               <Input
                 value={formState.office}
                 onChange={e => setFormState({ ...formState, office: e.target.value })}
@@ -309,7 +311,7 @@ export const AdminResearchers: React.FC = () => {
           </div>
 
           <div>
-            <label className="text-xs font-semibold text-slate-300 block mb-1">Academic Department</label>
+            <label className="text-xs font-semibold text-slate-700 dark:text-slate-300 block mb-1">Academic Department</label>
             <Input
               value={formState.department}
               onChange={e => setFormState({ ...formState, department: e.target.value })}
@@ -317,7 +319,7 @@ export const AdminResearchers: React.FC = () => {
           </div>
 
           <div>
-            <label className="text-xs font-semibold text-slate-300 block mb-1">Expertise (comma-separated)</label>
+            <label className="text-xs font-semibold text-slate-700 dark:text-slate-300 block mb-1">Expertise (comma-separated)</label>
             <Input
               value={formState.expertise}
               onChange={e => setFormState({ ...formState, expertise: e.target.value })}
@@ -325,7 +327,7 @@ export const AdminResearchers: React.FC = () => {
           </div>
 
           <div>
-            <label className="text-xs font-semibold text-slate-300 block mb-1">Biography</label>
+            <label className="text-xs font-semibold text-slate-700 dark:text-slate-300 block mb-1">Biography</label>
             <Textarea
               rows={4}
               value={formState.bio}
@@ -334,7 +336,7 @@ export const AdminResearchers: React.FC = () => {
             />
           </div>
 
-          <div className="pt-3 flex items-center justify-end gap-3 border-t border-slate-800">
+          <div className="pt-3 flex items-center justify-end gap-3 border-t border-slate-200 dark:border-slate-800">
             <Button variant="outline" size="sm" type="button" onClick={() => setModalOpen(false)}>
               Cancel
             </Button>

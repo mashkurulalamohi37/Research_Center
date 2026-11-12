@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
-import { Atom, Lock, Mail, ArrowRight, Shield, UserCheck, Sparkles } from 'lucide-react';
+import { Atom, Shield, UserCheck } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 import { Button } from '../../components/ui/Button';
 import { Input } from '../../components/ui/Input';
-import { Badge } from '../../components/ui/Badge';
 import { useToast } from '../../context/ToastContext';
+import { useDocumentTitle } from '../../hooks/useDocumentTitle';
 
 export const Login: React.FC = () => {
+  useDocumentTitle('Staff & Faculty Sign In');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -29,7 +30,7 @@ export const Login: React.FC = () => {
     try {
       await login(email);
       setIsLoading(false);
-      success('Authentication Successful', `Welcome back to the AIRC Portal.`);
+      success('Authentication Successful', `Welcome back to the IRICC Portal.`);
       if (email.toLowerCase().includes('admin')) {
         navigate('/admin');
       } else {
@@ -43,7 +44,7 @@ export const Login: React.FC = () => {
 
   const handleQuickLogin = (role: 'researcher' | 'admin') => {
     switchRole(role);
-    success(`Logged in as ${role === 'admin' ? 'Institute Director' : 'Faculty Investigator'}`);
+    success(`Logged in as ${role === 'admin' ? 'Center Director' : 'Faculty Investigator'}`);
     navigate(role === 'admin' ? '/admin' : '/dashboard');
   };
 
@@ -51,28 +52,30 @@ export const Login: React.FC = () => {
     <div className="min-h-[80vh] flex items-center justify-center py-12 px-4">
       <div className="w-full max-w-md space-y-6">
         {/* Brand Header */}
-        <div className="text-center space-y-2">
-          <Link to="/" className="inline-flex items-center gap-2 mb-2">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 p-0.5 flex items-center justify-center">
-              <div className="w-full h-full bg-navy-950 rounded-[10px] flex items-center justify-center">
-                <Atom className="w-5 h-5 text-cyan-400" />
-              </div>
-            </div>
-            <span className="text-2xl font-black text-slate-100 tracking-wider">AIRC</span>
+        <div className="text-center space-y-3">
+          <Link to="/" className="inline-flex flex-col items-center gap-2 mb-2 group">
+            <img
+              src="/iricc-logo.jpg"
+              alt="IRICC Official Seal"
+              width="64"
+              height="64"
+              className="w-16 h-16 rounded-full object-cover shadow-md ring-2 ring-amber-400/50 group-hover:ring-amber-500/80 transition-all duration-300"
+            />
+            <span className="text-2xl font-black text-slate-900 dark:text-slate-100 tracking-wider font-sans">IRICC</span>
           </Link>
-          <h2 className="text-2xl font-extrabold text-slate-100 tracking-tight">
+          <h2 className="text-2xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight">
             Institutional Single Sign-On
           </h2>
-          <p className="text-xs text-slate-400">
-            Sign in to access Researcher Lab Space or Administrative Controls.
+          <p className="text-xs text-slate-500 dark:text-slate-400">
+            Sign in to access Researcher Lab Space, IP Portfolio, or Administrative Controls.
           </p>
         </div>
 
         {/* Login Card */}
-        <div className="p-8 rounded-3xl border border-slate-800 bg-slate-900/90 shadow-2xl backdrop-blur-xl space-y-6">
+        <div className="p-8 rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/90 shadow-xl backdrop-blur-xl space-y-6">
           <form onSubmit={handleLogin} className="space-y-4">
             <div>
-              <label className="text-xs font-semibold text-slate-300 block mb-1">
+              <label className="text-xs font-semibold text-slate-700 dark:text-slate-300 block mb-1">
                 Institutional Email Address
               </label>
               <Input
@@ -80,14 +83,14 @@ export const Login: React.FC = () => {
                 required
                 value={email}
                 onChange={e => setEmail(e.target.value)}
-                placeholder="faculty@airc.research.edu"
+                placeholder="faculty@iricc.org"
               />
             </div>
 
             <div>
               <div className="flex items-center justify-between mb-1">
-                <label className="text-xs font-semibold text-slate-300">Password</label>
-                <Link to="/forgot-password" className="text-[11px] text-cyan-400 hover:underline">
+                <label className="text-xs font-semibold text-slate-700 dark:text-slate-300">Password</label>
+                <Link to="/forgot-password" className="text-[11px] text-cyan-600 dark:text-cyan-400 hover:underline">
                   Forgot Password?
                 </Link>
               </div>
@@ -100,36 +103,34 @@ export const Login: React.FC = () => {
               />
             </div>
 
-            <div className="pt-2">
-              <Button variant="cyan" size="lg" className="w-full" type="submit" isLoading={isLoading}>
-                Sign In to Portal <ArrowRight className="w-4 h-4 ml-1" />
-              </Button>
-            </div>
+            <Button variant="cyan" size="lg" type="submit" className="w-full" isLoading={isLoading}>
+              Sign In to IRICC Console
+            </Button>
           </form>
 
-          {/* Quick Demo Role Switcher */}
-          <div className="pt-4 border-t border-slate-800/80 space-y-3">
-            <div className="text-[11px] font-bold text-slate-500 uppercase tracking-wider text-center font-mono">
-              Quick Prototype Demo Presets
+          {/* Quick Demo Switcher Buttons */}
+          <div className="pt-4 border-t border-slate-200 dark:border-slate-800 space-y-3">
+            <div className="text-[11px] font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider text-center font-mono">
+              Demo Instant Access
             </div>
-            <div className="grid grid-cols-2 gap-2">
+            <div className="grid grid-cols-2 gap-2.5">
               <Button
                 variant="outline"
                 size="sm"
                 onClick={() => handleQuickLogin('researcher')}
-                className="text-xs flex items-center justify-center gap-1.5"
+                className="text-xs flex items-center justify-center gap-1.5 border-cyan-500/30 text-cyan-700 dark:text-cyan-400"
               >
-                <UserCheck className="w-3.5 h-3.5 text-cyan-400" />
-                Researcher
+                <UserCheck className="w-3.5 h-3.5" />
+                Faculty Login
               </Button>
               <Button
                 variant="outline"
                 size="sm"
                 onClick={() => handleQuickLogin('admin')}
-                className="text-xs flex items-center justify-center gap-1.5"
+                className="text-xs flex items-center justify-center gap-1.5 border-purple-500/30 text-purple-700 dark:text-purple-400"
               >
-                <Shield className="w-3.5 h-3.5 text-purple-400" />
-                Admin Director
+                <Shield className="w-3.5 h-3.5" />
+                Director Admin
               </Button>
             </div>
           </div>
