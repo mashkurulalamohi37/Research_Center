@@ -73,36 +73,41 @@ export const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Col 2: Research Areas */}
+          {/* Col 2: 10 Institutional Hubs */}
           <div>
-            <h4 className="text-xs font-bold text-slate-900 dark:text-slate-100 uppercase tracking-wider mb-4">
-              Research Disciplines
+            <h4 className="text-xs font-bold text-slate-900 dark:text-slate-100 uppercase tracking-wider mb-4 font-mono">
+              10 Institutional Hubs
             </h4>
-            <ul className="space-y-2.5">
-              <li><Link to="/research/artificial-intelligence" className="hover:text-cyan-700 dark:hover:text-cyan-400 transition-colors">AI Foundations & Logic</Link></li>
-              <li><Link to="/research/computer-vision" className="hover:text-cyan-700 dark:hover:text-cyan-400 transition-colors">Computer Vision & 3D</Link></li>
-              <li><Link to="/research/natural-language-processing" className="hover:text-cyan-700 dark:hover:text-cyan-400 transition-colors">NLP & Generative Systems</Link></li>
-              <li><Link to="/research/robotics-autonomous-systems" className="hover:text-cyan-700 dark:hover:text-cyan-400 transition-colors">Robotics & Autonomous</Link></li>
-              <li><Link to="/research/healthcare-ai" className="hover:text-cyan-700 dark:hover:text-cyan-400 transition-colors">Healthcare AI & Biotech</Link></li>
-              <li><Link to="/research/cybersecurity-trustworthy-ai" className="hover:text-cyan-700 dark:hover:text-cyan-400 transition-colors">Trustworthy & Cyber AI</Link></li>
+            <ul className="space-y-2 text-xs">
+              <li><Link to="/about" className="hover:text-cyan-700 dark:hover:text-cyan-400 transition-colors">01. About AIRIC</Link></li>
+              <li><Link to="/research" className="hover:text-cyan-700 dark:hover:text-cyan-400 transition-colors">02. Research & Publications</Link></li>
+              <li><Link to="/innovation" className="hover:text-cyan-700 dark:hover:text-cyan-400 transition-colors">03. Innovation & Incubation</Link></li>
+              <li><Link to="/commercialization" className="hover:text-cyan-700 dark:hover:text-cyan-400 transition-colors">04. Commercialization Center</Link></li>
+              <li><Link to="/technology" className="hover:text-cyan-700 dark:hover:text-cyan-400 transition-colors">05. Technology & Computing</Link></li>
+              <li><Link to="/education" className="hover:text-cyan-700 dark:hover:text-cyan-400 transition-colors">06. Education & Training</Link></li>
+              <li><Link to="/experts" className="hover:text-cyan-700 dark:hover:text-cyan-400 transition-colors">07. Experts & Specialists</Link></li>
+              <li><Link to="/health-wellbeing" className="hover:text-cyan-700 dark:hover:text-cyan-400 transition-colors">08. Health & Wellbeing</Link></li>
+              <li><Link to="/collaborate" className="hover:text-cyan-700 dark:hover:text-cyan-400 transition-colors">09. Contact & Collaboration</Link></li>
+              <li><Link to="/automation" className="hover:text-cyan-700 dark:hover:text-cyan-400 transition-colors">10. Automation Center</Link></li>
             </ul>
           </div>
 
-          {/* Col 3: Academic Portals */}
+          {/* Col 3: Academic Portals & Repositories */}
           <div>
-            <h4 className="text-xs font-bold text-slate-900 dark:text-slate-100 uppercase tracking-wider mb-4">
-              Center & Portals
+            <h4 className="text-xs font-bold text-slate-900 dark:text-slate-100 uppercase tracking-wider mb-4 font-mono">
+              Portals & Repositories
             </h4>
-            <ul className="space-y-2.5">
-              <li><Link to="/about" className="hover:text-cyan-700 dark:hover:text-cyan-400 transition-colors">About & Leadership</Link></li>
-              <li><Link to="/researchers" className="hover:text-cyan-700 dark:hover:text-cyan-400 transition-colors">Faculty & Investigators</Link></li>
-              <li><Link to="/projects" className="hover:text-cyan-700 dark:hover:text-cyan-400 transition-colors">Research & Spinout Projects</Link></li>
-              <li><Link to="/publications" className="hover:text-cyan-700 dark:hover:text-cyan-400 transition-colors">Publications & Patents</Link></li>
-              <li><Link to="/opportunities" className="hover:text-cyan-700 dark:hover:text-cyan-400 transition-colors">Fellowships & Grants</Link></li>
-              <li><Link to="/resources" className="hover:text-cyan-700 dark:hover:text-cyan-400 transition-colors">Open Models & Datasets</Link></li>
+            <ul className="space-y-2 text-xs">
+              <li><Link to="/apps" className="hover:text-cyan-700 dark:hover:text-cyan-400 font-semibold text-cyan-600 dark:text-cyan-400 transition-colors">10 Applications Portfolio</Link></li>
+              <li><Link to="/datasets" className="hover:text-cyan-700 dark:hover:text-cyan-400 transition-colors">Dataset & Data Center</Link></li>
+              <li><Link to="/journals/jair" className="hover:text-cyan-700 dark:hover:text-cyan-400 transition-colors">JAIR Journal</Link></li>
+              <li><Link to="/journals/jairic" className="hover:text-cyan-700 dark:hover:text-cyan-400 transition-colors">JAIRIC Journal</Link></li>
+              <li><Link to="/young-scientists" className="hover:text-cyan-700 dark:hover:text-cyan-400 transition-colors">Young Scientist Programme</Link></li>
+              <li><Link to="/projects" className="hover:text-cyan-700 dark:hover:text-cyan-400 transition-colors">Research Projects</Link></li>
+              <li><Link to="/researchers" className="hover:text-cyan-700 dark:hover:text-cyan-400 transition-colors">Faculty Directory</Link></li>
               <li>
-                <Link to="/collaborate" className="text-cyan-700 dark:text-cyan-400 font-semibold hover:underline flex items-center gap-1">
-                  Collaborate <Sparkles className="w-3 h-3" />
+                <Link to="/collaborate" className="text-cyan-700 dark:text-cyan-400 font-semibold hover:underline flex items-center gap-1 pt-1">
+                  Collaborate With AIRIC <Sparkles className="w-3 h-3" />
                 </Link>
               </li>
             </ul>

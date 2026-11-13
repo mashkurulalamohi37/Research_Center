@@ -48,6 +48,14 @@ const Collaborate = lazy(() => import('./pages/public/Collaborate').then(m => ({
 const Contact = lazy(() => import('./pages/public/Contact').then(m => ({ default: m.Contact })));
 const NotFound = lazy(() => import('./pages/public/NotFound').then(m => ({ default: m.NotFound })));
 
+// Category Hubs & Dedicated Vertical Views
+const CategoryHubPage = lazy(() => import('./pages/public/CategoryHubPage').then(m => ({ default: m.CategoryHubPage })));
+const Datasets = lazy(() => import('./pages/public/Datasets').then(m => ({ default: m.Datasets })));
+const Journals = lazy(() => import('./pages/public/Journals').then(m => ({ default: m.Journals })));
+const YoungScientists = lazy(() => import('./pages/public/YoungScientists').then(m => ({ default: m.YoungScientists })));
+const Experts = lazy(() => import('./pages/public/Experts').then(m => ({ default: m.Experts })));
+const AutomationCenter = lazy(() => import('./pages/public/AutomationCenter').then(m => ({ default: m.AutomationCenter })));
+
 // Lazy Loaded Auth Pages
 const Login = lazy(() => import('./pages/auth/Login').then(m => ({ default: m.Login })));
 const ForgotPassword = lazy(() => import('./pages/auth/ForgotPassword').then(m => ({ default: m.ForgotPassword })));
@@ -105,6 +113,28 @@ export const App: React.FC = () => {
           <Route path="partners" element={<Partners />} />
           <Route path="collaborate" element={<Collaborate />} />
           <Route path="contact" element={<Contact />} />
+          
+          {/* Institutional Hubs & Verticals (Zero Dead Links) */}
+          <Route path="innovation" element={<CategoryHubPage />} />
+          <Route path="innovation/:sectionSlug" element={<CategoryHubPage />} />
+          <Route path="commercialization" element={<CategoryHubPage />} />
+          <Route path="commercialization/:sectionSlug" element={<CategoryHubPage />} />
+          <Route path="technology" element={<CategoryHubPage />} />
+          <Route path="technology/:sectionSlug" element={<CategoryHubPage />} />
+          <Route path="education" element={<CategoryHubPage />} />
+          <Route path="education/:sectionSlug" element={<CategoryHubPage />} />
+          <Route path="health-wellbeing" element={<CategoryHubPage />} />
+          <Route path="health-wellbeing/:sectionSlug" element={<CategoryHubPage />} />
+          <Route path="divisions" element={<CategoryHubPage />} />
+          <Route path="divisions/:sectionSlug" element={<CategoryHubPage />} />
+          <Route path="automation" element={<AutomationCenter />} />
+          <Route path="datasets" element={<Datasets />} />
+          <Route path="datasets/:slug" element={<Datasets />} />
+          <Route path="journals" element={<Journals />} />
+          <Route path="journals/:journalSlug" element={<Journals />} />
+          <Route path="young-scientists" element={<YoungScientists />} />
+          <Route path="experts" element={<Experts />} />
+
           <Route path="login" element={<Login />} />
           <Route path="forgot-password" element={<ForgotPassword />} />
           <Route path="*" element={<NotFound />} />

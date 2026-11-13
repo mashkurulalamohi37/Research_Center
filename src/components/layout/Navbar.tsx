@@ -3,27 +3,34 @@ import { Link, NavLink, useNavigate, useLocation } from 'react-router-dom';
 import { 
   Search, Sun, Moon, Menu, X, ChevronDown, 
   ShieldAlert, UserCheck, LogIn, Sparkles, LogOut,
-  Calendar, Briefcase, Database, Mail, Info, Award
+  Calendar, Briefcase, Database, Mail, Info, Award, BookOpen
 } from 'lucide-react';
 import { useTheme } from '../../context/ThemeContext';
 import { useAuth } from '../../context/AuthContext';
 import { Button } from '../ui/Button';
 import { Logo } from '../ui/Logo';
 import { TopHeaderBar } from './TopHeaderBar';
+import { DesktopMegaMenu } from './DesktopMegaMenu';
+import { MobileNavDrawer } from './MobileNavDrawer';
 import { GlobalSearchModal } from '../shared/GlobalSearchModal';
 
 const primaryLinks = [
   { name: 'Research', path: '/research' },
-  { name: 'Projects', path: '/projects' },
+  { name: 'Applications', path: '/apps' },
   { name: 'Publications', path: '/publications' },
-  { name: 'News', path: '/news' },
+  { name: 'Projects', path: '/projects' },
+  { name: 'Experts', path: '/experts' },
 ];
 
 const exploreLinks = [
   { name: 'About Institute', path: '/about', icon: Info, desc: 'Mission, governance, and commercialization' },
+  { name: 'Datasets Repository', path: '/datasets', icon: Database, desc: 'Access-controlled scientific data center' },
+  { name: 'Academic Journals (JAIR)', path: '/journals/jair', icon: BookOpen, desc: 'Peer-reviewed AI & theoretical research' },
+  { name: 'Commercialization Journal (JAIRIC)', path: '/journals/jairic', icon: Sparkles, desc: 'Deep-tech translation & patents' },
+  { name: 'Young Scientist Programme', path: '/young-scientists', icon: Award, desc: 'Collegiate fellowships & mentorship' },
+  { name: 'Automation Center', path: '/automation', icon: ShieldAlert, desc: 'Autonomous pipelines & cloud APIs' },
   { name: 'Events & Symposia', path: '/events', icon: Calendar, desc: 'Conferences and research talks' },
   { name: 'Opportunities', path: '/opportunities', icon: Briefcase, desc: 'Ph.D. fellowships and careers' },
-  { name: 'Open Resources', path: '/resources', icon: Database, desc: 'Datasets, models, and code' },
   { name: 'Academic Partners', path: '/partners', icon: Award, desc: 'Consortia and alliances' },
   { name: 'Contact & Campus', path: '/contact', icon: Mail, desc: 'Global campus & tech transfer directory' },
 ];
@@ -47,6 +54,7 @@ export const Navbar: React.FC = () => {
   const [searchOpen, setSearchOpen] = useState(false);
   const [portalMenuOpen, setPortalMenuOpen] = useState(false);
   const [exploreMenuOpen, setExploreMenuOpen] = useState(false);
+  const [megaMenuOpen, setMegaMenuOpen] = useState(false);
 
   const portalRef = useRef<HTMLDivElement>(null);
   const exploreRef = useRef<HTMLDivElement>(null);
@@ -69,6 +77,7 @@ export const Navbar: React.FC = () => {
     setMobileMenuOpen(false);
     setPortalMenuOpen(false);
     setExploreMenuOpen(false);
+    setMegaMenuOpen(false);
   }, [location.pathname]);
 
   // Click outside listener for dropdowns
@@ -135,6 +144,13 @@ export const Navbar: React.FC = () => {
             >
               Home
             </NavLink>
+
+            {/* 10 Institute Hubs Mega Menu */}
+            <DesktopMegaMenu
+              isOpen={megaMenuOpen}
+              onToggle={() => setMegaMenuOpen(!megaMenuOpen)}
+              onClose={() => setMegaMenuOpen(false)}
+            />
 
             {primaryLinks.map(link => (
               <NavLink
@@ -319,58 +335,13 @@ export const Navbar: React.FC = () => {
         </div>
 
         {/* Mobile Navigation Drawer */}
-        {mobileMenuOpen && (
-          <div className="lg:hidden fixed inset-x-0 top-full bg-white/98 dark:bg-navy-950/98 border-b border-slate-200 dark:border-cyan-500/20 backdrop-blur-2xl p-5 shadow-2xl animate-fade-in max-h-[85vh] overflow-y-auto">
-            <div className="flex flex-col gap-1.5 mb-5">
-              {allMobileLinks.map(link => (
-                <NavLink
-                  key={link.path}
-                  to={link.path}
-                  className={({ isActive }) =>
-                    `px-3.5 py-2 rounded-xl text-xs font-semibold transition-all ${
-                      isActive
-                        ? 'bg-cyan-50 dark:bg-cyan-500/15 text-cyan-700 dark:text-cyan-400 border border-cyan-200 dark:border-cyan-500/30 font-bold'
-                        : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800/60'
-                    }`
-                  }
-                >
-                  {link.name}
-                </NavLink>
-              ))}
-            </div>
-
-            <div className="p-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/60 space-y-2.5 mb-4">
-              <div className="text-[11px] font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
-                Direct Workspace Switcher
-              </div>
-              <div className="grid grid-cols-2 gap-2">
-                <Button
-                  variant="outline"
-                  size="sm"
-                  onClick={() => handleSwitchPortal('researcher')}
-                  className={`text-xs ${role === 'researcher' ? 'border-cyan-500 text-cyan-600' : ''}`}
-                >
-                  Researcher UI
-                </Button>
-                <Button
-                  variant="outline"
-                  size="sm"
-                  onClick={() => handleSwitchPortal('admin')}
-                  className={`text-xs ${role === 'admin' ? 'border-purple-500 text-purple-600' : ''}`}
-                >
-                  Admin Portal
-                </Button>
-              </div>
-            </div>
-
-            <Link to="/collaborate" className="w-full">
-              <Button variant="cyan" size="md" className="w-full text-xs">
-                <Sparkles className="w-3.5 h-3.5 mr-1" />
-                Collaborate With AIRIC
-              </Button>
-            </Link>
-          </div>
-        )}
+        <MobileNavDrawer
+          isOpen={mobileMenuOpen}
+          onClose={() => setMobileMenuOpen(false)}
+          role={role}
+          onSwitchPortal={handleSwitchPortal}
+          onOpenSearch={() => setSearchOpen(true)}
+        />
       </header>
 
       {/* Global Search Modal Trigger */}
