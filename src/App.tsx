@@ -55,6 +55,8 @@ const Journals = lazy(() => import('./pages/public/Journals').then(m => ({ defau
 const YoungScientists = lazy(() => import('./pages/public/YoungScientists').then(m => ({ default: m.YoungScientists })));
 const Experts = lazy(() => import('./pages/public/Experts').then(m => ({ default: m.Experts })));
 const AutomationCenter = lazy(() => import('./pages/public/AutomationCenter').then(m => ({ default: m.AutomationCenter })));
+const Apps = lazy(() => import('./pages/public/Apps').then(m => ({ default: m.Apps })));
+const AppDetail = lazy(() => import('./pages/public/AppDetail').then(m => ({ default: m.AppDetail })));
 
 // Lazy Loaded Auth Pages
 const Login = lazy(() => import('./pages/auth/Login').then(m => ({ default: m.Login })));
@@ -134,6 +136,10 @@ export const App: React.FC = () => {
           <Route path="journals/:journalSlug" element={<Journals />} />
           <Route path="young-scientists" element={<YoungScientists />} />
           <Route path="experts" element={<Experts />} />
+
+          {/* Dedicated Application Portfolio */}
+          <Route path="apps" element={<Apps />} />
+          <Route path="apps/:slug" element={<AppDetail />} />
 
           <Route path="login" element={<Login />} />
           <Route path="forgot-password" element={<ForgotPassword />} />
