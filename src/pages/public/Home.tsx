@@ -11,6 +11,13 @@ import { StatsCounter } from '../../components/home/StatsCounter';
 import { InteractiveResearchMap } from '../../components/home/InteractiveResearchMap';
 import { PillarsBar } from '../../components/home/PillarsBar';
 import { EcosystemGrid } from '../../components/home/EcosystemGrid';
+import { ApplicationsShowcase } from '../../components/home/ApplicationsShowcase';
+import { JournalsShowcase } from '../../components/home/JournalsShowcase';
+import { DatasetsShowcase } from '../../components/home/DatasetsShowcase';
+import { YoungScientistShowcase } from '../../components/home/YoungScientistShowcase';
+import { InnovationShowcase } from '../../components/home/InnovationShowcase';
+import { FundingShowcase } from '../../components/home/FundingShowcase';
+import { ExpertsShowcase } from '../../components/home/ExpertsShowcase';
 import { mockResearchAreas } from '../../data/researchAreas';
 import { mockProjects } from '../../data/projects';
 import { mockPublications } from '../../data/publications';
@@ -234,6 +241,9 @@ export const Home: React.FC = () => {
       {/* 3.5. ORGANIZATIONAL ECOSYSTEM (10 DIVISIONS MATRIX) */}
       <EcosystemGrid />
 
+      {/* 3.6. DEDICATED APPLICATIONS PORTFOLIO SHOWCASE */}
+      <ApplicationsShowcase />
+
       {/* 4. RESEARCH AREAS GRID */}
       <section className="py-20 relative">
         <div className="container mx-auto px-4 lg:px-8">
@@ -424,59 +434,23 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* 8. FACULTY & INVESTIGATORS SPOTLIGHT */}
-      <section className="py-20 bg-slate-50/70 dark:bg-slate-950/40">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-12 gap-4">
-            <div>
-              <Badge variant="cyan" className="mb-2">Leadership & Faculty</Badge>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight">
-                Principal Investigators
-              </h2>
-              <p className="text-slate-600 dark:text-slate-400 text-sm mt-1">
-                World-class scientists and fellows leading research and innovation programs at IRICC.
-              </p>
-            </div>
-            <Link to="/researchers">
-              <Button variant="ghost" size="sm">
-                View All Faculty & Fellows <ArrowRight className="w-4 h-4 ml-1" />
-              </Button>
-            </Link>
-          </div>
+      {/* 8. INNOVATION & INCUBATION SHOWCASE (TRL 1-9) */}
+      <InnovationShowcase />
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {coreFaculty.map(r => (
-              <Link key={r.id} to={`/researchers/${r.slug}`} className="group block">
-                <Card className="overflow-hidden border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 hover:border-cyan-500/50 shadow-xs hover:shadow-md transition-all duration-300">
-                  <div className="relative h-64 overflow-hidden">
-                    <img
-                      src={r.avatar}
-                      alt={r.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent" />
-                    <div className="absolute bottom-3 left-3 right-3">
-                      <h4 className="text-base font-bold text-white group-hover:text-cyan-300 transition-colors">
-                        {r.name}
-                      </h4>
-                      <p className="text-xs text-cyan-300 line-clamp-1">{r.title}</p>
-                    </div>
-                  </div>
-                  <CardContent className="p-4 pt-3 space-y-2">
-                    <p className="text-xs text-slate-600 dark:text-slate-400 line-clamp-2 leading-relaxed">
-                      {r.bio}
-                    </p>
-                    <div className="pt-2 flex items-center justify-between text-xs text-slate-500 font-mono border-t border-slate-100 dark:border-slate-800">
-                      <span>Citations: <strong className="text-slate-900 dark:text-slate-300">{r.citations.toLocaleString()}</strong></span>
-                      <span>h-index: <strong className="text-cyan-700 dark:text-cyan-400">{r.hIndex}</strong></span>
-                    </div>
-                  </CardContent>
-                </Card>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* 9. ACADEMIC JOURNALS (JAIR & JAIRIC) */}
+      <JournalsShowcase />
+
+      {/* 10. DATASET REPOSITORY (ACCESS-CONTROLLED) */}
+      <DatasetsShowcase />
+
+      {/* 11. MEET OUR EXPERTS & RESOURCE PERSONS */}
+      <ExpertsShowcase />
+
+      {/* 12. YOUNG SCIENTIST PROGRAMME */}
+      <YoungScientistShowcase />
+
+      {/* 13. RESEARCH FUNDING & GRANTS */}
+      <FundingShowcase />
 
       {/* 9. NEWS & EVENTS SPLIT SECTION */}
       <section className="py-20 relative">

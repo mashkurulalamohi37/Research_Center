@@ -95,8 +95,8 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 05-01: Build dataset, journal, and funding datasets and create homepage section components.
-- [ ] 05-02: Assemble all sections into `Home.tsx` and create dedicated subpages (`/datasets`, `/journals/jair`, `/journals/jairic`, `/young-scientists`).
+- [x] 05-01: Build dataset, journal, and funding datasets and create homepage section components.
+- [x] 05-02: Assemble all sections into `Home.tsx` and create dedicated subpages (`/datasets`, `/journals/jair`, `/journals/jairic`, `/young-scientists`).
 
 ---
 
