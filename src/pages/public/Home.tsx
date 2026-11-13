@@ -10,6 +10,7 @@ import { HeroCanvas } from '../../components/home/HeroCanvas';
 import { StatsCounter } from '../../components/home/StatsCounter';
 import { InteractiveResearchMap } from '../../components/home/InteractiveResearchMap';
 import { PillarsBar } from '../../components/home/PillarsBar';
+import { EcosystemGrid } from '../../components/home/EcosystemGrid';
 import { mockResearchAreas } from '../../data/researchAreas';
 import { mockProjects } from '../../data/projects';
 import { mockPublications } from '../../data/publications';
@@ -229,6 +230,9 @@ export const Home: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {/* 3.5. ORGANIZATIONAL ECOSYSTEM (10 DIVISIONS MATRIX) */}
+      <EcosystemGrid />
 
       {/* 4. RESEARCH AREAS GRID */}
       <section className="py-20 relative">

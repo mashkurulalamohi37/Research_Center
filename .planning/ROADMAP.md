@@ -79,7 +79,7 @@ Plans:
 **Plans**: 1 plan
 
 Plans:
-- [ ] 04-01: Create divisions dataset and build `EcosystemGrid` component and `/divisions` dedicated explorer page.
+- [x] 04-01: Create divisions dataset and build `EcosystemGrid` component and `/divisions` dedicated explorer page.
 
 ---
 

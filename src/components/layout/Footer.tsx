@@ -98,6 +98,7 @@ export const Footer: React.FC = () => {
               Portals & Repositories
             </h4>
             <ul className="space-y-2 text-xs">
+              <li><Link to="/divisions" className="hover:text-cyan-700 dark:hover:text-cyan-400 font-semibold text-cyan-600 dark:text-cyan-400 transition-colors">10 Divisions Ecosystem</Link></li>
               <li><Link to="/apps" className="hover:text-cyan-700 dark:hover:text-cyan-400 font-semibold text-cyan-600 dark:text-cyan-400 transition-colors">10 Applications Portfolio</Link></li>
               <li><Link to="/datasets" className="hover:text-cyan-700 dark:hover:text-cyan-400 transition-colors">Dataset & Data Center</Link></li>
               <li><Link to="/journals/jair" className="hover:text-cyan-700 dark:hover:text-cyan-400 transition-colors">JAIR Journal</Link></li>
