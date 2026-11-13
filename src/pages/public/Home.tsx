@@ -9,6 +9,7 @@ import {
 import { HeroCanvas } from '../../components/home/HeroCanvas';
 import { StatsCounter } from '../../components/home/StatsCounter';
 import { InteractiveResearchMap } from '../../components/home/InteractiveResearchMap';
+import { PillarsBar } from '../../components/home/PillarsBar';
 import { mockResearchAreas } from '../../data/researchAreas';
 import { mockProjects } from '../../data/projects';
 import { mockPublications } from '../../data/publications';
@@ -24,7 +25,7 @@ import { ImageWithFallback } from '../../components/ui/ImageWithFallback';
 import { useDocumentTitle } from '../../hooks/useDocumentTitle';
 
 export const Home: React.FC = () => {
-  useDocumentTitle('Research, Innovation & Commercialization');
+  useDocumentTitle('Transforming Ideas into Real-World Impact | AIRIC');
   const featuredProjects = mockProjects.filter(p => p.featured).slice(0, 3);
   const featuredPublications = mockPublications.filter(p => p.featured).slice(0, 3);
   const coreFaculty = mockResearchers.filter(r => r.featured).slice(0, 4);
@@ -55,7 +56,7 @@ export const Home: React.FC = () => {
         {/* Hero Background Grid */}
         <div className="absolute inset-0 scientific-grid opacity-35 pointer-events-none" />
 
-        <div className="container relative z-10 mx-auto px-4 lg:px-8 text-center max-w-4xl">
+        <div className="container relative z-10 mx-auto px-4 lg:px-8 text-center max-w-5xl">
           {/* Official Emblem */}
           <motion.div
             initial={{ opacity: 0, scale: 0.85 }}
@@ -66,7 +67,7 @@ export const Home: React.FC = () => {
             <div className="relative group">
               <img
                 src="/iricc-logo.jpg"
-                alt="IRICC Official Seal — Intelligent Research, Innovation & Commercialization Center"
+                alt="AIRIC Official Seal — Advanced Intelligent Research, Innovation & Commercialization Center"
                 width="112"
                 height="112"
                 className="w-24 h-24 sm:w-28 sm:h-28 rounded-full object-cover shadow-xl ring-4 ring-amber-400/50 hover:ring-amber-500/80 transition-all duration-300"
@@ -80,10 +81,12 @@ export const Home: React.FC = () => {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-cyan-200 dark:border-cyan-500/30 bg-cyan-50/90 dark:bg-cyan-950/40 text-cyan-800 dark:text-cyan-300 text-xs font-semibold tracking-wide backdrop-blur-md mb-6 shadow-xs"
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-cyan-200 dark:border-cyan-500/30 bg-cyan-50/90 dark:bg-cyan-950/40 text-cyan-800 dark:text-cyan-300 text-xs font-semibold tracking-wide backdrop-blur-md mb-6 shadow-xs"
           >
             <Sparkles className="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-400" />
-            <span>Advancing Research. Enabling Innovation. Accelerating Commercialization.</span>
+            <span className="font-mono uppercase tracking-wider text-[11px]">
+              AIRIC • Advanced Intelligence Research, Innovation & Commercialization Institute
+            </span>
           </motion.div>
 
           {/* Main Headline */}
@@ -91,11 +94,16 @@ export const Home: React.FC = () => {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.15 }}
-            className="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-[1.1] font-sans"
+            className="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-[1.08] font-sans"
           >
-            <span className="text-cyan-700 dark:text-cyan-400">IRICC</span>
-            <span className="block text-2xl sm:text-4xl lg:text-5xl mt-2 text-slate-800 dark:text-slate-100 font-bold">
-              Intelligent Research, Innovation & Commercialization Center
+            <span className="text-slate-900 dark:text-white">
+              Transforming Ideas into
+            </span>{' '}
+            <span className="bg-gradient-to-r from-cyan-600 via-sky-500 to-blue-600 dark:from-cyan-400 dark:via-sky-400 dark:to-blue-400 bg-clip-text text-transparent">
+              Real-World Impact
+            </span>
+            <span className="block text-xl sm:text-3xl lg:text-4xl mt-3 text-cyan-700 dark:text-cyan-400 font-bold tracking-tight">
+              Intelligent Research • Innovation • Commercialization
             </span>
           </motion.h1>
 
@@ -104,9 +112,9 @@ export const Home: React.FC = () => {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="mt-6 text-base sm:text-xl text-slate-600 dark:text-slate-300 max-w-2xl mx-auto leading-relaxed font-normal"
+            className="mt-6 text-base sm:text-lg lg:text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed font-normal"
           >
-            A world-leading center uniting multidisciplinary scientific discovery, cutting-edge engineering, and high-impact deep-tech commercialization.
+            A premier international research institution uniting fundamental scientific discovery, cutting-edge artificial intelligence, quantum computing, digital healthcare, and deep-tech commercialization.
           </motion.p>
 
           {/* Action Buttons */}
@@ -122,11 +130,25 @@ export const Home: React.FC = () => {
                 <ArrowRight className="w-4 h-4 ml-1" />
               </Button>
             </Link>
-            <Link to="/collaborate" className="w-full sm:w-auto">
-              <Button variant="secondary" size="lg" className="w-full sm:w-auto bg-white text-slate-800 hover:bg-slate-100 border border-slate-200 shadow-xs dark:bg-slate-800 dark:text-white dark:hover:bg-slate-700 dark:border-slate-700">
-                Collaborate With IRICC
+            <Link to="/apps" className="w-full sm:w-auto">
+              <Button variant="outline" size="lg" className="w-full sm:w-auto border-cyan-500/40 text-cyan-700 dark:text-cyan-300 hover:bg-cyan-500/10">
+                10 Applications Portfolio
               </Button>
             </Link>
+            <Link to="/collaborate" className="w-full sm:w-auto">
+              <Button variant="secondary" size="lg" className="w-full sm:w-auto bg-white text-slate-800 hover:bg-slate-100 border border-slate-200 shadow-xs dark:bg-slate-800 dark:text-white dark:hover:bg-slate-700 dark:border-slate-700">
+                Collaborate With AIRIC
+              </Button>
+            </Link>
+          </motion.div>
+
+          {/* 4 Core Pillars Bar */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
+            <PillarsBar />
           </motion.div>
 
           {/* Institutional Indicators */}
@@ -595,7 +617,7 @@ export const Home: React.FC = () => {
             Academic & Commercialization Partners
           </h2>
           <p className="text-slate-600 dark:text-slate-400 text-sm mt-2 max-w-xl mx-auto">
-            IRICC actively collaborates with world-leading universities, venture accelerators, and enterprise technology leaders.
+            AIRIC actively collaborates with world-leading universities, venture accelerators, and enterprise technology leaders.
           </p>
 
           <div className="mt-12 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 items-center">
@@ -638,7 +660,7 @@ export const Home: React.FC = () => {
             </Badge>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-tight">
-            Collaborate With <span className="text-cyan-700 dark:text-cyan-400">IRICC</span>
+            Collaborate With <span className="text-cyan-700 dark:text-cyan-400">AIRIC</span>
           </h2>
           <p className="text-slate-600 dark:text-slate-300 text-base sm:text-lg mt-4 leading-relaxed max-w-2xl mx-auto">
             Partner with our faculty, research scientists, and innovation fellows to co-develop breakthrough scientific discoveries, license patents, and commercialize deep-tech solutions.

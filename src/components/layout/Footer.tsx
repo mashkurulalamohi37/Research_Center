@@ -12,7 +12,7 @@ export const Footer: React.FC = () => {
     e.preventDefault();
     if (email) {
       success(
-        'Subscribed to IRICC Research & Commercialization Dispatch',
+        'Subscribed to AIRIC Research & Commercialization Dispatch',
         `Monthly research papers, spinout updates, and breakthrough briefings will be sent to ${email}`
       );
       setEmail('');
@@ -142,7 +142,7 @@ export const Footer: React.FC = () => {
 
         {/* Bottom Bar */}
         <div className="mt-14 pt-8 border-t border-slate-200 dark:border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
-          <p>© 2026 International Research and Innovation and Commercialization Center (IRICC). All rights reserved.</p>
+          <p>© 2026 AIRIC Institute — Advanced Intelligence Research, Innovation & Commercialization Institute. All rights reserved.</p>
           <div className="flex items-center gap-6 text-slate-600 dark:text-slate-400">
             <Link to="/contact" className="hover:text-slate-900 dark:hover:text-slate-200">Contact</Link>
             <Link to="/partners" className="hover:text-slate-900 dark:hover:text-slate-200">International Consortia</Link>

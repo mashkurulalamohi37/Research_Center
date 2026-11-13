@@ -13,14 +13,14 @@ const PageLoader = () => (
     <div className="relative">
       <img
         src="/iricc-logo.jpg"
-        alt="IRICC Official Seal"
+        alt="AIRIC Official Seal"
         width="56"
         height="56"
         className="w-14 h-14 rounded-full object-cover shadow-md ring-2 ring-amber-400/50 animate-pulse"
       />
     </div>
     <span className="text-xs font-mono text-cyan-800 dark:text-cyan-400 tracking-widest uppercase font-semibold">
-      Loading IRICC…
+      Loading AIRIC…
     </span>
   </div>
 );

@@ -9,6 +9,7 @@ import { useTheme } from '../../context/ThemeContext';
 import { useAuth } from '../../context/AuthContext';
 import { Button } from '../ui/Button';
 import { Logo } from '../ui/Logo';
+import { TopHeaderBar } from './TopHeaderBar';
 import { GlobalSearchModal } from '../shared/GlobalSearchModal';
 
 const primaryLinks = [
@@ -107,14 +108,16 @@ export const Navbar: React.FC = () => {
 
   return (
     <>
-      <header
-        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-          isScrolled
-            ? 'bg-white/95 dark:bg-navy-950/95 backdrop-blur-xl border-b border-slate-200/80 dark:border-cyan-500/20 shadow-xs py-2.5'
-            : 'bg-white/85 dark:bg-navy-950/80 backdrop-blur-md py-3.5 border-b border-slate-200/60 dark:border-white/5'
-        }`}
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-2 lg:gap-4">
+      <header className="fixed top-0 left-0 right-0 z-40 shadow-xs">
+        <TopHeaderBar onOpenSearch={() => setSearchOpen(true)} />
+        <div
+          className={`transition-all duration-300 ${
+            isScrolled
+              ? 'bg-white/95 dark:bg-navy-950/95 backdrop-blur-xl border-b border-slate-200/80 dark:border-cyan-500/20 shadow-xs py-2'
+              : 'bg-white/90 dark:bg-navy-950/85 backdrop-blur-md py-3 border-b border-slate-200/60 dark:border-white/5'
+          }`}
+        >
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-2 lg:gap-4">
           {/* Brand Logo */}
           <Logo size="md" />
 
@@ -313,10 +316,11 @@ export const Navbar: React.FC = () => {
             </button>
           </div>
         </div>
+        </div>
 
         {/* Mobile Navigation Drawer */}
         {mobileMenuOpen && (
-          <div className="lg:hidden fixed inset-x-0 top-[58px] bg-white/98 dark:bg-navy-950/98 border-b border-slate-200 dark:border-cyan-500/20 backdrop-blur-2xl p-5 shadow-2xl animate-fade-in max-h-[85vh] overflow-y-auto">
+          <div className="lg:hidden fixed inset-x-0 top-full bg-white/98 dark:bg-navy-950/98 border-b border-slate-200 dark:border-cyan-500/20 backdrop-blur-2xl p-5 shadow-2xl animate-fade-in max-h-[85vh] overflow-y-auto">
             <div className="flex flex-col gap-1.5 mb-5">
               {allMobileLinks.map(link => (
                 <NavLink
@@ -362,7 +366,7 @@ export const Navbar: React.FC = () => {
             <Link to="/collaborate" className="w-full">
               <Button variant="cyan" size="md" className="w-full text-xs">
                 <Sparkles className="w-3.5 h-3.5 mr-1" />
-                Collaborate With IRICC
+                Collaborate With AIRIC
               </Button>
             </Link>
           </div>

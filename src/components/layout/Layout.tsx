@@ -7,7 +7,7 @@ export const Layout: React.FC = () => {
   return (
     <div className="min-h-screen flex flex-col bg-background text-foreground selection:bg-cyan-500/20 selection:text-cyan-400">
       <Navbar />
-      <main className="flex-grow pt-20">
+      <main className="flex-grow pt-24 sm:pt-28">
         <Outlet />
       </main>
       <Footer />
