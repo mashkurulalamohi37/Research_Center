@@ -9,7 +9,7 @@ interface TopHeaderBarProps {
 export const TopHeaderBar: React.FC<TopHeaderBarProps> = ({ onOpenSearch }) => {
   return (
     <div className="w-full bg-slate-900 text-slate-200 border-b border-cyan-500/20 text-[11px] font-mono select-none">
-      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-1.5 flex items-center justify-between gap-2 overflow-hidden">
+      <div className="w-full px-4 sm:px-6 lg:px-8 py-1.5 flex items-center justify-between gap-2 overflow-hidden">
         {/* Left: Official Title & Live Indicator */}
         <div className="flex items-center gap-2 sm:gap-3 min-w-0">
           <div className="flex items-center gap-1.5 shrink-0">
@@ -25,7 +25,7 @@ export const TopHeaderBar: React.FC<TopHeaderBarProps> = ({ onOpenSearch }) => {
           <div className="font-bold tracking-wider text-slate-100 uppercase truncate">
             <span className="text-cyan-400 font-extrabold mr-1.5">AIRIC —</span>
             <span className="tracking-widest">
-              ADVANCED INTELLIGENT RESEARCH • INNOVATION • COMMERCIALIZATION CENTER
+              OFFICIAL RESEARCH & INNOVATION ECOSYSTEM
             </span>
           </div>
         </div>

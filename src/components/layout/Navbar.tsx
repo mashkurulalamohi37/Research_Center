@@ -63,6 +63,7 @@ export const Navbar: React.FC = () => {
   const { role, switchRole, logout } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
+  const isHome = location.pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -117,7 +118,7 @@ export const Navbar: React.FC = () => {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-40 shadow-xs">
+      <header className={`${isHome ? 'w-full shrink-0' : 'fixed top-0 left-0 right-0'} z-40 shadow-xs`}>
         <TopHeaderBar onOpenSearch={() => setSearchOpen(true)} />
         <div
           className={`transition-all duration-300 ${
@@ -126,12 +127,14 @@ export const Navbar: React.FC = () => {
               : 'bg-white/90 dark:bg-navy-950/85 backdrop-blur-md py-3 border-b border-slate-200/60 dark:border-white/5'
           }`}
         >
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-2 lg:gap-4">
-          {/* Brand Logo */}
-          <Logo size="md" />
+          <div className="w-full px-3 sm:px-5 lg:px-6 flex items-center justify-between gap-3 lg:gap-6">
+            {/* Brand Logo - Logo Graphic & Acronym AIRIC Only, positioned cleanly to the left */}
+            <div className="shrink-0 mr-3 lg:mr-6">
+              <Logo size="md" showSubtitle={false} />
+            </div>
 
-          {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-1 shrink-0">
+            {/* Desktop Navigation Links */}
+            <nav className="hidden lg:flex items-center gap-1 shrink-0">
             <NavLink
               to="/"
               className={({ isActive }) =>

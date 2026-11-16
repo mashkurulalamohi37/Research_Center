@@ -4,13 +4,15 @@ import { Link } from 'react-router-dom';
 interface LogoProps {
   size?: 'sm' | 'md' | 'lg' | 'xl';
   showSubtitle?: boolean;
+  showBadge?: boolean;
   className?: string;
   asLink?: boolean;
 }
 
 export const Logo: React.FC<LogoProps> = ({
   size = 'md',
-  showSubtitle = true,
+  showSubtitle = false,
+  showBadge = false,
   className = '',
   asLink = true,
 }) => {
@@ -40,9 +42,11 @@ export const Logo: React.FC<LogoProps> = ({
           <span className={`${text} font-black tracking-wider text-slate-900 dark:text-white font-sans leading-none`}>
             AIRIC
           </span>
-          <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-cyan-50 dark:bg-cyan-500/15 text-cyan-800 dark:text-cyan-300 border border-cyan-200 dark:border-cyan-500/30 font-bold tracking-wider leading-none">
-            INSTITUTE
-          </span>
+          {showBadge && (
+            <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-cyan-50 dark:bg-cyan-500/15 text-cyan-800 dark:text-cyan-300 border border-cyan-200 dark:border-cyan-500/30 font-bold tracking-wider leading-none">
+              INSTITUTE
+            </span>
+          )}
         </div>
         {showSubtitle && (
           <span className={`${sub} font-medium text-slate-600 dark:text-slate-300 tracking-tight mt-0.5 hidden sm:block leading-tight`}>
