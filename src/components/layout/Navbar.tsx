@@ -242,8 +242,8 @@ export const Navbar: React.FC = () => {
               {theme === 'dark' ? <Sun className="w-3.5 h-3.5 text-amber-400" /> : <Moon className="w-3.5 h-3.5 text-slate-600" />}
             </button>
 
-            {/* Portal Switcher Dropdown */}
-            <div ref={portalRef} className="relative">
+            {/* Portal Switcher Dropdown (Available in Header on sm+, and in Mobile Drawer on all screens) */}
+            <div ref={portalRef} className="relative hidden sm:block">
               <button
                 onClick={() => setPortalMenuOpen(!portalMenuOpen)}
                 aria-label="Switch Active Workspace Portal"

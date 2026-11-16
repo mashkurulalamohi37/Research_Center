@@ -22,10 +22,13 @@ export const TopHeaderBar: React.FC<TopHeaderBarProps> = ({ onOpenSearch }) => {
             </span>
           </div>
 
-          <div className="font-bold tracking-wider text-slate-100 uppercase truncate">
-            <span className="text-cyan-400 font-extrabold mr-1.5">AIRIC —</span>
-            <span className="tracking-widest">
+          <div className="font-bold tracking-wider text-slate-100 uppercase truncate text-[10px] sm:text-[11px]">
+            <span className="text-cyan-400 font-extrabold mr-1">AIRIC —</span>
+            <span className="tracking-widest hidden sm:inline">
               OFFICIAL RESEARCH & INNOVATION ECOSYSTEM
+            </span>
+            <span className="tracking-widest sm:hidden">
+              RESEARCH ECOSYSTEM
             </span>
           </div>
         </div>

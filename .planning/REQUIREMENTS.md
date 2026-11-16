@@ -1,36 +1,35 @@
-# Requirements: Navbar Non-Blocking & Hero Viewport Alignment
+# Requirements: Mobile & Multi-Device Fluency (Milestone 3)
 
 ## Active Milestone Objective
-Resolve the navbar blocking issue on the home dashboard by establishing a seamless non-overlapping flex layout where the hero section and left rail start directly below the navbar; remove the `INSTITUTE` badge next to `AIRIC` in the header; and calibrate the vertical proportions of `CenterHeroStage` and `StudioVideoCarousel` so that all content (telemetry strip and timeline scrubber) fits completely within `100vh` without clipping or outer scrolling.
+Transform the AIRIC web platform into a fluid, fast, and accessible multi-device experience across all phone and tablet form factors without breaking the pristine `100vh` desktop zero-scroll dashboard. Move the left 10-division navigation into an intuitive, high-performance mobile drawer; adapt the homepage layout to a natural vertical card flow on smaller screens; optimize touch targets and lightweight rendering; and systematically verify UI on all target screen sizes.
 
 ---
 
-## Active Requirements (Milestone 2)
+## Active Requirements (Milestone 3)
 
-### 1. Navbar Flow & Non-Blocking Architecture (`NAV_FLOW`)
-- **REQ-NAV-01**: The navbar must NOT block or cover any part of the hero section or the left division navigation rail.
-- **REQ-NAV-02**: On the home dashboard, the content stage must start directly from the bottom edge of the navbar using a native flex flow (e.g. `shrink-0` header + `flex-1 min-h-0` main) instead of fragile hardcoded padding-top offsets.
-- **REQ-NAV-03**: In `Logo.tsx` (and header context), display ONLY the circular AIRIC seal and the acronym `AIRIC`. Remove the `INSTITUTE` badge and any full-name subtitles from the header.
+### 1. Unified Mobile Navigation & Drawer (`MOB_NAV`)
+- **REQ-MOB-01**: On screens `< 1024px` (tablets and phones), the pinned left `DivisionsNavRail` is hidden from the main view and accessible through the top hamburger menu.
+- **REQ-MOB-02**: The `MobileNavDrawer` provides a clean tabbed or segmented structure allowing mobile users to effortlessly switch between **"10 Divisions"** and **"Institute Hubs & Pages"**.
+- **REQ-MOB-03**: Division items in the mobile drawer display titles, subtitles, and touch-expandable sub-disciplines/capabilities, eliminating any hover dependency.
+- **REQ-MOB-04**: The top navbar on mobile and tablet retains the AIRIC seal logo, quick search button, theme toggle, and hamburger button cleanly in one row without wrapping or collision.
 
-### 2. Hero Section Alignment & Vertical Budgeting (`HERO_ALIGN`)
-- **REQ-HERO-01**: The hero section starts cleanly directly below the navbar with appropriate breathing room and zero occlusion.
-- **REQ-HERO-02**: Tune vertical margins and font scale in `CenterHeroStage.tsx` (`text-2xl sm:text-3xl lg:text-[34px] xl:text-[38px]`) so that:
-  - Official ecosystem beacon badge is visible.
-  - Organization title is prominent and focal.
-  - Mission tagline is visible.
-  - 4 core pillar chips are visible.
-  - Action button cluster is visible.
-  - Institutional telemetry counter strip is fully visible and NOT cut off.
+### 2. Responsive Homepage Layout Flow (`RESP_LAYOUT`)
+- **REQ-LAY-01**: On desktop (`>= 1024px`), the homepage maintains its zero-scroll `100vh` layout with the left rail, center hero, and bottom-right video carousel intact.
+- **REQ-LAY-02**: On mobile & tablet (`< 1024px`), the homepage transitions seamlessly into a smooth natural vertical scroll layout (`overflow-y-auto min-h-screen`) where users scroll down naturally through:
+  1. Center Hero Stage (hero title, pillar chips, CTAs, telemetry counters).
+  2. Featured Video Carousel (touch-swipeable / button controllable, properly aspect-ratio scaled).
+  3. Quick-access Division badges/cards.
+- **REQ-LAY-03**: The outer container strictly enforces `overflow-x: hidden` to eliminate horizontal scrollbars on all mobile viewports.
 
-### 3. Studio Video Carousel Containment (`CAROUSEL_FIT`)
-- **REQ-CAR-01**: `StudioVideoCarousel.tsx` fits cleanly in the bottom-right quadrant with an optimized responsive height (`h-[270px]` to `h-[320px]`).
-- **REQ-CAR-02**: The bottom timeline track (`Timeline`, `+ Add Scene`, scene tracks, and scrubber) must remain 100% visible above the bottom edge of the viewport with zero clipping.
+### 3. Typography, Touch Targets & Lightweight Performance (`TOUCH_PERF`)
+- **REQ-PRF-01**: All interactive buttons, tabs, accordions, and links meet WCAG touch target standards (minimum `44x44px` or comfortably padded hit areas).
+- **REQ-PRF-02**: Hero typography and telemetry badges scale responsively (`text-xl sm:text-2xl md:text-3xl lg:text-[34px] xl:text-[38px]`) so text never clips or overflows viewport boundaries.
+- **REQ-PRF-03**: Animations, backdrop blurs, and re-renders are optimized for mobile GPUs, ensuring fast initial load and 60fps scrolling.
 
-### 4. Build & Runtime Integrity (`VERIFICATION`)
-- **REQ-VER-01**: TypeScript and Vite build passes with zero errors (`npm run build`).
-- **REQ-VER-02**: Desktop view on localhost has strictly zero outer vertical scrollbars and zero clipped elements.
-
----
-
-## Previous Completed Milestone Requirements
-*(See git history and .planning/phases/01-05 for completed Phase 1 through Phase 5 requirements)*
+### 4. Device-by-Device UI Verification (`DEVICE_VERIFY`)
+- **REQ-DEV-01**: Verify UI on **320px** (Compact Mobile / iPhone SE 1st gen).
+- **REQ-DEV-02**: Verify UI on **375px & 390px** (Standard Mobile / iPhone 12/13/14/15).
+- **REQ-DEV-03**: Verify UI on **412px** (Modern Android Flagships / Pixel & Galaxy).
+- **REQ-DEV-04**: Verify UI on **768px** (Tablet Portrait / iPad Mini / Air).
+- **REQ-DEV-05**: Verify UI on **1024px** (Tablet Landscape & Compact Laptops).
+- **REQ-DEV-06**: Verify complete TypeScript and Vite build passes with zero errors (`npm run build`).

@@ -172,6 +172,23 @@
   background: #050b14;
 }
 
+/* Mobile Touch & Responsive Safeguards */
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Hide scrollbar for clean horizontal pill scrolling on mobile */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 .dark ::-webkit-scrollbar-thumb {
   background: #1e293b;
   border-radius: 4px;

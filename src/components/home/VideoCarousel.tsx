@@ -273,7 +273,7 @@ export const VideoCarousel: React.FC = () => {
       {/* Main Carousel Split Stage */}
       <div className="flex-1 min-h-0 flex flex-col md:flex-row overflow-hidden">
         {/* Left: Video Player Stage */}
-        <div className="flex-1 min-h-0 relative flex flex-col justify-between overflow-hidden bg-slate-950">
+        <div className="h-[195px] sm:h-[220px] md:h-auto md:flex-1 min-h-0 relative flex flex-col justify-between overflow-hidden bg-slate-950 shrink-0 md:shrink">
           {/* Background Canvas simulation with animated waves */}
           <div className={`absolute inset-0 bg-gradient-to-br ${activeVideo.gradient} opacity-90`} />
           <canvas

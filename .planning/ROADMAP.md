@@ -9,27 +9,27 @@
 
 ---
 
-## Milestone 2: Navbar Non-Blocking & Hero Viewport Alignment (Active)
+## Milestone 2: Navbar Non-Blocking & Hero Viewport Alignment (Completed)
+- [x] Phase 6: Navbar Flow Architecture & Logo Brand Cleanliness
+- [x] Phase 7: Hero & Studio Video Carousel Viewport Proportions Tuning
+- [x] Phase 8: Verification & Visual Polish
 
-### Phase 6: Navbar Flow Architecture & Logo Brand Cleanliness
-**Goal**: Eliminate the navbar overlap on the home dashboard by transitioning to a natural flex flow header (`shrink-0` without hardcoded `pt-[...]` magic numbers), ensuring the hero section and left rail start directly at the navbar's bottom edge. Remove the `INSTITUTE` badge from `Logo.tsx`.  
-**Requirements**: REQ-NAV-01, REQ-NAV-02, REQ-NAV-03  
-**Success Criteria**:
-1. Nav bar does not overlap or block any part of the left rail (`10 DIVISIONS`) or the center hero stage.
-2. The hero section begins cleanly right from the bottom edge of the navbar.
-3. Top-left logo shows circular seal and acronym `AIRIC` only (no `INSTITUTE` badge).
+---
 
-### Phase 7: Hero & Studio Video Carousel Viewport Proportions Tuning
-**Goal**: Calibrate vertical spacing and heights across `CenterHeroStage.tsx`, `StudioVideoCarousel.tsx`, and `Home.tsx` so that all elements (including telemetry strip and timeline scrubber) are 100% visible within `100vh` without clipping or outer scrolling.  
-**Requirements**: REQ-HERO-01, REQ-HERO-02, REQ-CAR-01, REQ-CAR-02  
-**Success Criteria**:
-1. `CenterHeroStage` fits comfortably in the upper section with all 4 pillars, CTAs, and telemetry strip fully visible.
-2. `StudioVideoCarousel` is anchored in the bottom-right with its timeline bar fully visible above the bottom edge.
-3. Desktop layout has zero outer vertical scrollbars and zero clipping.
+## Milestone 3: Mobile & Multi-Device Fluency (Completed)
 
-### Phase 8: Verification & Visual Polish
-**Goal**: Execute `npm run build` to verify zero TypeScript or packaging issues, check HMR on localhost:5173, and verify visual alignment with wireframe requirements.  
-**Requirements**: REQ-VER-01, REQ-VER-02  
-**Success Criteria**:
-1. `npm run build` succeeds with zero errors.
-2. Visual inspection confirms navbar non-blocking and seamless viewport fit.
+### Phase 9: Unified Mobile Navigation & Touch Drawer
+- [x] Integrate the 10-division navigation and institutional hubs into a unified, touch-optimized `MobileNavDrawer.tsx`. Ensure the top header bar on small devices has balanced spacing (Logo, Search, Theme toggle, Portal switch, Hamburger) with zero wrapping or touch conflicts.
+- **Requirements**: REQ-MOB-01, REQ-MOB-02, REQ-MOB-03, REQ-MOB-04
+
+### Phase 10: Responsive Home Stage & Fluid Scroll Architecture
+- [x] Update `Layout.tsx`, `Home.tsx`, and `CenterHeroStage.tsx` so that `< 1024px` transitions to a natural vertical scroll layout with optimized typography and telemetry cards, while `>= 1024px` desktop maintains the pristine `100vh` zero-scroll dashboard.
+- **Requirements**: REQ-LAY-01, REQ-LAY-02, REQ-LAY-03, REQ-PRF-02
+
+### Phase 11: Video Carousel Mobile Adaptations & Touch Controls
+- [x] Ensure `VideoCarousel.tsx` displays crisply on mobile screens with responsive height, touch-friendly play/pause/prev/next controls, legible badges, and lightweight performance without layout shifts.
+- **Requirements**: REQ-PRF-01, REQ-PRF-03
+
+### Phase 12: Multi-Device Systematic Verification & Build Validation
+- [x] Systematically verify and test the UI across 5 device viewports (320px, 375px/390px, 412px, 768px, 1024px) using Chrome DevTools/DOM checks and execute `npm run build` with zero errors.
+- **Requirements**: REQ-DEV-01, REQ-DEV-02, REQ-DEV-03, REQ-DEV-04, REQ-DEV-05, REQ-DEV-06

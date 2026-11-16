@@ -34,13 +34,16 @@ export const CenterHeroStage: React.FC = () => {
         className="max-w-3xl"
       >
         {/* Official Ecosystem Status Badge */}
-        <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-700 dark:text-cyan-400 text-[10px] font-mono font-medium mb-1.5 backdrop-blur-md">
-          <span className="relative flex h-2 w-2">
+        <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-700 dark:text-cyan-400 text-[10px] font-mono font-medium mb-1.5 backdrop-blur-md max-w-full">
+          <span className="relative flex h-2 w-2 shrink-0">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
           </span>
-          <span className="tracking-wider uppercase font-semibold">
+          <span className="tracking-wider uppercase font-semibold truncate hidden sm:inline">
             OFFICIAL RESEARCH & COMMERCIALIZATION ECOSYSTEM
+          </span>
+          <span className="tracking-wider uppercase font-semibold truncate sm:hidden">
+            OFFICIAL RESEARCH ECOSYSTEM
           </span>
         </div>
 
@@ -99,17 +102,17 @@ export const CenterHeroStage: React.FC = () => {
         </div>
 
         {/* Institutional Telemetry Micro-Strip */}
-        <div className="pt-1.5 border-t border-slate-200 dark:border-slate-800/80 flex flex-wrap items-center gap-3 sm:gap-5 text-slate-500 dark:text-slate-400 text-[11px] font-mono">
+        <div className="pt-2 border-t border-slate-200 dark:border-slate-800/80 flex flex-wrap items-center gap-2.5 sm:gap-5 text-slate-500 dark:text-slate-400 text-[10px] sm:text-[11px] font-mono">
           {telemetry.map((item, idx) => (
             <div key={item.label} className="flex items-center gap-1.5">
               <span className="text-slate-900 dark:text-white font-bold tracking-tight">
                 {item.val}
               </span>
-              <span className="text-slate-500 text-[11px]">
+              <span className="text-slate-500 text-[10px] sm:text-[11px]">
                 {item.label}
               </span>
               {idx < telemetry.length - 1 && (
-                <span className="text-slate-300 dark:text-slate-700 ml-2">/</span>
+                <span className="text-slate-300 dark:text-slate-700 ml-1.5 hidden sm:inline">/</span>
               )}
             </div>
           ))}
