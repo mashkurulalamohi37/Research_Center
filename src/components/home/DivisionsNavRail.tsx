@@ -78,35 +78,6 @@ export const DivisionsNavRail: React.FC = () => {
       className="w-full h-full flex flex-col justify-between bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border-r border-slate-200 dark:border-slate-800 shadow-xl relative select-none"
       onMouseLeave={handleMouseLeave}
     >
-      {/* Top Banner: Apps & Software Direct Access */}
-      <div className="p-2.5 border-b border-slate-200/80 dark:border-slate-800 bg-gradient-to-b from-cyan-50/60 to-white dark:from-slate-900/90 dark:to-slate-900/60 shrink-0">
-        <Link
-          to="/apps"
-          onMouseEnter={() => setActiveDivision(null)}
-          className="group relative flex items-center justify-between p-2.5 rounded-xl bg-white dark:bg-slate-800/90 hover:bg-cyan-500/10 dark:hover:bg-cyan-950/40 border border-slate-200/90 dark:border-slate-700/80 hover:border-cyan-500/40 dark:hover:border-cyan-500/40 transition-all duration-200 shadow-2xs hover:shadow-xs cursor-pointer"
-        >
-          <div className="flex items-center gap-2.5 min-w-0">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-cyan-600 to-blue-600 dark:from-cyan-500 dark:to-blue-500 flex items-center justify-center text-white shadow-xs shrink-0 group-hover:scale-105 transition-transform">
-              <AppWindow className="w-4 h-4" />
-            </div>
-            <div className="min-w-0">
-              <div className="flex items-center gap-1.5">
-                <span className="text-xs sm:text-[13px] font-extrabold text-slate-900 dark:text-white group-hover:text-cyan-700 dark:group-hover:text-cyan-300 transition-colors tracking-tight leading-tight">
-                  Apps & Software
-                </span>
-                <span className="text-[9px] font-mono px-1.5 py-0.5 rounded bg-cyan-100 dark:bg-cyan-950/80 text-cyan-800 dark:text-cyan-300 border border-cyan-200 dark:border-cyan-800/60 font-bold uppercase leading-none">
-                  10 APPS
-                </span>
-              </div>
-              <p className="text-[10px] text-slate-500 dark:text-slate-400 group-hover:text-slate-700 dark:group-hover:text-slate-300 transition-colors truncate mt-0.5 leading-tight">
-                Proprietary Software Systems
-              </p>
-            </div>
-          </div>
-          <ArrowRight className="w-3.5 h-3.5 text-slate-400 group-hover:text-cyan-600 dark:group-hover:text-cyan-400 group-hover:translate-x-0.5 transition-all shrink-0 ml-1" />
-        </Link>
-      </div>
-
       {/* Top Header Label */}
       <div className="px-3.5 py-2.5 border-b border-slate-200/80 dark:border-slate-800 flex items-center justify-between shrink-0 bg-slate-50/50 dark:bg-slate-900/50">
         <div className="flex items-center gap-1.5">
@@ -124,8 +95,30 @@ export const DivisionsNavRail: React.FC = () => {
         </Link>
       </div>
 
-      {/* 10 Division Items Stack - matching wireframe layout */}
+      {/* Menu Items Stack - matching wireframe layout */}
       <div className="flex-1 min-h-0 overflow-y-auto divide-y divide-slate-100 dark:divide-slate-800/60 custom-scrollbar">
+        {/* Apps & Software Option - Seamlessly placed inside the left menu on top */}
+        <Link
+          to="/apps"
+          onMouseEnter={() => setActiveDivision(null)}
+          className="group relative px-3 py-2 sm:py-2.5 transition-all duration-150 cursor-pointer flex items-center justify-between hover:bg-slate-50 dark:hover:bg-slate-800/50 text-slate-800 dark:text-slate-200 border-l-4 border-transparent hover:border-cyan-500"
+        >
+          {/* Left: Option Name & Subtitle */}
+          <div className="min-w-0 pr-2">
+            <h4 className="text-xs sm:text-[13px] font-bold tracking-tight truncate leading-tight group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors">
+              Apps & Software
+            </h4>
+            <p className="text-[10px] text-slate-500 dark:text-slate-400 group-hover:text-cyan-600 dark:group-hover:text-cyan-300 transition-colors truncate mt-0.5">
+              Proprietary Software Systems
+            </p>
+          </div>
+
+          {/* Right: Chevron Icon matching wireframe */}
+          <ChevronDown
+            className="w-4 h-4 shrink-0 transition-all duration-200 text-slate-400 dark:text-slate-500 group-hover:text-slate-600 dark:group-hover:text-slate-300"
+          />
+        </Link>
+
         {instituteDivisions.map((division) => {
           const isActive = activeDivision?.id === division.id;
           const subtitle = divisionSubtitles[division.id] || division.tagline || 'Scientific Research';
