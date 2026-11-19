@@ -10,15 +10,15 @@
 
 ### Current State
 1. **Logo & Identity:**
-   - `src/components/ui/Logo.tsx` displays "IRICC" / "International Research & Innovation Center" with a badge "RESEARCH".
-   - `src/App.tsx` PageLoader displays "Loading IRICC…".
-   - `index.html` title is "IRICC — Intelligent Research, Innovation & Commercialization Center".
+   - `src/components/ui/Logo.tsx` displays "AIRIC" / "International Research & Innovation Center" with a badge "RESEARCH".
+   - `src/App.tsx` PageLoader displays "Loading AIRIC…".
+   - `index.html` title is "AIRIC — Intelligent Research, Innovation & Commercialization Center".
 2. **Top Header:**
    - No top institution meta-bar exists above the navbar.
    - `src/components/layout/Navbar.tsx` is fixed at `top-0` with height around 64px (`pt-20` on `<main>`).
 3. **Hero Section:**
    - In `src/pages/public/Home.tsx`, the hero displays:
-     - Heading: "IRICC" / "Intelligent Research, Innovation & Commercialization Center"
+     - Heading: "AIRIC" / "Intelligent Research, Innovation & Commercialization Center"
      - Subheading: "A world-leading center uniting multidisciplinary scientific discovery..."
    - No 4 Core Pillars Bar exists.
 4. **Theme & CSS Tokens:**

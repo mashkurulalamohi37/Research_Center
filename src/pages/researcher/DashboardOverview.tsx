@@ -45,7 +45,7 @@ export const DashboardOverview: React.FC = () => {
             <Badge variant="cyan">Lead Investigator</Badge>
           </div>
           <p className="text-xs text-slate-500 dark:text-slate-400 font-mono">
-            Welcome back, Dr. Marcus Vance • Visual Intelligence & Neural Reconstruction Lab • IRICC
+            Welcome back, Dr. Marcus Vance • Visual Intelligence & Neural Reconstruction Lab • AIRIC
           </p>
         </div>
 

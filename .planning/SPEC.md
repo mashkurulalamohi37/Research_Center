@@ -10,7 +10,7 @@
 
 ## 1. Goal
 
-Refactor the existing IRICC website into the complete, production-ready "AIRIC Institute (Advanced Intelligence Research, Innovation & Commercialization Institute)" platform according to client documentation. Deliver an institutional digital presence featuring unified brand identity, a zero-dead-link 10-category navigation system, a dedicated 10-application product showcase portfolio (`/apps` and `/apps/:slug`), an organizational ecosystem matrix across 10 academic and commercial divisions, and comprehensive research homepage modules.
+Refactor the existing AIRIC website into the complete, production-ready "AIRIC Institute (Advanced Intelligence Research, Innovation & Commercialization Institute)" platform according to client documentation. Deliver an institutional digital presence featuring unified brand identity, a zero-dead-link 10-category navigation system, a dedicated 10-application product showcase portfolio (`/apps` and `/apps/:slug`), an organizational ecosystem matrix across 10 academic and commercial divisions, and comprehensive research homepage modules.
 
 ---
 
@@ -38,7 +38,7 @@ Refactor the existing IRICC website into the complete, production-ready "AIRIC I
 ### Requirement 2: Complete 10-Category Navigation System (Zero Dead '#' Links)
 Every item in the 10 navigation categories must link to an active route, tab, or filtered directory view. Zero placeholder `#` or `javascript:void(0)` links.
 
-#### Category 01: About IRICC / AIRIC (`/about`)
+#### Category 01: About AIRIC / AIRIC (`/about`)
 - **Core Sections:**
   - Vision, Mission & Objectives (`/about#vision-mission`)
   - Leadership & Governance (`/about#governance` or `/leadership`)
@@ -127,7 +127,7 @@ Every item in the 10 navigation categories must link to an active route, tab, or
 - Become a Member (`/collaborate#membership`)
 - Submit a Research Proposal (`/collaborate#proposal`)
 - Industry Collaboration Portal (`/collaborate#industry`)
-- Contact IRICC / AIRIC Campus (`/contact`)
+- Contact AIRIC / AIRIC Campus (`/contact`)
 
 #### Category 10: Automation Center (`/automation`)
 - Institutional Automation Workflows

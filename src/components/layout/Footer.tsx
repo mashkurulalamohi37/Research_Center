@@ -38,7 +38,7 @@ export const Footer: React.FC = () => {
                 href="https://github.com"
                 target="_blank"
                 rel="noreferrer"
-                aria-label="IRICC GitHub Organization"
+                aria-label="AIRIC GitHub Organization"
                 className="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-400 hover:text-cyan-700 dark:hover:text-cyan-400 hover:border-cyan-500/40 shadow-xs transition-colors focus-visible:ring-2 focus-visible:ring-cyan-500 focus-visible:outline-none"
               >
                 <Github className="w-4 h-4" />
@@ -47,7 +47,7 @@ export const Footer: React.FC = () => {
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noreferrer"
-                aria-label="IRICC LinkedIn Page"
+                aria-label="AIRIC LinkedIn Page"
                 className="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-400 hover:text-cyan-700 dark:hover:text-cyan-400 hover:border-cyan-500/40 shadow-xs transition-colors focus-visible:ring-2 focus-visible:ring-cyan-500 focus-visible:outline-none"
               >
                 <Linkedin className="w-4 h-4" />
@@ -56,7 +56,7 @@ export const Footer: React.FC = () => {
                 href="https://scholar.google.com"
                 target="_blank"
                 rel="noreferrer"
-                aria-label="IRICC Google Scholar Profile"
+                aria-label="AIRIC Google Scholar Profile"
                 className="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-400 hover:text-cyan-700 dark:hover:text-cyan-400 hover:border-cyan-500/40 shadow-xs transition-colors focus-visible:ring-2 focus-visible:ring-cyan-500 focus-visible:outline-none"
               >
                 <BookOpen className="w-4 h-4" />
@@ -65,7 +65,7 @@ export const Footer: React.FC = () => {
                 href="https://arxiv.org"
                 target="_blank"
                 rel="noreferrer"
-                aria-label="IRICC arXiv Repository"
+                aria-label="AIRIC arXiv Repository"
                 className="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-400 hover:text-cyan-700 dark:hover:text-cyan-400 hover:border-cyan-500/40 shadow-xs transition-colors focus-visible:ring-2 focus-visible:ring-cyan-500 focus-visible:outline-none"
               >
                 <Globe className="w-4 h-4" />

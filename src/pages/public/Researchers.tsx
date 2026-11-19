@@ -38,7 +38,7 @@ export const Researchers: React.FC = () => {
           Faculty & Investigators
         </Badge>
         <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight">
-          IRICC Research Directory
+          AIRIC Research Directory
         </h1>
         <p className="text-slate-600 dark:text-slate-300 text-base sm:text-lg mt-4 leading-relaxed max-w-2xl mx-auto">
           Distinguished faculty, principal investigators, postdoctoral fellows, and commercialization venture fellows leading our programs.

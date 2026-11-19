@@ -29,13 +29,13 @@ export const ResearcherSettings: React.FC = () => {
       <form onSubmit={handleSave} className="space-y-6">
         <Card className="p-6 border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 shadow-sm space-y-4">
           <h3 className="text-base font-bold text-slate-900 dark:text-slate-100 flex items-center gap-2">
-            <Key className="w-4 h-4 text-cyan-600 dark:text-cyan-400" /> IRICC API Access Token
+            <Key className="w-4 h-4 text-cyan-600 dark:text-cyan-400" /> AIRIC API Access Token
           </h3>
           <p className="text-xs text-slate-500 dark:text-slate-400">
             Use this token to programmatically submit papers, upload dataset artifacts, and query the knowledge graph.
           </p>
           <div className="flex gap-2">
-            <Input readOnly value="iricc_sec_token_991823908129482914801" className="font-mono text-xs" />
+            <Input readOnly value="AIRIC_sec_token_991823908129482914801" className="font-mono text-xs" />
             <Button variant="secondary" size="sm" type="button" onClick={() => success('Copied Token', 'API access token copied to clipboard.')}>
               Copy
             </Button>

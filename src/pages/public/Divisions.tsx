@@ -269,17 +269,17 @@ export const Divisions: React.FC = () => {
                         <Link
                           key={app.slug}
                           to={`/apps/${app.slug}`}
-                          className="group p-4 bg-slate-950/80 rounded-xl border border-slate-800 hover:border-cyan-500/40 transition-all flex items-start gap-3.5 hover:shadow-lg hover:shadow-cyan-950/20"
+                          className="group p-4 bg-slate-950/80 rounded-xl border border-slate-800 hover:border-cyan-500/40 transition-all flex items-start gap-3.5 hover:shadow-lg hover:shadow-cyan-950/20 overflow-hidden"
                         >
-                          <div className="p-2.5 rounded-lg bg-slate-900 border border-slate-700 text-cyan-400 group-hover:border-cyan-500/40 group-hover:scale-105 transition-all">
+                          <div className="p-2.5 rounded-lg bg-slate-900 border border-slate-700 text-cyan-400 group-hover:border-cyan-500/40 group-hover:scale-105 transition-all shrink-0">
                             <AppVectorIcon iconKey={app.iconKey} size="md" className="w-6 h-6 text-cyan-400" />
                           </div>
-                          <div>
+                          <div className="min-w-0 flex-1">
                             <div className="flex items-center gap-2">
-                              <h4 className="font-bold text-white group-hover:text-cyan-300 text-sm transition-colors">
+                              <h4 className="font-bold text-white group-hover:text-cyan-300 text-sm transition-colors truncate">
                                 {app.name}
                               </h4>
-                              <Badge variant="outline" className="text-[9px] px-1.5 py-0 bg-slate-900 border-slate-700 text-cyan-300">
+                              <Badge variant="outline" className="text-[9px] px-1.5 py-0 bg-slate-900 border-slate-700 text-cyan-300 shrink-0">
                                 {app.status}
                               </Badge>
                             </div>

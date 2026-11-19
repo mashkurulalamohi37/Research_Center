@@ -11,7 +11,7 @@
 ### The 10 Navigation Categories
 The client specification and user requirements demand a zero-dead-link 10-category navigation structure:
 
-1. **01. About IRICC / AIRIC (`/about`)**
+1. **01. About AIRIC / AIRIC (`/about`)**
    - Core:
      - Vision, Mission & Objectives (`/about#vision-mission`)
      - Leadership & Governance (`/about#governance`)
@@ -100,7 +100,7 @@ The client specification and user requirements demand a zero-dead-link 10-catego
    - Become a Member (`/collaborate#membership`)
    - Submit a Research Proposal (`/collaborate#proposal`)
    - Industry Collaboration (`/collaborate#industry`)
-   - Contact IRICC / AIRIC (`/contact`)
+   - Contact AIRIC / AIRIC (`/contact`)
 
 10. **10. Automation Center (`/automation`)**
     - Institutional Automation Workflows (`/automation#workflows`)

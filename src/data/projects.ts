@@ -26,8 +26,8 @@ export const mockProjects: Project[] = [
     technologies: ['PyTorch', 'Z3 SMT Solver', 'JAX', 'CUDA Custom Kernels', 'Formal Verification'],
     featured: true,
     publicationsIds: ['pub-neurips-2025-logic', 'pub-icml-2024-causal'],
-    githubUrl: 'https://github.com/iricc/neurologic-core',
-    demoUrl: 'https://neurologic.iricc.org',
+    githubUrl: 'https://github.com/AIRIC/neurologic-core',
+    demoUrl: 'https://neurologic.AIRIC.org',
     deliverables: [
       { title: 'Differentiable SMT Solver Kernel', date: '2023-09-01', completed: true },
       { title: '14B Parameter Symbolic Foundation Model', date: '2024-06-15', completed: true },
@@ -60,7 +60,7 @@ export const mockProjects: Project[] = [
     technologies: ['3D Gaussian Splatting', 'CUDA', 'Stereo Endoscopy', 'OpenCV', 'Vision Transformers'],
     featured: true,
     publicationsIds: ['pub-cvpr-2025-surgical', 'pub-miccai-2024-splat'],
-    demoUrl: 'https://surgical3d.iricc.org',
+    demoUrl: 'https://surgical3d.AIRIC.org',
     deliverables: [
       { title: 'Real-Time Endoscopic Stream Pipeline', date: '2023-12-01', completed: true },
       { title: 'Sub-Millimeter Tissue Deformation Model', date: '2024-11-20', completed: true },
@@ -92,7 +92,7 @@ export const mockProjects: Project[] = [
     technologies: ['ROS2', 'Multi-Agent RL', 'LIDAR Odometry', 'Distributed SLAM', 'UWB Mesh'],
     featured: true,
     publicationsIds: ['pub-icra-2025-swarm'],
-    githubUrl: 'https://github.com/iricc/swarm-rescue',
+    githubUrl: 'https://github.com/AIRIC/swarm-rescue',
     deliverables: [
       { title: 'Autonomous P2P Spatial SLAM Protocol', date: '2023-04-10', completed: true },
       { title: 'Autonomous Air-Ground Team Rendezvous', date: '2024-05-18', completed: true },

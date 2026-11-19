@@ -13,7 +13,7 @@ import { useToast } from '../../context/ToastContext';
 import { useDocumentTitle } from '../../hooks/useDocumentTitle';
 
 export const Collaborate: React.FC = () => {
-  useDocumentTitle('Partner with IRICC — Strategic Alliances & Commercialization');
+  useDocumentTitle('Partner with AIRIC — Strategic Alliances & Commercialization');
   const [formData, setFormData] = useState({
     contactPerson: '',
     organization: '',
@@ -60,7 +60,7 @@ export const Collaborate: React.FC = () => {
       await researchService.submitCollaboration(formData);
       setIsSubmitting(false);
       setIsSubmitted(true);
-      success('Collaboration Proposal Received', 'The IRICC Office of Commercialization & Technology Transfer has assigned an intake reference ID.');
+      success('Collaboration Proposal Received', 'The AIRIC Office of Commercialization & Technology Transfer has assigned an intake reference ID.');
     } catch {
       setIsSubmitting(false);
       error('Submission Error', 'Failed to transmit proposal. Please try again.');
@@ -76,7 +76,7 @@ export const Collaborate: React.FC = () => {
           Strategic Partnerships & Commercialization
         </Badge>
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight">
-          Collaborate With <span className="text-gradient-cyan">IRICC</span>
+          Collaborate With <span className="text-gradient-cyan">AIRIC</span>
         </h1>
         <p className="text-slate-600 dark:text-slate-300 text-base sm:text-lg mt-4 leading-relaxed max-w-2xl mx-auto">
           Partner with our principal investigators, faculty, and venture fellows to pioneer breakthroughs in science, intellectual property, and global commercialization.
@@ -107,7 +107,7 @@ export const Collaborate: React.FC = () => {
               </div>
               <h3 className="text-2xl font-bold text-slate-900 dark:text-slate-100">Proposal Submitted Successfully</h3>
               <p className="text-sm text-slate-600 dark:text-slate-300 max-w-md mx-auto leading-relaxed">
-                Thank you for reaching out to IRICC. A designated representative from the Office of Commercialization & Technology Transfer will review your inquiry within 3 business days.
+                Thank you for reaching out to AIRIC. A designated representative from the Office of Commercialization & Technology Transfer will review your inquiry within 3 business days.
               </p>
               <div className="pt-4">
                 <Button variant="outline" size="sm" onClick={() => setIsSubmitted(false)}>

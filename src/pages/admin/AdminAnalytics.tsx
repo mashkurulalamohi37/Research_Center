@@ -34,7 +34,7 @@ export const AdminAnalytics: React.FC = () => {
           </p>
         </div>
 
-        <Button variant="cyan" size="sm" onClick={() => success('Report Exported', 'Annual IRICC Research Impact Report (PDF) prepared.')}>
+        <Button variant="cyan" size="sm" onClick={() => success('Report Exported', 'Annual AIRIC Research Impact Report (PDF) prepared.')}>
           <Download className="w-3.5 h-3.5 mr-1" /> Export Annual Report
         </Button>
       </div>

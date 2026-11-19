@@ -48,7 +48,7 @@ export const AdminDashboard: React.FC = () => {
         <div>
           <div className="flex items-center gap-2 mb-1">
             <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight">
-              IRICC Directorate Executive Suite
+              AIRIC Directorate Executive Suite
             </h1>
             <Badge variant="purple">Superadmin</Badge>
           </div>

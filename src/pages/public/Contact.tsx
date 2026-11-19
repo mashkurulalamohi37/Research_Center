@@ -66,7 +66,7 @@ export const Contact: React.FC = () => {
           Institutional Communications
         </Badge>
         <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight">
-          Contact IRICC
+          Contact AIRIC
         </h1>
         <p className="text-slate-600 dark:text-slate-300 text-base sm:text-lg mt-4 leading-relaxed max-w-2xl mx-auto">
           Connect with our administration, research laboratories, technology transfer office, or commercialization team.
@@ -101,7 +101,7 @@ export const Contact: React.FC = () => {
                 </p>
                 <p className="flex items-center gap-2">
                   <Mail className="w-4 h-4 text-cyan-600 dark:text-cyan-400 shrink-0" />
-                  <span>contact@iricc.org</span>
+                  <span>contact@AIRIC.org</span>
                 </p>
               </div>
             </Card>
@@ -115,21 +115,21 @@ export const Contact: React.FC = () => {
                 <div className="p-3 rounded-xl bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 flex items-center justify-between">
                   <div>
                     <div className="font-semibold text-slate-900 dark:text-slate-200">Admissions & Fellowships</div>
-                    <div className="text-slate-500">fellowships@iricc.org</div>
+                    <div className="text-slate-500">fellowships@AIRIC.org</div>
                   </div>
                   <Badge variant="outline">Recruitment</Badge>
                 </div>
                 <div className="p-3 rounded-xl bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 flex items-center justify-between">
                   <div>
                     <div className="font-semibold text-slate-900 dark:text-slate-200">Office of Commercialization & Grants</div>
-                    <div className="text-slate-500">commercialization@iricc.org</div>
+                    <div className="text-slate-500">commercialization@AIRIC.org</div>
                   </div>
                   <Badge variant="cyan">Tech Transfer</Badge>
                 </div>
                 <div className="p-3 rounded-xl bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 flex items-center justify-between">
                   <div>
                     <div className="font-semibold text-slate-900 dark:text-slate-200">Press & Scientific Communications</div>
-                    <div className="text-slate-500">media@iricc.org</div>
+                    <div className="text-slate-500">media@AIRIC.org</div>
                   </div>
                   <Badge variant="outline">Press</Badge>
                 </div>
@@ -140,13 +140,13 @@ export const Contact: React.FC = () => {
             <div className="relative h-48 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xs">
               <img
                 src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=800&q=80"
-                alt="IRICC Campus Map"
+                alt="AIRIC Campus Map"
                 className="w-full h-full object-cover opacity-75"
               />
               <div className="absolute inset-0 bg-slate-900/20 dark:bg-navy-950/40 flex items-center justify-center">
                 <div className="p-3 rounded-2xl bg-white/95 dark:bg-navy-950/90 border border-slate-200 dark:border-cyan-500/40 text-center backdrop-blur-md shadow-md">
                   <MapPin className="w-5 h-5 text-cyan-600 dark:text-cyan-400 mx-auto mb-1 animate-bounce" />
-                  <div className="text-xs font-bold text-slate-900 dark:text-slate-100">IRICC Innovation Pavilion</div>
+                  <div className="text-xs font-bold text-slate-900 dark:text-slate-100">AIRIC Innovation Pavilion</div>
                   <div className="text-[10px] text-cyan-700 dark:text-cyan-300 font-mono">Cambridge Commercialization Quad</div>
                 </div>
               </div>
@@ -163,7 +163,7 @@ export const Contact: React.FC = () => {
                   </div>
                   <h3 className="text-2xl font-bold text-slate-900 dark:text-slate-100">Inquiry Dispatched</h3>
                   <p className="text-sm text-slate-600 dark:text-slate-300 max-w-sm mx-auto leading-relaxed">
-                    Thank you for contacting IRICC. A member of our administration will review and respond to your inquiry shortly.
+                    Thank you for contacting AIRIC. A member of our administration will review and respond to your inquiry shortly.
                   </p>
                   <div className="pt-4">
                     <Button variant="outline" size="sm" onClick={() => setIsSubmitted(false)}>

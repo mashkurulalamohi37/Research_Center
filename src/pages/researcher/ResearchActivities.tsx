@@ -28,7 +28,7 @@ export const ResearchActivities: React.FC = () => {
     },
     {
       title: 'Co-Organizer & Program Chair',
-      venue: 'IRICC International Symposium on Verifiable AI Safety 2026',
+      venue: 'AIRIC International Symposium on Verifiable AI Safety 2026',
       date: 'September 2026',
       type: 'Symposium Organization',
     }

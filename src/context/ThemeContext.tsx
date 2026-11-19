@@ -12,7 +12,7 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [theme, setThemeState] = useState<Theme>(() => {
-    const saved = localStorage.getItem('iricc-theme');
+    const saved = localStorage.getItem('AIRIC-theme');
     if (saved === 'dark' || saved === 'light') return saved;
     return 'light'; // Default to light mode
   });
@@ -26,7 +26,7 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       root.classList.add('light');
       root.classList.remove('dark');
     }
-    localStorage.setItem('iricc-theme', theme);
+    localStorage.setItem('AIRIC-theme', theme);
   }, [theme]);
 
   const toggleTheme = () => {

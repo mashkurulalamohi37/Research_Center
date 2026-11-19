@@ -1,5 +1,6 @@
 import React, { Suspense, lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { airicLogo } from './components/ui/Logo';
 
 // Layouts
 import { Layout } from './components/layout/Layout';
@@ -12,7 +13,7 @@ const PageLoader = () => (
   <div className="min-h-[60vh] flex flex-col items-center justify-center space-y-4">
     <div className="relative">
       <img
-        src="/iricc-logo.jpg"
+        src={airicLogo}
         alt="AIRIC Official Seal"
         width="56"
         height="56"
@@ -130,6 +131,7 @@ export const App: React.FC = () => {
           <Route path="health-wellbeing/:sectionSlug" element={<CategoryHubPage />} />
           <Route path="divisions" element={<Divisions />} />
           <Route path="divisions/:divisionSlug" element={<Divisions />} />
+          <Route path="divisions/:divisionSlug/:sectionSlug" element={<Divisions />} />
           <Route path="automation" element={<AutomationCenter />} />
           <Route path="datasets" element={<Datasets />} />
           <Route path="datasets/:slug" element={<Datasets />} />

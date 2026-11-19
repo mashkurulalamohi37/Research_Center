@@ -27,7 +27,7 @@ export const LabResources: React.FC = () => {
             Supercomputing cluster nodes, training dataset repositories, and lab documentation.
           </p>
         </div>
-        <Button variant="cyan" size="sm" onClick={() => success('Job Scheduler', 'Launched IRICC SLURM GPU job submission wizard.')}>
+        <Button variant="cyan" size="sm" onClick={() => success('Job Scheduler', 'Launched AIRIC SLURM GPU job submission wizard.')}>
           <Plus className="w-3.5 h-3.5 mr-1" /> Allocate Compute
         </Button>
       </div>

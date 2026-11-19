@@ -32,7 +32,7 @@ export const Resources: React.FC = () => {
   };
 
   const handleDownload = (item: typeof mockResources[0]) => {
-    success('Resource Download Ready', `Accessing ${item.title} (${item.fileSize}) from IRICC artifact mirror.`);
+    success('Resource Download Ready', `Accessing ${item.title} (${item.fileSize}) from AIRIC artifact mirror.`);
   };
 
   return (
@@ -44,7 +44,7 @@ export const Resources: React.FC = () => {
           Open Science Repository
         </Badge>
         <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight">
-          IRICC Open Datasets, Models & Tools
+          AIRIC Open Datasets, Models & Tools
         </h1>
         <p className="text-slate-600 dark:text-slate-300 text-base sm:text-lg mt-4 leading-relaxed max-w-2xl mx-auto">
           We release open-weights models, 3D surgical perception datasets, formal verification solvers, and robotics packages for academic reproducibility.

@@ -130,7 +130,7 @@ export const DivisionFlyout: React.FC<DivisionFlyoutProps> = ({
         {/* Flyout Footer Action Link */}
         <div className="relative z-10 pt-2.5 border-t border-slate-800/80 flex items-center justify-between">
           <Link
-            to="/divisions"
+            to={`/divisions/${division.id}`}
             className="text-[11px] font-medium text-cyan-400 hover:text-cyan-300 transition-colors flex items-center gap-1 group"
           >
             <span>Explore {division.shortName} Portal</span>

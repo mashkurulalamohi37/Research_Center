@@ -27,12 +27,12 @@ export const PublicationDetail: React.FC = () => {
 
   const getCitationText = () => {
     if (citeFormat === 'bibtex') {
-      return `@article{iricc_${pub.slug.replace(/-/g, '_')}_${pub.year},
+      return `@article{AIRIC_${pub.slug.replace(/-/g, '_')}_${pub.year},
   title = {${pub.title}},
   author = {${pub.authors.join(' and ')}},
   journal = {${pub.venue}},
   year = {${pub.year}},
-  doi = {${pub.doi || '10.1145/iricc.2025.01'}}
+  doi = {${pub.doi || '10.1145/AIRIC.2025.01'}}
 }`;
     } else if (citeFormat === 'apa') {
       return `${pub.authors.join(', ')} (${pub.year}). ${pub.title}. ${pub.venue}.${pub.doi ? ` https://doi.org/${pub.doi}` : ''}`;
@@ -97,7 +97,7 @@ export const PublicationDetail: React.FC = () => {
             </div>
             <div>
               <span className="text-slate-500 dark:text-slate-400 block">Publisher</span>
-              <strong className="text-slate-800 dark:text-slate-200">{pub.publisher || 'IRICC Open Press'}</strong>
+              <strong className="text-slate-800 dark:text-slate-200">{pub.publisher || 'AIRIC Open Press'}</strong>
             </div>
             <div>
               <span className="text-slate-500 dark:text-slate-400 block">DOI Identifier</span>

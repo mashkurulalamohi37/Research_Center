@@ -4,9 +4,9 @@ export const useDocumentTitle = (title: string) => {
   useEffect(() => {
     const prevTitle = document.title;
     if (title) {
-      document.title = `${title} | IRICC`;
+      document.title = `${title} | AIRIC`;
     } else {
-      document.title = 'IRICC — Intelligent Research, Innovation & Commercialization Center';
+      document.title = 'AIRIC — Intelligent Research, Innovation & Commercialization Center';
     }
     return () => {
       document.title = prevTitle;

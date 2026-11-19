@@ -34,11 +34,11 @@ export const AdminSettings: React.FC = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label className="text-xs font-semibold text-slate-700 dark:text-slate-300 block mb-1">Institute Display Name</label>
-              <Input defaultValue="International Research and Innovation and Commercialization Center (IRICC)" />
+              <Input defaultValue="International Research and Innovation and Commercialization Center (AIRIC)" />
             </div>
             <div>
               <label className="text-xs font-semibold text-slate-700 dark:text-slate-300 block mb-1">Official DOI CrossRef Prefix</label>
-              <Input defaultValue="10.1145/iricc" className="font-mono" />
+              <Input defaultValue="10.1145/AIRIC" className="font-mono" />
             </div>
           </div>
         </Card>
@@ -53,7 +53,7 @@ export const AdminSettings: React.FC = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label className="text-xs font-semibold text-slate-700 dark:text-slate-300 block mb-1">FastAPI Backend Endpoint</label>
-              <Input defaultValue="https://api.iricc.org/v1" />
+              <Input defaultValue="https://api.AIRIC.org/v1" />
             </div>
             <div>
               <label className="text-xs font-semibold text-slate-700 dark:text-slate-300 block mb-1">Environment Mode</label>

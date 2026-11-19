@@ -14,7 +14,7 @@ export const AdminMedia: React.FC = () => {
   const mediaFiles = [
     {
       id: 'med-1',
-      title: 'IRICC High-Bay Autonomous Robotics Facility',
+      title: 'AIRIC High-Bay Autonomous Robotics Facility',
       url: 'https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=1000&q=80',
       size: '2.4 MB',
       format: 'JPEG / 4K',

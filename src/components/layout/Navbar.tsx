@@ -118,7 +118,7 @@ export const Navbar: React.FC = () => {
 
   return (
     <>
-      <header className={`${isHome ? 'w-full shrink-0' : 'fixed top-0 left-0 right-0'} z-40 shadow-xs`}>
+      <header className={`${isHome ? 'sticky top-0 w-full' : 'fixed top-0 left-0 right-0'} z-40 shadow-xs`}>
         <TopHeaderBar onOpenSearch={() => setSearchOpen(true)} />
         <div
           className={`transition-all duration-300 ${

@@ -303,7 +303,7 @@ export const OpportunityDetail: React.FC = () => {
               rows={4}
               value={formData.statementOfPurpose}
               onChange={e => setFormData({ ...formData, statementOfPurpose: e.target.value })}
-              placeholder="Outline your research background, technical skills, and why your interests align with IRICC..."
+              placeholder="Outline your research background, technical skills, and why your interests align with AIRIC..."
             />
           </div>
 

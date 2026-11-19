@@ -21,7 +21,7 @@ export const AdminNews: React.FC = () => {
     category: 'Research' as NewsCategory,
     excerpt: '',
     content: '',
-    author: 'IRICC Newsroom',
+    author: 'AIRIC Newsroom',
     coverImage: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80',
   });
 
@@ -34,7 +34,7 @@ export const AdminNews: React.FC = () => {
       category: 'Research',
       excerpt: '',
       content: '',
-      author: 'IRICC Newsroom',
+      author: 'AIRIC Newsroom',
       coverImage: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80',
     });
     setModalOpen(true);
@@ -55,7 +55,7 @@ export const AdminNews: React.FC = () => {
         publishDate: new Date().toISOString().split('T')[0],
         featured: false,
         status: 'Published',
-        tags: ['IRICC', formState.category],
+        tags: ['AIRIC', formState.category],
       };
       setArticles(prev => [newArticle, ...prev]);
       success('Article Dispatched', 'New press release is now live.');
@@ -118,7 +118,7 @@ export const AdminNews: React.FC = () => {
         isOpen={modalOpen}
         onClose={() => setModalOpen(false)}
         title={isEditing ? 'Edit Article' : 'Compose News Article'}
-        description="Publish article to the public IRICC newsroom."
+        description="Publish article to the public AIRIC newsroom."
         maxWidth="2xl"
       >
         <form onSubmit={handleSave} className="space-y-4">
@@ -128,7 +128,7 @@ export const AdminNews: React.FC = () => {
               required
               value={formState.title}
               onChange={e => setFormState({ ...formState, title: e.target.value })}
-              placeholder="e.g. IRICC Researchers Win Best Paper at CVPR 2025"
+              placeholder="e.g. AIRIC Researchers Win Best Paper at CVPR 2025"
             />
           </div>
 

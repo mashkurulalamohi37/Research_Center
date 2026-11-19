@@ -1,5 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import airicLogoAsset from '@/assets/logo.jpg';
+
+export const airicLogo = airicLogoAsset;
 
 interface LogoProps {
   size?: 'sm' | 'md' | 'lg' | 'xl';
@@ -29,12 +32,18 @@ export const Logo: React.FC<LogoProps> = ({
     <div className={`inline-flex items-center gap-3 shrink-0 group ${className}`}>
       <div className="relative shrink-0">
         <img
-          src="/iricc-logo.jpg"
+          src={airicLogo}
           alt="AIRIC Official Seal"
           width="40"
           height="40"
           className={`${img} rounded-full object-cover shadow-sm ring-2 ring-amber-400/30 group-hover:ring-amber-500/60 transition-all duration-300`}
           loading="eager"
+          onError={(e) => {
+            const target = e.currentTarget;
+            if (target.src !== '/AIRIC-logo.jpg') {
+              target.src = '/AIRIC-logo.jpg';
+            }
+          }}
         />
       </div>
       <div className="flex flex-col text-left">

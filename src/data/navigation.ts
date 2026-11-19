@@ -25,7 +25,7 @@ export const navigationCategories: NavCategory[] = [
   {
     id: 'about',
     number: '01',
-    title: 'About IRICC / AIRIC',
+    title: 'About AIRIC Institute',
     shortTitle: 'About',
     path: '/about',
     tagline: 'Institutional vision, governance, advisory council, and research personnel',

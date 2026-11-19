@@ -17,7 +17,7 @@ Refine the header and navbar to display ONLY the circular AIRIC seal graphic and
 - **Action**:
   - Update `LogoProps` so `showSubtitle` defaults to `false`.
   - When `showSubtitle` is false, strictly omit the long string `"Advanced Intelligence Research, Innovation & Commercialization Institute"`.
-  - Display the circular seal graphic (`/iricc-logo.jpg`), the bold acronym **`AIRIC`**, and the monospace `"INSTITUTE"` pill badge.
+  - Display the circular seal graphic (`/AIRIC-logo.jpg`), the bold acronym **`AIRIC`**, and the monospace `"INSTITUTE"` pill badge.
 - **Verification**: Inspect navbar; ensure only the circular logo and `AIRIC` text render without subtitle.
 
 ### Task 2: Refactor `TopHeaderBar.tsx` to Exclude Full Organization Name

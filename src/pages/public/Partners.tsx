@@ -28,7 +28,7 @@ export const Partners: React.FC = () => {
           Global Academic & Industrial Alliances
         </h1>
         <p className="text-slate-600 dark:text-slate-300 text-base sm:text-lg mt-4 leading-relaxed max-w-2xl mx-auto">
-          IRICC operates through extensive collaborative partnerships with premier universities, international research institutes, teaching hospitals, and technology enterprises.
+          AIRIC operates through extensive collaborative partnerships with premier universities, international research institutes, teaching hospitals, and technology enterprises.
         </p>
 
         {/* Filter Buttons */}
@@ -118,7 +118,7 @@ export const Partners: React.FC = () => {
             Establish a Research Partnership
           </h2>
           <p className="text-sm text-slate-600 dark:text-slate-300 max-w-xl mx-auto leading-relaxed">
-            We actively negotiate sponsored research agreements, compute cluster sharing, and joint doctoral co-advising with IRICC.
+            We actively negotiate sponsored research agreements, compute cluster sharing, and joint doctoral co-advising with AIRIC.
           </p>
           <div className="pt-2">
             <Link to="/collaborate">

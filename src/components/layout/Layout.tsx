@@ -9,11 +9,12 @@ export const Layout: React.FC = () => {
 
   if (isHome) {
     return (
-      <div className="min-h-screen lg:h-screen lg:max-h-screen overflow-x-hidden lg:overflow-hidden flex flex-col bg-background text-foreground selection:bg-cyan-500/20 selection:text-cyan-400">
+      <div className="min-h-screen flex flex-col bg-background text-foreground selection:bg-cyan-500/20 selection:text-cyan-400">
         <Navbar />
-        <main className="flex-1 min-h-0 overflow-y-auto lg:overflow-hidden flex flex-col">
+        <main className="flex-1 flex flex-col">
           <Outlet />
         </main>
+        <Footer />
       </div>
     );
   }

@@ -36,7 +36,7 @@ export const Events: React.FC = () => {
           Symposiums, Seminars & Workshops
         </h1>
         <p className="text-slate-600 dark:text-slate-300 text-base sm:text-lg mt-4 leading-relaxed max-w-2xl mx-auto">
-          Participate in international AI symposiums, distinguished keynote lectures, hands-on masterclasses, and student research hackathons hosted by IRICC.
+          Participate in international AI symposiums, distinguished keynote lectures, hands-on masterclasses, and student research hackathons hosted by AIRIC.
         </p>
 
         {/* Filter Bar */}
@@ -131,7 +131,7 @@ export const Events: React.FC = () => {
           </div>
         ) : (
           <div className="py-12 text-center text-slate-500 dark:text-slate-400 space-y-2">
-            <p className="text-base font-semibold text-slate-800 dark:text-slate-200">IRICC Video Lecture Archive</p>
+            <p className="text-base font-semibold text-slate-800 dark:text-slate-200">AIRIC Video Lecture Archive</p>
             <p className="text-xs text-slate-500">Over 40+ keynote recordings from past NeurIPS, CVPR, and ICRA preparatory workshops.</p>
           </div>
         )}

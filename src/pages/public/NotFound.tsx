@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Compass } from 'lucide-react';
 import { Button } from '../../components/ui/Button';
+import { airicLogo } from '../../components/ui/Logo';
 
 export const NotFound: React.FC = () => {
   return (
@@ -13,11 +14,15 @@ export const NotFound: React.FC = () => {
           </div>
           <div className="absolute inset-0 flex items-center justify-center">
             <img
-              src="/iricc-logo.jpg"
-              alt="IRICC Official Seal"
+              src={airicLogo}
+              alt="AIRIC Official Seal"
               width="64"
               height="64"
               className="w-16 h-16 rounded-full object-cover shadow-lg ring-2 ring-amber-400/50"
+              onError={(e) => {
+                const target = e.currentTarget;
+                if (target.src !== '/AIRIC-logo.jpg') target.src = '/AIRIC-logo.jpg';
+              }}
             />
           </div>
         </div>
@@ -27,7 +32,7 @@ export const NotFound: React.FC = () => {
             Academic Coordinate Not Found
           </h2>
           <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-            The requested research publication, project record, or portal page does not exist in the IRICC directory.
+            The requested research publication, project record, or portal page does not exist in the AIRIC directory.
           </p>
         </div>
 

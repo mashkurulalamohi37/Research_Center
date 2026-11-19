@@ -39,7 +39,7 @@ Establish the complete, official AIRIC institutional identity across the top hea
    - Update `PageLoader` label to: `Loading AIRIC…`
 </action>
 <verify>
-Inspect `index.html`, `Logo.tsx`, and `App.tsx` to verify all IRICC branding strings have been cleanly updated to AIRIC.
+Inspect `index.html`, `Logo.tsx`, and `App.tsx` to verify all AIRIC branding strings have been cleanly updated to AIRIC.
 </verify>
 <done>
 Global logo, loader, and document metadata accurately reflect AIRIC Institute.

@@ -8,6 +8,7 @@ import {
 import { useAuth } from '../../context/AuthContext';
 import { Badge } from '../ui/Badge';
 import { Button } from '../ui/Button';
+import { airicLogo } from '../ui/Logo';
 
 export const ResearcherLayout: React.FC = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -52,14 +53,18 @@ export const ResearcherLayout: React.FC = () => {
           <div className="flex items-center justify-between px-3 py-3 mb-3 border-b border-slate-200 dark:border-slate-800/80 shrink-0">
             <Link to="/" className="flex items-center gap-3">
               <img
-                src="/iricc-logo.jpg"
-                alt="IRICC Official Seal"
+                src={airicLogo}
+                alt="AIRIC Official Seal"
                 width="36"
                 height="36"
                 className="w-9 h-9 rounded-full object-cover shadow-sm ring-2 ring-amber-400/40 shrink-0"
+                onError={(e) => {
+                  const target = e.currentTarget;
+                  if (target.src !== '/AIRIC-logo.jpg') target.src = '/AIRIC-logo.jpg';
+                }}
               />
               <div className="flex flex-col">
-                <span className="text-base font-black tracking-wider text-slate-900 dark:text-slate-100 font-sans">IRICC PORTAL</span>
+                <span className="text-base font-black tracking-wider text-slate-900 dark:text-slate-100 font-sans">AIRIC PORTAL</span>
                 <span className="text-[10px] text-cyan-700 dark:text-cyan-400 font-mono font-bold">FACULTY CONSOLE</span>
               </div>
             </Link>
@@ -134,7 +139,7 @@ export const ResearcherLayout: React.FC = () => {
               <Menu className="w-5 h-5" />
             </button>
             <div className="text-xs text-slate-500 dark:text-slate-400 font-mono hidden sm:block">
-              Connected to <strong className="text-cyan-700 dark:text-cyan-400">IRICC Secure Node (Cambridge-East)</strong>
+              Connected to <strong className="text-cyan-700 dark:text-cyan-400">AIRIC Secure Node (Cambridge-East)</strong>
             </div>
           </div>
 

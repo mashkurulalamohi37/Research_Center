@@ -24,7 +24,7 @@ export const DivisionsNavRail: React.FC = () => {
   const leaveTimerRef = useRef<NodeJS.Timeout | null>(null);
   const containerRef = useRef<HTMLElement>(null);
 
-  const handleItemMouseEnter = (division: DivisionItem, e: React.MouseEvent<HTMLDivElement>) => {
+  const handleItemMouseEnter = (division: DivisionItem, e: React.MouseEvent<HTMLElement>) => {
     if (leaveTimerRef.current) {
       clearTimeout(leaveTimerRef.current);
       leaveTimerRef.current = null;
@@ -102,8 +102,9 @@ export const DivisionsNavRail: React.FC = () => {
           const subtitle = divisionSubtitles[division.id] || division.tagline || 'Scientific Research';
 
           return (
-            <div
+            <Link
               key={division.id}
+              to={`/divisions/${division.id}`}
               onMouseEnter={(e) => handleItemMouseEnter(division, e)}
               className={`group relative px-3 py-2 sm:py-2.5 transition-all duration-150 cursor-pointer flex items-center justify-between ${
                 isActive
@@ -129,7 +130,7 @@ export const DivisionsNavRail: React.FC = () => {
                     : 'text-slate-400 dark:text-slate-500 group-hover:text-slate-600 dark:group-hover:text-slate-300'
                 }`}
               />
-            </div>
+            </Link>
           );
         })}
       </div>

@@ -1,4 +1,4 @@
-# International Research and Innovation and Commercialization Center (IRICC) — Full-Stack Platform
+# International Research and Innovation and Commercialization Center (AIRIC) — Full-Stack Platform
 
 [![React](https://img.shields.io/badge/Frontend-React_18_|_TypeScript_5-61DAFB?logo=react&logoColor=black)](https://react.dev/)
 [![Vite](https://img.shields.io/badge/Bundler-Vite_6-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)
@@ -10,17 +10,17 @@
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 > **"Advancing Research. Empowering Innovation. Accelerating Commercialization."**  
-> An enterprise-grade, multidisciplinary scientific web application and research management platform engineered for the International Research and Innovation and Commercialization Center (IRICC).
+> An enterprise-grade, multidisciplinary scientific web application and research management platform engineered for the International Research and Innovation and Commercialization Center (AIRIC).
 
 ---
 
 ## 🔬 Institutional Architecture & Capabilities
 
-The **IRICC Digital Platform** combines a light-themed, public-facing academic & technology transfer portal with authenticated scientific lab management workspaces and an institute-wide Directorate CMS.
+The **AIRIC Digital Platform** combines a light-themed, public-facing academic & technology transfer portal with authenticated scientific lab management workspaces and an institute-wide Directorate CMS.
 
 ```text
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                          IRICC DIGITAL ECOSYSTEM                            │
+│                          AIRIC DIGITAL ECOSYSTEM                            │
 ├─────────────────────────┬─────────────────────────┬─────────────────────────┤
 │    PUBLIC WEB PORTAL    │    RESEARCHER PORTAL    │   ADMIN DIRECTORATE CMS │
 ├─────────────────────────┼─────────────────────────┼─────────────────────────┤
@@ -187,9 +187,9 @@ The platform includes pre-configured demo presets for rapid evaluation:
 
 | Role | Email | Password | Access Scope |
 |---|---|---|---|
-| **Institute Director (Admin)** | `director@iricc.org` | `iricc2026!` | Full Admin Directorate CMS (`/admin`), Review Queues, Audit Logs, Settings |
-| **Principal Investigator (Researcher)** | `m.vance@iricc.org` | `iricc2026!` | Researcher Portal (`/dashboard`), Publication Pipeline, Project Grants, Lab Bookings |
-| **Faculty Lead (Researcher)** | `sarah.lin@iricc.org` | `iricc2026!` | Research Workspace, Authored Papers, Student Tracking |
+| **Institute Director (Admin)** | `director@AIRIC.org` | `AIRIC2026!` | Full Admin Directorate CMS (`/admin`), Review Queues, Audit Logs, Settings |
+| **Principal Investigator (Researcher)** | `m.vance@AIRIC.org` | `AIRIC2026!` | Researcher Portal (`/dashboard`), Publication Pipeline, Project Grants, Lab Bookings |
+| **Faculty Lead (Researcher)** | `sarah.lin@AIRIC.org` | `AIRIC2026!` | Research Workspace, Authored Papers, Student Tracking |
 | **Public Visitor (Guest)** | *Unauthenticated* | *N/A* | Public Institute Catalog, Application Intake, BibTeX Generator |
 
 *(You can also use the **Quick Demo Switcher** buttons on the `/login` page for instant role switching without typing credentials).*
@@ -214,12 +214,12 @@ This project is licensed under the **MIT License** — see the [LICENSE](LICENSE
 
 ## 🏛️ Acknowledgments & Citation
 
-If you utilize the IRICC platform or its research methodologies in your academic work, please cite:
+If you utilize the AIRIC platform or its research methodologies in your academic work, please cite:
 
 ```bibtex
-@misc{iricc2026platform,
-  title={International Research and Innovation and Commercialization Center (IRICC) Full-Stack Digital Platform},
-  author={IRICC Directorate and Engineering Team},
+@misc{AIRIC2026platform,
+  title={International Research and Innovation and Commercialization Center (AIRIC) Full-Stack Digital Platform},
+  author={AIRIC Directorate and Engineering Team},
   year={2026},
   publisher={GitHub},
   howpublished={\url{https://github.com/mashkurulalamohi37/Research_Center}}

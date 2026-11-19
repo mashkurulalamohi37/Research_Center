@@ -5,6 +5,7 @@ import { Button } from '../../components/ui/Button';
 import { Input } from '../../components/ui/Input';
 import { useToast } from '../../context/ToastContext';
 import { useDocumentTitle } from '../../hooks/useDocumentTitle';
+import { airicLogo } from '../../components/ui/Logo';
 
 export const ForgotPassword: React.FC = () => {
   useDocumentTitle('Reset Portal Password');
@@ -26,13 +27,17 @@ export const ForgotPassword: React.FC = () => {
         <div className="text-center space-y-3">
           <Link to="/" className="inline-flex flex-col items-center gap-2 mb-2 group">
             <img
-              src="/iricc-logo.jpg"
-              alt="IRICC Official Seal"
+              src={airicLogo}
+              alt="AIRIC Official Seal"
               width="64"
               height="64"
               className="w-16 h-16 rounded-full object-cover shadow-md ring-2 ring-amber-400/50 group-hover:ring-amber-500/80 transition-all duration-300"
+              onError={(e) => {
+                const target = e.currentTarget;
+                if (target.src !== '/AIRIC-logo.jpg') target.src = '/AIRIC-logo.jpg';
+              }}
             />
-            <span className="text-2xl font-black text-slate-900 dark:text-slate-100 tracking-wider font-sans">IRICC</span>
+            <span className="text-2xl font-black text-slate-900 dark:text-slate-100 tracking-wider font-sans">AIRIC</span>
           </Link>
           <h2 className="text-2xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight">
             Reset Portal Access
@@ -69,7 +74,7 @@ export const ForgotPassword: React.FC = () => {
                   required
                   value={email}
                   onChange={e => setEmail(e.target.value)}
-                  placeholder="faculty@iricc.org"
+                  placeholder="faculty@AIRIC.org"
                 />
               </div>
 

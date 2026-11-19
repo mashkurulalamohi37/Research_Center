@@ -7,6 +7,7 @@ import { Button } from '../../components/ui/Button';
 import { Badge } from '../../components/ui/Badge';
 import { Card } from '../../components/ui/Card';
 import { useDocumentTitle } from '../../hooks/useDocumentTitle';
+import { airicLogo } from '../../components/ui/Logo';
 
 export const About: React.FC = () => {
   useDocumentTitle('About the Institute');
@@ -17,11 +18,15 @@ export const About: React.FC = () => {
       <section className="container mx-auto px-4 lg:px-8 text-center max-w-4xl">
         <div className="flex justify-center mb-6">
           <img
-            src="/iricc-logo.jpg"
-            alt="IRICC Official Seal"
+            src={airicLogo}
+            alt="AIRIC Official Seal"
             width="80"
             height="80"
             className="w-20 h-20 rounded-full object-cover shadow-lg ring-4 ring-amber-400/40"
+            onError={(e) => {
+              const target = e.currentTarget;
+              if (target.src !== '/AIRIC-logo.jpg') target.src = '/AIRIC-logo.jpg';
+            }}
           />
         </div>
         <Badge variant="cyan" className="mb-4">
@@ -33,7 +38,7 @@ export const About: React.FC = () => {
           <span className="text-gradient-cyan">Enabling Commercialization.</span>
         </h1>
         <p className="text-slate-600 dark:text-slate-300 text-base sm:text-lg mt-6 leading-relaxed max-w-3xl mx-auto">
-          The International Research and Innovation and Commercialization Center (IRICC) is an autonomous international research institute dedicated to foundational discovery, deep-tech innovation, and translating lab breakthroughs into global commercial solutions.
+          The International Research and Innovation and Commercialization Center (AIRIC) is an autonomous international research institute dedicated to foundational discovery, deep-tech innovation, and translating lab breakthroughs into global commercial solutions.
         </p>
       </section>
 
@@ -95,7 +100,7 @@ export const About: React.FC = () => {
                 "Bridging Fundamental Discovery and Global Commercialization"
               </h3>
               <p>
-                At IRICC, we believe the current paradigm of artificial intelligence and deep-tech is approaching a critical scientific and economic inflection point. While laboratory foundation models demonstrate startling conversational fluency, high-stakes endeavors—such as robotic surgery, autonomous transportation, and molecular pharmacology—demand verifiable precision and scalable commercial translation.
+                At AIRIC, we believe the current paradigm of artificial intelligence and deep-tech is approaching a critical scientific and economic inflection point. While laboratory foundation models demonstrate startling conversational fluency, high-stakes endeavors—such as robotic surgery, autonomous transportation, and molecular pharmacology—demand verifiable precision and scalable commercial translation.
               </p>
               <p>
                 Our center was founded on the conviction that the future belongs to integrated neuro-symbolic systems, verifiable autonomy, and streamlined technology transfer pipelines that move discoveries from academic bench to global markets.
@@ -128,7 +133,7 @@ export const About: React.FC = () => {
           <div className="relative flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="w-full md:w-5/12 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/70 text-right shadow-xs">
               <span className="text-xs font-mono text-cyan-700 dark:text-cyan-400 font-bold">2020</span>
-              <h4 className="text-base font-bold text-slate-900 dark:text-slate-100 mt-1">Founding of IRICC</h4>
+              <h4 className="text-base font-bold text-slate-900 dark:text-slate-100 mt-1">Founding of AIRIC</h4>
               <p className="text-xs text-slate-600 dark:text-slate-400 mt-1">Established with an initial $25M founding grant to explore neuro-symbolic reasoning, AI safety, and tech commercialization.</p>
             </div>
             <div className="w-8 h-8 rounded-full bg-cyan-600 text-white dark:bg-cyan-400 dark:text-navy-950 flex items-center justify-center font-bold text-xs shrink-0 z-10 shadow-md shadow-cyan-400/30">
@@ -181,7 +186,7 @@ export const About: React.FC = () => {
           <Badge variant="cyan">Governance</Badge>
           <h3 className="text-2xl font-bold text-slate-900 dark:text-slate-100">Institutional Governance & Advisory</h3>
           <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed max-w-2xl mx-auto">
-            IRICC is governed by an independent International Board of Scientific Overseers comprising Nobel Laureates, Turing Award winners, venture partners, and senior university leaders.
+            AIRIC is governed by an independent International Board of Scientific Overseers comprising Nobel Laureates, Turing Award winners, venture partners, and senior university leaders.
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4 text-xs font-semibold text-slate-800 dark:text-slate-300">
             <div className="p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/60 shadow-xs">

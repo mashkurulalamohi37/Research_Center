@@ -114,7 +114,7 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({ isOpen, on
           {!q && (
             <div className="py-8 text-center text-slate-500 dark:text-slate-400">
               <Sparkles className="w-8 h-8 text-cyan-500/70 mx-auto mb-3 animate-pulse-slow" />
-              <p className="text-sm font-medium text-slate-700 dark:text-slate-300">Search the complete IRICC Knowledge Graph</p>
+              <p className="text-sm font-medium text-slate-700 dark:text-slate-300">Search the complete AIRIC Knowledge Graph</p>
               <p className="text-xs text-slate-500 mt-1">Try "Neuro-Symbolic", "Sarah Lin", "Surgical Vision", "Quantum", "Fellowship"</p>
             </div>
           )}
@@ -270,7 +270,7 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({ isOpen, on
             <span>•</span>
             <span>Real-time graph indexing</span>
           </div>
-          <span className="text-cyan-700 dark:text-cyan-400 font-medium">IRICC Core Index v1.0</span>
+          <span className="text-cyan-700 dark:text-cyan-400 font-medium">AIRIC Core Index v1.0</span>
         </div>
       </div>
     </div>

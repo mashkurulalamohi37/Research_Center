@@ -151,32 +151,32 @@ export const EcosystemGrid: React.FC = () => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.95 }}
                   transition={{ duration: 0.25 }}
-                  className="group relative bg-slate-900/90 rounded-xl border border-slate-800 hover:border-cyan-500/40 p-6 flex flex-col justify-between transition-all duration-300 hover:shadow-xl hover:shadow-cyan-950/30"
+                  className="group relative bg-slate-900/90 rounded-xl border border-slate-800 hover:border-cyan-500/40 p-6 flex flex-col justify-between transition-all duration-300 hover:shadow-xl hover:shadow-cyan-950/30 overflow-hidden"
                 >
                   {/* Top Bar with Number & Category */}
                   <div>
-                    <div className="flex items-center justify-between mb-4">
-                      <div className="flex items-center gap-2">
-                        <div className="w-8 h-8 rounded-lg bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center font-mono font-bold text-xs text-cyan-400 group-hover:scale-105 transition-transform">
+                    <div className="flex items-center justify-between mb-4 gap-2">
+                      <div className="flex items-center gap-2 min-w-0">
+                        <div className="w-8 h-8 rounded-lg bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center font-mono font-bold text-xs text-cyan-400 group-hover:scale-105 transition-transform shrink-0">
                           {division.number}
                         </div>
-                        <Badge variant="outline" className="text-[10px] bg-slate-800/80 border-slate-700 text-slate-300">
+                        <Badge variant="outline" className="text-[10px] bg-slate-800/80 border-slate-700 text-slate-300 truncate">
                           {division.category}
                         </Badge>
                       </div>
 
-                      <span className="text-[11px] font-mono text-cyan-400/80 bg-cyan-950/40 px-2 py-0.5 rounded border border-cyan-900/40">
+                      <span className="text-[11px] font-mono text-cyan-400/80 bg-cyan-950/40 px-2 py-0.5 rounded border border-cyan-900/40 shrink-0 truncate max-w-[170px]" title={division.badge}>
                         {division.badge}
                       </span>
                     </div>
 
                     {/* Icon & Title */}
-                    <div className="flex items-start gap-3.5 mb-3">
+                    <div className="flex items-start gap-3.5 mb-3 min-w-0">
                       <div className={`p-2.5 rounded-lg bg-gradient-to-br ${division.accentColor} text-white shadow-md shadow-cyan-950/20 shrink-0`}>
                         <Icon className="w-5 h-5" />
                       </div>
-                      <div>
-                        <h3 className="text-lg font-bold text-white group-hover:text-cyan-300 transition-colors">
+                      <div className="min-w-0 flex-1">
+                        <h3 className="text-lg font-bold text-white group-hover:text-cyan-300 transition-colors truncate">
                           {division.name}
                         </h3>
                         <p className="text-xs text-slate-400 line-clamp-1 mt-0.5">
@@ -193,12 +193,12 @@ export const EcosystemGrid: React.FC = () => {
                     {/* Focus Areas Badges */}
                     <div className="flex flex-wrap gap-1.5 mb-4">
                       {division.focusAreas.slice(0, 3).map((fa, i) => (
-                        <span key={i} className="text-[10px] px-2 py-0.5 rounded bg-slate-800 text-slate-400 border border-slate-700/50">
+                        <span key={i} className="text-[10px] px-2 py-0.5 rounded bg-slate-800 text-slate-400 border border-slate-700/50 max-w-full truncate" title={fa}>
                           {fa}
                         </span>
                       ))}
                       {division.focusAreas.length > 3 && (
-                        <span className="text-[10px] px-1.5 py-0.5 rounded bg-slate-800/60 text-slate-500">
+                        <span className="text-[10px] px-1.5 py-0.5 rounded bg-slate-800/60 text-slate-500 shrink-0">
                           +{division.focusAreas.length - 3} more
                         </span>
                       )}
@@ -213,16 +213,16 @@ export const EcosystemGrid: React.FC = () => {
                           <span>Deployed Software Systems</span>
                           <span className="text-cyan-400 font-bold">{matchingApps.length} Apps</span>
                         </div>
-                        <div className="flex items-center gap-2">
+                        <div className="flex flex-wrap items-center gap-1.5">
                           {matchingApps.map(app => (
                             <Link
                               key={app.slug}
                               to={`/apps/${app.slug}`}
-                              className="group/app flex items-center gap-1.5 px-2 py-1 rounded-md bg-slate-800 hover:bg-cyan-950/60 border border-slate-700 hover:border-cyan-500/50 text-[11px] text-slate-300 hover:text-cyan-300 transition-all"
+                              className="group/app inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-slate-800 hover:bg-cyan-950/60 border border-slate-700 hover:border-cyan-500/50 text-[11px] text-slate-300 hover:text-cyan-300 transition-all max-w-full"
                               title={`${app.name}: ${app.subtitle}`}
                             >
-                              <AppVectorIcon iconKey={app.iconKey} size="sm" className="w-3.5 h-3.5 text-cyan-400" />
-                              <span className="font-semibold">{app.name}</span>
+                              <AppVectorIcon iconKey={app.iconKey} size="sm" className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
+                              <span className="font-semibold truncate">{app.name}</span>
                             </Link>
                           ))}
                         </div>
@@ -343,17 +343,17 @@ export const EcosystemGrid: React.FC = () => {
                       </td>
 
                       {/* Associated Apps */}
-                      <td className="py-4 px-4 whitespace-nowrap">
-                        <div className="flex items-center gap-1.5">
+                      <td className="py-4 px-4">
+                        <div className="flex flex-wrap items-center gap-1.5 max-w-xs">
                           {matchingApps.length > 0 ? (
                             matchingApps.map(app => (
                               <Link
                                 key={app.slug}
                                 to={`/apps/${app.slug}`}
                                 onClick={(e) => e.stopPropagation()}
-                                className="px-2 py-0.5 rounded bg-slate-800 hover:bg-cyan-950/60 border border-slate-700 hover:border-cyan-500/40 text-[10px] text-cyan-300 flex items-center gap-1 transition-colors"
+                                className="px-2 py-0.5 rounded bg-slate-800 hover:bg-cyan-950/60 border border-slate-700 hover:border-cyan-500/40 text-[10px] text-cyan-300 flex items-center gap-1 transition-colors whitespace-nowrap"
                               >
-                                <AppVectorIcon iconKey={app.iconKey} size="sm" className="w-3 h-3 text-cyan-400" />
+                                <AppVectorIcon iconKey={app.iconKey} size="sm" className="w-3 h-3 text-cyan-400 shrink-0" />
                                 <span>{app.name}</span>
                               </Link>
                             ))

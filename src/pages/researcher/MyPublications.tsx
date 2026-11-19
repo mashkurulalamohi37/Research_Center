@@ -115,7 +115,7 @@ export const MyPublications: React.FC = () => {
         type: formState.type,
         researchAreaId: formState.researchAreaId,
         abstract: formState.abstract,
-        keywords: ['Computer Vision', 'Neural Fields', 'IRICC'],
+        keywords: ['Computer Vision', 'Neural Fields', 'AIRIC'],
         doi: formState.doi,
         citations: 0,
         featured: false,

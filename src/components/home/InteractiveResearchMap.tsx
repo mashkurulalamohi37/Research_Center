@@ -9,6 +9,7 @@ import { mockResearchAreas } from '../../data/researchAreas';
 import { mockResearchers } from '../../data/researchers';
 import { Badge } from '../ui/Badge';
 import { Button } from '../ui/Button';
+import { airicLogo } from '../ui/Logo';
 
 export const InteractiveResearchMap: React.FC = () => {
   const [selectedAreaId, setSelectedAreaId] = useState<string>(mockResearchAreas[0].id);
@@ -44,7 +45,7 @@ export const InteractiveResearchMap: React.FC = () => {
             Interconnected Research Architecture
           </h2>
           <p className="text-slate-600 dark:text-slate-400 text-base mt-3 leading-relaxed">
-            IRICC connects mathematical foundations, visual intelligence, physical robotics, and biomedical translation into a cohesive interdisciplinary network.
+            AIRIC connects mathematical foundations, visual intelligence, physical robotics, and biomedical translation into a cohesive interdisciplinary network.
           </p>
         </div>
 
@@ -56,14 +57,18 @@ export const InteractiveResearchMap: React.FC = () => {
             <div className="p-4 rounded-2xl border border-cyan-500/40 bg-white dark:bg-cyan-950/20 backdrop-blur-md flex items-center justify-between shadow-xs dark:shadow-lg dark:shadow-cyan-950/30">
               <div className="flex items-center gap-3">
                 <img
-                  src="/iricc-logo.jpg"
-                  alt="IRICC Official Seal"
+                  src={airicLogo}
+                  alt="AIRIC Official Seal"
                   width="40"
                   height="40"
                   className="w-10 h-10 rounded-full object-cover shadow-sm ring-2 ring-amber-400/40 shrink-0"
+                  onError={(e) => {
+                    const target = e.currentTarget;
+                    if (target.src !== '/AIRIC-logo.jpg') target.src = '/AIRIC-logo.jpg';
+                  }}
                 />
                 <div>
-                  <h4 className="text-sm font-bold text-slate-900 dark:text-slate-100">IRICC Knowledge Topology</h4>
+                  <h4 className="text-sm font-bold text-slate-900 dark:text-slate-100">AIRIC Knowledge Topology</h4>
                   <p className="text-xs text-cyan-700 dark:text-cyan-400 font-mono font-medium">8 Core Research Groups • 32 Projects</p>
                 </div>
               </div>

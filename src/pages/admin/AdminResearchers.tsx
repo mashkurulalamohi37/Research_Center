@@ -298,7 +298,7 @@ export const AdminResearchers: React.FC = () => {
                 required
                 value={formState.email}
                 onChange={e => setFormState({ ...formState, email: e.target.value })}
-                placeholder="j.doe@iricc.org"
+                placeholder="j.doe@AIRIC.org"
               />
             </div>
             <div>

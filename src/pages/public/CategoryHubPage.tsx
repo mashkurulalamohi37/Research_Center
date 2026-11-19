@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { 
   ArrowRight, Sparkles, CheckCircle2, ChevronRight, 
@@ -27,9 +27,11 @@ const iconMap: Record<string, React.ElementType> = {
 
 export const CategoryHubPage: React.FC = () => {
   const { categorySlug, sectionSlug } = useParams<{ categorySlug?: string; sectionSlug?: string }>();
+  const location = useLocation();
   
-  // Resolve category from URL (or fallback to innovation)
-  const activeSlug = categorySlug || 'innovation';
+  // Resolve category from URL param or first path segment (e.g. /technology, /commercialization, /education, /health-wellbeing, /innovation)
+  const pathCategory = location.pathname.split('/')[1] || '';
+  const activeSlug = categorySlug || pathCategory || 'innovation';
   const category: NavCategory = navigationCategories.find(c => c.id === activeSlug) || navigationCategories[2];
   
   useDocumentTitle(`${category.title} | AIRIC Institute`);
