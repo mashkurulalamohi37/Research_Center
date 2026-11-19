@@ -126,7 +126,7 @@ export const Navbar: React.FC = () => {
           }`}
         >
           <div className="w-full px-3 sm:px-5 lg:px-6 flex items-center justify-between gap-3 lg:gap-6">
-            {/* Brand Logo - Logo Graphic & Acronym AIRIC Only, positioned cleanly to the left */}
+            {/* Brand Logo - Official Seal & AIRIC Institute Brand */}
             <div className="shrink-0 mr-3 lg:mr-6">
               <Logo size="md" showSubtitle={false} />
             </div>

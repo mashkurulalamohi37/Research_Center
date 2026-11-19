@@ -48,12 +48,12 @@ export const Logo: React.FC<LogoProps> = ({
       </div>
       <div className="flex flex-col text-left">
         <div className="flex items-center gap-2">
-          <span className={`${text} font-black tracking-wider text-slate-900 dark:text-white font-sans leading-none`}>
-            AIRIC
+          <span className={`${text} font-black tracking-tight text-slate-900 dark:text-white font-sans leading-none`}>
+            AIRIC <span className="font-bold text-cyan-700 dark:text-cyan-400">Institute</span>
           </span>
           {showBadge && (
             <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-cyan-50 dark:bg-cyan-500/15 text-cyan-800 dark:text-cyan-300 border border-cyan-200 dark:border-cyan-500/30 font-bold tracking-wider leading-none">
-              INSTITUTE
+              OFFICIAL
             </span>
           )}
         </div>
