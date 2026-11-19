@@ -9,7 +9,6 @@ import { useTheme } from '../../context/ThemeContext';
 import { useAuth } from '../../context/AuthContext';
 import { Button } from '../ui/Button';
 import { Logo } from '../ui/Logo';
-import { TopHeaderBar } from './TopHeaderBar';
 import { DesktopMegaMenu } from './DesktopMegaMenu';
 import { MobileNavDrawer } from './MobileNavDrawer';
 import { GlobalSearchModal } from '../shared/GlobalSearchModal';
@@ -119,7 +118,6 @@ export const Navbar: React.FC = () => {
   return (
     <>
       <header className={`${isHome ? 'sticky top-0 w-full' : 'fixed top-0 left-0 right-0'} z-40 shadow-xs`}>
-        <TopHeaderBar onOpenSearch={() => setSearchOpen(true)} />
         <div
           className={`transition-all duration-300 ${
             isScrolled
