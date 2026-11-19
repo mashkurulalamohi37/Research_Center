@@ -4,7 +4,7 @@ import {
   ChevronDown, Sparkles, Building2, BookOpen, Rocket, 
   TrendingUp, Cpu, GraduationCap, Users, HeartPulse, 
   Handshake, Bot, Shield, Layers, Search, X, ArrowRight,
-  ExternalLink, Compass, ShieldAlert, UserCheck, LogIn, LogOut
+  ExternalLink, Compass, ShieldAlert, UserCheck, LogIn, LogOut, AppWindow
 } from 'lucide-react';
 import { navigationCategories } from '../../data/navigation';
 import { instituteDivisions, DivisionItem } from '../../data/divisions';
@@ -195,6 +195,31 @@ export const MobileNavDrawer: React.FC<MobileNavDrawerProps> = ({
           {/* TAB 1: 10 DIVISIONS (ACCORDION STACK) */}
           {activeTab === 'divisions' && (
             <div className="space-y-1.5 pb-2">
+              {/* Apps & Software Featured Card */}
+              <Link
+                to="/apps"
+                onClick={onClose}
+                className="flex items-center justify-between p-2.5 rounded-2xl bg-gradient-to-r from-cyan-500/15 via-blue-500/10 to-indigo-500/15 border border-cyan-500/30 text-slate-900 dark:text-white shadow-xs mb-2"
+              >
+                <div className="flex items-center gap-2.5">
+                  <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-cyan-600 to-blue-600 flex items-center justify-center text-white shadow-xs">
+                    <AppWindow className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <div className="flex items-center gap-1.5">
+                      <span className="text-xs font-bold">Apps & Software</span>
+                      <span className="text-[9px] font-mono px-1 py-0.2 rounded bg-cyan-500/20 text-cyan-800 dark:text-cyan-300 font-bold uppercase">
+                        10 APPS
+                      </span>
+                    </div>
+                    <p className="text-[10px] text-slate-500 dark:text-slate-400">
+                      Proprietary Software Systems
+                    </p>
+                  </div>
+                </div>
+                <ArrowRight className="w-4 h-4 text-cyan-600 dark:text-cyan-400" />
+              </Link>
+
               <div className="flex items-center justify-between px-1 py-1 text-[11px] font-mono text-slate-400 dark:text-slate-500">
                 <span className="uppercase tracking-wider font-semibold">Institute Divisions</span>
                 <Link

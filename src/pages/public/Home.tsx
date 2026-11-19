@@ -51,7 +51,7 @@ export const Home: React.FC = () => {
   return (
     <div className="flex-1 w-full flex flex-col lg:flex-row relative bg-slate-50/50 dark:bg-slate-950">
       {/* Desktop Left Navigation Rail (10 Divisions with Subtitles & Hover Flyouts, sticky on scroll) */}
-      <aside className="hidden lg:block lg:w-[275px] xl:w-[295px] shrink-0 sticky top-[92px] h-[calc(100vh-92px)] z-30 overflow-hidden border-r border-slate-200 dark:border-slate-800">
+      <aside className="hidden lg:block lg:w-[275px] xl:w-[295px] shrink-0 sticky top-[64px] h-[calc(100vh-64px)] z-30 overflow-hidden border-r border-slate-200 dark:border-slate-800">
         <DivisionsNavRail />
       </aside>
 
@@ -76,6 +76,16 @@ export const Home: React.FC = () => {
           </div>
 
           <div className="flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar text-xs">
+            {/* Apps & Software Mobile Pill */}
+            <Link
+              to="/apps"
+              className="shrink-0 px-2.5 py-1.5 rounded-xl bg-gradient-to-r from-cyan-600 to-blue-600 text-white font-bold transition-all shadow-2xs flex items-center gap-1.5"
+            >
+              <span className="w-4 h-4 rounded bg-white/20 text-white text-[9px] font-mono font-bold flex items-center justify-center">
+                ★
+              </span>
+              <span>Apps & Software</span>
+            </Link>
             {instituteDivisions.map((division) => (
               <Link
                 key={division.id}
