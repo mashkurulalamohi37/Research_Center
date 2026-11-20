@@ -27,6 +27,36 @@ export interface ResearchArea {
   parentAreaId?: string;
 }
 
+export interface ResearcherExperience {
+  role: string;
+  organization: string;
+  period?: string;
+  location?: string;
+  highlights?: string;
+}
+
+export interface BookPublication {
+  title: string;
+  category?: string;
+  publisher: string;
+  url?: string;
+}
+
+export interface AcademicStats {
+  activeUniversityYears?: number;
+  teachingYears?: number;
+  researchYears?: number;
+  patentsCount?: number;
+  publicationsCount?: number;
+  sciIndexedCount?: number;
+  completedResearchProjects?: number;
+  completedTeachingProjects?: number;
+  thesisSupervisionCount?: string | number;
+  phdSupervisedCount?: number;
+  moocCount?: number;
+  moocUrl?: string;
+}
+
 export interface Researcher {
   id: string;
   slug: string;
@@ -66,6 +96,9 @@ export interface Researcher {
   researchAreaIds: string[];
   expertise: string[];
   interests: string[];
+  experiences?: ResearcherExperience[];
+  academicStats?: AcademicStats;
+  bookPublication?: BookPublication;
   googleScholar?: string;
   orcid?: string;
   linkedin?: string;
@@ -110,7 +143,7 @@ export interface Project {
   }[];
 }
 
-export type PublicationType = 'Journal' | 'Conference' | 'Book Chapter' | 'Workshop' | 'Preprint' | 'Technical Report';
+export type PublicationType = 'Journal' | 'Conference' | 'Book' | 'Book Chapter' | 'Workshop' | 'Preprint' | 'Technical Report';
 export type PublicationStatus = 'Published' | 'Pending Review' | 'Draft' | 'Rejected';
 
 export interface Publication {

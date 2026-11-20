@@ -67,6 +67,98 @@ export const mockResearchers: Researcher[] = [
       'Quantum Machine Learning',
       'Signal Processing',
     ],
+    experiences: [
+      {
+        role: 'Professor, Head of CSE',
+        organization: 'Bangladesh Army University of Science and Technology (BAUST)',
+        period: '2022-07-01 to 2025-03-19',
+        location: 'Bangladesh',
+        highlights: 'Headed CSE department administration, academic planning, and outcome-based curriculum execution.'
+      },
+      {
+        role: 'Professor & Director of IQAC; Assoc. Prof. & Head of ICT',
+        organization: 'Bangladesh Army University of Science and Technology (BAUST)',
+        period: 'Academic Directorate',
+        location: 'Bangladesh',
+        highlights: 'Directed Institutional Quality Assurance Cell (IQAC) standards and governed ICT program operations.'
+      },
+      {
+        role: 'Associate Professor, Asst. Prof. & Foreign Expert (High-Level Talent, Category A)',
+        organization: 'South China University of Technology (SCUT)',
+        period: 'Faculty & Category A Foreign Expert',
+        location: 'China',
+        highlights: 'Honored with Category A High-Level Foreign Expert status; supervised international AI & vision testbeds.'
+      },
+      {
+        role: 'Visiting Professor',
+        organization: 'Leading University',
+        period: 'Visiting Academic',
+        location: 'Bangladesh',
+        highlights: 'Conducted advanced research seminars and mentored engineering student bodies.'
+      },
+      {
+        role: 'Visiting Professor (Asst.)',
+        organization: 'University of British Columbia (UBC)',
+        period: 'International Visiting Faculty',
+        location: 'Canada',
+        highlights: 'Collaborated on computer vision, autonomous intelligence, and robotics systems.'
+      },
+      {
+        role: 'Visiting Professor (Asst.)',
+        organization: 'Jessore University of Science & Technology (JUST)',
+        period: 'Visiting Academic',
+        location: 'Bangladesh',
+        highlights: 'Delivered advanced deep learning, signal processing, and neural network lectures.'
+      },
+      {
+        role: 'Visiting Faculty',
+        organization: 'Universiti Tun Hussein Onn Malaysia (UTHM)',
+        period: 'International Faculty Exchange',
+        location: 'Malaysia',
+        highlights: 'Delivered research modules in intelligent systems, time series analysis, and robotics.'
+      },
+      {
+        role: 'Visiting Faculty',
+        organization: 'International Islamic University Malaysia (IIUM)',
+        period: 'International Academic Collaboration',
+        location: 'Malaysia',
+        highlights: 'Engaged in joint graduate thesis co-supervision and academic dissemination.'
+      },
+      {
+        role: 'Project/Research Engineer (R&D) - Part Time',
+        organization: 'China United Tech. Ltd.',
+        period: 'Industrial R&D',
+        location: 'China',
+        highlights: 'Researched and engineered commercial computer vision and intelligent algorithmic systems.'
+      },
+      {
+        role: 'Lecturer',
+        organization: 'University of Information Technology & Sciences (UITS)',
+        period: 'Faculty',
+        location: 'Bangladesh',
+        highlights: 'Taught core undergraduate engineering, computer science fundamentals, and programming.'
+      },
+    ],
+    academicStats: {
+      activeUniversityYears: 18,
+      teachingYears: 14,
+      researchYears: 4,
+      patentsCount: 7,
+      publicationsCount: 37,
+      sciIndexedCount: 19,
+      completedResearchProjects: 19,
+      completedTeachingProjects: 4,
+      thesisSupervisionCount: '~50',
+      phdSupervisedCount: 5,
+      moocCount: 1,
+      moocUrl: 'https://www.xuetangx.com/course/scut08081002961intl/16965237',
+    },
+    bookPublication: {
+      title: 'Control Engineering Theory & Applications',
+      category: 'For Undergraduate and Master’s students',
+      publisher: 'Taylor & Francis, CRC Press, USA',
+      url: 'https://www.amazon.com/Control-Engineering-Theory-Applications-Jahangir-ebook/dp/B0BHXVWKXP/ref=sr_1_1crid=18WBINH75PLUC&keywords=Control+Engineering+Theory+%26+Applications+Jahangir+Alam&qid=1698345541&sprefix=control+engineering+theory+%26+applications-+jahan%2Caps%2C1035&sr=8-1',
+    },
     googleScholar: 'https://scholar.google.com',
     orcid: 'https://orcid.org',
     linkedin: 'https://linkedin.com',
