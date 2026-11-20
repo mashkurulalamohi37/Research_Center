@@ -228,17 +228,16 @@ export const Experts: React.FC = () => {
     setSearchParams(newParams);
   };
 
-  // We extract exactly one primary demo employee for each of the 16 official categories
-  const categoryDemoEmployees = EXPERT_CATEGORIES.map(category => {
-    const employee = mockResearchers.find(r => r.expertCategory === category);
-    return {
-      category,
+  // Extract all experts belonging to official categories
+  const categoryExperts = mockResearchers
+    .filter(r => r.expertCategory && EXPERT_CATEGORIES.includes(r.expertCategory as ExpertCategory))
+    .map(employee => ({
+      category: employee.expertCategory as ExpertCategory,
       employee,
-    };
-  }).filter((item): item is { category: ExpertCategory; employee: typeof mockResearchers[0] } => !!item.employee);
+    }));
 
   // Filter based on selected section, category, and search term
-  const filtered = categoryDemoEmployees.filter(({ category, employee }) => {
+  const filtered = categoryExperts.filter(({ category, employee }) => {
     const meta = categoryMeta[category];
 
     // Section match
@@ -281,7 +280,7 @@ export const Experts: React.FC = () => {
 
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-xs font-mono font-semibold mb-3">
             <Users className="w-3.5 h-3.5" />
-            <span>17 PROFESSIONAL CATEGORIES • 1 SPECIALIST PER ROLE</span>
+            <span>17 PROFESSIONAL CATEGORIES • {categoryExperts.length} SPECIALISTS</span>
           </div>
 
           <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white">
@@ -317,7 +316,7 @@ export const Experts: React.FC = () => {
             )}
           </div>
           <div className="text-xs font-mono text-slate-500">
-            Showing <strong className="text-slate-800 dark:text-slate-200">{filtered.length}</strong> of 17 specialists
+            Showing <strong className="text-slate-800 dark:text-slate-200">{filtered.length}</strong> of {categoryExperts.length} specialists
           </div>
         </div>
 
@@ -325,6 +324,7 @@ export const Experts: React.FC = () => {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
           {SECTION_GROUPS.map(sec => {
             const isSecActive = selectedSection === sec.id;
+            const secTotalExperts = categoryExperts.filter(e => categoryMeta[e.category].sectionId === sec.id).length;
             return (
               <button
                 key={sec.id}
@@ -344,7 +344,7 @@ export const Experts: React.FC = () => {
                       ? 'bg-cyan-600 text-white dark:bg-cyan-400 dark:text-slate-950' 
                       : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400'
                   }`}>
-                    {sec.count} Roles
+                    {secTotalExperts} Experts • {sec.count} Roles
                   </span>
                 </div>
                 <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-1 line-clamp-2 leading-relaxed">
@@ -386,7 +386,9 @@ export const Experts: React.FC = () => {
             >
               <span>All Categories</span>
               <span className="px-1.5 py-0.2 rounded-full text-[10px] font-mono bg-black/10 dark:bg-black/20">
-                {selectedSection === 'all' ? 17 : selectedSection === 'faculty' ? 11 : 6}
+                {selectedSection === 'all' 
+                  ? categoryExperts.length 
+                  : categoryExperts.filter(e => categoryMeta[e.category].sectionId === selectedSection).length}
               </span>
             </button>
 
@@ -396,6 +398,7 @@ export const Experts: React.FC = () => {
             }).map(cat => {
               const isSelected = selectedCategory === cat;
               const MetaIcon = categoryMeta[cat].icon;
+              const catCount = categoryExperts.filter(e => e.category === cat).length;
 
               return (
                 <button
@@ -409,6 +412,15 @@ export const Experts: React.FC = () => {
                 >
                   <MetaIcon className="w-3.5 h-3.5 shrink-0" />
                   <span>{cat}</span>
+                  {catCount > 1 && (
+                    <span className={`px-1.5 py-0.2 rounded-full text-[10px] font-mono ${
+                      isSelected 
+                        ? 'bg-black/20 text-white dark:text-slate-950 font-bold' 
+                        : 'bg-cyan-500/15 text-cyan-700 dark:text-cyan-300'
+                    }`}>
+                      {catCount}
+                    </span>
+                  )}
                 </button>
               );
             })}
@@ -446,7 +458,7 @@ export const Experts: React.FC = () => {
                         Leadership & Research Faculty
                       </h2>
                       <span className="px-2 py-0.5 rounded-full text-xs font-mono bg-cyan-500/10 text-cyan-700 dark:text-cyan-300 border border-cyan-500/20">
-                        11 Roles
+                        {categoryExperts.filter(e => categoryMeta[e.category].sectionId === 'faculty').length} Specialists • 11 Roles
                       </span>
                     </div>
                     <span className="text-xs text-slate-500 hidden sm:inline">
@@ -470,7 +482,7 @@ export const Experts: React.FC = () => {
                         Engineering, Development & Robotics Disciplines
                       </h2>
                       <span className="px-2 py-0.5 rounded-full text-xs font-mono bg-lime-500/10 text-lime-700 dark:text-lime-300 border border-lime-500/20">
-                        6 Roles
+                        {categoryExperts.filter(e => categoryMeta[e.category].sectionId === 'engineering').length} Specialists • 6 Roles
                       </span>
                     </div>
                     <span className="text-xs text-slate-500 hidden sm:inline">
@@ -513,11 +525,15 @@ export const Experts: React.FC = () => {
               <span>{category}</span>
             </span>
             <span className={`text-[10px] font-mono uppercase tracking-widest font-semibold ${
-              employee.id === 'prof-dr-sm-jahangir-alam' || employee.id === 'dr-engr-mohammed-sowket-ali'
+              employee.id === 'prof-dr-sm-jahangir-alam' || employee.id === 'lt-col-shameem-reza' || employee.id === 'dr-engr-mohammed-sowket-ali'
                 ? 'text-cyan-600 dark:text-cyan-400 font-bold' 
                 : 'text-slate-400'
             }`}>
-              {employee.id === 'prof-dr-sm-jahangir-alam' ? 'EXECUTIVE ADVISOR' : employee.id === 'dr-engr-mohammed-sowket-ali' ? 'ACADEMIC ADVISOR' : 'DEMO EXPERT'}
+              {employee.id === 'prof-dr-sm-jahangir-alam' || employee.id === 'lt-col-shameem-reza'
+                ? 'EXECUTIVE ADVISOR' 
+                : employee.id === 'dr-engr-mohammed-sowket-ali' 
+                ? 'ACADEMIC ADVISOR' 
+                : 'DEMO EXPERT'}
             </span>
           </div>
 

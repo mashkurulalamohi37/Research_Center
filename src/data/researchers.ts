@@ -170,6 +170,78 @@ export const mockResearchers: Researcher[] = [
     joinDate: '2020-01-01',
   },
 
+  // 1B. EXECUTIVE ADVISOR (Lt Col Md Shameem Reza, PhD (retd))
+  {
+    id: 'lt-col-shameem-reza',
+    slug: 'lt-col-shameem-reza',
+    name: 'Lt Col Md Shameem Reza, PhD (retd)',
+    title: 'Executive Advisor & Treasurer, BAUST (Lt Col, Retd., Ph.D.)',
+    category: 'faculty',
+    expertCategory: 'Executive Advisor',
+    department: 'Executive Advisory Council & Directorate / BAUST',
+    email: 'treasurer@baust.edu.bd',
+    office: 'Treasurer Directorate Office, BAUST / AIRIC Executive Suite',
+    avatar: '/lt-col-shameem-reza.jpg',
+    bio: 'Lt Col Md Shameem Reza, PhD (retd) serves as Executive Advisor at the AIRIC Institute. Currently the Treasurer of the Bangladesh Army University of Science and Technology (BAUST) and a retired Lieutenant Colonel of the Bangladesh Army, Dr. Reza brings distinguished senior executive leadership, defense-grade operational discipline, and high-level institutional governance. He guides AIRIC\'s strategic advisory, executive decision management, academic financial stewardship, and institutional infrastructure expansion.',
+    education: [
+      {
+        degree: 'Ph.D.',
+        institution: 'Post-Graduate Doctoral Studies',
+        year: 2015,
+      },
+      {
+        degree: 'Master of Defence Studies (MDS) & Senior Command',
+        institution: 'Defence Services Command and Staff College (DSCSC)',
+        year: 2008,
+      },
+    ],
+    researchAreaIds: ['ai-core'],
+    expertise: [
+      'Executive Governance & Strategic Advisory',
+      'Institutional Financial Stewardship',
+      'Defense & High-Security Organizational Leadership',
+      'Educational Infrastructure Development',
+      'Decision Support Systems & Policy Formulation',
+      'Operational Risk Management',
+    ],
+    interests: [
+      'Institutional Governance & Strategic Advisory',
+      'Defense & Security-Grade Information Systems',
+      'Educational Financial Administration',
+      'Leadership & Organizational Development',
+      'Policy Formulation & Quality Assurance',
+    ],
+    experiences: [
+      {
+        role: 'Treasurer',
+        organization: 'Bangladesh Army University of Science and Technology (BAUST)',
+        period: 'Present',
+        location: 'Saidpur, Bangladesh',
+        highlights: 'Governing institutional financial resources, university budgeting, fiscal policy, and capital infrastructure development.'
+      },
+      {
+        role: 'Lieutenant Colonel (Retd.)',
+        organization: 'Bangladesh Army',
+        period: 'Distinguished Military Service',
+        location: 'Bangladesh',
+        highlights: 'Senior military command, operational administration, strategic logistics, defense planning, and leadership development.'
+      },
+    ],
+    academicStats: {
+      activeUniversityYears: 15,
+      teachingYears: 10,
+      researchYears: 5,
+    },
+    googleScholar: 'https://scholar.google.com',
+    orcid: 'https://orcid.org',
+    linkedin: 'https://linkedin.com',
+    hIndex: 18,
+    citations: 2100,
+    featured: true,
+    status: 'active',
+    joinDate: '2020-01-01',
+  },
+
   // 2. ADVISOR
   {
     id: 'dr-engr-mohammed-sowket-ali',
@@ -773,7 +845,6 @@ export const mockResearchers: Researcher[] = [
     name: 'Dr. Wei Zhang',
     title: 'Principal Investigator, Edge AI & IoT',
     category: 'faculty',
-    expertCategory: 'Scientist',
     department: 'Electrical Engineering & Microelectronics',
     email: 'w.zhang@AIRIC.org',
     phone: '+1 (415) 890-2144',
