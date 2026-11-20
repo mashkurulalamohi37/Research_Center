@@ -7,14 +7,14 @@ Build a world-class, ultra-responsive web platform for AIRIC (Advanced Intellige
 
 ---
 
-## Current Milestone: v1.5 Appoint Mashkurul Alam Ohi as Scientist
+## Current Milestone: v1.6 Appoint Mehadi Talha as AI Engineer
 
-**Goal:** Appoint and integrate Mashkurul Alam Ohi as a Scientist in the AIRIC faculty and Experts network directory, featuring his background in Natural Language Processing, Transformer models, and deep learning research.
+**Goal:** Appoint and integrate Mehadi Talha as an AI Engineer in the AIRIC faculty and Experts network directory, featuring his profile, portrait, and specialization in Applied AI and Deep Learning Systems.
 
 **Target features:**
-- Profile Data: Add Mashkurul Alam Ohi into `src/data/researchers.ts` with complete academic bio, education (BAUST CSE), research areas (NLP, Deep Learning, Text Classification), and publications.
-- Experts Directory: Appoint him under the 'Scientist' discipline on the `/experts` directory page within Leadership & Research Faculty.
-- Category UI & Metrics: Update the Scientist filter pill and counts so the category displays active appointment rather than the empty recruitment state.
+- Profile & Photo Asset: Save uploaded portrait to `public/mehadi-talha.jpg` and `src/assets/mehadi-talha.jpg`, and integrate Mehadi Talha into `src/data/researchers.ts` with contact email `mehaditalha62@gmail.com`, phone `+8801521745815`, and role `AI Engineer`.
+- Experts Directory Presentation: Map to the 'AI Engineer' category under Leadership & Research Faculty on the `/experts` directory page.
+- Category UI & Metrics: Activate the 'AI Engineer' category filter pill (count: 1) and render his card with the cyan AI Engineer badge.
 
 ---
 
@@ -23,6 +23,7 @@ Build a world-class, ultra-responsive web platform for AIRIC (Advanced Intellige
 2. **Navbar Non-Blocking & Hero Viewport Alignment** (Phases 6-8 completed 2026-11-16).
 3. **Mobile & Multi-Device Fluency** (Phases 9-12 completed 2026-11-19).
 4. **Experts Directory Roster Alignment** (Phases 13-14 completed 2026-11-20).
+5. **Appoint Mashkurul Alam Ohi as Scientist** (Phases 15-16 completed 2026-11-20).
 
 ---
 

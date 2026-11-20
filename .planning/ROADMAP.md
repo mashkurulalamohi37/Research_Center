@@ -31,14 +31,20 @@
 ---
 
 ## Milestone 5: Appoint Mashkurul Alam Ohi as Scientist (Completed)
+- [x] Phase 15: Scientist Data Modeling & Publications Integration
+- [x] Phase 16: Experts Directory UI Integration & Verification
 
-### Phase 15: Scientist Data Modeling & Publications Integration
-- [x] Add Mashkurul Alam Ohi to `src/data/researchers.ts` as Scientist with authentic BAUST CSE education, NLP & deep learning expertise.
-- [x] Add ICCIT Bengali transformer text classification publication to `src/data/publications.ts`.
-- **Requirements**: REQ-SCI-01, REQ-SCI-02
+---
 
-### Phase 16: Experts Directory UI Integration & Verification
-- [x] Connect Mashkurul Alam Ohi to `/experts` under Leadership & Research Faculty in the Scientist category.
-- [x] Verify category filter pills, statistics counters (3 total appointed specialists), and responsive cards.
-- [x] Verify production build with `npm run build`.
-- **Requirements**: REQ-SCI-03, REQ-SCI-04, REQ-SCI-05, REQ-SCI-06
+## Milestone 6: Appoint Mehadi Talha as AI Engineer (In Progress)
+
+### Phase 17: AI Engineer Data Modeling & Portrait Asset Integration
+- [ ] Save uploaded portrait to `public/mehadi-talha.jpg` and `src/assets/mehadi-talha.jpg`.
+- [ ] Add Mehadi Talha into `src/data/researchers.ts` with contact email `mehaditalha62@gmail.com`, phone `+8801521745815`, and role `AI Engineer`.
+- **Requirements**: REQ-ENG-01, REQ-ENG-02
+
+### Phase 18: Experts Directory UI Integration & Verification
+- [ ] Connect Mehadi Talha to `/experts` under Leadership & Research Faculty in the AI Engineer category.
+- [ ] Verify category filter pills, statistics counters (4 total appointed specialists), and responsive cards.
+- [ ] Verify production build with `npm run build`.
+- **Requirements**: REQ-ENG-03, REQ-ENG-04, REQ-ENG-05, REQ-ENG-06
