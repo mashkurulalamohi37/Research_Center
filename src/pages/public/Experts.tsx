@@ -473,10 +473,8 @@ export const Experts: React.FC = () => {
                     </span>
                   </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {filtered
-                      .filter(({ category }) => categoryMeta[category].sectionId === 'faculty')
-                      .map(({ category, employee }) => renderExpertCard(category, employee))}
+                  <div className="space-y-6">
+                    {renderExpertsList(filtered.filter(({ category }) => categoryMeta[category].sectionId === 'faculty'))}
                   </div>
                 </div>
 
@@ -497,16 +495,14 @@ export const Experts: React.FC = () => {
                     </span>
                   </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {filtered
-                      .filter(({ category }) => categoryMeta[category].sectionId === 'engineering')
-                      .map(({ category, employee }) => renderExpertCard(category, employee))}
+                  <div className="space-y-6">
+                    {renderExpertsList(filtered.filter(({ category }) => categoryMeta[category].sectionId === 'engineering'))}
                   </div>
                 </div>
               </>
             ) : (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {filtered.map(({ category, employee }) => renderExpertCard(category, employee))}
+              <div>
+                {renderExpertsList(filtered)}
               </div>
             )}
           </div>
@@ -515,14 +511,41 @@ export const Experts: React.FC = () => {
     </div>
   );
 
-  function renderExpertCard(category: ExpertCategory, employee: typeof mockResearchers[0]) {
+  function renderExpertsList(experts: typeof filtered) {
+    const chiefAdvisorItem = experts.find(e => e.category === 'Chief Advisor');
+    const regularExperts = experts.filter(e => e.category !== 'Chief Advisor');
+
+    return (
+      <div className="space-y-6">
+        {chiefAdvisorItem && (
+          <div className="flex justify-center w-full">
+            <div className="w-full max-w-md">
+              {renderExpertCard(chiefAdvisorItem.category, chiefAdvisorItem.employee, true)}
+            </div>
+          </div>
+        )}
+
+        {regularExperts.length > 0 && (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {regularExperts.map(({ category, employee }) => renderExpertCard(category, employee, false))}
+          </div>
+        )}
+      </div>
+    );
+  }
+
+  function renderExpertCard(category: ExpertCategory, employee: typeof mockResearchers[0], isChiefAdvisor = false) {
     const meta = categoryMeta[category];
     const CategoryIcon = meta.icon;
 
     return (
       <Card 
         key={employee.id} 
-        className="border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/80 hover:border-cyan-500/40 shadow-xs hover:shadow-md transition-all flex flex-col justify-between group overflow-hidden"
+        className={`border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/80 shadow-xs hover:shadow-md transition-all flex flex-col justify-between group overflow-hidden ${
+          isChiefAdvisor 
+            ? 'border-indigo-400/60 dark:border-indigo-500/40 hover:border-indigo-500 ring-1 ring-indigo-500/20 shadow-sm' 
+            : 'hover:border-cyan-500/40'
+        }`}
       >
         <CardHeader className="pb-3">
           {/* Category Identifier Ribbon */}
