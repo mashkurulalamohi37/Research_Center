@@ -33,7 +33,24 @@ export interface Researcher {
   name: string;
   title: string; // e.g. "Director & Chief Scientist", "Principal Investigator", "Senior Postdoctoral Fellow"
   category: 'faculty' | 'postdoc' | 'student' | 'visiting';
-  expertCategory?: 'Advisor' | 'Scientist' | 'AI Engineer' | 'Innovators' | 'Commercial Analyst' | 'Data Scientist' | 'Data Analyst' | 'Apps Architect' | 'Software Analyst' | 'Software Engineer' | string;
+  expertCategory?: 
+    | 'Advisor' 
+    | 'Scientist' 
+    | 'AI Engineer' 
+    | 'Innovators' 
+    | 'Commercial Analyst' 
+    | 'Data Scientist' 
+    | 'Data Analyst' 
+    | 'Apps Architect' 
+    | 'Software Analyst' 
+    | 'Software Engineer'
+    | 'Developer/ Junior Engineer'
+    | 'Marketing Engineer'
+    | 'Researcher'
+    | 'Automation & Robotics'
+    | 'Automation & Robotics Engineer'
+    | 'Embedded Engineer'
+    | string;
   department: string;
   email: string;
   phone?: string;
