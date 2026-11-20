@@ -1,6 +1,7 @@
 import { Researcher } from '../types';
 
 export const EXPERT_CATEGORIES = [
+  'Chief Advisor',
   'Executive Advisor',
   'Advisor',
   'Scientist',
@@ -23,6 +24,105 @@ export const EXPERT_CATEGORIES = [
 export type ExpertCategory = typeof EXPERT_CATEGORIES[number];
 
 export const mockResearchers: Researcher[] = [
+  // 0. CHIEF ADVISOR
+  {
+    id: 'prof-dr-hu-guoqing',
+    slug: 'prof-dr-hu-guoqing',
+    name: 'Prof. Dr. Hu Guoqing',
+    title: 'Chief Advisor & Professor, Ph.D. Supervisor (SCUT)',
+    category: 'faculty',
+    expertCategory: 'Chief Advisor',
+    department: 'Chief Advisory Directorate & Supreme Governance',
+    email: 'gqhu@scut.edu.cn',
+    office: 'Chief Advisory Directorate, AIRIC Global / SCUT Guangzhou',
+    avatar: '/prof-dr-hu-guoqing.jpg',
+    bio: 'Prof. Dr. Hu Guoqing serves as Chief Advisor at the AIRIC Institute. He is a distinguished Professor and Ph.D. Supervisor at the School of Mechanical and Automotive Engineering, South China University of Technology (SCUT), Guangzhou, China. He received his Ph.D. (Doctor of Engineering) in Mechatronic Engineering from Xiamen University. With over two decades of international academic leadership, high-impact scientific research, and doctoral mentorship, Prof. Hu provides supreme strategic guidance, international research governance, and academic oversight across AIRIC\'s intelligent robotics, control theory, machine vision, and advanced cyber-physical engineering initiatives.',
+    education: [
+      {
+        degree: 'Ph.D. in Mechatronic Engineering (Doctor of Engineering)',
+        institution: 'Xiamen University, China',
+        year: 2004,
+      },
+      {
+        degree: 'M.Eng. in Mechanical & Control Engineering',
+        institution: 'Xiamen University, China',
+        year: 2000,
+      },
+      {
+        degree: 'B.Eng. in Mechanical Engineering',
+        institution: "Xi'an Jiaotong University / National Key University, China",
+        year: 1997,
+      },
+    ],
+    researchAreaIds: ['ai-core', 'robotics-autonomous'],
+    expertise: [
+      'Control Engineering & Mechatronics',
+      'Robotics & Autonomous Motion Control',
+      'Machine Vision & Visual Intelligence',
+      'Biosignal & Information Processing',
+      'Microfluidics & Biomedical Engineering',
+      'Strategic International Academic Governance',
+      'Advanced Machine Learning Algorithms',
+    ],
+    interests: [
+      'Control Engineering Theory and Applications',
+      'Intelligent Robotics and Motion Planning',
+      'Machine Vision and Sensor Fusion Systems',
+      'Biosignal Processing and Neuromuscular Modeling',
+      'Micro-electro-mechanical Systems (MEMS)',
+      'High-Level Global Collaborative R&D',
+    ],
+    experiences: [
+      {
+        role: 'Professor & Ph.D. Supervisor',
+        organization: 'School of Mechanical and Automotive Engineering, South China University of Technology (SCUT)',
+        period: '2008 to Present',
+        location: 'Guangzhou, China',
+        highlights: 'Supervising doctoral and master students, directing high-level scientific research projects, national natural science foundation initiatives, and international academic exchanges.'
+      },
+      {
+        role: 'Visiting Professor & International Research Scholar',
+        organization: 'University of Queensland / Case Western Reserve University',
+        period: 'International Academic Fellowships',
+        location: 'Australia / USA',
+        highlights: 'Conducted advanced collaborative investigations in microfluidics, biomedical engineering, and intelligent control.'
+      },
+      {
+        role: 'Associate Professor & Researcher',
+        organization: 'South China University of Technology (SCUT)',
+        period: '2004 to 2008',
+        location: 'Guangzhou, China',
+        highlights: 'Led research laboratories in mechatronic engineering, robotics kinematics, and vision-guided industrial manipulation.'
+      },
+    ],
+    academicStats: {
+      activeUniversityYears: 22,
+      teachingYears: 18,
+      researchYears: 22,
+      patentsCount: 15,
+      publicationsCount: 85,
+      sciIndexedCount: 48,
+      completedResearchProjects: 25,
+      completedTeachingProjects: 6,
+      thesisSupervisionCount: '60+',
+      phdSupervisedCount: 12,
+    },
+    bookPublication: {
+      title: 'Control Engineering Theory & Applications',
+      category: 'For Undergraduate and Master’s students',
+      publisher: 'Taylor & Francis, CRC Press, USA',
+      url: 'https://www.amazon.com/Control-Engineering-Theory-Applications-Jahangir-ebook/dp/B0BHXVWKXP',
+    },
+    googleScholar: 'https://scholar.google.com',
+    orcid: 'https://orcid.org',
+    linkedin: 'https://linkedin.com',
+    hIndex: 38,
+    citations: 6200,
+    featured: true,
+    status: 'active',
+    joinDate: '2020-01-01',
+  },
+
   // 1. EXECUTIVE ADVISOR
   {
     id: 'prof-dr-sm-jahangir-alam',

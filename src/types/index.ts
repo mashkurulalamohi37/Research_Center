@@ -64,6 +64,7 @@ export interface Researcher {
   title: string; // e.g. "Director & Chief Scientist", "Principal Investigator", "Senior Postdoctoral Fellow"
   category: 'faculty' | 'postdoc' | 'student' | 'visiting';
   expertCategory?: 
+    | 'Chief Advisor'
     | 'Executive Advisor'
     | 'Advisor' 
     | 'Scientist' 

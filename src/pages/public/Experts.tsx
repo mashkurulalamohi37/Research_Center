@@ -24,18 +24,19 @@ export const SECTION_GROUPS: {
   {
     id: 'all',
     label: 'All Sections',
-    shortLabel: 'All 17 Roles',
-    count: 17,
+    shortLabel: 'All 18 Roles',
+    count: 18,
     description: 'Complete multidisciplinary institute talent roster across research, architecture, and engineering.',
     categories: [...EXPERT_CATEGORIES],
   },
   {
     id: 'faculty',
     label: 'Leadership & Research Faculty',
-    shortLabel: 'Core Faculty (11)',
-    count: 11,
-    description: 'Executive advisors, scientific directors, foundational researchers, and system architects.',
+    shortLabel: 'Core Faculty (12)',
+    count: 12,
+    description: 'Chief advisor, executive advisors, scientific directors, foundational researchers, and system architects.',
     categories: [
+      'Chief Advisor',
       'Executive Advisor',
       'Advisor',
       'Scientist',
@@ -66,13 +67,19 @@ export const SECTION_GROUPS: {
   },
 ];
 
-// Meta configuration for all 17 official categories
+// Meta configuration for all 18 official categories
 const categoryMeta: Record<ExpertCategory, { 
   icon: React.FC<{ className?: string }>; 
   badgeColor: string; 
   roleDesc: string; 
   sectionId: 'faculty' | 'engineering';
 }> = {
+  'Chief Advisor': {
+    icon: ShieldCheck,
+    badgeColor: 'bg-indigo-100 text-indigo-900 border-indigo-300 dark:bg-indigo-500/15 dark:text-indigo-300 dark:border-indigo-500/30',
+    roleDesc: 'Supreme Advisory Directorate, International Science & Strategic Governance',
+    sectionId: 'faculty',
+  },
   'Executive Advisor': {
     icon: Award,
     badgeColor: 'bg-amber-100 text-amber-900 border-amber-300 dark:bg-amber-500/15 dark:text-amber-300 dark:border-amber-500/30',
@@ -275,19 +282,19 @@ export const Experts: React.FC = () => {
             <ChevronRight className="w-3.5 h-3.5 text-slate-600" />
             <span>Institute Directory</span>
             <ChevronRight className="w-3.5 h-3.5 text-slate-600" />
-            <span className="text-cyan-300 font-bold">17 Specialized Categories</span>
+            <span className="text-cyan-300 font-bold">18 Specialized Categories</span>
           </div>
 
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-xs font-mono font-semibold mb-3">
             <Users className="w-3.5 h-3.5" />
-            <span>17 PROFESSIONAL CATEGORIES • {categoryExperts.length} SPECIALISTS</span>
+            <span>18 PROFESSIONAL CATEGORIES • {categoryExperts.length} SPECIALISTS</span>
           </div>
 
           <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white">
             Professional & Expert Network
           </h1>
           <p className="mt-3 text-base sm:text-lg text-slate-300 max-w-4xl leading-relaxed">
-            Explore AIRIC’s multidisciplinary talent across research, systems architecture, robotics, and software engineering. Connect with verified specialists across all 17 institute disciplines.
+            Explore AIRIC’s multidisciplinary talent across research, systems architecture, robotics, and software engineering. Connect with verified specialists across all 18 institute disciplines.
           </p>
         </div>
       </section>
@@ -458,7 +465,7 @@ export const Experts: React.FC = () => {
                         Leadership & Research Faculty
                       </h2>
                       <span className="px-2 py-0.5 rounded-full text-xs font-mono bg-cyan-500/10 text-cyan-700 dark:text-cyan-300 border border-cyan-500/20">
-                        {categoryExperts.filter(e => categoryMeta[e.category].sectionId === 'faculty').length} Specialists • 11 Roles
+                        {categoryExperts.filter(e => categoryMeta[e.category].sectionId === 'faculty').length} Specialists • 12 Roles
                       </span>
                     </div>
                     <span className="text-xs text-slate-500 hidden sm:inline">
@@ -525,11 +532,13 @@ export const Experts: React.FC = () => {
               <span>{category}</span>
             </span>
             <span className={`text-[10px] font-mono uppercase tracking-widest font-semibold ${
-              employee.id === 'prof-dr-sm-jahangir-alam' || employee.id === 'lt-col-shameem-reza' || employee.id === 'dr-engr-mohammed-sowket-ali'
+              employee.id === 'prof-dr-hu-guoqing' || employee.id === 'prof-dr-sm-jahangir-alam' || employee.id === 'lt-col-shameem-reza' || employee.id === 'dr-engr-mohammed-sowket-ali'
                 ? 'text-cyan-600 dark:text-cyan-400 font-bold' 
                 : 'text-slate-400'
             }`}>
-              {employee.id === 'prof-dr-sm-jahangir-alam' || employee.id === 'lt-col-shameem-reza'
+              {employee.id === 'prof-dr-hu-guoqing'
+                ? 'CHIEF ADVISOR'
+                : employee.id === 'prof-dr-sm-jahangir-alam' || employee.id === 'lt-col-shameem-reza'
                 ? 'EXECUTIVE ADVISOR' 
                 : employee.id === 'dr-engr-mohammed-sowket-ali' 
                 ? 'ACADEMIC ADVISOR' 
