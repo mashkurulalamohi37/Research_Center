@@ -287,7 +287,7 @@ export const Experts: React.FC = () => {
 
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-xs font-mono font-semibold mb-3">
             <Users className="w-3.5 h-3.5" />
-            <span>18 PROFESSIONAL CATEGORIES • {categoryExperts.length} SPECIALISTS</span>
+            <span>18 PROFESSIONAL DISCIPLINES • {categoryExperts.length} APPOINTED ADVISORS</span>
           </div>
 
           <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white">
@@ -331,7 +331,9 @@ export const Experts: React.FC = () => {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
           {SECTION_GROUPS.map(sec => {
             const isSecActive = selectedSection === sec.id;
-            const secTotalExperts = categoryExperts.filter(e => categoryMeta[e.category].sectionId === sec.id).length;
+            const secTotalExperts = sec.id === 'all'
+              ? categoryExperts.length
+              : categoryExperts.filter(e => categoryMeta[e.category].sectionId === sec.id).length;
             return (
               <button
                 key={sec.id}
@@ -351,7 +353,7 @@ export const Experts: React.FC = () => {
                       ? 'bg-cyan-600 text-white dark:bg-cyan-400 dark:text-slate-950' 
                       : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400'
                   }`}>
-                    {secTotalExperts} Experts • {sec.count} Roles
+                    {secTotalExperts} {secTotalExperts === 1 ? 'Expert' : 'Experts'} • {sec.count} Roles
                   </span>
                 </div>
                 <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-1 line-clamp-2 leading-relaxed">
@@ -434,23 +436,57 @@ export const Experts: React.FC = () => {
           </div>
         </div>
 
-        {/* Experts Grid (1 Demo Employee per Category) */}
+        {/* Experts Grid */}
         {filtered.length === 0 ? (
-          <div className="text-center py-12 p-8 rounded-3xl border border-dashed border-slate-200 dark:border-slate-800 bg-white/40 dark:bg-slate-900/40">
-            <p className="text-sm text-slate-500 dark:text-slate-400">
-              No expert found matching <strong className="text-slate-800 dark:text-slate-200">"{searchTerm}"</strong>.
-            </p>
-            <button
-              onClick={() => { 
-                setSearchTerm(''); 
-                setSelectedCategory('all'); 
-                setSelectedSection('all');
-              }}
-              className="mt-3 px-4 py-2 text-xs font-bold rounded-xl bg-cyan-600 text-white hover:bg-cyan-700 transition-colors cursor-pointer"
-            >
-              Reset Filters
-            </button>
-          </div>
+          searchTerm.trim() ? (
+            <div className="text-center py-12 p-8 rounded-3xl border border-dashed border-slate-200 dark:border-slate-800 bg-white/40 dark:bg-slate-900/40">
+              <p className="text-sm text-slate-500 dark:text-slate-400">
+                No expert found matching <strong className="text-slate-800 dark:text-slate-200">"{searchTerm}"</strong>.
+              </p>
+              <button
+                onClick={() => { 
+                  setSearchTerm(''); 
+                  setSelectedCategory('all'); 
+                  setSelectedSection('all');
+                }}
+                className="mt-3 px-4 py-2 text-xs font-bold rounded-xl bg-cyan-600 text-white hover:bg-cyan-700 transition-colors cursor-pointer"
+              >
+                Reset Filters
+              </button>
+            </div>
+          ) : (
+            <div className="p-8 sm:p-12 text-center rounded-3xl border border-dashed border-cyan-500/20 bg-slate-50/50 dark:bg-slate-900/40 space-y-4">
+              <div className="w-12 h-12 mx-auto rounded-2xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-600 dark:text-cyan-400">
+                <Sparkles className="w-6 h-6" />
+              </div>
+              <h3 className="text-base sm:text-lg font-bold text-slate-800 dark:text-slate-100">
+                {selectedCategory !== 'all' 
+                  ? `Appointments in Progress: ${selectedCategory}` 
+                  : 'Specialist Appointments in Progress'}
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 max-w-lg mx-auto leading-relaxed">
+                AIRIC is currently finalizing appointments for this discipline. Distinguished faculty nominations, principal investigators, and specialist inquiries may be submitted to the Directorate.
+              </p>
+              <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
+                <button
+                  onClick={() => { 
+                    setSearchTerm(''); 
+                    setSelectedCategory('all'); 
+                    setSelectedSection('all');
+                  }}
+                  className="px-4 py-2 text-xs font-bold rounded-xl bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-slate-300 dark:hover:bg-slate-700 transition-colors cursor-pointer"
+                >
+                  View Appointed Leadership
+                </button>
+                <Link
+                  to="/contact"
+                  className="px-4 py-2 text-xs font-bold rounded-xl bg-cyan-600 hover:bg-cyan-500 text-white transition-colors cursor-pointer"
+                >
+                  Contact Directorate
+                </Link>
+              </div>
+            </div>
+          )
         ) : (
           <div className="space-y-8">
             {/* If All Categories are shown with no active search, display section dividers */}
@@ -496,7 +532,29 @@ export const Experts: React.FC = () => {
                   </div>
 
                   <div className="space-y-6">
-                    {renderExpertsList(filtered.filter(({ category }) => categoryMeta[category].sectionId === 'engineering'))}
+                    {categoryExperts.filter(e => categoryMeta[e.category].sectionId === 'engineering').length > 0 ? (
+                      renderExpertsList(filtered.filter(({ category }) => categoryMeta[category].sectionId === 'engineering'))
+                    ) : (
+                      <div className="p-8 rounded-2xl border border-dashed border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/40 text-center space-y-3">
+                        <div className="w-10 h-10 mx-auto rounded-xl bg-lime-500/10 border border-lime-500/20 flex items-center justify-center text-lime-600 dark:text-lime-400">
+                          <Wrench className="w-5 h-5" />
+                        </div>
+                        <h3 className="text-sm font-bold text-slate-800 dark:text-slate-200">
+                          Engineering & Autonomous Robotics Appointments in Progress
+                        </h3>
+                        <p className="text-xs text-slate-500 dark:text-slate-400 max-w-md mx-auto leading-relaxed">
+                          AIRIC is actively screening nominations and principal engineers across Autonomous Robotics, Embedded Systems, and AI Engineering disciplines.
+                        </p>
+                        <div>
+                          <Link
+                            to="/contact"
+                            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 transition-colors"
+                          >
+                            Inquire with Academic Directorate →
+                          </Link>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </div>
               </>
@@ -526,8 +584,16 @@ export const Experts: React.FC = () => {
         )}
 
         {regularExperts.length > 0 && (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {regularExperts.map(({ category, employee }) => renderExpertCard(category, employee, false))}
+          <div className="flex justify-center w-full">
+            <div className={`grid gap-6 w-full ${
+              regularExperts.length === 1 
+                ? 'max-w-md grid-cols-1' 
+                : regularExperts.length === 2 
+                ? 'max-w-3xl grid-cols-1 md:grid-cols-2' 
+                : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'
+            }`}>
+              {regularExperts.map(({ category, employee }) => renderExpertCard(category, employee, false))}
+            </div>
           </div>
         )}
       </div>
@@ -555,17 +621,15 @@ export const Experts: React.FC = () => {
               <span>{category}</span>
             </span>
             <span className={`text-[10px] font-mono uppercase tracking-widest font-semibold ${
-              employee.id === 'prof-dr-hu-guoqing' || employee.id === 'prof-dr-sm-jahangir-alam' || employee.id === 'lt-col-shameem-reza' || employee.id === 'dr-engr-mohammed-sowket-ali'
+              employee.id === 'prof-dr-hu-guoqing' || employee.id === 'lt-col-shameem-reza'
                 ? 'text-cyan-600 dark:text-cyan-400 font-bold' 
                 : 'text-slate-400'
             }`}>
               {employee.id === 'prof-dr-hu-guoqing'
                 ? 'CHIEF ADVISOR'
-                : employee.id === 'prof-dr-sm-jahangir-alam' || employee.id === 'lt-col-shameem-reza'
+                : employee.id === 'lt-col-shameem-reza'
                 ? 'EXECUTIVE ADVISOR' 
-                : employee.id === 'dr-engr-mohammed-sowket-ali' 
-                ? 'ACADEMIC ADVISOR' 
-                : 'DEMO EXPERT'}
+                : 'INSTITUTE APPOINTEE'}
             </span>
           </div>
 

@@ -24,17 +24,17 @@
 
 ---
 
-## Milestone 4: Experts Directory Roster Alignment (In Progress)
+## Milestone 4: Experts Directory Roster Alignment (Completed)
 
 ### Phase 13: Experts Directory Data & Personnel Alignment
-- [ ] Remove all 16 demo accounts from `src/data/researchers.ts`.
-- [ ] Remove Prof. Dr. S.M. Jahangir Alam and Dr. Engr. Mohammed Sowket Ali from `src/data/researchers.ts` and safeguard references in projects and publications.
-- [ ] Retain and configure verified appointments: Prof. Dr. Hu Guoqing (Chief Advisor) and Lt Col Md Shameem Reza, PhD (retd) (Executive Advisor).
+- [x] Remove all 16 demo accounts from `src/data/researchers.ts`.
+- [x] Remove Prof. Dr. S.M. Jahangir Alam and Dr. Engr. Mohammed Sowket Ali from `src/data/researchers.ts` and safeguard references in projects and publications.
+- [x] Retain and configure verified appointments: Prof. Dr. Hu Guoqing (Chief Advisor) and Lt Col Md Shameem Reza, PhD (retd) (Executive Advisor).
 - **Requirements**: REQ-EXP-01, REQ-EXP-02, REQ-EXP-03
 
 ### Phase 14: Experts Page UI Refinement & System Verification
-- [ ] Update `/experts` page UI headers, total specialists counters, and section statistics to match the live verified roster.
-- [ ] Provide elegant open-appointment / nomination notices for categories without active appointees.
-- [ ] Safeguard Home Showcase, search modals, and related components against missing researcher IDs.
-- [ ] Verify complete project build via `npm run build` with zero errors.
+- [x] Update `/experts` page UI headers, total specialists counters, and section statistics to match the live verified roster.
+- [x] Provide elegant open-appointment / nomination notices for categories without active appointees.
+- [x] Safeguard Home Showcase, search modals, and related components against missing researcher IDs.
+- [x] Verify complete project build via `npm run build` with zero errors.
 - **Requirements**: REQ-EXP-04, REQ-EXP-05, REQ-EXP-06, REQ-EXP-07, REQ-EXP-08

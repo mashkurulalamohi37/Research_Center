@@ -2,39 +2,6 @@ import { Project } from '../types';
 
 export const mockProjects: Project[] = [
   {
-    id: 'proj-jahangir-intelligent-systems',
-    slug: 'intelligent-systems-and-computer-vision-frameworks',
-    title: 'Intelligent Systems, Computer Vision & Quantum AI Control Architectures',
-    shortDescription: 'Advanced research programs in neural networks, computer vision, time-series diagnostics, and nano bio-robotics.',
-    description: 'Directed by Prof. Dr. S.M. Jahangir Alam, this multi-phase program spans foundational AI and translational systems: integrating generative AI, high-dimensional computer vision, time-series signal analysis, and quantum machine learning algorithms with practical industrial automation and bio-robotic controls.',
-    problemStatement: 'Modern complex cyber-physical and bio-robotic systems demand ultra-fast sensory perception and provably stable control under real-time dynamic conditions.',
-    methodology: 'Combining deep neural representations with adaptive state-space estimation, quantum neural networks, and distributed sensory telemetry.',
-    outcomes: [
-      '19 Scientific Research Projects successfully completed across university testbeds.',
-      '7 international and national patents filed and granted.',
-      'International MOOC course deployed globally on XuetangX platform.',
-      'Published comprehensive monograph with Taylor & Francis / CRC Press (USA).'
-    ],
-    researchAreaId: 'ai-core',
-    leadResearcherId: 'prof-dr-sm-jahangir-alam',
-    teamMemberIds: ['prof-dr-sm-jahangir-alam'],
-    status: 'Completed',
-    startDate: '2020-01-01',
-    endDate: '2025-03-19',
-    fundingBody: 'International Research Funds & University Grants',
-    fundingAmount: '$3,200,000',
-    image: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1000&q=80',
-    technologies: ['Computer Vision', 'Deep Learning', 'Quantum AI', 'Nano Bio-Robotics', 'Signal Processing'],
-    featured: true,
-    publicationsIds: ['pub-jahangir-book-crc-2023', 'pub-jahangir-vision-scie-2024'],
-    deliverables: [
-      { title: '19 Completed Scientific Projects Portfolio', date: '2024-12-01', completed: true },
-      { title: '7 Granted Patents & IP Filing', date: '2024-06-15', completed: true },
-      { title: 'CRC Press / Taylor & Francis Monograph', date: '2023-10-01', completed: true },
-      { title: 'XuetangX International MOOC Launch', date: '2022-09-01', completed: true },
-    ]
-  },
-  {
     id: 'proj-neurosym-core',
     slug: 'provably-sound-neurosymbolic-foundations',
     title: 'Provably Sound Neuro-Symbolic Foundations for General Reasoning',
