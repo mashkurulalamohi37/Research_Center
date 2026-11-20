@@ -7,14 +7,14 @@ Build a world-class, ultra-responsive web platform for AIRIC (Advanced Intellige
 
 ---
 
-## Current Milestone: v1.6 Appoint Mehadi Talha as AI Engineer
+## Current Milestone: v1.7 Appoint MD. Ahnaf Shahryar Nayem as Software Engineer
 
-**Goal:** Appoint and integrate Mehadi Talha as an AI Engineer in the AIRIC faculty and Experts network directory, featuring his profile, portrait, and specialization in Applied AI and Deep Learning Systems.
+**Goal:** Appoint and integrate MD. Ahnaf Shahryar Nayem as a Software Engineer in the AIRIC faculty and Experts network directory, featuring his profile, portrait, and specialization in Full-Stack Platforms and Distributed Systems.
 
 **Target features:**
-- Profile & Photo Asset: Save uploaded portrait to `public/mehadi-talha.jpg` and `src/assets/mehadi-talha.jpg`, and integrate Mehadi Talha into `src/data/researchers.ts` with contact email `mehaditalha62@gmail.com`, phone `+8801521745815`, and role `AI Engineer`.
-- Experts Directory Presentation: Map to the 'AI Engineer' category under Leadership & Research Faculty on the `/experts` directory page.
-- Category UI & Metrics: Activate the 'AI Engineer' category filter pill (count: 1) and render his card with the cyan AI Engineer badge.
+- Profile & Photo Asset: Save uploaded portrait to `public/ahnaf-shahryar-nayem.jpg` and `src/assets/ahnaf-shahryar-nayem.jpg`, and integrate MD. Ahnaf Shahryar Nayem into `src/data/researchers.ts` with contact email `asnayem1122@gmail.com`, phone `+880 17038957`, and role `Software Engineer`.
+- Experts Directory Presentation: Map to the 'Software Engineer' category under Leadership & Research Faculty on the `/experts` directory page.
+- Category UI & Metrics: Activate the 'Software Engineer' category filter pill (count: 1) and render his card with the rose/blue Software Engineer badge and direct communication links.
 
 ---
 
@@ -24,6 +24,7 @@ Build a world-class, ultra-responsive web platform for AIRIC (Advanced Intellige
 3. **Mobile & Multi-Device Fluency** (Phases 9-12 completed 2026-11-19).
 4. **Experts Directory Roster Alignment** (Phases 13-14 completed 2026-11-20).
 5. **Appoint Mashkurul Alam Ohi as Scientist** (Phases 15-16 completed 2026-11-20).
+6. **Appoint Mehadi Talha as AI Engineer** (Phases 17-18 completed 2026-11-20).
 
 ---
 

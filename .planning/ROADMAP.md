@@ -48,3 +48,18 @@
 - [x] Verify category filter pills, statistics counters (4 total appointed specialists), and responsive cards.
 - [x] Verify production build with `npm run build`.
 - **Requirements**: REQ-ENG-03, REQ-ENG-04, REQ-ENG-05, REQ-ENG-06
+
+---
+
+## Milestone 7: Appoint MD. Ahnaf Shahryar Nayem as Software Engineer (Completed)
+
+### Phase 19: Software Engineer Data Modeling & Portrait Asset Integration
+- [x] Save uploaded portrait to `public/ahnaf-shahryar-nayem.jpg` and `src/assets/ahnaf-shahryar-nayem.jpg`.
+- [x] Add MD. Ahnaf Shahryar Nayem into `src/data/researchers.ts` with contact email `asnayem1122@gmail.com`, phone `+880 17038957`, and role `Software Engineer`.
+- **Requirements**: REQ-SWE-01, REQ-SWE-02
+
+### Phase 20: Experts Directory UI Integration & Verification
+- [x] Connect MD. Ahnaf Shahryar Nayem to `/experts` under Leadership & Research Faculty in the Software Engineer category.
+- [x] Verify category filter pills, ribbon label (`SOFTWARE ENGINEER`), statistics counters (5 total appointed specialists), and responsive cards.
+- [x] Verify production build with `npm run build`.
+- **Requirements**: REQ-SWE-03, REQ-SWE-04, REQ-SWE-05, REQ-SWE-06

@@ -330,7 +330,75 @@ export const mockResearchers: Researcher[] = [
     joinDate: '2024-01-01',
   },
 
-  // 4. AUXILIARY / FOUNDATIONAL RESEARCH FACULTY
+  // 4. SOFTWARE ENGINEER (MD. Ahnaf Shahryar Nayem)
+  {
+    id: 'ahnaf-shahryar-nayem',
+    slug: 'ahnaf-shahryar-nayem',
+    name: 'MD. Ahnaf Shahryar Nayem',
+    title: 'Software Engineer (Full-Stack Platforms & Distributed Runtimes)',
+    category: 'faculty',
+    expertCategory: 'Software Engineer',
+    department: 'Software Engineering & Production Systems Lab',
+    email: 'asnayem1122@gmail.com',
+    phone: '+880 17038957',
+    office: 'Engineering Pavilion, Room 208',
+    avatar: '/ahnaf-shahryar-nayem.jpg',
+    bio: 'MD. Ahnaf Shahryar Nayem serves as a Software Engineer at the AIRIC Institute. He specializes in architecting high-concurrency full-stack platforms, cloud-native distributed microservices, reactive frontend systems, and resilient DevOps pipelines. At AIRIC, he engineers production software runtimes, high-throughput API gateways, and scalable digital interfaces empowering the institute’s research computing and scientific operations.',
+    education: [
+      {
+        degree: 'B.Sc. in Computer Science & Engineering',
+        institution: 'Bangladesh Army University of Science and Technology (BAUST)',
+        year: 2024,
+      },
+    ],
+    researchAreaIds: ['ai-core'],
+    expertise: [
+      'Full-Stack Software Engineering',
+      'Distributed Systems Architecture',
+      'TypeScript, React & Next.js Platforms',
+      'High-Throughput REST & GraphQL APIs',
+      'Cloud Runtimes & Microservices',
+      'Automated CI/CD & Production DevOps',
+      'Database Modeling & Query Optimization',
+    ],
+    interests: [
+      'Modern High-Performance Web Architectures',
+      'Scalable Distributed Systems & Message Queues',
+      'Reactive Component Frameworks & UI Ergonomics',
+      'Cloud-Native Container Orchestration',
+      'Reliable Software Testing & Observability',
+    ],
+    experiences: [
+      {
+        role: 'Software Engineer',
+        organization: 'AIRIC Institute',
+        period: '2024 to Present',
+        location: 'Saidpur / Global',
+        highlights: 'Directing full-stack software development, distributed systems architecture, API gateway design, and cloud production infrastructure.'
+      },
+      {
+        role: 'Software & Systems Engineer',
+        organization: 'Dept. of CSE, BAUST',
+        period: '2022 to 2024',
+        location: 'Saidpur, Bangladesh',
+        highlights: 'Engineered web applications, institutional database platforms, and automated workflow systems.'
+      },
+    ],
+    academicStats: {
+      researchYears: 2,
+      completedResearchProjects: 4,
+    },
+    googleScholar: 'https://scholar.google.com',
+    github: 'https://github.com/asnayem1122',
+    linkedin: 'https://linkedin.com',
+    hIndex: 2,
+    citations: 18,
+    featured: true,
+    status: 'active',
+    joinDate: '2024-01-01',
+  },
+
+  // 5. AUXILIARY / FOUNDATIONAL RESEARCH FACULTY
   {
     id: 'dr-sarah-lin',
     slug: 'dr-sarah-lin',

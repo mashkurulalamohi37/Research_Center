@@ -590,6 +590,8 @@ export const Experts: React.FC = () => {
                 ? 'max-w-md grid-cols-1' 
                 : regularExperts.length === 2 
                 ? 'max-w-3xl grid-cols-1 md:grid-cols-2' 
+                : regularExperts.length === 4
+                ? 'grid-cols-1 md:grid-cols-2 xl:grid-cols-4'
                 : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'
             }`}>
               {regularExperts.map(({ category, employee }) => renderExpertCard(category, employee, false))}
@@ -621,7 +623,7 @@ export const Experts: React.FC = () => {
               <span>{category}</span>
             </span>
             <span className={`text-[10px] font-mono uppercase tracking-widest font-semibold ${
-              employee.id === 'prof-dr-hu-guoqing' || employee.id === 'lt-col-shameem-reza' || employee.id === 'mashkurul-alam-ohi' || employee.id === 'mehadi-talha'
+              employee.id === 'prof-dr-hu-guoqing' || employee.id === 'lt-col-shameem-reza' || employee.id === 'mashkurul-alam-ohi' || employee.id === 'mehadi-talha' || employee.id === 'ahnaf-shahryar-nayem'
                 ? 'text-cyan-600 dark:text-cyan-400 font-bold' 
                 : 'text-slate-400'
             }`}>
@@ -633,6 +635,8 @@ export const Experts: React.FC = () => {
                 ? 'RESEARCH SCIENTIST'
                 : employee.id === 'mehadi-talha'
                 ? 'AI ENGINEER'
+                : employee.id === 'ahnaf-shahryar-nayem'
+                ? 'SOFTWARE ENGINEER'
                 : 'INSTITUTE APPOINTEE'}
             </span>
           </div>
