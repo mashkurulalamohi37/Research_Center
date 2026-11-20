@@ -8,8 +8,8 @@ Appoint Mehadi Talha as an AI Engineer in the AIRIC faculty and Experts network 
 ## Active Requirements (Milestone 6)
 
 ### 1. Personnel Data & Portrait Asset Integration (`PROFILE`)
-- [ ] **REQ-ENG-01**: Copy the uploaded portrait image to `public/mehadi-talha.jpg` and `src/assets/mehadi-talha.jpg`.
-- [ ] **REQ-ENG-02**: Add Mehadi Talha into `src/data/researchers.ts` with:
+- [x] **REQ-ENG-01**: Copy the uploaded portrait image to `public/mehadi-talha.jpg` and `src/assets/mehadi-talha.jpg`.
+- [x] **REQ-ENG-02**: Add Mehadi Talha into `src/data/researchers.ts` with:
   - `id`: `mehadi-talha`
   - `slug`: `mehadi-talha`
   - `name`: `Mehadi Talha`
@@ -24,12 +24,12 @@ Appoint Mehadi Talha as an AI Engineer in the AIRIC faculty and Experts network 
   - `expertise`: Deep Learning Systems, Neural Model Deployment, Inference Optimization, Full-Stack AI Engineering, Python & PyTorch
 
 ### 2. Experts Directory UI Presentation (`UI_PRESENTATION`)
-- [ ] **REQ-ENG-03**: Ensure the `/experts` directory page reflects 4 appointed specialists (Prof. Dr. Hu Guoqing, Lt Col Md Shameem Reza, Mashkurul Alam Ohi, and Mehadi Talha).
-- [ ] **REQ-ENG-04**: Under Section 1 (Leadership & Research Faculty), render Mehadi Talha's card with the cyan AI Engineer badge, contact details (email and direct phone link), and bio.
-- [ ] **REQ-ENG-05**: Ensure the 'AI Engineer' category filter pill shows a count of 1 and displays his card directly when clicked.
+- [x] **REQ-ENG-03**: Ensure the `/experts` directory page reflects 4 appointed specialists (Prof. Dr. Hu Guoqing, Lt Col Md Shameem Reza, Mashkurul Alam Ohi, and Mehadi Talha).
+- [x] **REQ-ENG-04**: Under Section 1 (Leadership & Research Faculty), render Mehadi Talha's card with the cyan AI Engineer badge, contact details (email and direct phone link), and bio.
+- [x] **REQ-ENG-05**: Ensure the 'AI Engineer' category filter pill shows a count of 1 and displays his card directly when clicked.
 
 ### 3. Verification & Build (`VERIFY`)
-- [ ] **REQ-ENG-06**: Execute `npm run build` and ensure zero TypeScript errors or broken routes.
+- [x] **REQ-ENG-06**: Execute `npm run build` and ensure zero TypeScript errors or broken routes.
 
 ---
 
@@ -37,9 +37,9 @@ Appoint Mehadi Talha as an AI Engineer in the AIRIC faculty and Experts network 
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| REQ-ENG-01  | Phase 17 | Pending |
-| REQ-ENG-02  | Phase 17 | Pending |
-| REQ-ENG-03  | Phase 18 | Pending |
-| REQ-ENG-04  | Phase 18 | Pending |
-| REQ-ENG-05  | Phase 18 | Pending |
-| REQ-ENG-06  | Phase 18 | Pending |
+| REQ-ENG-01  | Phase 17 | Completed |
+| REQ-ENG-02  | Phase 17 | Completed |
+| REQ-ENG-03  | Phase 18 | Completed |
+| REQ-ENG-04  | Phase 18 | Completed |
+| REQ-ENG-05  | Phase 18 | Completed |
+| REQ-ENG-06  | Phase 18 | Completed |

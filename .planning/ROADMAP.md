@@ -36,15 +36,15 @@
 
 ---
 
-## Milestone 6: Appoint Mehadi Talha as AI Engineer (In Progress)
+## Milestone 6: Appoint Mehadi Talha as AI Engineer (Completed)
 
 ### Phase 17: AI Engineer Data Modeling & Portrait Asset Integration
-- [ ] Save uploaded portrait to `public/mehadi-talha.jpg` and `src/assets/mehadi-talha.jpg`.
-- [ ] Add Mehadi Talha into `src/data/researchers.ts` with contact email `mehaditalha62@gmail.com`, phone `+8801521745815`, and role `AI Engineer`.
+- [x] Save uploaded portrait to `public/mehadi-talha.jpg` and `src/assets/mehadi-talha.jpg`.
+- [x] Add Mehadi Talha into `src/data/researchers.ts` with contact email `mehaditalha62@gmail.com`, phone `+8801521745815`, and role `AI Engineer`.
 - **Requirements**: REQ-ENG-01, REQ-ENG-02
 
 ### Phase 18: Experts Directory UI Integration & Verification
-- [ ] Connect Mehadi Talha to `/experts` under Leadership & Research Faculty in the AI Engineer category.
-- [ ] Verify category filter pills, statistics counters (4 total appointed specialists), and responsive cards.
-- [ ] Verify production build with `npm run build`.
+- [x] Connect Mehadi Talha to `/experts` under Leadership & Research Faculty in the AI Engineer category.
+- [x] Verify category filter pills, statistics counters (4 total appointed specialists), and responsive cards.
+- [x] Verify production build with `npm run build`.
 - **Requirements**: REQ-ENG-03, REQ-ENG-04, REQ-ENG-05, REQ-ENG-06

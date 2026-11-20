@@ -263,7 +263,74 @@ export const mockResearchers: Researcher[] = [
     joinDate: '2024-01-01',
   },
 
-  // 3. AUXILIARY / FOUNDATIONAL RESEARCH FACULTY
+  // 3. AI ENGINEER (Mehadi Talha)
+  {
+    id: 'mehadi-talha',
+    slug: 'mehadi-talha',
+    name: 'Mehadi Talha',
+    title: 'AI Engineer (Applied Deep Learning & Intelligent Systems)',
+    category: 'faculty',
+    expertCategory: 'AI Engineer',
+    department: 'Applied AI Systems & Neural Engineering Lab',
+    email: 'mehaditalha62@gmail.com',
+    phone: '+8801521745815',
+    office: 'AI Systems Pavilion, Room 204',
+    avatar: '/mehadi-talha.jpg',
+    bio: 'Mehadi Talha serves as an AI Engineer at the AIRIC Institute. He specializes in designing and engineering high-performance deep learning pipelines, neural inference acceleration, intelligent computer vision systems, and full-stack AI platform integrations. At AIRIC, he spearheads the deployment of production-grade neural networks, automated research workflows, and scalable model serving infrastructure across the institute’s computational testbeds.',
+    education: [
+      {
+        degree: 'B.Sc. in Computer Science & Engineering',
+        institution: 'Bangladesh Army University of Science and Technology (BAUST)',
+        year: 2024,
+      },
+    ],
+    researchAreaIds: ['ai-core', 'robotics-autonomous'],
+    expertise: [
+      'Applied Deep Learning Systems',
+      'Neural Model Inference & Optimization',
+      'Computer Vision & Object Detection',
+      'Full-Stack AI Application Engineering',
+      'Python, PyTorch & TensorFlow',
+      'FastAPI & Modern Web Architectures',
+      'Distributed Research Data Pipelines',
+    ],
+    interests: [
+      'Real-Time Neural Inference Acceleration',
+      'Edge AI & Autonomous Systems Integration',
+      'End-to-End Deep Learning Workflows',
+      'High-Throughput Model Serving',
+      'Interactive AI Systems Design',
+    ],
+    experiences: [
+      {
+        role: 'AI Engineer',
+        organization: 'AIRIC Institute',
+        period: '2024 to Present',
+        location: 'Saidpur / Global',
+        highlights: 'Leading applied AI systems engineering, neural model deployment, high-throughput inference optimization, and digital research infrastructure.'
+      },
+      {
+        role: 'AI & Software Systems Engineer',
+        organization: 'Dept. of CSE, BAUST',
+        period: '2022 to 2024',
+        location: 'Saidpur, Bangladesh',
+        highlights: 'Engineered computer vision pipelines, full-stack software applications, and institutional research tools.'
+      },
+    ],
+    academicStats: {
+      researchYears: 2,
+      completedResearchProjects: 5,
+    },
+    googleScholar: 'https://scholar.google.com',
+    linkedin: 'https://linkedin.com',
+    hIndex: 2,
+    citations: 20,
+    featured: true,
+    status: 'active',
+    joinDate: '2024-01-01',
+  },
+
+  // 4. AUXILIARY / FOUNDATIONAL RESEARCH FACULTY
   {
     id: 'dr-sarah-lin',
     slug: 'dr-sarah-lin',
