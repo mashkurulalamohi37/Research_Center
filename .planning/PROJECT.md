@@ -7,20 +7,38 @@ Build a world-class, ultra-responsive web platform for AIRIC (Advanced Intellige
 
 ---
 
-## Active Milestone: Mobile & Multi-Device Fluency (Milestone 3)
+## Current Milestone: v1.4 Experts Directory Roster Alignment
 
-### Milestone Objective
-Make the AIRIC web platform completely suitable and fluent on mobile and tablet devices of all variations (from 320px compact screens to 1024px tablets). Integrate the left 10-division navigation into a unified, high-performance mobile hamburger drawer with tabs/accordions. Adapt the homepage on mobile/tablet to a natural vertical flow while preserving desktop `100vh` zero-scroll. Eliminate any layout breaks, horizontal overflows, or touch friction, and verify every device profile one by one.
+**Goal:** Remove all demo accounts and unconfirmed personnel from the Experts tab, and establish a verified directory highlighting authentic institute appointments.
 
-### Core Problems Addressed
-1. **Desktop-Only Viewport Constraints**: The fixed `100vh` and pinned left rail currently clip content or force awkward scrolling on small screens and tablets.
-2. **Left Navigation Rail on Small Screens**: The 10-division rail takes up full horizontal and vertical space on mobile and relies on desktop hover events. It must be collapsed into the mobile hamburger menu drawer.
-3. **Touch Targets & Typography Scaling**: On small screens, font sizes, badge paddings, and button clusters need responsive scaling without wrapping awkwardly or breaking layouts.
-4. **Performance & Lightweight Touch UX**: Heavy hover bridges and redundant menu structures must be replaced by streamlined mobile touch accordions with instantaneous response.
-5. **Systematic Multi-Device Verification**: Every device form factor (320px, 375px/390px, 412px, 768px, 1024px) must be systematically verified with zero horizontal overflow.
+**Target features:**
+- Remove all 16 demo accounts from the Experts network directory (`src/data/researchers.ts` and `src/pages/public/Experts.tsx`).
+- Remove Prof. Dr. S.M. Jahangir Alam and Dr. Engr. Mohammed Sowket Ali from the directory and related references.
+- Present verified leadership appointments: Prof. Dr. Hu Guoqing (Chief Advisor) and Lt Col Md Shameem Reza, PhD (retd) (Executive Advisor).
+- Update directory UI statistics, section categories, and graceful empty states for disciplines currently undergoing open appointments.
 
 ---
 
 ## Completed Milestones
 1. **AIRIC Full-Viewport Single-Page Experience** (Phases 1-5 completed 2026-11-16).
 2. **Navbar Non-Blocking & Hero Viewport Alignment** (Phases 6-8 completed 2026-11-16).
+3. **Mobile & Multi-Device Fluency** (Phases 9-12 completed 2026-11-19).
+
+---
+
+## Evolution
+
+This document evolves at phase transitions and milestone boundaries.
+
+**After each phase transition** (via `/gsd-transition`):
+1. Requirements invalidated? → Move to Out of Scope with reason
+2. Requirements validated? → Move to Validated with phase reference
+3. New requirements emerged? → Add to Active
+4. Decisions to log? → Add to Key Decisions
+5. "What This Is" still accurate? → Update if drifted
+
+**After each milestone** (via `/gsd-complete-milestone`):
+1. Full review of all sections
+2. Core Value check — still the right priority?
+3. Audit Out of Scope — reasons still valid?
+4. Update Context with current state

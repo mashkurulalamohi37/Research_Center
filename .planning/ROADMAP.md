@@ -17,19 +17,24 @@
 ---
 
 ## Milestone 3: Mobile & Multi-Device Fluency (Completed)
+- [x] Phase 9: Unified Mobile Navigation & Touch Drawer
+- [x] Phase 10: Responsive Home Stage & Fluid Scroll Architecture
+- [x] Phase 11: Video Carousel Mobile Adaptations & Touch Controls
+- [x] Phase 12: Multi-Device Systematic Verification & Build Validation
 
-### Phase 9: Unified Mobile Navigation & Touch Drawer
-- [x] Integrate the 10-division navigation and institutional hubs into a unified, touch-optimized `MobileNavDrawer.tsx`. Ensure the top header bar on small devices has balanced spacing (Logo, Search, Theme toggle, Portal switch, Hamburger) with zero wrapping or touch conflicts.
-- **Requirements**: REQ-MOB-01, REQ-MOB-02, REQ-MOB-03, REQ-MOB-04
+---
 
-### Phase 10: Responsive Home Stage & Fluid Scroll Architecture
-- [x] Update `Layout.tsx`, `Home.tsx`, and `CenterHeroStage.tsx` so that `< 1024px` transitions to a natural vertical scroll layout with optimized typography and telemetry cards, while `>= 1024px` desktop maintains the pristine `100vh` zero-scroll dashboard.
-- **Requirements**: REQ-LAY-01, REQ-LAY-02, REQ-LAY-03, REQ-PRF-02
+## Milestone 4: Experts Directory Roster Alignment (In Progress)
 
-### Phase 11: Video Carousel Mobile Adaptations & Touch Controls
-- [x] Ensure `VideoCarousel.tsx` displays crisply on mobile screens with responsive height, touch-friendly play/pause/prev/next controls, legible badges, and lightweight performance without layout shifts.
-- **Requirements**: REQ-PRF-01, REQ-PRF-03
+### Phase 13: Experts Directory Data & Personnel Alignment
+- [ ] Remove all 16 demo accounts from `src/data/researchers.ts`.
+- [ ] Remove Prof. Dr. S.M. Jahangir Alam and Dr. Engr. Mohammed Sowket Ali from `src/data/researchers.ts` and safeguard references in projects and publications.
+- [ ] Retain and configure verified appointments: Prof. Dr. Hu Guoqing (Chief Advisor) and Lt Col Md Shameem Reza, PhD (retd) (Executive Advisor).
+- **Requirements**: REQ-EXP-01, REQ-EXP-02, REQ-EXP-03
 
-### Phase 12: Multi-Device Systematic Verification & Build Validation
-- [x] Systematically verify and test the UI across 5 device viewports (320px, 375px/390px, 412px, 768px, 1024px) using Chrome DevTools/DOM checks and execute `npm run build` with zero errors.
-- **Requirements**: REQ-DEV-01, REQ-DEV-02, REQ-DEV-03, REQ-DEV-04, REQ-DEV-05, REQ-DEV-06
+### Phase 14: Experts Page UI Refinement & System Verification
+- [ ] Update `/experts` page UI headers, total specialists counters, and section statistics to match the live verified roster.
+- [ ] Provide elegant open-appointment / nomination notices for categories without active appointees.
+- [ ] Safeguard Home Showcase, search modals, and related components against missing researcher IDs.
+- [ ] Verify complete project build via `npm run build` with zero errors.
+- **Requirements**: REQ-EXP-04, REQ-EXP-05, REQ-EXP-06, REQ-EXP-07, REQ-EXP-08

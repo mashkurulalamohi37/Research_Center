@@ -1,16 +1,19 @@
 ---
-gsd_state_version: '1.0'
-status: completed
-milestone: Mobile & Multi-Device Fluency
+gsd_state_version: "1.0"
+milestone: v1.4
+milestone_name: Experts Directory Roster Alignment
+status: planning
+last_updated: "2026-11-20T13:13:52.584Z"
+last_activity: 2026-11-20
 progress:
-  total_phases: 4
-  completed_phases: 4
-  total_plans: 4
-  completed_plans: 4
-  percent: 100
+  total_phases: 2
+  completed_phases: 0
+  total_plans: 2
+  completed_plans: 0
+  percent: 0
 ---
 
-# Project State: Mobile & Multi-Device Fluency (Milestone 3)
+# Project State: Experts Directory Roster Alignment (Milestone 4)
 
 ## Project Reference
 
@@ -18,16 +21,12 @@ See: [.planning/PROJECT.md](file:///F:/Talha/ARIRCC/.planning/PROJECT.md)
 See: [.planning/REQUIREMENTS.md](file:///F:/Talha/ARIRCC/.planning/REQUIREMENTS.md)  
 See: [.planning/ROADMAP.md](file:///F:/Talha/ARIRCC/.planning/ROADMAP.md)  
 
-**Core value:** Ultra-fast, fluid, and intuitive multi-device experience across phones (320px–480px), tablets (768px–1024px), and desktops (>= 1024px) with unified hamburger navigation, zero UI breakage, and systematic multi-device verification.  
-**Current focus:** Completed & verified with `npm run build` (`✓ built in 12.96s`).
+**Core value:** Authentic institutional directory showcasing verified advisors (Prof. Dr. Hu Guoqing and Lt Col Md Shameem Reza), eliminating all mock demo accounts, removing Jahangir Alam and Sowket Ali, and maintaining robust UI and build stability.  
+**Current focus:** Phase 13 (Experts Directory Data & Personnel Alignment).
 
-## Performance Metrics & Multi-Device Matrix
+## Current Position
 
-| Viewport Profile | Status | Verification Detail |
-|---|---|---|
-| **320px** Compact Mobile | COMPLETED | Zero horizontal overflow, single-row navbar, wrapped telemetry |
-| **375px/390px** Standard iPhone | COMPLETED | Fluid vertical flow, quick-access division pills |
-| **412px** Android Flagship | COMPLETED | 60fps canvas performance, clean touch accordions |
-| **768px** Tablet Portrait | COMPLETED | Left rail collapsed into drawer, natural scroll flow |
-| **1024px+** Desktop | COMPLETED | 100vh zero-scroll preserved, left division rail with hover flyouts |
-| **Vite Build** | COMPLETED | ✓ Built in 12.96s with zero errors |
+Phase: Phase 13 (Experts Directory Data & Personnel Alignment)
+Plan: —
+Status: Planning & Execution
+Last activity: 2026-11-20 — Milestone v1.4 started

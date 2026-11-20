@@ -1,35 +1,37 @@
-# Requirements: Mobile & Multi-Device Fluency (Milestone 3)
+# Requirements: Experts Directory Roster Alignment (Milestone 4)
 
 ## Active Milestone Objective
-Transform the AIRIC web platform into a fluid, fast, and accessible multi-device experience across all phone and tablet form factors without breaking the pristine `100vh` desktop zero-scroll dashboard. Move the left 10-division navigation into an intuitive, high-performance mobile drawer; adapt the homepage layout to a natural vertical card flow on smaller screens; optimize touch targets and lightweight rendering; and systematically verify UI on all target screen sizes.
+Remove all demo accounts and unconfirmed personnel from the Experts tab (`/experts`), remove Prof. Dr. S.M. Jahangir Alam and Dr. Engr. Mohammed Sowket Ali, and align the Experts network page around verified leadership (Prof. Dr. Hu Guoqing and Lt Col Md Shameem Reza, PhD (retd)), while ensuring graceful UI states and zero application breakage.
 
 ---
 
-## Active Requirements (Milestone 3)
+## Active Requirements (Milestone 4)
 
-### 1. Unified Mobile Navigation & Drawer (`MOB_NAV`)
-- **REQ-MOB-01**: On screens `< 1024px` (tablets and phones), the pinned left `DivisionsNavRail` is hidden from the main view and accessible through the top hamburger menu.
-- **REQ-MOB-02**: The `MobileNavDrawer` provides a clean tabbed or segmented structure allowing mobile users to effortlessly switch between **"10 Divisions"** and **"Institute Hubs & Pages"**.
-- **REQ-MOB-03**: Division items in the mobile drawer display titles, subtitles, and touch-expandable sub-disciplines/capabilities, eliminating any hover dependency.
-- **REQ-MOB-04**: The top navbar on mobile and tablet retains the AIRIC seal logo, quick search button, theme toggle, and hamburger button cleanly in one row without wrapping or collision.
+### 1. Personnel Roster & Data Cleanup (`DATA_CLEANUP`)
+- [ ] **REQ-EXP-01**: Remove all 16 demo accounts from the active experts directory (`src/data/researchers.ts`), ensuring placeholder names and stock profile cards (Sarah Lin, Marcus Vance, Elena Rostova, Alexander Weiss, etc.) are eliminated from the active directory.
+- [ ] **REQ-EXP-02**: Remove Prof. Dr. S.M. Jahangir Alam and Dr. Engr. Mohammed Sowket Ali from the directory and resolve or gracefully safeguard any downstream relations (projects, publications, research areas).
+- [ ] **REQ-EXP-03**: Retain verified leadership appointments: Prof. Dr. Hu Guoqing (Chief Advisor) and Lt Col Md Shameem Reza, PhD (retd) (Executive Advisor) with complete institutional bios, credentials, and contact cards.
 
-### 2. Responsive Homepage Layout Flow (`RESP_LAYOUT`)
-- **REQ-LAY-01**: On desktop (`>= 1024px`), the homepage maintains its zero-scroll `100vh` layout with the left rail, center hero, and bottom-right video carousel intact.
-- **REQ-LAY-02**: On mobile & tablet (`< 1024px`), the homepage transitions seamlessly into a smooth natural vertical scroll layout (`overflow-y-auto min-h-screen`) where users scroll down naturally through:
-  1. Center Hero Stage (hero title, pillar chips, CTAs, telemetry counters).
-  2. Featured Video Carousel (touch-swipeable / button controllable, properly aspect-ratio scaled).
-  3. Quick-access Division badges/cards.
-- **REQ-LAY-03**: The outer container strictly enforces `overflow-x: hidden` to eliminate horizontal scrollbars on all mobile viewports.
+### 2. Experts Page UI & Category Presentation (`UI_PRESENTATION`)
+- [ ] **REQ-EXP-04**: Update the `/experts` directory header statistics, category counts, and section tallies to reflect the verified active specialists count rather than placeholder totals.
+- [ ] **REQ-EXP-05**: For categories and sections currently without active appointees (e.g. disciplines with upcoming appointments), display an elegant, clean status badge / recruitment note instead of broken cards or raw empty screens.
+- [ ] **REQ-EXP-06**: Ensure all category filters, search input, and section tabs function smoothly with zero runtime errors.
 
-### 3. Typography, Touch Targets & Lightweight Performance (`TOUCH_PERF`)
-- **REQ-PRF-01**: All interactive buttons, tabs, accordions, and links meet WCAG touch target standards (minimum `44x44px` or comfortably padded hit areas).
-- **REQ-PRF-02**: Hero typography and telemetry badges scale responsively (`text-xl sm:text-2xl md:text-3xl lg:text-[34px] xl:text-[38px]`) so text never clips or overflows viewport boundaries.
-- **REQ-PRF-03**: Animations, backdrop blurs, and re-renders are optimized for mobile GPUs, ensuring fast initial load and 60fps scrolling.
+### 3. Cross-Platform Integrity & Build Verification (`VERIFY`)
+- [ ] **REQ-EXP-07**: Ensure Home showcase (`ExpertsShowcase.tsx`), Global Search, Research Areas, and profile routes resolve cleanly without null dereferences.
+- [ ] **REQ-EXP-08**: Pass full TypeScript compilation and Vite production build (`npm run build`) with zero errors.
 
-### 4. Device-by-Device UI Verification (`DEVICE_VERIFY`)
-- **REQ-DEV-01**: Verify UI on **320px** (Compact Mobile / iPhone SE 1st gen).
-- **REQ-DEV-02**: Verify UI on **375px & 390px** (Standard Mobile / iPhone 12/13/14/15).
-- **REQ-DEV-03**: Verify UI on **412px** (Modern Android Flagships / Pixel & Galaxy).
-- **REQ-DEV-04**: Verify UI on **768px** (Tablet Portrait / iPad Mini / Air).
-- **REQ-DEV-05**: Verify UI on **1024px** (Tablet Landscape & Compact Laptops).
-- **REQ-DEV-06**: Verify complete TypeScript and Vite build passes with zero errors (`npm run build`).
+---
+
+## Traceability Matrix
+
+| Requirement | Phase | Status |
+|-------------|-------|--------|
+| REQ-EXP-01  | Phase 13 | Pending |
+| REQ-EXP-02  | Phase 13 | Pending |
+| REQ-EXP-03  | Phase 13 | Pending |
+| REQ-EXP-04  | Phase 14 | Pending |
+| REQ-EXP-05  | Phase 14 | Pending |
+| REQ-EXP-06  | Phase 14 | Pending |
+| REQ-EXP-07  | Phase 14 | Pending |
+| REQ-EXP-08  | Phase 14 | Pending |
