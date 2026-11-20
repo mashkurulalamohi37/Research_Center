@@ -1,25 +1,33 @@
-# Requirements: Experts Directory Roster Alignment (Milestone 4)
+# Requirements: Appoint Mashkurul Alam Ohi as Scientist (Milestone 5 / v1.5)
 
 ## Active Milestone Objective
-Remove all demo accounts and unconfirmed personnel from the Experts tab (`/experts`), remove Prof. Dr. S.M. Jahangir Alam and Dr. Engr. Mohammed Sowket Ali, and align the Experts network page around verified leadership (Prof. Dr. Hu Guoqing and Lt Col Md Shameem Reza, PhD (retd)), while ensuring graceful UI states and zero application breakage.
+Appoint Mashkurul Alam Ohi as a Scientist in the AIRIC faculty and Experts network directory (`/experts`), highlighting his specialization in Natural Language Processing, Transformer architectures, and Bengali computational linguistics.
 
 ---
 
-## Active Requirements (Milestone 4)
+## Active Requirements (Milestone 5)
 
-### 1. Personnel Roster & Data Cleanup (`DATA_CLEANUP`)
-- [x] **REQ-EXP-01**: Remove all 16 demo accounts from the active experts directory (`src/data/researchers.ts`), ensuring placeholder names and stock profile cards (Sarah Lin, Marcus Vance, Elena Rostova, Alexander Weiss, etc.) are eliminated from the active directory.
-- [x] **REQ-EXP-02**: Remove Prof. Dr. S.M. Jahangir Alam and Dr. Engr. Mohammed Sowket Ali from the directory and resolve or gracefully safeguard any downstream relations (projects, publications, research areas).
-- [x] **REQ-EXP-03**: Retain verified leadership appointments: Prof. Dr. Hu Guoqing (Chief Advisor) and Lt Col Md Shameem Reza, PhD (retd) (Executive Advisor) with complete institutional bios, credentials, and contact cards.
+### 1. Personnel Data & Profile Integration (`PROFILE`)
+- [ ] **REQ-SCI-01**: Add Mashkurul Alam Ohi into `src/data/researchers.ts` with:
+  - `id`: `mashkurul-alam-ohi`
+  - `slug`: `mashkurul-alam-ohi`
+  - `name`: `Mashkurul Alam Ohi`
+  - `title`: `Research Scientist (Natural Language Processing & Computational Intelligence)`
+  - `category`: `faculty`
+  - `expertCategory`: `Scientist`
+  - `department`: `Foundational AI & Natural Language Processing Lab`
+  - `education`: B.Sc. in Computer Science & Engineering from Bangladesh Army University of Science and Technology (BAUST)
+  - `expertise`: Deep Learning, Transformer Architectures, Natural Language Processing, Imbalanced Text Classification, Computational Intelligence
+  - `github`: `https://github.com/mashkurulalamohi37`
+- [ ] **REQ-SCI-02**: Add his ICCIT conference publication (*"Mental Health Sign Recognition in Bengali Text: An Optimized Deep Learning Transformer Model for Imbalanced Classification"*) to `src/data/publications.ts` with `authorIds: ['mashkurul-alam-ohi']`.
 
-### 2. Experts Page UI & Category Presentation (`UI_PRESENTATION`)
-- [x] **REQ-EXP-04**: Update the `/experts` directory header statistics, category counts, and section tallies to reflect the verified active specialists count rather than placeholder totals.
-- [x] **REQ-EXP-05**: For categories and sections currently without active appointees (e.g. disciplines with upcoming appointments), display an elegant, clean status badge / recruitment note instead of broken cards or raw empty screens.
-- [x] **REQ-EXP-06**: Ensure all category filters, search input, and section tabs function smoothly with zero runtime errors.
+### 2. Experts Directory UI Presentation (`UI_PRESENTATION`)
+- [ ] **REQ-SCI-03**: Ensure the `/experts` directory page reflects 3 appointed specialists (Prof. Dr. Hu Guoqing, Lt Col Md Shameem Reza, and Mashkurul Alam Ohi).
+- [ ] **REQ-SCI-04**: Under Section 1 (Leadership & Research Faculty), render Mashkurul Alam Ohi's Scientist card with the emerald Scientist badge, specialization tags, and bio.
+- [ ] **REQ-SCI-05**: Ensure the 'Scientist' category filter pill shows a count of 1 and displays his card directly when clicked.
 
-### 3. Cross-Platform Integrity & Build Verification (`VERIFY`)
-- [x] **REQ-EXP-07**: Ensure Home showcase (`ExpertsShowcase.tsx`), Global Search, Research Areas, and profile routes resolve cleanly without null dereferences.
-- [x] **REQ-EXP-08**: Pass full TypeScript compilation and Vite production build (`npm run build`) with zero errors.
+### 3. Verification & Build (`VERIFY`)
+- [ ] **REQ-SCI-06**: Execute `npm run build` and ensure zero TypeScript errors or broken routes.
 
 ---
 
@@ -27,11 +35,9 @@ Remove all demo accounts and unconfirmed personnel from the Experts tab (`/exper
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| REQ-EXP-01  | Phase 13 | Completed |
-| REQ-EXP-02  | Phase 13 | Completed |
-| REQ-EXP-03  | Phase 13 | Completed |
-| REQ-EXP-04  | Phase 14 | Completed |
-| REQ-EXP-05  | Phase 14 | Completed |
-| REQ-EXP-06  | Phase 14 | Completed |
-| REQ-EXP-07  | Phase 14 | Completed |
-| REQ-EXP-08  | Phase 14 | Completed |
+| REQ-SCI-01  | Phase 15 | Pending |
+| REQ-SCI-02  | Phase 15 | Pending |
+| REQ-SCI-03  | Phase 16 | Pending |
+| REQ-SCI-04  | Phase 16 | Pending |
+| REQ-SCI-05  | Phase 16 | Pending |
+| REQ-SCI-06  | Phase 16 | Pending |

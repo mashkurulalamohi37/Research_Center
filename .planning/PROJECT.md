@@ -7,15 +7,14 @@ Build a world-class, ultra-responsive web platform for AIRIC (Advanced Intellige
 
 ---
 
-## Current Milestone: v1.4 Experts Directory Roster Alignment
+## Current Milestone: v1.5 Appoint Mashkurul Alam Ohi as Scientist
 
-**Goal:** Remove all demo accounts and unconfirmed personnel from the Experts tab, and establish a verified directory highlighting authentic institute appointments.
+**Goal:** Appoint and integrate Mashkurul Alam Ohi as a Scientist in the AIRIC faculty and Experts network directory, featuring his background in Natural Language Processing, Transformer models, and deep learning research.
 
 **Target features:**
-- Remove all 16 demo accounts from the Experts network directory (`src/data/researchers.ts` and `src/pages/public/Experts.tsx`).
-- Remove Prof. Dr. S.M. Jahangir Alam and Dr. Engr. Mohammed Sowket Ali from the directory and related references.
-- Present verified leadership appointments: Prof. Dr. Hu Guoqing (Chief Advisor) and Lt Col Md Shameem Reza, PhD (retd) (Executive Advisor).
-- Update directory UI statistics, section categories, and graceful empty states for disciplines currently undergoing open appointments.
+- Profile Data: Add Mashkurul Alam Ohi into `src/data/researchers.ts` with complete academic bio, education (BAUST CSE), research areas (NLP, Deep Learning, Text Classification), and publications.
+- Experts Directory: Appoint him under the 'Scientist' discipline on the `/experts` directory page within Leadership & Research Faculty.
+- Category UI & Metrics: Update the Scientist filter pill and counts so the category displays active appointment rather than the empty recruitment state.
 
 ---
 
@@ -23,6 +22,7 @@ Build a world-class, ultra-responsive web platform for AIRIC (Advanced Intellige
 1. **AIRIC Full-Viewport Single-Page Experience** (Phases 1-5 completed 2026-11-16).
 2. **Navbar Non-Blocking & Hero Viewport Alignment** (Phases 6-8 completed 2026-11-16).
 3. **Mobile & Multi-Device Fluency** (Phases 9-12 completed 2026-11-19).
+4. **Experts Directory Roster Alignment** (Phases 13-14 completed 2026-11-20).
 
 ---
 

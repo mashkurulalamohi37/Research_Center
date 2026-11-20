@@ -25,16 +25,20 @@
 ---
 
 ## Milestone 4: Experts Directory Roster Alignment (Completed)
+- [x] Phase 13: Experts Directory Data & Personnel Alignment
+- [x] Phase 14: Experts Page UI Refinement & System Verification
 
-### Phase 13: Experts Directory Data & Personnel Alignment
-- [x] Remove all 16 demo accounts from `src/data/researchers.ts`.
-- [x] Remove Prof. Dr. S.M. Jahangir Alam and Dr. Engr. Mohammed Sowket Ali from `src/data/researchers.ts` and safeguard references in projects and publications.
-- [x] Retain and configure verified appointments: Prof. Dr. Hu Guoqing (Chief Advisor) and Lt Col Md Shameem Reza, PhD (retd) (Executive Advisor).
-- **Requirements**: REQ-EXP-01, REQ-EXP-02, REQ-EXP-03
+---
 
-### Phase 14: Experts Page UI Refinement & System Verification
-- [x] Update `/experts` page UI headers, total specialists counters, and section statistics to match the live verified roster.
-- [x] Provide elegant open-appointment / nomination notices for categories without active appointees.
-- [x] Safeguard Home Showcase, search modals, and related components against missing researcher IDs.
-- [x] Verify complete project build via `npm run build` with zero errors.
-- **Requirements**: REQ-EXP-04, REQ-EXP-05, REQ-EXP-06, REQ-EXP-07, REQ-EXP-08
+## Milestone 5: Appoint Mashkurul Alam Ohi as Scientist (In Progress)
+
+### Phase 15: Scientist Data Modeling & Publications Integration
+- [ ] Add Mashkurul Alam Ohi to `src/data/researchers.ts` as Scientist with authentic BAUST CSE education, NLP & deep learning expertise.
+- [ ] Add ICCIT Bengali transformer text classification publication to `src/data/publications.ts`.
+- **Requirements**: REQ-SCI-01, REQ-SCI-02
+
+### Phase 16: Experts Directory UI Integration & Verification
+- [ ] Connect Mashkurul Alam Ohi to `/experts` under Leadership & Research Faculty in the Scientist category.
+- [ ] Verify category filter pills, statistics counters (3 total appointed specialists), and responsive cards.
+- [ ] Verify production build with `npm run build`.
+- **Requirements**: REQ-SCI-03, REQ-SCI-04, REQ-SCI-05, REQ-SCI-06
