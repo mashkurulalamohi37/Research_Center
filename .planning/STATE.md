@@ -1,9 +1,9 @@
 ---
 gsd_state_version: "1.0"
 milestone: v1.7
-milestone_name: Appoint MD. Ahnaf Shahryar Nayem as Software Engineer & Purge AI-Generated Profiles
+milestone_name: Appoint MD. Ahnaf Shahryar Nayem & Restore Advisors
 status: completed
-last_updated: "2026-11-20T21:46:00.000Z"
+last_updated: "2026-11-20T21:48:00.000Z"
 last_activity: 2026-11-20
 progress:
   total_phases: 2
@@ -13,7 +13,7 @@ progress:
   percent: 100
 ---
 
-# Project State: Experts Page Refinement & AI Profile Purge
+# Project State: Experts Page Roster (5 Specialists)
 
 ## Project Reference
 
@@ -21,19 +21,21 @@ See: [.planning/PROJECT.md](file:///F:/Talha/ARIRCC/.planning/PROJECT.md)
 See: [.planning/REQUIREMENTS.md](file:///F:/Talha/ARIRCC/.planning/REQUIREMENTS.md)  
 See: [.planning/ROADMAP.md](file:///F:/Talha/ARIRCC/.planning/ROADMAP.md)  
 
-**Core value:** Successfully purged all legacy AI-generated profiles (`Prof. Dr. Hu Guoqing` and `Lt Col Md Shameem Reza, PhD (retd)`) from the Experts Directory (`/experts`). The page now exclusively features verified real personnel.
+**Core value:** Restored Prof. Dr. Hu Guoqing (Chief Advisor) and Lt Col Md Shameem Reza, PhD (retd) (Executive Advisor) alongside Mashkurul Alam Ohi (Scientist), Mehadi Talha (AI Engineer), and MD. Ahnaf Shahryar Nayem (Software Engineer).
 
-## Verified Active Roster on Experts Page
+## Active Roster on Experts Page
 
 | Personnel | Role | Category | Status |
 |---|---|---|---|
-| **Mashkurul Alam Ohi** | Research Scientist | Scientist | Verified Active Appointee |
-| **Mehadi Talha** | AI Engineer | AI Engineer | Verified Active Appointee |
-| **MD. Ahnaf Shahryar Nayem** | Software Engineer | Software Engineer | Verified Active Appointee |
-| **Vite & TS Build** | — | — | PASS (0 errors, 13.95s) |
+| **Prof. Dr. Hu Guoqing** | Chief Advisor | Leadership | Active (Top Row Centered) |
+| **Lt Col Md Shameem Reza, PhD (retd)** | Executive Advisor | Leadership | Active |
+| **Mashkurul Alam Ohi** | Research Scientist | Scientist | Active |
+| **Mehadi Talha** | AI Engineer | AI Engineer | Active |
+| **MD. Ahnaf Shahryar Nayem** | Software Engineer | Software Engineer | Active |
+| **Vite & TS Build** | — | — | PASS |
 
 ## Current Position
 
-Phase: AI Profile Purge Complete
+Phase: Restored Advisors & Maintained Roster
 Status: Verified & Built
-Last activity: 2026-11-20 — AI profiles removed from experts page
+Last activity: 2026-11-20 — Restored Chief Advisor and Shamim Reza

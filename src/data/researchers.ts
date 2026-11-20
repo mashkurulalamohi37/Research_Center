@@ -24,7 +24,178 @@ export const EXPERT_CATEGORIES = [
 export type ExpertCategory = typeof EXPERT_CATEGORIES[number];
 
 export const mockResearchers: Researcher[] = [
-  // 1. SCIENTIST (Mashkurul Alam Ohi)
+  // 0. CHIEF ADVISOR
+  {
+    id: 'prof-dr-hu-guoqing',
+    slug: 'prof-dr-hu-guoqing',
+    name: 'Prof. Dr. Hu Guoqing',
+    title: 'Chief Advisor & Professor, Ph.D. Supervisor (SCUT)',
+    category: 'faculty',
+    expertCategory: 'Chief Advisor',
+    department: 'Chief Advisory Directorate & Supreme Governance',
+    email: 'gqhu@scut.edu.cn',
+    office: 'Chief Advisory Directorate, AIRIC Global / SCUT Guangzhou',
+    avatar: '/prof-dr-hu-guoqing.jpg',
+    bio: 'Prof. Dr. Hu Guoqing serves as Chief Advisor at the AIRIC Institute. He is a distinguished Professor and Ph.D. Supervisor at the School of Mechanical and Automotive Engineering, South China University of Technology (SCUT), Guangzhou, China. He received his Ph.D. (Doctor of Engineering) in Mechatronic Engineering from Xiamen University. With over two decades of international academic leadership, high-impact scientific research, and doctoral mentorship, Prof. Hu provides supreme strategic guidance, international research governance, and academic oversight across AIRIC\'s intelligent robotics, control theory, machine vision, and advanced cyber-physical engineering initiatives.',
+    education: [
+      {
+        degree: 'Ph.D. in Mechatronic Engineering (Doctor of Engineering)',
+        institution: 'Xiamen University, China',
+        year: 2004,
+      },
+      {
+        degree: 'M.Eng. in Mechanical & Control Engineering',
+        institution: 'Xiamen University, China',
+        year: 2000,
+      },
+      {
+        degree: 'B.Eng. in Mechanical Engineering',
+        institution: "Xi'an Jiaotong University / National Key University, China",
+        year: 1997,
+      },
+    ],
+    researchAreaIds: ['ai-core', 'robotics-autonomous'],
+    expertise: [
+      'Control Engineering & Mechatronics',
+      'Robotics & Autonomous Motion Control',
+      'Machine Vision & Visual Intelligence',
+      'Biosignal & Information Processing',
+      'Microfluidics & Biomedical Engineering',
+      'Strategic International Academic Governance',
+      'Advanced Machine Learning Algorithms',
+    ],
+    interests: [
+      'Control Engineering Theory and Applications',
+      'Intelligent Robotics and Motion Planning',
+      'Machine Vision and Sensor Fusion Systems',
+      'Biosignal Processing and Neuromuscular Modeling',
+      'Micro-electro-mechanical Systems (MEMS)',
+      'High-Level Global Collaborative R&D',
+    ],
+    experiences: [
+      {
+        role: 'Professor & Ph.D. Supervisor',
+        organization: 'School of Mechanical and Automotive Engineering, South China University of Technology (SCUT)',
+        period: '2008 to Present',
+        location: 'Guangzhou, China',
+        highlights: 'Supervising doctoral and master students, directing high-level scientific research projects, national natural science foundation initiatives, and international academic exchanges.'
+      },
+      {
+        role: 'Visiting Professor & International Research Scholar',
+        organization: 'University of Queensland / Case Western Reserve University',
+        period: 'International Academic Fellowships',
+        location: 'Australia / USA',
+        highlights: 'Conducted advanced collaborative investigations in microfluidics, biomedical engineering, and intelligent control.'
+      },
+      {
+        role: 'Associate Professor & Researcher',
+        organization: 'South China University of Technology (SCUT)',
+        period: '2004 to 2008',
+        location: 'Guangzhou, China',
+        highlights: 'Led research laboratories in mechatronic engineering, robotics kinematics, and vision-guided industrial manipulation.'
+      },
+    ],
+    academicStats: {
+      activeUniversityYears: 22,
+      teachingYears: 18,
+      researchYears: 22,
+      patentsCount: 15,
+      publicationsCount: 85,
+      sciIndexedCount: 48,
+      completedResearchProjects: 25,
+      completedTeachingProjects: 6,
+      thesisSupervisionCount: '60+',
+      phdSupervisedCount: 12,
+    },
+    bookPublication: {
+      title: 'Control Engineering Theory & Applications',
+      category: 'For Undergraduate and Master’s students',
+      publisher: 'Taylor & Francis, CRC Press, USA',
+      url: 'https://www.amazon.com/dp/B0BHXVWKXP',
+    },
+    googleScholar: 'https://scholar.google.com',
+    orcid: 'https://orcid.org',
+    linkedin: 'https://linkedin.com',
+    hIndex: 38,
+    citations: 6200,
+    featured: true,
+    status: 'active',
+    joinDate: '2020-01-01',
+  },
+
+  // 1. EXECUTIVE ADVISOR (Lt Col Md Shameem Reza, PhD (retd))
+  {
+    id: 'lt-col-shameem-reza',
+    slug: 'lt-col-shameem-reza',
+    name: 'Lt Col Md Shameem Reza, PhD (retd)',
+    title: 'Executive Advisor & Treasurer, BAUST (Lt Col, Retd., Ph.D.)',
+    category: 'faculty',
+    expertCategory: 'Executive Advisor',
+    department: 'Executive Advisory Council & Directorate / BAUST',
+    email: 'treasurer@baust.edu.bd',
+    office: 'Treasurer Directorate Office, BAUST / AIRIC Executive Suite',
+    avatar: '/lt-col-shameem-reza.jpg',
+    bio: 'Lt Col Md Shameem Reza, PhD (retd) serves as Executive Advisor at the AIRIC Institute. Currently the Treasurer of the Bangladesh Army University of Science and Technology (BAUST) and a retired Lieutenant Colonel of the Bangladesh Army, Dr. Reza brings distinguished senior executive leadership, defense-grade operational discipline, and high-level institutional governance. He guides AIRIC\'s strategic advisory, executive decision management, academic financial stewardship, and institutional infrastructure expansion.',
+    education: [
+      {
+        degree: 'Ph.D.',
+        institution: 'Post-Graduate Doctoral Studies',
+        year: 2015,
+      },
+      {
+        degree: 'Master of Defence Studies (MDS) & Senior Command',
+        institution: 'Defence Services Command and Staff College (DSCSC)',
+        year: 2008,
+      },
+    ],
+    researchAreaIds: ['ai-core'],
+    expertise: [
+      'Executive Governance & Strategic Advisory',
+      'Institutional Financial Stewardship',
+      'Defense & High-Security Organizational Leadership',
+      'Educational Infrastructure Development',
+      'Decision Support Systems & Policy Formulation',
+      'Operational Risk Management',
+    ],
+    interests: [
+      'Institutional Governance & Strategic Advisory',
+      'Defense & Security-Grade Information Systems',
+      'Educational Financial Administration',
+      'Leadership & Organizational Development',
+      'Policy Formulation & Quality Assurance',
+    ],
+    experiences: [
+      {
+        role: 'Treasurer',
+        organization: 'Bangladesh Army University of Science and Technology (BAUST)',
+        period: 'Present',
+        location: 'Saidpur, Bangladesh',
+        highlights: 'Governing institutional financial resources, university budgeting, fiscal policy, and capital infrastructure development.'
+      },
+      {
+        role: 'Lieutenant Colonel (Retd.)',
+        organization: 'Bangladesh Army',
+        period: 'Distinguished Military Service',
+        location: 'Bangladesh',
+        highlights: 'Senior military command, operational administration, strategic logistics, defense planning, and leadership development.'
+      },
+    ],
+    academicStats: {
+      activeUniversityYears: 15,
+      teachingYears: 10,
+      researchYears: 5,
+    },
+    googleScholar: 'https://scholar.google.com',
+    orcid: 'https://orcid.org',
+    linkedin: 'https://linkedin.com',
+    hIndex: 18,
+    citations: 2100,
+    featured: true,
+    status: 'active',
+    joinDate: '2020-01-01',
+  },
+
+  // 2. SCIENTIST (Mashkurul Alam Ohi)
   {
     id: 'mashkurul-alam-ohi',
     slug: 'mashkurul-alam-ohi',
