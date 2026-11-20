@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSearchParams, Link } from 'react-router-dom';
 import { 
-  Users, Search, X, ChevronRight, Mail, 
+  Users, Search, X, ChevronRight, Mail, Phone,
   Award, Sparkles, Cpu, Bot, Database, 
   Layers, Code, LineChart, TrendingUp, Lightbulb, 
   ShieldCheck, GraduationCap,
@@ -34,9 +34,9 @@ export const SECTION_GROUPS: {
     label: 'Leadership & Research Faculty',
     shortLabel: 'Core Faculty (10)',
     count: 10,
-    description: 'Scientific directors, foundational researchers, enterprise architects, and commercial advisors.',
+    description: 'Scientific directors, foundational researchers, enterprise architects, and executive advisors.',
     categories: [
-      'Advisor',
+      'Executive Advisor',
       'Scientist',
       'AI Engineer',
       'Innovators',
@@ -72,10 +72,10 @@ const categoryMeta: Record<ExpertCategory, {
   roleDesc: string; 
   sectionId: 'faculty' | 'engineering';
 }> = {
-  'Advisor': {
+  'Executive Advisor': {
     icon: Award,
     badgeColor: 'bg-amber-100 text-amber-900 border-amber-300 dark:bg-amber-500/15 dark:text-amber-300 dark:border-amber-500/30',
-    roleDesc: 'Strategic Council & Technology Commercialization Governance',
+    roleDesc: 'Executive Council, Scientific Direction & AI Research Governance',
     sectionId: 'faculty',
   },
   'Scientist': {
@@ -182,7 +182,8 @@ export const Experts: React.FC = () => {
   const [selectedSection, setSelectedSection] = useState<ExpertSectionId>(sectionParam);
 
   useEffect(() => {
-    const cat = searchParams.get('category') || 'all';
+    let cat = searchParams.get('category') || 'all';
+    if (cat === 'Advisor') cat = 'Executive Advisor';
     const sec = (searchParams.get('section') as ExpertSectionId) || 'all';
     setSelectedCategory(cat);
     setSelectedSection(sec);
@@ -252,7 +253,8 @@ export const Experts: React.FC = () => {
       const matchCategory = category.toLowerCase().includes(q);
       const matchDept = employee.department.toLowerCase().includes(q);
       const matchExpertise = employee.expertise.some(e => e.toLowerCase().includes(q));
-      return matchName || matchTitle || matchCategory || matchDept || matchExpertise;
+      const matchPhone = employee.phone ? employee.phone.includes(q) : false;
+      return matchName || matchTitle || matchCategory || matchDept || matchExpertise || matchPhone;
     }
 
     return true;
@@ -504,8 +506,12 @@ export const Experts: React.FC = () => {
               <CategoryIcon className="w-3.5 h-3.5 shrink-0" />
               <span>{category}</span>
             </span>
-            <span className="text-[10px] font-mono text-slate-400 uppercase tracking-widest">
-              DEMO EXPERT
+            <span className={`text-[10px] font-mono uppercase tracking-widest font-semibold ${
+              employee.id === 'prof-dr-sm-jahangir-alam' 
+                ? 'text-cyan-600 dark:text-cyan-400 font-bold' 
+                : 'text-slate-400'
+            }`}>
+              {employee.id === 'prof-dr-sm-jahangir-alam' ? 'EXECUTIVE FACULTY' : 'DEMO EXPERT'}
             </span>
           </div>
 
@@ -566,13 +572,24 @@ export const Experts: React.FC = () => {
             <span>Full Profile</span>
             <ChevronRight className="w-3.5 h-3.5" />
           </Link>
-          <a 
-            href={`mailto:${employee.email}`} 
-            title={`Email ${employee.name}`}
-            className="p-1.5 rounded-lg text-slate-400 hover:text-cyan-600 dark:hover:text-cyan-400 hover:bg-white dark:hover:bg-slate-800 transition-colors"
-          >
-            <Mail className="w-4 h-4" />
-          </a>
+          <div className="flex items-center gap-1">
+            {employee.phone && (
+              <a 
+                href={`tel:${employee.phone}`} 
+                title={`Call ${employee.name}: ${employee.phone}`}
+                className="p-1.5 rounded-lg text-slate-400 hover:text-cyan-600 dark:hover:text-cyan-400 hover:bg-white dark:hover:bg-slate-800 transition-colors"
+              >
+                <Phone className="w-4 h-4" />
+              </a>
+            )}
+            <a 
+              href={`mailto:${employee.email}`} 
+              title={`Email ${employee.name}: ${employee.email}`}
+              className="p-1.5 rounded-lg text-slate-400 hover:text-cyan-600 dark:hover:text-cyan-400 hover:bg-white dark:hover:bg-slate-800 transition-colors"
+            >
+              <Mail className="w-4 h-4" />
+            </a>
+          </div>
         </CardFooter>
       </Card>
     );

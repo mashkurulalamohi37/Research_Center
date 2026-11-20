@@ -1,7 +1,7 @@
 import { Researcher } from '../types';
 
 export const EXPERT_CATEGORIES = [
-  'Advisor',
+  'Executive Advisor',
   'Scientist',
   'AI Engineer',
   'Innovators',
@@ -22,29 +22,53 @@ export const EXPERT_CATEGORIES = [
 export type ExpertCategory = typeof EXPERT_CATEGORIES[number];
 
 export const mockResearchers: Researcher[] = [
-  // 1. ADVISOR
+  // 1. EXECUTIVE ADVISOR
   {
-    id: 'dr-arthur-pendleton',
-    slug: 'dr-arthur-pendleton',
-    name: 'Dr. Arthur Pendleton',
-    title: 'Senior Strategic & Commercial Advisor',
-    category: 'visiting',
-    expertCategory: 'Advisor',
-    department: 'Advisory Council & Strategic Governance',
-    email: 'a.pendleton@AIRIC.org',
-    phone: '+1 (415) 890-2100',
-    office: 'Directorate Suite 501',
-    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80',
-    bio: 'Dr. Arthur Pendleton serves as Senior Strategic Advisor to the AIRIC Directorate. With over 25 years advising multilateral research councils, sovereign technology funds, and university spinouts, he guides international tech transfer, ethical AI governance, and strategic enterprise partnerships.',
+    id: 'prof-dr-sm-jahangir-alam',
+    slug: 'prof-dr-sm-jahangir-alam',
+    name: 'Prof. Dr. S.M. Jahangir Alam',
+    title: 'Executive Advisor & Professor (Doctor of Engineering, AI & Computer Vision)',
+    category: 'faculty',
+    expertCategory: 'Executive Advisor',
+    department: 'Executive Advisory Council & Directorate',
+    email: 'jahangir@baust.edu.bd',
+    phone: '01766128002',
+    office: 'Executive Advisory Suite, AIRIC Directorate',
+    avatar: '/prof-jahangir-alam.png',
+    bio: 'Prof. Dr. S.M. Jahangir Alam serves as Executive Advisor at the AIRIC Institute. He earned his Ph.D. (Doctor of Engineering) specialized in Artificial Intelligence and Computer Vision from the prestigious Xiamen University (World rank ~300), China. An esteemed leader across academia and intelligent computing research, he stewards AIRIC’s strategic advisory, scientific governance, and multidisciplinary initiatives spanning Brain Science, Neural Networks, Computer Vision, and Quantum AI.',
     education: [
-      { degree: 'Ph.D. in Technology Management & Policy', institution: 'University of Cambridge', year: 2003 },
-      { degree: 'M.B.A. in Venture Finance', institution: 'Harvard Business School', year: 1998 },
+      { 
+        degree: 'Ph.D. (Doctor of Engineering, Specialized in AI & Computer Vision)', 
+        institution: 'Xiamen University (World rank~300), China', 
+        year: 2012 
+      },
     ],
     researchAreaIds: ['ai-core'],
-    expertise: ['Strategic Governance', 'Deep-Tech IP Commercialization', 'Sovereign AI Policy', 'Venture Strategy'],
-    interests: ['International university-industry IP pacts', 'Ethical frontier AI regulation', 'Deep-tech capital formation'],
+    expertise: [
+      'Brain Science & Neural Networks',
+      'Computer Vision',
+      'Deep Learning',
+      'Generative AI',
+      'Intelligent Systems',
+      'Quantum AI',
+      'Nano Bio-Robotics',
+      'Data Science & Time Series',
+    ],
+    interests: [
+      'Brain Science & Neural Networks',
+      'Computer Vision',
+      'Data Science and Time Series Analysis',
+      'Deep Learning',
+      'Generative AI',
+      'Intelligent Systems',
+      'Nano Bio-Robotics',
+      'Natural Language Processing',
+      'Quantum AI',
+      'Quantum Machine Learning',
+      'Signal Processing',
+    ],
     googleScholar: 'https://scholar.google.com',
-    orcid: 'https://orcid.org/0000-0002-1111-2222',
+    orcid: 'https://orcid.org',
     linkedin: 'https://linkedin.com',
     hIndex: 42,
     citations: 12400,

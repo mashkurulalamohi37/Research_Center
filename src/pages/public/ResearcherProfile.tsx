@@ -3,7 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { 
   Mail, MapPin, BookOpen, 
   Award, GraduationCap, Github, 
-  Globe, Sparkles, CheckCircle2 
+  Globe, Sparkles, CheckCircle2, Phone 
 } from 'lucide-react';
 import { mockResearchers } from '../../data/researchers';
 import { mockProjects } from '../../data/projects';
@@ -103,6 +103,14 @@ export const ResearcherProfile: React.FC = () => {
                 >
                   <Mail className="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-400" /> Email Lab
                 </a>
+                {researcher.phone && (
+                  <a
+                    href={`tel:${researcher.phone}`}
+                    className="px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-xs text-slate-700 dark:text-slate-200 hover:text-cyan-700 dark:hover:text-cyan-400 border border-slate-200 dark:border-slate-700 flex items-center gap-1.5 transition-colors"
+                  >
+                    <Phone className="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-400" /> {researcher.phone}
+                  </a>
+                )}
                 {researcher.googleScholar && (
                   <a
                     href={researcher.googleScholar}
