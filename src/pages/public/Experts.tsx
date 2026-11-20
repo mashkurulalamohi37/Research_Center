@@ -590,8 +590,6 @@ export const Experts: React.FC = () => {
                 ? 'max-w-md grid-cols-1' 
                 : regularExperts.length === 2 
                 ? 'max-w-3xl grid-cols-1 md:grid-cols-2' 
-                : regularExperts.length === 4
-                ? 'grid-cols-1 md:grid-cols-2 xl:grid-cols-4'
                 : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'
             }`}>
               {regularExperts.map(({ category, employee }) => renderExpertCard(category, employee, false))}
