@@ -24,19 +24,20 @@ export const SECTION_GROUPS: {
   {
     id: 'all',
     label: 'All Sections',
-    shortLabel: 'All 16 Roles',
-    count: 16,
+    shortLabel: 'All 17 Roles',
+    count: 17,
     description: 'Complete multidisciplinary institute talent roster across research, architecture, and engineering.',
     categories: [...EXPERT_CATEGORIES],
   },
   {
     id: 'faculty',
     label: 'Leadership & Research Faculty',
-    shortLabel: 'Core Faculty (10)',
-    count: 10,
-    description: 'Scientific directors, foundational researchers, enterprise architects, and executive advisors.',
+    shortLabel: 'Core Faculty (11)',
+    count: 11,
+    description: 'Executive advisors, scientific directors, foundational researchers, and system architects.',
     categories: [
       'Executive Advisor',
+      'Advisor',
       'Scientist',
       'AI Engineer',
       'Innovators',
@@ -65,7 +66,7 @@ export const SECTION_GROUPS: {
   },
 ];
 
-// Meta configuration for all 16 official categories
+// Meta configuration for all 17 official categories
 const categoryMeta: Record<ExpertCategory, { 
   icon: React.FC<{ className?: string }>; 
   badgeColor: string; 
@@ -76,6 +77,12 @@ const categoryMeta: Record<ExpertCategory, {
     icon: Award,
     badgeColor: 'bg-amber-100 text-amber-900 border-amber-300 dark:bg-amber-500/15 dark:text-amber-300 dark:border-amber-500/30',
     roleDesc: 'Executive Council, Scientific Direction & AI Research Governance',
+    sectionId: 'faculty',
+  },
+  'Advisor': {
+    icon: Award,
+    badgeColor: 'bg-yellow-100 text-yellow-900 border-yellow-300 dark:bg-yellow-500/15 dark:text-yellow-300 dark:border-yellow-500/30',
+    roleDesc: 'Strategic Academic Governance, Nano/IT & Engineering Systems',
     sectionId: 'faculty',
   },
   'Scientist': {
@@ -182,8 +189,7 @@ export const Experts: React.FC = () => {
   const [selectedSection, setSelectedSection] = useState<ExpertSectionId>(sectionParam);
 
   useEffect(() => {
-    let cat = searchParams.get('category') || 'all';
-    if (cat === 'Advisor') cat = 'Executive Advisor';
+    const cat = searchParams.get('category') || 'all';
     const sec = (searchParams.get('section') as ExpertSectionId) || 'all';
     setSelectedCategory(cat);
     setSelectedSection(sec);
@@ -270,19 +276,19 @@ export const Experts: React.FC = () => {
             <ChevronRight className="w-3.5 h-3.5 text-slate-600" />
             <span>Institute Directory</span>
             <ChevronRight className="w-3.5 h-3.5 text-slate-600" />
-            <span className="text-cyan-300 font-bold">16 Specialized Categories</span>
+            <span className="text-cyan-300 font-bold">17 Specialized Categories</span>
           </div>
 
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-xs font-mono font-semibold mb-3">
             <Users className="w-3.5 h-3.5" />
-            <span>16 PROFESSIONAL CATEGORIES • 1 DEMO EMPLOYEE PER ROLE</span>
+            <span>17 PROFESSIONAL CATEGORIES • 1 SPECIALIST PER ROLE</span>
           </div>
 
           <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white">
             Professional & Expert Network
           </h1>
           <p className="mt-3 text-base sm:text-lg text-slate-300 max-w-4xl leading-relaxed">
-            Explore AIRIC’s multidisciplinary talent across research, systems architecture, robotics, and software engineering. Connect with verified specialists across all 16 institute disciplines.
+            Explore AIRIC’s multidisciplinary talent across research, systems architecture, robotics, and software engineering. Connect with verified specialists across all 17 institute disciplines.
           </p>
         </div>
       </section>
@@ -311,7 +317,7 @@ export const Experts: React.FC = () => {
             )}
           </div>
           <div className="text-xs font-mono text-slate-500">
-            Showing <strong className="text-slate-800 dark:text-slate-200">{filtered.length}</strong> of 16 demo specialists
+            Showing <strong className="text-slate-800 dark:text-slate-200">{filtered.length}</strong> of 17 specialists
           </div>
         </div>
 
@@ -380,7 +386,7 @@ export const Experts: React.FC = () => {
             >
               <span>All Categories</span>
               <span className="px-1.5 py-0.2 rounded-full text-[10px] font-mono bg-black/10 dark:bg-black/20">
-                {selectedSection === 'all' ? 16 : selectedSection === 'faculty' ? 10 : 6}
+                {selectedSection === 'all' ? 17 : selectedSection === 'faculty' ? 11 : 6}
               </span>
             </button>
 
@@ -440,7 +446,7 @@ export const Experts: React.FC = () => {
                         Leadership & Research Faculty
                       </h2>
                       <span className="px-2 py-0.5 rounded-full text-xs font-mono bg-cyan-500/10 text-cyan-700 dark:text-cyan-300 border border-cyan-500/20">
-                        10 Roles
+                        11 Roles
                       </span>
                     </div>
                     <span className="text-xs text-slate-500 hidden sm:inline">
@@ -507,11 +513,11 @@ export const Experts: React.FC = () => {
               <span>{category}</span>
             </span>
             <span className={`text-[10px] font-mono uppercase tracking-widest font-semibold ${
-              employee.id === 'prof-dr-sm-jahangir-alam' 
+              employee.id === 'prof-dr-sm-jahangir-alam' || employee.id === 'dr-engr-mohammed-sowket-ali'
                 ? 'text-cyan-600 dark:text-cyan-400 font-bold' 
                 : 'text-slate-400'
             }`}>
-              {employee.id === 'prof-dr-sm-jahangir-alam' ? 'EXECUTIVE FACULTY' : 'DEMO EXPERT'}
+              {employee.id === 'prof-dr-sm-jahangir-alam' ? 'EXECUTIVE ADVISOR' : employee.id === 'dr-engr-mohammed-sowket-ali' ? 'ACADEMIC ADVISOR' : 'DEMO EXPERT'}
             </span>
           </div>
 
@@ -575,7 +581,7 @@ export const Experts: React.FC = () => {
           <div className="flex items-center gap-1">
             {employee.phone && (
               <a 
-                href={`tel:${employee.phone}`} 
+                href={`tel:${employee.phone.split(',')[0].trim()}`} 
                 title={`Call ${employee.name}: ${employee.phone}`}
                 className="p-1.5 rounded-lg text-slate-400 hover:text-cyan-600 dark:hover:text-cyan-400 hover:bg-white dark:hover:bg-slate-800 transition-colors"
               >

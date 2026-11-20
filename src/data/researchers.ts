@@ -2,6 +2,7 @@ import { Researcher } from '../types';
 
 export const EXPERT_CATEGORIES = [
   'Executive Advisor',
+  'Advisor',
   'Scientist',
   'AI Engineer',
   'Innovators',
@@ -164,6 +165,157 @@ export const mockResearchers: Researcher[] = [
     linkedin: 'https://linkedin.com',
     hIndex: 42,
     citations: 12400,
+    featured: true,
+    status: 'active',
+    joinDate: '2020-01-01',
+  },
+
+  // 2. ADVISOR
+  {
+    id: 'dr-engr-mohammed-sowket-ali',
+    slug: 'dr-engr-mohammed-sowket-ali',
+    name: 'Dr. Engr. Mohammed Sowket Ali',
+    title: 'Advisor & Associate Professor (Ph.D. & M.Engg., South Korea; FIEB, FBCS)',
+    category: 'faculty',
+    expertCategory: 'Advisor',
+    department: 'Advisory Council & Department of CSE / ICT, BAUST',
+    email: 'sowket@gmail.com',
+    phone: '+8801791895371, +8801769662712',
+    office: 'Advisory Pavilion, AIRIC Directorate / Dept. of CSE, BAUST',
+    avatar: '/dr-sowket-ali.png',
+    bio: 'Dr. Engr. Mohammed Sowket Ali serves as Advisor at the AIRIC Institute. He earned his Ph.D. in Nano/IT Engineering from Seoul National University of Science and Technology (South Korea) and M.Engg. in Electronics & Computer Engineering from Chonnam National University (South Korea). A Fellow of the Institution of Engineers Bangladesh (FIEB), Fellow of the British Computer Society (FBCS), and Senior Member of IACSIT, Dr. Ali brings over 18 years of university teaching, research, and high-level academic administration—having served as Founding Head of CSE, Head of ICT, and Director of ICT Wing and Archive at BAUST, as well as an industrial R&D Project Manager in Seoul, South Korea. His research encompasses Control Theory and Application, Explainable AI (XAI), Machine Learning, Speech and Image Signal Processing, Brain-Machine Interfaces, and IoT.',
+    education: [
+      {
+        degree: 'Ph.D. in Nano/IT Engineering',
+        institution: 'Seoul National University of Science and Technology, South Korea',
+        year: 2013,
+      },
+      {
+        degree: 'M.Engg. in Electronics and Computer Engineering',
+        institution: 'Chonnam National University, South Korea',
+        year: 2007,
+      },
+      {
+        degree: 'B.Sc. Engineering in Computer Science & Engineering (FIEB, FBCS)',
+        institution: 'Bangladesh (Senior Member IACSIT, Member IAENG)',
+        year: 2000,
+      },
+    ],
+    researchAreaIds: ['ai-core', 'iot-edge-ai'],
+    expertise: [
+      'Control Theory and Application',
+      'Machine Learning & XAI',
+      'Biomedical Signal Processing',
+      'Nano/IT & Embedded Systems',
+      'Few-Shot Learning (FSL)',
+      'Brain Machine Interface (BMI)',
+      'Intelligent Robotics & Control',
+      'Internet of Things (IoT)',
+    ],
+    interests: [
+      'Control Theory and Application',
+      'Machine Learning',
+      'Explainable AI (XAI)',
+      'Learning from Limited Data [Few-Shot Learning (FSL)]',
+      'Data Science and Data Mining',
+      'Intelligent Systems and Machine Learning',
+      'Speech and Image Signal Processing',
+      'Natural Language Processing',
+      'Biotechnology & Health Informatics',
+      'Feature Extraction and Classification of Biomedical Signals',
+      'Quantum Computing and Communications',
+      'Embedded Computer Systems',
+      'Digital System Design & Application',
+      'Human Computer Interaction (HCI)',
+      'Brain Machine Interface (BMI)',
+      'Internet of Things (IoT)',
+    ],
+    experiences: [
+      {
+        role: 'Associate Professor, Department of CSE',
+        organization: 'Bangladesh Army University of Science and Technology (BAUST)',
+        period: '2021-11-01 to Present',
+        location: 'Saidpur, Bangladesh',
+        highlights: 'Leading senior undergraduate and graduate instruction in intelligent systems and machine learning.'
+      },
+      {
+        role: 'Assistant Professor, Department of CSE',
+        organization: 'Bangladesh Army University of Science and Technology (BAUST)',
+        period: '2015-02-01 to 2021-10-31 (6y 9m)',
+        location: 'Saidpur, Bangladesh',
+        highlights: 'Delivered core computer science and engineering coursework, research supervision, and curriculum design.'
+      },
+      {
+        role: 'Head, Dept. of ICT & Director of ICT Wing and Archive',
+        organization: 'Bangladesh Army University of Science and Technology (BAUST)',
+        period: '2020 to 2025',
+        location: 'Saidpur, Bangladesh',
+        highlights: 'Administrative leadership governing ICT department operations, digital archiving, and university ICT infrastructure.'
+      },
+      {
+        role: 'Founding Head, Dept. of CSE & Dept. of ICT',
+        organization: 'Bangladesh Army University of Science and Technology (BAUST)',
+        period: '2015 to 2018 & 2020 to 2021',
+        location: 'Saidpur, Bangladesh',
+        highlights: 'Pioneered departmental establishment, laboratory procurement, and outcome-based curriculum accreditation.'
+      },
+      {
+        role: 'Research Fellow (Ph.D.)',
+        organization: 'Dept. of Nano/IT Engineering, Seoul National University of Science and Technology',
+        period: '2007-03-01 to 2013-02-28 (6 Years)',
+        location: 'Seoul, South Korea',
+        highlights: 'Conducted high-impact research in control systems, robotics, and nano/IT system architectures.'
+      },
+      {
+        role: 'Project Manager (R&D)',
+        organization: 'Solution Division, ActsOne Co., Ltd.',
+        period: '2013-06-10 to 2013-11-30',
+        location: 'Seoul, South Korea',
+        highlights: 'Managed commercial R&D software and embedded solutions in industrial IT environments.'
+      },
+      {
+        role: 'Software Engineer (R&D)',
+        organization: 'MUSE R&D Inc.',
+        period: '2008-04-16 to 2009-03-31',
+        location: 'Seoul, South Korea',
+        highlights: 'Engineered embedded algorithms and software systems for industrial clients.'
+      },
+      {
+        role: 'Assistant Professor & Chairman (In-charge), Dept. of EEE',
+        organization: 'Uttara University (UU)',
+        period: '2014-03-15 to 2015-01-31',
+        location: 'Dhaka, Bangladesh',
+        highlights: 'Headed departmental academic programs and curriculum administration.'
+      },
+      {
+        role: 'Teaching Assistant (TA)',
+        organization: 'Dept. of Electronics and Computer Engineering, Chonnam National University',
+        period: '2005-02 to 2007-03 (2 Years)',
+        location: 'Gwangju, South Korea',
+        highlights: 'Supported graduate research in ubiquitous sensor networks, robotics, and distance sensor estimation.'
+      },
+      {
+        role: 'Instructor',
+        organization: 'Seoul Metropolitan Government',
+        period: '2010-05 to 2014-02 (3y 10m)',
+        location: 'Seoul, South Korea',
+        highlights: 'Conducted IT education and professional instruction for international student forums.'
+      },
+    ],
+    academicStats: {
+      activeUniversityYears: 18,
+      teachingYears: 11,
+      researchYears: 7,
+      publicationsCount: 42,
+      sciIndexedCount: 19,
+      completedResearchProjects: 12,
+      thesisSupervisionCount: '50+',
+    },
+    googleScholar: 'https://scholar.google.com',
+    orcid: 'https://orcid.org',
+    linkedin: 'https://linkedin.com',
+    hIndex: 32,
+    citations: 4850,
     featured: true,
     status: 'active',
     joinDate: '2020-01-01',
