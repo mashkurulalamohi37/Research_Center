@@ -287,7 +287,7 @@ export const Experts: React.FC = () => {
 
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-xs font-mono font-semibold mb-3">
             <Users className="w-3.5 h-3.5" />
-            <span>18 PROFESSIONAL DISCIPLINES • {categoryExperts.length} APPOINTED ADVISORS</span>
+            <span>18 PROFESSIONAL DISCIPLINES • {categoryExperts.length} APPOINTED SPECIALISTS</span>
           </div>
 
           <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white">
@@ -476,7 +476,7 @@ export const Experts: React.FC = () => {
                   }}
                   className="px-4 py-2 text-xs font-bold rounded-xl bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-slate-300 dark:hover:bg-slate-700 transition-colors cursor-pointer"
                 >
-                  View Appointed Leadership
+                  View Appointed Specialists
                 </button>
                 <Link
                   to="/contact"
@@ -623,15 +623,11 @@ export const Experts: React.FC = () => {
               <span>{category}</span>
             </span>
             <span className={`text-[10px] font-mono uppercase tracking-widest font-semibold ${
-              employee.id === 'prof-dr-hu-guoqing' || employee.id === 'lt-col-shameem-reza' || employee.id === 'mashkurul-alam-ohi' || employee.id === 'mehadi-talha' || employee.id === 'ahnaf-shahryar-nayem'
+              employee.id === 'mashkurul-alam-ohi' || employee.id === 'mehadi-talha' || employee.id === 'ahnaf-shahryar-nayem'
                 ? 'text-cyan-600 dark:text-cyan-400 font-bold' 
                 : 'text-slate-400'
             }`}>
-              {employee.id === 'prof-dr-hu-guoqing'
-                ? 'CHIEF ADVISOR'
-                : employee.id === 'lt-col-shameem-reza'
-                ? 'EXECUTIVE ADVISOR' 
-                : employee.id === 'mashkurul-alam-ohi'
+              {employee.id === 'mashkurul-alam-ohi'
                 ? 'RESEARCH SCIENTIST'
                 : employee.id === 'mehadi-talha'
                 ? 'AI ENGINEER'

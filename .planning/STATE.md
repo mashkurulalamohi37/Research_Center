@@ -1,9 +1,9 @@
 ---
 gsd_state_version: "1.0"
 milestone: v1.7
-milestone_name: Appoint MD. Ahnaf Shahryar Nayem as Software Engineer
+milestone_name: Appoint MD. Ahnaf Shahryar Nayem as Software Engineer & Purge AI-Generated Profiles
 status: completed
-last_updated: "2026-11-20T21:37:00.000Z"
+last_updated: "2026-11-20T21:46:00.000Z"
 last_activity: 2026-11-20
 progress:
   total_phases: 2
@@ -13,7 +13,7 @@ progress:
   percent: 100
 ---
 
-# Project State: Appoint MD. Ahnaf Shahryar Nayem as Software Engineer (Milestone 7)
+# Project State: Experts Page Refinement & AI Profile Purge
 
 ## Project Reference
 
@@ -21,23 +21,19 @@ See: [.planning/PROJECT.md](file:///F:/Talha/ARIRCC/.planning/PROJECT.md)
 See: [.planning/REQUIREMENTS.md](file:///F:/Talha/ARIRCC/.planning/REQUIREMENTS.md)  
 See: [.planning/ROADMAP.md](file:///F:/Talha/ARIRCC/.planning/ROADMAP.md)  
 
-**Core value:** Successfully appointed MD. Ahnaf Shahryar Nayem as Software Engineer in the Software Engineering & Production Systems Lab, verified across `/experts` directory and production build.  
-**Current focus:** Completed & verified with `npm run build` (`✓ built in 28.61s`).
+**Core value:** Successfully purged all legacy AI-generated profiles (`Prof. Dr. Hu Guoqing` and `Lt Col Md Shameem Reza, PhD (retd)`) from the Experts Directory (`/experts`). The page now exclusively features verified real personnel.
 
-## Roster Integration Matrix
+## Verified Active Roster on Experts Page
 
 | Personnel | Role | Category | Status |
 |---|---|---|---|
-| **Prof. Dr. Hu Guoqing** | Chief Advisor | Leadership | Active (Top Row Centered) |
-| **Lt Col Md Shameem Reza, PhD (retd)** | Executive Advisor | Leadership | Active |
-| **Mashkurul Alam Ohi** | Research Scientist | Scientist | Active |
-| **Mehadi Talha** | AI Engineer | AI Engineer | Active |
-| **MD. Ahnaf Shahryar Nayem** | Software Engineer | Software Engineer | Active |
-| **Vite & TS Build** | — | — | PASS (0 errors, 28.61s) |
+| **Mashkurul Alam Ohi** | Research Scientist | Scientist | Verified Active Appointee |
+| **Mehadi Talha** | AI Engineer | AI Engineer | Verified Active Appointee |
+| **MD. Ahnaf Shahryar Nayem** | Software Engineer | Software Engineer | Verified Active Appointee |
+| **Vite & TS Build** | — | — | PASS (0 errors, 13.95s) |
 
 ## Current Position
 
-Phase: Phase 20 Complete
-Plan: Complete
+Phase: AI Profile Purge Complete
 Status: Verified & Built
-Last activity: 2026-11-20 — Milestone v1.7 completed
+Last activity: 2026-11-20 — AI profiles removed from experts page
