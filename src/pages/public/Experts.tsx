@@ -621,7 +621,7 @@ export const Experts: React.FC = () => {
               <span>{category}</span>
             </span>
             <span className={`text-[10px] font-mono uppercase tracking-widest font-semibold ${
-              employee.id === 'prof-dr-hu-guoqing' || employee.id === 'lt-col-shameem-reza'
+              employee.id === 'prof-dr-hu-guoqing' || employee.id === 'lt-col-shameem-reza' || employee.id === 'mashkurul-alam-ohi'
                 ? 'text-cyan-600 dark:text-cyan-400 font-bold' 
                 : 'text-slate-400'
             }`}>
@@ -629,6 +629,8 @@ export const Experts: React.FC = () => {
                 ? 'CHIEF ADVISOR'
                 : employee.id === 'lt-col-shameem-reza'
                 ? 'EXECUTIVE ADVISOR' 
+                : employee.id === 'mashkurul-alam-ohi'
+                ? 'RESEARCH SCIENTIST'
                 : 'INSTITUTE APPOINTEE'}
             </span>
           </div>

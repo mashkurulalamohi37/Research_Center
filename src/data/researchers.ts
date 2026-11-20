@@ -195,7 +195,75 @@ export const mockResearchers: Researcher[] = [
     joinDate: '2020-01-01',
   },
 
-  // 2. SCIENTIST
+  // 2. SCIENTIST (Mashkurul Alam Ohi)
+  {
+    id: 'mashkurul-alam-ohi',
+    slug: 'mashkurul-alam-ohi',
+    name: 'Mashkurul Alam Ohi',
+    title: 'Research Scientist (NLP, Deep Learning & Transformer Architectures)',
+    category: 'faculty',
+    expertCategory: 'Scientist',
+    department: 'Foundational AI & Natural Language Processing Lab',
+    email: 'ohi@AIRIC.org',
+    office: 'Science Quadrangle, Suite 302',
+    avatar: '/mashkurul-alam-ohi.png',
+    bio: 'Mashkurul Alam Ohi serves as a Research Scientist at the AIRIC Institute. He holds a B.Sc. in Computer Science and Engineering from the Bangladesh Army University of Science and Technology (BAUST). His research concentrates on Natural Language Processing (NLP), deep learning transformer architectures, imbalanced text classification, and computational intelligence. He has authored peer-reviewed research presented at premier computing conferences including ICCIT and architected intelligent institutional software platforms.',
+    education: [
+      {
+        degree: 'B.Sc. in Computer Science & Engineering',
+        institution: 'Bangladesh Army University of Science and Technology (BAUST)',
+        year: 2024,
+      },
+    ],
+    researchAreaIds: ['ai-core'],
+    expertise: [
+      'Natural Language Processing (NLP)',
+      'Deep Learning Transformers',
+      'Bengali Text Classification',
+      'Imbalanced Data Modeling',
+      'Computational Intelligence',
+      'Neural Language Models',
+      'Full-Stack Research Engineering',
+    ],
+    interests: [
+      'Low-resource NLP and Language Modeling',
+      'Mental Health Sign Recognition in Clinical Text',
+      'Transformer Optimization & Fine-Tuning',
+      'Multimodal Language Representations',
+      'Automated Academic Workflow Systems',
+    ],
+    experiences: [
+      {
+        role: 'Research Scientist',
+        organization: 'AIRIC Institute',
+        period: '2024 to Present',
+        location: 'Saidpur / Global',
+        highlights: 'Directing research programs in foundational NLP, transformer architecture optimization, and language intelligence pipelines.'
+      },
+      {
+        role: 'Research Investigator & Lead Author',
+        organization: 'Dept. of CSE, BAUST',
+        period: '2021 to 2024',
+        location: 'Saidpur, Bangladesh',
+        highlights: 'Engineered deep learning transformer models for mental health text classification (presented at ICCIT) and created the BAUST ProjectShowcase institutional application.'
+      },
+    ],
+    academicStats: {
+      researchYears: 3,
+      publicationsCount: 3,
+      completedResearchProjects: 4,
+    },
+    googleScholar: 'https://scholar.google.com',
+    github: 'https://github.com/mashkurulalamohi37',
+    linkedin: 'https://linkedin.com',
+    hIndex: 3,
+    citations: 45,
+    featured: true,
+    status: 'active',
+    joinDate: '2024-01-01',
+  },
+
+  // 3. AUXILIARY / FOUNDATIONAL RESEARCH FACULTY
   {
     id: 'dr-sarah-lin',
     slug: 'dr-sarah-lin',

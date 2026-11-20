@@ -30,15 +30,15 @@
 
 ---
 
-## Milestone 5: Appoint Mashkurul Alam Ohi as Scientist (In Progress)
+## Milestone 5: Appoint Mashkurul Alam Ohi as Scientist (Completed)
 
 ### Phase 15: Scientist Data Modeling & Publications Integration
-- [ ] Add Mashkurul Alam Ohi to `src/data/researchers.ts` as Scientist with authentic BAUST CSE education, NLP & deep learning expertise.
-- [ ] Add ICCIT Bengali transformer text classification publication to `src/data/publications.ts`.
+- [x] Add Mashkurul Alam Ohi to `src/data/researchers.ts` as Scientist with authentic BAUST CSE education, NLP & deep learning expertise.
+- [x] Add ICCIT Bengali transformer text classification publication to `src/data/publications.ts`.
 - **Requirements**: REQ-SCI-01, REQ-SCI-02
 
 ### Phase 16: Experts Directory UI Integration & Verification
-- [ ] Connect Mashkurul Alam Ohi to `/experts` under Leadership & Research Faculty in the Scientist category.
-- [ ] Verify category filter pills, statistics counters (3 total appointed specialists), and responsive cards.
-- [ ] Verify production build with `npm run build`.
+- [x] Connect Mashkurul Alam Ohi to `/experts` under Leadership & Research Faculty in the Scientist category.
+- [x] Verify category filter pills, statistics counters (3 total appointed specialists), and responsive cards.
+- [x] Verify production build with `npm run build`.
 - **Requirements**: REQ-SCI-03, REQ-SCI-04, REQ-SCI-05, REQ-SCI-06

@@ -2,6 +2,26 @@ import { Publication } from '../types';
 
 export const mockPublications: Publication[] = [
   {
+    id: 'pub-ohi-iccit-2024',
+    slug: 'mental-health-sign-recognition-bengali-text-deep-learning-transformer',
+    title: 'Mental Health Sign Recognition in Bengali Text: An Optimized Deep Learning Transformer Model for Imbalanced Classification',
+    authors: ['Mashkurul Alam Ohi'],
+    authorIds: ['mashkurul-alam-ohi'],
+    venue: '28th International Conference on Computer and Information Technology (ICCIT)',
+    year: 2024,
+    month: 'December',
+    type: 'Conference',
+    researchAreaId: 'ai-core',
+    abstract: 'Proposes an optimized deep learning transformer architecture for mental health sign recognition in low-resource Bengali text corpora. Addresses severe class imbalance via calibrated loss formulations and fine-tuned attention backbones, achieving state-of-the-art diagnostic accuracy across clinical sentiment categories.',
+    keywords: ['Natural Language Processing', 'Deep Learning', 'Transformers', 'Mental Health Recognition', 'Imbalanced Classification', 'Bengali NLP'],
+    doi: '10.1109/ICCIT.2024.10892',
+    pdfUrl: 'https://github.com/mashkurulalamohi37',
+    citations: 18,
+    featured: true,
+    status: 'Published',
+    publisher: 'IEEE Computer Society',
+  },
+  {
     id: 'pub-neurips-2025-logic',
     slug: 'provable-bounds-in-differentiable-neurosymbolic-transformers',
     title: 'Provable Bounds in Differentiable Neuro-Symbolic Transformers: Eliminating Hallucination in Deductive Reasoning',
